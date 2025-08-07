@@ -1,7 +1,19 @@
+other_nogit/*
+practice/data/*
+practice/media/*
+practice/*
+media/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+*.gz
+*.mp4
+*.html
+*.ipynb
+*.pth
 
 # C extensions
 *.so
