@@ -8,7 +8,7 @@ keywords:
 - 高等数学,微积分,讲义
 vlook-chp-autonum: h1=off
 vlook-query: vdl=on
-vlook-query: ws=off
+vlook-query: ws=off..............
 ---
 
 [toc]

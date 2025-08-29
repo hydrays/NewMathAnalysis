@@ -558,7 +558,7 @@ vlook-query: vdl=on, ws=off
 > $\displaystyle = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x$
 
 
-## 高阶导数
+### 高阶导数
 > [!tip]
 > 
 > 导函数也是函数, 所以可以继续对导函数求导, 也就是二阶导数. 二阶导数反应了导函数的变化率. 依次可以继续到三阶导数, 四阶导数, ...
