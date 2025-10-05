@@ -1,0 +1,16 @@
+\documentclass[preview, border=5pt]{standalone}
+\usepackage{amsmath} % 提供 aligned 环境
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setCJKmainfont{SimHei} % 设置中文字体
+
+\begin{document}
+\Large % 设置大字号
+\begin{equation*}
+\begin{aligned}
+C \cdot \frac{dP}{dt} + \frac{P - P_{ic}}{R} &= Q(t) \\
+R &= \frac{8 \mu L}{\pi r^4} \cdot F(CA) \\
+F(CA) &= R_{\text{min}} + \frac{R_{\text{max}} - R_{\text{min}}}{1 + \exp\left(-S \cdot (BP - BP_{\text{opt}})\right)}
+\end{aligned}
+\end{equation*}
+\end{document}

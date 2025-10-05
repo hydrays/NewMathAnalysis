@@ -11,8 +11,6 @@ vlook-query: vdl=on
 vlook-query: ws=off
 ---
 
-[toc]
-
 # 第六章 积分的应用
 
 ## 几何应用: 求体积与弧长

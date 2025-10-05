@@ -68,7 +68,7 @@ vlook-query: vdl=on, ws=off
 > 
 > 设函数 $f(x)$ 在点 $x_0$ 附近有定义，则过点 $(x_0, f(x_0))$ 和 $(x_0 + \Delta x, f(x_0 + \Delta x))$ 的割线斜率为 $\displaystyle \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}$, 当 $\Delta x \to 0$ 时，这个割线斜率的极限（若存在）就是切线的斜率，也即导数：
 > $$
-> f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = \frac{\Delta y}{\Delta x}.
+> f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} =\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}.
 > $$
 > 这样，切线的斜率和导数都通过极限的方式被严格定义。
 
