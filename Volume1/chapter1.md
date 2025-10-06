@@ -53,7 +53,7 @@ vlook-doc-lib:
 > 
 > ==集合举例==
 >
-> 1. *`太阳系八大行星`* --- $\{水星, 金星, 地球, 火星, 木星, 土星, 天王星, \\海王星\}$
+> 1. *`太阳系八大行星`* --- $\{水星, 金星, 地球, 火星, 木星, 土星, 天王星, 海王星\}$
 > 2. *`10个阿拉伯数字`* --- $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$
 > 3. *`一个班所有男生的姓氏`* --- $\{李, 王, 张, 杨, 周, 诸葛, 徐, 孙, 胡\}$
 > 4. *`1 ~ 10 之间的所有偶数`* $A=\left \{  2,4,6,8,10\right \} $
@@ -847,7 +847,7 @@ vlook-doc-lib:
 > 
 >  取 $\delta = \min\{\delta_1, \delta_2\}$，则当 $0 < |x - x_0| < \delta$ 时：  
 >  $
->  |[f(x) \pm g(x)] - [A \pm B]| \\\leq |f(x) - A| + |g(x) - B| < \varepsilon
+>  |[f(x) \pm g(x)] - [A \pm B]| \leq |f(x) - A| + |g(x) - B| < \varepsilon
 >  $
 
 > [!important]
@@ -862,7 +862,7 @@ vlook-doc-lib:
 >  使得当 $0 < |x - x_0| < \delta_2$时，$|g(x) - B| < \frac{\varepsilon}{2}$  
 > 
 >  取 $\delta = \min\{\delta_1, \delta_2\}，则当 0 < |x - x_0| < \delta$ 时：  
->  $|[f(x) \pm g(x)] - [A \pm B]| \\\leq |f(x) - A| + |g(x) - B| < \varepsilon
+>  $|[f(x) \pm g(x)] - [A \pm B]| \leq |f(x) - A| + |g(x) - B| < \varepsilon
 >  $
 
 > [!important]
@@ -873,7 +873,7 @@ vlook-doc-lib:
 > 
 >  先证 $\lim_{x \to x_0} \frac{1}{g(x)} = \frac{1}{B}$：  
 > 
->  由 $\lim_{x \to x_0} g(x) = B \neq 0，存在 \delta_1 > 0使当 \\0 < |x - x_0| < \delta_1时，|g(x)| > \frac{|B|}{2}$  
+>  由 $\lim_{x \to x_0} g(x) = B \neq 0，存在 \delta_1 > 0使当 0 < |x - x_0| < \delta_1时，|g(x)| > \frac{|B|}{2}$  
 > 
 >  - 对任意$\varepsilon > 0$，取 $\delta_2 > 0 使当 0 < |x - x_0| < \delta_2$ 时：  
 >    $
@@ -886,7 +886,7 @@ vlook-doc-lib:
 > 
 >  2. 再结合乘法法则即得：  
 >  $
->     \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \left( f(x) \cdot \frac{1}{g(x)} \right) \\= A \cdot \frac{1}{B} = \frac{A}{B}
+>     \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \left( f(x) \cdot \frac{1}{g(x)} \right) = A \cdot \frac{1}{B} = \frac{A}{B}
 >     $
 > 
 
@@ -1107,7 +1107,7 @@ vlook-doc-lib:
 >     - \( x \) 为圆弧长度（弧度制）
 >     - \( \tan x \) 为切线长度
 > 2. **面积比较**：
->    $ \text{面积} \triangle OAP < \text{扇形面积} OAP \\< \text{面积} \triangle OAT$
+>    $ \text{面积} \triangle OAP < \text{扇形面积} OAP < \text{面积} \triangle OAT$
 >    即：$ \frac{1}{2} \sin x < \frac{1}{2} x < \frac{1}{2} \tan x $
 > 3. **化简不等式**：
 > $\sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}$
@@ -1173,7 +1173,7 @@ vlook-doc-lib:
 > 2. **有界性证明**：
 >    - 证明展开式小于3：
 >    $
->    \left(1+\frac{1}{n}\right)^n < 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!} \\< 3
+>    \left(1+\frac{1}{n}\right)^n < 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!} < 3
 >    $
 >
 > 3. **极限存在性**：
@@ -1234,13 +1234,13 @@ vlook-doc-lib:
 > 
 > $\displaystyle \lim_{x\rightarrow 0}\frac{\tan(x)}{x}$ (P48: 例1)
 > 
-> 解：$\displaystyle \lim_{x \rightarrow 0} \frac{\tan (x)}{x}= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \cdot \frac{1}{\cos (x)} \right) \\= \left( \lim_{x \rightarrow 0} \frac{\sin (x)}{x} \right) \cdot \left( \lim_{x \rightarrow 0} \frac{1}{\cos (x)} \right)=1$.
+> 解：$\displaystyle \lim_{x \rightarrow 0} \frac{\tan (x)}{x}= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \cdot \frac{1}{\cos (x)} \right) = \left( \lim_{x \rightarrow 0} \frac{\sin (x)}{x} \right) \cdot \left( \lim_{x \rightarrow 0} \frac{1}{\cos (x)} \right)=1$.
 >
 > **例2**
 > 
 > $\displaystyle \lim_{x\rightarrow 0}\frac{1-\cos(x)}{x^2}$ (P48: 例2)
 > 
-> 解：$\displaystyle \lim_{x \rightarrow 0} \frac{1 - \cos (x)}{x^{2}} \\= \lim_{x \rightarrow 0} \left( \frac{\sin^{2}(x)}{x^{2}} \cdot \frac{1}{1 + \cos (x)} \right)\\= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos (x)} \\= \frac{1}{2}$.
+> 解：$\displaystyle \lim_{x \rightarrow 0} \frac{1 - \cos (x)}{x^{2}} = \lim_{x \rightarrow 0} \left( \frac{\sin^{2}(x)}{x^{2}} \cdot \frac{1}{1 + \cos (x)} \right)= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos (x)} = \frac{1}{2}$.
 >
 >
 > **例3**
@@ -1254,7 +1254,7 @@ vlook-doc-lib:
 > $\displaystyle \lim_{x\rightarrow \infty}\left( 1-\frac{1}{x}\right)^{x}$ (P51: 例4)
 > 
 > 解：令 $t = -x$，则当 $x \to \infty$ 时，$t \to -\infty$.  于是
-> $\displaystyle \lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \left( 1 + \frac{1}{t} \right)^{-t} \\= \lim_{t \to -\infty} \frac{1}{\left( 1 + \frac{1}{t} \right)^{t}} = \frac{1}{e}$.
+> $\displaystyle \lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \left( 1 + \frac{1}{t} \right)^{-t} = \lim_{t \to -\infty} \frac{1}{\left( 1 + \frac{1}{t} \right)^{t}} = \frac{1}{e}$.
 >
 > **例5**
 > 
