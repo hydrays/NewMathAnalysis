@@ -380,3 +380,8 @@ mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
   transform: translateY(-50%);
   /* ... */
 }    
+
+/* 隐藏导航中心的拖拽/浮动 handle */
+.v-nav-center-handle {
+  display: none !important;
+}

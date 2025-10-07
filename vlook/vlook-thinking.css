@@ -12241,3 +12241,8 @@ content>#write .md-alert-caution p>span[md-inline=em]:only-child>em>span[md-inli
 .formula { /* .v-segment-btn.formula 类在文件中出现过，但这里更可能是指公式容器类 */
     font-size: 0.65em !important;
 }
+
+/* 隐藏导航中心的拖拽/浮动 handle */
+.v-nav-center-handle {
+    display: none !important;
+  }

@@ -620,13 +620,13 @@
 >  对任意 $\varepsilon > 0$，存在 $N_1$ 使当 $n > N_1$ 时 $|a_n - A| < \frac{\varepsilon}{2}$，  
 >  存在 $N_2$ 使当 $n > N_2$ 时 $|b_n - B|$ < $\frac{\varepsilon}{2}$。  
 >  取 
-> 
->  $|(a_n \pm b_n)$ - $(A \pm B)$| $\leq |a_n - A|$ + $|b_n - B|$ < $\varepsilon$.
+>  $$\small\begin{aligned}|(a_n \pm b_n) - (A \pm B)| &\leq |a_n - A| + |b_n - B| \\&< \varepsilon.\end{aligned}$$
 >  
 > 
 >  *`乘法`*: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n = A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 则 $\displaystyle \lim_{n\rightarrow \infty}a_nb_n = AB$.
 >  **证明**:  
->  关键分解：\|$a_nb_n - AB$|$ = $|$a_nb_n - Ab_n + Ab_n - AB|$ $\leq $|$b_n||a_n - A| + |A||b_n - B$|  
+>  关键分解：
+>$$\small\begin{aligned}|a_nb_n - AB| &= |a_nb_n - Ab_n + Ab_n - AB| \\&\leq |b_n||a_n - A| + |A||b_n - B|  \end{aligned}$$
 >  因\{$b_n\}$收敛，故存在M>0使|$b_n|\leq M$  
 >  对$\varepsilon > 0$，取$N_1$使当$n>N_1$时$|a_n-A|<\frac{\varepsilon}{2M}$  
 >  取$N_2$使当$n>N_2$时$|b_n-B|<\frac{\varepsilon}{2|A|+1}$  
@@ -654,9 +654,7 @@
 >  使得当 $0 < |x - x_0| < \delta_2$ 时，$|g(x) - B| < \frac{\varepsilon}{2}$  
 > 
 >  取 $\delta = \min\{\delta_1, \delta_2\}$，则当 $0 < |x - x_0| < \delta$ 时：  
->  $
->  |[f(x) \pm g(x)] - [A \pm B]| \\\leq |f(x) - A| + |g(x) - B| < \varepsilon
->  $
+>  $$\begin{aligned}  &|[f(x) \pm g(x)] - [A \pm B]| \\\leq &|f(x) - A| + |g(x) - B| \\< &\varepsilon  \end{aligned}$$
 
 > [!important]
 > 
@@ -669,9 +667,8 @@
 >  由 $\lim_{x \to x_0} g(x) = B，存在 \delta_2 > 0$，  
 >  使得当 $0 < |x - x_0| < \delta_2$时，$|g(x) - B| < \frac{\varepsilon}{2}$  
 > 
->  取 $\delta = \min\{\delta_1, \delta_2\}，则当 0 < |x - x_0| < \delta$ 时：  
->  $|[f(x) \pm g(x)] - [A \pm B]| \\\leq |f(x) - A| + |g(x) - B| < \varepsilon
->  $
+>  取 $\delta = \min\{\delta_1, \delta_2\}，则当 0 < |x - x_0| < \delta$ 时：
+>$$ \begin{aligned} &|[f(x) \pm g(x)] - [A \pm B]| \\ \leq &|f(x) - A| + |g(x) - B| \\< &\varepsilon  \end{aligned}$$
 
 > [!important]
 > 
@@ -693,9 +690,7 @@
 >    $
 > 
 >  2. 再结合乘法法则即得：  
->  $
->     \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \left( f(x) \cdot \frac{1}{g(x)} \right) \\= A \cdot \frac{1}{B} = \frac{A}{B}
->     $
+>  $$ \displaystyle \begin{aligned}    \lim_{x \to x_0} \frac{f(x)}{g(x)} &= \lim_{x \to x_0} \left( f(x) \cdot \frac{1}{g(x)} \right) \\& =  A \cdot \frac{1}{B} = \frac{A}{B}  \end{aligned}$$
 > 
 
 > [!note]
@@ -910,12 +905,12 @@
 > 
 > ##### 几何法证明
 > 1. **单位圆构造**：
->   - 考虑单位圆（半径 \( r = 1 \)）中角度 \( x \in (0, \frac{\pi}{2}) \)   - 定义：
->     - \( \sin x \) 为对边长度
->     - \( x \) 为圆弧长度（弧度制）
->     - \( \tan x \) 为切线长度
+>   - 考虑单位圆（半径 \( r = 1 \)）中角度 $x \in \left(0, \frac{\pi}{2}\right)$   定义：
+>     -  $sin\:x$  为对边长度
+>     -  $x$  为圆弧长度（弧度制）
+>     -  $tan\:x$  为切线长度
 > 2. **面积比较**：
->    $ \text{面积} \triangle OAP < \text{扇形面积} OAP \\< \text{面积} \triangle OAT$
+>    $$ \scriptsize\begin{aligned} \text{面积} \triangle OAP < \text{扇形面积} OAP < \text{面积} \triangle OAT \end{aligned}$$
 >    即：$ \frac{1}{2} \sin x < \frac{1}{2} x < \frac{1}{2} \tan x $
 > 3. **化简不等式**：
 > $\sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}$
@@ -980,9 +975,7 @@
 >
 > 2. **有界性证明**：
 >    - 证明展开式小于3：
->    $
->    \left(1+\frac{1}{n}\right)^n < 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!} \\< 3
->    $
+>    $$\begin{aligned} \left(1+\frac{1}{n}\right)^n &< 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!} \\&< 3 \end{aligned}$$
 >
 > 3. **极限存在性**：
 >    - 由单调有界定理，极限存在
@@ -1042,13 +1035,15 @@
 > 
 > $\displaystyle \lim_{x\rightarrow 0}\frac{\tan(x)}{x}$ (P48: 例1)
 > 
-> 解：$\displaystyle \lim_{x \rightarrow 0} \frac{\tan (x)}{x}= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \cdot \frac{1}{\cos (x)} \right) \\= \left( \lim_{x \rightarrow 0} \frac{\sin (x)}{x} \right) \cdot \left( \lim_{x \rightarrow 0} \frac{1}{\cos (x)} \right)=1$.
+> 解：$$ \begin{aligned} \displaystyle &\lim_{x \rightarrow 0} \frac{\tan (x)}{x}= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \cdot \frac{1}{\cos (x)} \right) \\= &\left( \lim_{x \rightarrow 0} \frac{\sin (x)}{x} \right) \cdot \left( \lim_{x \rightarrow 0} \frac{1}{\cos (x)} \right) =1 \end{aligned} $$.
 >
 > **例2**
 > 
 > $\displaystyle \lim_{x\rightarrow 0}\frac{1-\cos(x)}{x^2}$ (P48: 例2)
 > 
-> 解：$\displaystyle \lim_{x \rightarrow 0} \frac{1 - \cos (x)}{x^{2}} \\= \lim_{x \rightarrow 0} \left( \frac{\sin^{2}(x)}{x^{2}} \cdot \frac{1}{1 + \cos (x)} \right)\\= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos (x)} \\= \frac{1}{2}$.
+> 解：
+> $$ \begin{aligned}\displaystyle &\lim_{x \rightarrow 0} \frac{1 - \cos (x)}{x^{2}} \\= &\lim_{x \rightarrow 0} \left( \frac{\sin^{2}(x)}{x^{2}} \cdot \frac{1}{1 + \cos (x)} \right)\\= &\lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos (x)} \\= &\frac{1}{2}\end{aligned} 
+>$$.
 >
 >
 > **例3**
@@ -1061,8 +1056,8 @@
 > 
 > $\displaystyle \lim_{x\rightarrow \infty}\left( 1-\frac{1}{x}\right)^{x}$ (P51: 例4)
 > 
-> 解：令 $t = -x$，则当 $x \to \infty$ 时，$t \to -\infty$.  于是
-> $\displaystyle \lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \left( 1 + \frac{1}{t} \right)^{-t} \\= \lim_{t \to -\infty} \frac{1}{\left( 1 + \frac{1}{t} \right)^{t}} = \frac{1}{e}$.
+> 解：令 $t = -x$，则当 $x \to \infty$ 时，$t \to -\infty$.  
+>于是 $$\begin{aligned}\displaystyle &\lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \left( 1 + \frac{1}{t} \right)^{-t} \\= &\lim_{t \to -\infty} \frac{1}{\left( 1 + \frac{1}{t} \right)^{t}} = \frac{1}{e} \end{aligned}$$.
 >
 > **例5**
 > 

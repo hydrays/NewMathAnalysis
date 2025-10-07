@@ -1,5 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/work/Lectures/Github_Repos/NewMathAnalysis/practice/media/videos/1080p60/partial_movie_files/DynamicMath/3977891868_1468956769_223132457.mp4'
-file 'file:C:/work/Lectures/Github_Repos/NewMathAnalysis/practice/media/videos/1080p60/partial_movie_files/DynamicMath/2852726489_3700140797_3837157583.mp4'
-file 'file:C:/work/Lectures/Github_Repos/NewMathAnalysis/practice/media/videos/1080p60/partial_movie_files/DynamicMath/2852726489_1331923711_3396168254.mp4'
-file 'file:C:/work/Lectures/Github_Repos/NewMathAnalysis/practice/media/videos/1080p60/partial_movie_files/DynamicMath/2852726489_1432596116_192633258.mp4'
