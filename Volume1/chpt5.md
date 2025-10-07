@@ -1,28 +1,4 @@
----
-title: 新工科数学分析(上)
-author: 首师大交叉科学研究院
-description: 首都师范大学新工科数学分析
-"og:description": 浏览器版和手机版
-"og:image": https://vlook-doc.pages.dev/pic/vlook-og.png
-keywords:
-- 高等数学,微积分,数学分析,讲义
-vlook-chp-autonum: h1=off
-vlook-query: vdl=on
-vlook-query: ws=off
-vlook-doc-lib:
-- [第一章: 极限](chapter1.html?target=_self "第一章")
-- [第二章: 导数](chapter2.html?target=_self "第二章")
-- [第三章: 微分](chapter3.html?target=_self "第三章")
-- [第四章: 积分](chapter4.html?target=_self "第四章")
-- [第五章: 函数的整体与局部性质](chapter5.html?target=_self "第五章")
-- [第六章: 积分的应用](chapter6.html?target=_self "第六章")
-- [第七章: 常微分方程](chapter7.html?target=_self "第七章")
-- [第八章: 数值方法](chapter8.html?target=_self "第八章")
----
-
-[toc]
-
-# 函数的整体与局部性质
+# 微分的应用
 
 
 ## 中值定理

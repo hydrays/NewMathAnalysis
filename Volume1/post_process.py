@@ -5,6 +5,7 @@ import glob
 def process_markdown_files():
     """
     处理所有chpt?.md文件，添加标题编号并保存为chapter?.md
+    并在每个输出文件开头插入head.yaml内容（如果存在）
     """
     # 获取所有chpt?.md文件
     pattern = "chpt*.md"
@@ -13,7 +14,14 @@ def process_markdown_files():
     if not files:
         print(f"未找到匹配 {pattern} 的文件")
         return
-    
+
+    # 读取head.yaml内容（如果存在）
+    head_yaml_path = "head.yaml"
+    head_content = ""
+    if os.path.exists(head_yaml_path):
+        with open(head_yaml_path, 'r', encoding='utf-8') as f:
+            head_content = f.read().rstrip() + "\n\n"  # 保证后面有空行分隔
+
     for file_path in files:
         # 提取章节数字
         match = re.search(r'chpt(\d+)\.md', file_path)
@@ -35,6 +43,9 @@ def process_markdown_files():
         # 保存为新文件
         new_filename = f"chapter{chapter_num}.md"
         with open(new_filename, 'w', encoding='utf-8') as f:
+            # 先写head.yaml内容，再写正文
+            if head_content:
+                f.write(head_content)
             f.write(processed_content)
         
         print(f"已保存: {new_filename}")

@@ -14,11 +14,12 @@ vlook-doc-lib:
 - [第二章: 导数](chapter2.html?target=_self "第二章")
 - [第三章: 微分](chapter3.html?target=_self "第三章")
 - [第四章: 积分](chapter4.html?target=_self "第四章")
-- [第五章: 函数的整体与局部性质](chapter5.html?target=_self "第五章")
+- [第五章: 微分的应用](chapter5.html?target=_self "第五章")
 - [第六章: 积分的应用](chapter6.html?target=_self "第六章")
 - [第七章: 常微分方程](chapter7.html?target=_self "第七章")
 - [第八章: 数值方法](chapter8.html?target=_self "第八章")
 ---
+
 [toc]
 
 # 第2章 导数
