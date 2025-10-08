@@ -531,15 +531,15 @@ vlook-doc-lib:
 > 
 > ==P86 例2==
 > 
-> **设 $y = 2e^{x}(\sin x + 2\cos x)$，求 $y'$**
-> 
-> $\begin{aligned}
-> 解：y' &= (2e^{x})'(\sin x + 2\cos x) + 2e^{x}(\sin x + 2\cos x)' \\
-> &= 2e^{x}(\sin x + 2\cos x) + 2e^{x}(\cos x - 2\sin x) \\
-> &= 2e^{x}\sin x + 4e^{x}\cos x + 2e^{x}\cos x - 4e^{x}\sin x \\
-> &= 6e^{x}\cos x - 2e^{x}\sin x \\
-> &= 2e^{x}(3\cos x - \sin x)
-> \end{aligned}$
+> **设 $y = 2e^{x}(\sin x + 2\cos x)$，求 $y'$**\
+> 解：
+> $$\small\begin{aligned}
+> y' &= (2e^{x})'(\sin x + 2\cos x) + 2e^{x}(\sin x + 2\cos x)' \\
+&= 2e^{x}(\sin x + 2\cos x) + 2e^{x}(\cos x - 2\sin x) \\
+&= 2e^{x}\sin x + 4e^{x}\cos x + 2e^{x}\cos x - 4e^{x}\sin x \\
+&= 6e^{x}\cos x - 2e^{x}\sin x \\
+&= 2e^{x}(3\cos x - \sin x)
+\end{aligned}$$
 >
 > ==P86 例3==
 > 
@@ -562,9 +562,10 @@ vlook-doc-lib:
 > **设 $y = \tan x$，求 $y$ 的导数 $y'$**
 > 
 > 解：
-> $\displaystyle y' = (\tan x)' = \left( \frac{\sin x}{\cos x} \right)' = \frac{(\sin x)' \cos x - \sin x (\cos x)'}{\cos^2 x}$
-> 
-> $\displaystyle = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x$
+> $$\small\displaystyle\begin{aligned}
+y' &= (\tan x)'\\&= \left( \frac{\sin x}{\cos x} \right)' \\&= \frac{(\sin x)' \cos x - \sin x (\cos x)'}{\cos^2 x}\\&= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} \\&= \frac{1}{\cos^2 x} \\&= \sec^2 x
+\end{aligned}
+$$
 
 
 ### 2.2.3 高阶导数
@@ -708,11 +709,10 @@ vlook-doc-lib:
 > **求函数 $f(x) = x^4 - 4x^2$ 的极值**
 > 
 > 解：一阶导数为：
-> $\displaystyle f'(x) = (x^4 - 4x^2)' = 4x^3 - 8x = 4x(x^2 - 2)$
+> $\small\displaystyle f'(x) = (x^4 - 4x^2)' = 4x^3 - 8x = 4x(x^2 - 2)$
 > 
 > 令 $f'(x) = 0$，解得：
-> 
-> $\displaystyle 4x(x^2 - 2) = 0 \quad \Rightarrow  x_1 = 0,\quad x_2 = \sqrt{2}, \quad x_3 = -\sqrt{2}$
+> $$\begin{aligned}&4x(x^2 - 2) = 0 \\\quad\Rightarrow\quad & x_1 = 0,\quad x_2 = \sqrt{2}, \quad x_3 = -\sqrt{2}\end{aligned}$$
 > 
 > 二阶导数为： 
 > $\displaystyle f''(x) = (4x^3 - 8x)' = 12x^2 - 8$
@@ -724,11 +724,11 @@ vlook-doc-lib:
 > 
 > 在 $x = \pm \sqrt{2}$ 处：
 > 
-> $\displaystyle f''(\pm \sqrt{2}) = 12 \cdot (\sqrt{2})^2 - 8 = 12 \cdot 2 - 8 = 16 > 0$
+> $\displaystyle f''(\pm \sqrt{2}) = 12 \cdot (\sqrt{2})^2 - 8 = 16 > 0$
 > 
 > 因此 $x = \pm \sqrt{2}$ 处为极小值，极小值为：
 > 
-> $\displaystyle f(\pm \sqrt{2}) = (\sqrt{2})^4 - 4 \cdot (\sqrt{2})^2 = 4 - 8 = -4$
+> $\displaystyle f(\pm \sqrt{2}) = (\sqrt{2})^4 - 4 \cdot (\sqrt{2})^2 = -4$
 
 >
 > [!caution]
@@ -767,7 +767,7 @@ vlook-doc-lib:
 >
 > 根据**光路最短原理（费马原理）**，光线在两点之间传播时，所走的路径是耗时最短的路径。因此，光线从A到B的总传播时间 $T(x)$ 必须取最小值。
 >
-> $$T(x) = \frac{S_1}{v_1} + \frac{S_2}{v_2} = \frac{\sqrt{h_1^2 + x^2}}{v_1} + \frac{\sqrt{h_2^2 + (l - x)^2}}{v_2}, \ \ x \in [0, l]$$
+> $$\small\displaystyle\begin{aligned}T(x) = \frac{S_1}{v_1} + \frac{S_2}{v_2} &= \frac{\sqrt{h_1^2 + x^2}}{v_1} + \frac{\sqrt{h_2^2 + (l - x)^2}}{v_2},\\x &\in [0, l]\end{aligned}$$
 >
 > 为了找到使 $T(x)$ 最小的 $x$ 值，我们对函数 $T(x)$ 求导并令其等于零。
 >
@@ -827,7 +827,7 @@ vlook-doc-lib:
 > 二阶导数：$\displaystyle y'' = \left( \frac{1}{2\sqrt{x}} \right)' = -\frac{1}{4x^{3/2}}$
 > 
 > 在函数定义域 $(0, +\infty)$ 内：
-> $\displaystyle x > 0 \quad \Rightarrow \quad x^{3/2} > 0 \quad \Rightarrow \quad y'' = -\frac{1}{4x^{3/2}} < 0$
+> $$\begin{aligned}\displaystyle x > 0 &\quad \Rightarrow \quad x^{3/2} > 0 \\ &\quad\Rightarrow \quad y'' = -\frac{1}{4x^{3/2}} < 0\end{aligned}$$
 > 
 > 当 $y'' < 0$ 时，曲线为**凸的**，则曲线 $y = \sqrt{x}$ 在定义域 $(0, +\infty)$ 内始终为凸曲线
 

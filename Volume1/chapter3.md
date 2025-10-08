@@ -265,7 +265,7 @@ vlook-doc-lib:
 > **设 $y = \ln \cos x$，求 $\frac{dy}{dx}$**.
 > 
 > 解：$y = \ln \cos x$ 可看作由 $y = \ln u$，$u = \cos x$ 复合而成。所以
-> $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \frac{1}{\cos x} \cdot (-\sin x) = -\frac{\sin x}{\cos x} = -\tan x.$$
+>$$ \small\displaystyle\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \frac{1}{\cos x} \cdot (-\sin x) = -\tan x.$$
 
 > [!note]
 > 
@@ -284,7 +284,7 @@ vlook-doc-lib:
 > **设 $y = \ln \sin(2x^2)$，求 $\frac{dy}{dx}$**
 >  
 > 解：所给函数可分解为 $y = \ln u, u = \sin v, v = 2x^2$。
-> $$\frac{dy}{dx} = \frac{1}{u} \cdot \cos v \cdot 4x = \frac{\cos(2x^2)}{\sin(2x^2)} \cdot 4x = 4x \cot(2x^2).$$
+> $$\small\displaystyle\begin{aligned}\frac{dy}{dx} &= \frac{1}{u} \cdot \cos v \cdot 4x \\&= \frac{\cos(2x^2)}{\sin(2x^2)} \cdot 4x \\&= 4x \cot(2x^2).\end{aligned}$$
 >
 
 > [!note]
@@ -300,7 +300,7 @@ vlook-doc-lib:
 > 
 > 根据链式法则：
 > 
-> $\displaystyle y' = \frac{dy}{du} \cdot \frac{du}{dv} \cdot \frac{dv}{dx} = e^{\cos \sqrt{x}} \cdot (-\sin \sqrt{x}) \cdot \frac{1}{2\sqrt{x}}= -\frac{e^{\cos \sqrt{x}} \sin \sqrt{x}}{2\sqrt{x}}$
+> $$\small\displaystyle\begin{aligned} y'& = \frac{dy}{du} \cdot \frac{du}{dv} \cdot \frac{dv}{dx} \\&= e^{\cos \sqrt{x}} \cdot (-\sin \sqrt{x}) \cdot \frac{1}{2\sqrt{x}}\\&= -\frac{e^{\cos \sqrt{x}} \sin \sqrt{x}}{2\sqrt{x}}\end{aligned}$$
 >
 >
 
@@ -332,7 +332,9 @@ $= -2\cos x \sin 3x$
 > 
 > 解：将方程两边对 $ x $ 求导，注意 $ y $ 是 $ x $ 的函数：
 > 
-> 左边求导：$\displaystyle \frac{d}{dx}(\ln y + x^2y - 1) = \frac{1}{y}\frac{dy}{dx} +2xy + x^2\frac{dy}{dx}$
+> 左边求导：
+>$\small\displaystyle \frac{d}{dx}(\ln y + x^2y - 1) = \frac{1}{y}\frac{dy}{dx} +2xy + x^2\frac{dy}{dx}$
+>
 > 右边求导：$\displaystyle \frac{d}{dx}(0) = 0$
 > 
 > 令两边相等：$\displaystyle \frac{1}{y}\frac{dy}{dx} + 2xy + x^2\frac{dy}{dx} = 0$
@@ -362,7 +364,7 @@ $= -2\cos x \sin 3x$
 > 
 > 求 $ x = 0 $ 时的 $ y $ 值:
 > 
-> $\displaystyle y^3 + 3y - 0 - 0 = 0 \Rightarrow y^3 + 3y = 0 \Rightarrow y(y^2 + 3) = 0$
+> $$\displaystyle\begin{aligned} y^3 + 3y - 0 - 0 = 0 &\;\Rightarrow \;y^3 + 3y = 0 \\&\;\Rightarrow\; y(y^2 + 3) = 0\end{aligned}$$
 > 
 > 解得实数解为 $ y = 0 $
 > 
@@ -383,7 +385,7 @@ $= -2\cos x \sin 3x$
 > 计算切点处斜率,在点 $(3\sqrt{2}, 2)$ 处：$\displaystyle k = \left.\frac{dy}{dx}\right|_{(3\sqrt{2},2)} = \frac{2 \times 3\sqrt{2}}{9 \times 2} = \frac{\sqrt{2}}{3}$
 > 
 > 于是所求的切线方程为：
-> $\displaystyle y - 2 = \frac{\sqrt{2}}{3}(x - 3\sqrt{2})\Rightarrow 3y - 6 = \sqrt{2}x - 6 \Rightarrow \sqrt{2}x - 3y = 0$
+> $$\small\begin{aligned}\displaystyle y - 2 = \frac{\sqrt{2}}{3}(x - 3\sqrt{2})&\;\Rightarrow 3y - 6 = \sqrt{2}x - 6 \\&\;\Rightarrow \;\sqrt{2}x - 3y = 0\end{aligned}$$
 > 
 
 ### 3.2.3 反函数求导
@@ -440,7 +442,7 @@ $= -2\cos x \sin 3x$
 > 
 > 解： 利用对数求导法
 > 两边取对数: 
-> $\displaystyle\ln y = \ln \left( (x^2)^{\ln x} \right) = \ln x \cdot \ln(x^2)=\ln x \cdot 2\ln x=2(\ln x)^2$
+> $$\small\begin{aligned}\displaystyle\ln y &= \ln \left( (x^2)^{\ln x} \right) \\&= \ln x \cdot \ln(x^2)\\&=\ln x \cdot 2\ln x\\&=2(\ln x)^2\end{aligned}$$
 > 
 > 两边对 $x$ 求导得：
 > $\displaystyle\frac{1}{y} \cdot y' = 2 \cdot 2\ln x \cdot \frac{1}{x} = \frac{4\ln x}{x}$
@@ -487,7 +489,6 @@ $= -2\cos x \sin 3x$
 > - $\displaystyle \frac{d}{dx}f(x)$, $\displaystyle \frac{d^2}{dx^2}f(x)$, $\displaystyle \frac{d^3}{dx^3}f(x)$, $\displaystyle \frac{d^{n}}{dx^{n}}f(x)$, $\cdots$.
 > 
 
-
 > [!note]
 > 
 > ==P97 例2==
@@ -499,7 +500,7 @@ $= -2\cos x \sin 3x$
 > $$y' = \frac{d}{dx} \cos(a x) = -a \sin(a x)$$
 > 
 > 求二阶导数 $y''$: 
-> $$y'' = \frac{d}{dx} \left( -a \sin(a x) \right) = -a \cdot a \cos(a x) = -a^2 \cos(a x)$$
+> $$\small\begin{aligned}y'' &= \frac{d}{dx} \left( -a \sin(a x) \right) \\&= -a \cdot a \cos(a x) \\&= -a^2 \cos(a x)\end{aligned}$$
 > 
 > 最终得到：
 > $$y'' = -a^2 \cos(a x)$$

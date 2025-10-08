@@ -1,4 +1,4 @@
-# 微分的应用
+# 函数的整体与局部性质
 
 
 ## 中值定理
@@ -111,13 +111,13 @@
 > ==补充应用:利普希茨Lipschitz连续==
 > 
 > 若 $ f(x) $ 在区间 $ I $ 上满足拉格朗日中值定理，且导数有界（即 $ |f'(x)| \leq M $），则 $ f(x) $ 是 **Lipschitz连续** 的，即：
-> $\displaystyle|f(x_1) - f(x_2)| \leq M |x_1 - x_2|, \quad \forall x_1, x_2 \in I.$
+> $\small\displaystyle|f(x_1) - f(x_2)| \leq M |x_1 - x_2|, \quad \forall x_1, x_2 \in I.$
 > 
 > 
 > **有限增量公式**
 > 
 > 对任意 $ x, y \in [a, b] $，存在 $ \theta \in (0, 1) $，使得：
-> $\displaystyle f(y) - f(x) = f'(x + \theta \Delta x) \Delta x, \quad 0 < \theta < 1.$  其中 $ \Delta x = y - x $
+> $\small\displaystyle f(y) - f(x) = f'(x + \theta \Delta x) \Delta x, \quad 0 < \theta < 1,$  其中 $ \Delta x = y - x $
 
 ### 罗尔中值定理和柯西中值定理
 
@@ -661,7 +661,7 @@
 > 
 > 根据导数的定义，这个极限等于 $\frac{1}{n!} R_n^{(n)}(0)$
 > 
-> 但 $R_n^{(n)}(0) = f^{(n)}(0) - P_n^{(n)}(0) = f^{(n)}(0) - n! \cdot \frac{f^{(n)}(0)}{n!} = 0$
+> 但 $$\begin{aligned}R_n^{(n)}(0) &= f^{(n)}(0) - P_n^{(n)}(0) \\&= f^{(n)}(0) - n! \cdot \frac{f^{(n)}(0)}{n!} = 0\end{aligned}$$
 > 
 > 因此：
 > $$

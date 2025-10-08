@@ -129,17 +129,17 @@
 > 
 > 解：将 $[0,1]$ $n$ 等分，$\Delta x = 1/n$，取 $\xi_i$ 为每个小区间的右端点，即 $\xi_i = i/n$
 > 
-> 黎曼和 $= \sum_{i=1}^n (i/n)\cdot(1/n) = (1/n^2) \sum_{i=1}^n i = (1/n^2)\cdot n(n+1)/2 = (n+1)/(2n)$
+> $$\small\displaystyle\begin{aligned}黎曼和 &= \sum_{i=1}^n (i/n)\cdot(1/n) \\&= (1/n^2) \sum_{i=1}^n i \\&= (1/n^2)\cdot n(n+1)/2 \\&= (n+1)/(2n)\end{aligned}$$
 > 
 > 当 $n\to\infty$ 时，$\lim_{n\to\infty} (n+1)/(2n) = 1/2$
-> 
+>
 > $\int_0^1 x\,dx = 1/2$
 > 
 > **例2** 计算 $\int_0^1 x^2\,dx$
 > 
 > 解：同样 $n$ 等分 $[0,1]$，$\Delta x = 1/n$，取 $\xi_i = i/n$
-> 
-> 黎曼和 $= \sum_{i=1}^n (i/n)^2\cdot(1/n) = (1/n^3) \sum_{i=1}^n i^2 = (1/n^3)\cdot n(n+1)(2n+1)/6$
+>
+> $$\small\begin{aligned}黎曼和 &= \sum_{i=1}^n (i/n)^2\cdot(1/n) \\&= (1/n^3) \sum_{i=1}^n i^2 \\&= (1/n^3)\cdot n(n+1)(2n+1)/6\end{aligned}$$
 > 
 > 当 $n\to\infty$ 时，极限 $= 1/3$
 > 
@@ -223,9 +223,7 @@
 > 
 > 解：$f(x) = x^2$ 的一个原函数是 $F(x) = x^3/3$
 > 根据微积分基本定理：
-> $$
-> \int_0^1 x^2\,dx = F(1) - F(0) = \frac{1^3}{3} - \frac{0^3}{3} = \frac{1}{3}
-> $$
+> $$\int_0^1 x^2\,dx = F(1) - F(0) = \frac{1^3}{3} - \frac{0^3}{3} = \frac{1}{3}$$
 > 
 > 这与我们之前用黎曼和极限计算的结果一致，但过程简单得多。
 > 
@@ -233,17 +231,13 @@
 > 
 > 解：$\sin x$ 的一个原函数是 $-\cos x$
 > 根据微积分基本定理：
-> $$
-> \int_0^\pi \sin x\,dx = [-\cos x]_0^\pi = -\cos\pi - (-\cos 0) = 1 + 1 = 2
-> $$
+> $$\begin{aligned}\int_0^\pi \sin x\,dx &= [-\cos x]_0^\pi \\&= -\cos\pi - (-\cos 0) \\&= 1 + 1 = 2\end{aligned}$$
 > 
 > **例3** 计算 $\int_1^e \frac{1}{x}\,dx$
 > 
 > 解：$\frac{1}{x}$ 的一个原函数是 $\ln|x|$
 > 根据微积分基本定理：
-> $$
-> \int_1^e \frac{1}{x}\,dx = \ln e - \ln 1 = 1 - 0 = 1
-> $$
+> $$\int_1^e \frac{1}{x}\,dx = \ln e - \ln 1 = 1 - 0 = 1$$
 > 
 > 这些例子展示了微积分基本定理的强大威力——它将复杂的极限计算简化为简单的代数运算。
 > 
@@ -260,8 +254,10 @@
 > 
 > 若函数 $f$ 和 $g$ 在 $[a, b]$ 上可积，$c$ 为常数，则：
 > 
-> - **加法性质**：$\int_a^b [f(x) + g(x)]\,dx = \int_a^b f(x)\,dx + \int_a^b g(x)\,dx$
-> - **数乘性质**：$\int_a^b c\cdot f(x)\,dx = c\cdot \int_a^b f(x)\,dx$
+> - **加法性质**：
+>$$\small\int_a^b [f(x) + g(x)]\,dx = \int_a^b f(x)\,dx + \int_a^b g(x)\,dx$$
+> - **数乘性质**：
+>$$\small\int_a^b c\cdot f(x)\,dx = c\cdot \int_a^b f(x)\,dx$$
 > 
 > **几何解释**：加法性质表示两个函数围成的总面积等于各自面积的代数和；数乘性质表示函数值按比例缩放时，面积也按相同比例缩放。
 >
@@ -272,7 +268,7 @@
 > 
 > 若函数 $f$ 在包含 $a, b, c$ 的区间上可积，则：
 > $$
-> \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
+> \small\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
 > $$
 > 
 > **几何解释**：从 $a$ 到 $b$ 的总面积等于从 $a$ 到 $c$ 的面积加上从 $c$ 到 $b$ 的面积。
@@ -283,7 +279,7 @@
 > **3. 积分上下限交换**
 > 
 > $$
-> \int_a^b f(x)\,dx = -\int_b^a f(x)\,dx
+> \small\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx
 > $$
 > 
 > **几何解释**：当积分方向反转时，面积值变号，这保证了面积的方向性。
@@ -294,7 +290,7 @@
 > **4. 绝对值不等式**
 > 
 > $$
-> \left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
+> \small\left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
 > $$
 > 
 > **几何解释**：函数积分的绝对值不超过函数绝对值积分，因为绝对值积分计算的是总面积（不考虑正负），而普通积分计算的是代数和。
@@ -306,7 +302,7 @@
 > 
 > 若在 $[a, b]$ 上 $f(x) \leq g(x)$，则
 > $$
-> \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx
+> \small\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx
 > $$
 > 
 > **几何解释**：函数值较大的曲线在相同区间上围成的面积也较大。
@@ -328,10 +324,10 @@
 > 
 > **定理**：设函数 $f$ 在区间 $I$ 上连续，函数 $\varphi$ 在区间 $J$ 上可导且值域包含于 $I$，则
 > $$
-> \int f(\varphi(x))\varphi'(x)\,dx = \int f(u)\,du,\quad u = \varphi(x)
+> \small\int f(\varphi(x))\varphi'(x)\,dx = \int f(u)\,du,\quad u = \varphi(x)
 > $$
 > 
-> **直观解释**：链式法则告诉我们 $(F(\varphi(x)))' = F'(\varphi(x))\cdot\varphi'(x) = f(\varphi(x))\varphi'(x)$
+> **直观解释**：链式法则告诉我们 $\small\displaystyle(F(\varphi(x)))' = F'(\varphi(x))\cdot\varphi'(x) = f(\varphi(x))\varphi'(x)$
 > 因此，$\int f(\varphi(x))\varphi'(x) dx$ 应该是 $F(\varphi(x)) + C$
 > 这正是 $\int f(u) du$ 在 $u = \varphi(x)$ 时的结果。
 
@@ -345,7 +341,7 @@
 > **例2** 计算 $\int x\sqrt{x^2+1}\,dx$
 > 
 > 解：令 $u = x^2+1$，则 $du = 2x\,dx$，$x\,dx = du/2$
-> 原积分 $= \int \sqrt{u}\cdot (du/2) = \frac{1}{2}\int u^{1/2}\,du = \frac{1}{2}\cdot\frac{2}{3}u^{3/2} + C = \frac{1}{3}(x^2+1)^{3/2} + C$
+> $$\begin{aligned}原积分 &= \int \sqrt{u}\cdot (du/2) \\&= \frac{1}{2}\int u^{1/2}\,du \\&= \frac{1}{2}\cdot\frac{2}{3}u^{3/2} + C \\&= \frac{1}{3}(x^2+1)^{3/2} + C\end{aligned}$$
 > 
 
 > [!important]
@@ -373,7 +369,7 @@
 > **例2** 计算 $\int \ln x\,dx$
 > 
 > 解：令 $u = \ln x, dv = dx$，则 $du = (1/x)\,dx, v = x$
-> 原积分 $= x\ln x - \int x\cdot(1/x)\,dx = x\ln x - \int dx = x\ln x - x + C$
+> $$\begin{aligned}原积分 &= x\ln x - \int x\cdot(1/x)\,dx \\&= x\ln x - \int dx \\&= x\ln x - x + C\end{aligned}$$
 > 
 
 ### 定积分的运算
@@ -407,10 +403,8 @@
 > 
 > 解：令 $u = 1+\sqrt{x}$，则 $du = \frac{1}{2\sqrt{x}}\,dx$，$dx = 2(u-1)\,du$
 > 当 $x = 1$ 时，$u = 2$；当 $x = 4$ 时，$u = 3$
-> 原积分 $= \int_2^3 \frac{u-1}{u} \cdot 2(u-1)\,du = 2\int_2^3 \frac{(u-1)^2}{u}\,du$
-> $= 2\int_2^3 (u - 2 + 1/u)\,du = 2\left[\frac{u^2}{2} - 2u + \ln|u|\right]_2^3$
-> $= [u^2 - 4u + 2\ln|u|]_2^3 = (9-12+2\ln 3) - (4-8+2\ln 2) = 1 + 2\ln(3/2)$
-> 
+> $$\displaystyle\begin{aligned}原积分 &= \int_2^3 \frac{u-1}{u} \cdot 2(u-1)\,du \\&= 2\int_2^3 \frac{(u-1)^2}{u}\,du \\&= 2\int_2^3 (u - 2 + 1/u)\,du \\&= 2\left[\frac{u^2}{2} - 2u + \ln|u|\right]_2^3 \\&= [u^2 - 4u + 2\ln|u|]_2^3 \\&= (9-12+2\ln 3) - (4-8+2\ln 2) \\&= 1 + 2\ln(3/2)\end{aligned}$$
+
 
 > [!important]
 > 
@@ -426,13 +420,15 @@
 > 
 > **例1** 计算 $\int_0^1 x e^x\,dx$
 > 
-> 解：令 $u = x, dv = e^x\,dx$，则 $du = dx, v = e^x$
-> 原积分 $= [x e^x]_0^1 - \int_0^1 e^x\,dx = (1\cdot e - 0) - [e^x]_0^1 = e - (e - 1) = 1$
+> 解：令 $u = x, dv = e^x\,dx$，则 $du = dx, v = e^x$。
+> $$\begin{aligned}原积分&= [x e^x]_0^1 - \int_0^1 e^x\,dx \\&= (1\cdot e - 0) - [e^x]_0^1 \\&= e - (e - 1)
+= 1\end{aligned}$$
 > 
 > **例2** 计算 $\int_1^e \ln x\,dx$
 > 
 > 解：令 $u = \ln x, dv = dx$，则 $du = (1/x)\,dx, v = x$
-> 原积分 $= [x\ln x]_1^e - \int_1^e x\cdot(1/x)\,dx = (e\cdot 1 - 1\cdot 0) - \int_1^e dx = e - [x]_1^e = e - (e - 1) = 1$
+> $$\begin{aligned}原积分 &= [x\ln x]_1^e - \int_1^e x\cdot(1/x)\,dx 
+\\&= (e\cdot 1 - 1\cdot 0) - \int_1^e dx \\&= e - [x]_1^e = e - (e - 1) \\&= 1\end{aligned}$$
 > 
 
 > [!important]

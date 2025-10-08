@@ -162,7 +162,7 @@
 > 1. **初始位移条件**：  
 > $$x(0) = A = x_0$$  
 > 2. **初始速度条件**：  
-> $$v(0) = x'(0) = -A\omega\sin(0) + B\omega\cos(0) = B\omega = v_0$$  
+> $$\begin{aligned}v(0) &= x'(0) = -A\omega\sin(0) + B\omega\cos(0) \\&= B\omega = v_0\end{aligned}$$  
 > 
 > 代入初始条件得到：  
 > 
@@ -862,6 +862,3 @@
 > $$
 >  
 > 该方程组描述了行星在三维空间中的运动。
-> 
-
-[回到主页面](index.html)

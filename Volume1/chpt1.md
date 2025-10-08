@@ -49,7 +49,7 @@
 > 2. **无序性**: 集合中的元素没有顺序之分. 所以集合 $\{水星, 金星, 地球\}$ 与集合 $\{地球, 水星, 金星\}$ 是没有区别的.
 >
 
-> [!Caution]
+> [!Warning]
 >
 > 一般用大写字母如 $A, B, C$ 表示集合, 用小写字母如 $x$ 或 $a, b, c$ 来表示集合中的元素.
 >
@@ -57,6 +57,15 @@
 >
 > - 如果 $x$ 是集合 $A$ 的元素, 就说 $x$ **属于** 集合 $A$ , 记作 $x\in A$ ; 
 > - 如果 $x$ 不是集合 $A$ 中的元素, 就说 $x$ **不属于** 集合 $A$, 记作 $a \notin A$.
+
+> [!caution]
+>
+> ==上机实验==
+>
+> 计算机图像处理中经常会用到**掩码** (mask) 的概念. 掩码本质上就是一个集合.
+>
+> - set_mask.ipynb: 图像掩码操作.
+> 
 
 > [!IMPORTANT]
 >
@@ -109,6 +118,12 @@
 > 
 > ![补集](../media/img/1.5.jpg)
 
+> [!caution]
+>
+> ==上机实验==
+>
+> - set_iou.ipynb: **交并比**介绍. 
+
 ### 映射
 
 > [!TIP]
@@ -137,7 +152,7 @@
 >
 > 映射可以通过下面的图像来理解: 
 >
-> ![映射](../media/img/Function_color_example_3.svg.png#200pt)
+> ![映射](../media/img/Function_color_example_3.svg.png#200h)
 > 
 > 图中箭头表示了集合 $A$ 中元素与集合 $B$ 中元素的对映关系. 
 > 
@@ -146,7 +161,7 @@
 > - **随处取值**是指 $A$ 中的任何一个元素在 $B$ 中都有对映；
 > - **唯一对映**是指 $f$ 可以把 $A$ 中的不同元素映射到 $B$ 中的同一个元素, 但不能把 $A$ 中的一个元素映射到 $B$ 中的多个元素.
 
-> [!Caution]
+> [!warning]
 >
 > ==映射的性质==
 >
@@ -171,9 +186,9 @@
 > 
 > 从上面的例子可以感受到, 映射的作用在于把集合 $A$ 中的元素作为**输入信号**, 例如如不同的人、GPS坐标、光的波长等, 经过某种操作, 转换成我们关心的输出, 如名字、位置和颜色. 从这个意义上理解, 映射就是就是把输入 $x$ 转化成 $f(x)$ 的一个机器.
 > 
-> ![Function](../media/img/function.png)
+> ![Function](../media/img/function.png#200w)
 
-> [!Caution]
+> [!warning]
 >
 > ==映射与函数==
 >
@@ -267,7 +282,7 @@
 > - 周期性
 > 
 
-> [!Caution]
+> [!Warning]
 >
 > ==反函数== 
 >
@@ -281,7 +296,7 @@
 > 
 > ![反函数图形的对称性](../media/img/inverse_function.png#400w)
 
-> [!Caution]
+> [!warning]
 > 
 > ==复合函数==
 > 
@@ -305,13 +320,17 @@
 > \end{align}
 > $$
 
-> [!Warning]
+> [!Caution]
 >
 > ==深度学习与复合函数==
 >
 > ![神经网络](../media/img/network.png#400w) 
-> 
+>
 > 人工智能中的核心技术为**深度学习**, 深度学习的背后其实就是有很多层 (从几十到几千层都有) 的**神经网络** (Neuron Network). 神经网络的本质正是复合函数. 对于图中所示的神经网络, 从最左端的**输入信号**开始, 之后每一层都是上一层信号的复合, 因此神经网络就是一个复合了很多次的函数, 这个函数把输入 (比如一张图片) 映射到我们关心的结果 (比如图像有猫还是狗的概率). 
+>
+> ==上机实验==
+> 
+> - set_mnist.ipynb: 手写数字识别演示.
 
 
 ## 极限
@@ -342,6 +361,14 @@
 > - 什么是静?
 > 	**数列极限**概念中**静**的部分来自于集合 $\mathbb{R}$ 中, 它表示 $A_n$ 的取值会慢慢**趋于稳定**, 到最后**几乎不变**了, 数学上我们称这种行为叫**收敛**. 
 > 
+
+
+> [!extent]
+>
+> ==上机实验==
+>
+> - limit_array_circle.ipynb: 圆面积的极限.
+
 
 > [!Note]
 >
@@ -459,7 +486,7 @@
 > 
 > - 任意改变数列的有限多项, 不影响极限的收敛.
 
-> [!caution]
+> [!warning]
 > 
 > ==数列极限的几条性质 (了解, 不需要证明)==
 > 
@@ -474,7 +501,7 @@
 > 
 > 函数极限跟数列极限本质上都是极限, 都是**动中取静**, 只不过数列极限中动的是 $n$, 而函数极限中动的是自变量 $x$. 之前我们强调过**函数图像**的重要性, 函数的极限过程同样可以通过函数图像来理解. 下面这张图可以作为我们对函数极限的**直觉**, 图中展示了 $\displaystyle \lim_{x\rightarrow 2} f(x) = 4$, 请大家想想在这个极限过程中什么在**动**, 什么是**静**?
 >
->  ![函数极限](../media/img/function_limit.png)
+>  ![函数极限](../media/img/function_limit.png#400w)
 >  
 
 > [!note]
@@ -546,7 +573,7 @@
 > ![一个重要的函数极限](../media/img/sinx_over_x_full.png#400h)
 > 
 
-> [!caution]
+> [!warning]
 > 
 > ==函数极限的性质==
 > 
@@ -589,6 +616,16 @@
 >**函数趋于无穷大**
 > 
 > $\displaystyle \lim_{x\rightarrow x_0} f(x) = \infty \iff \forall M > 0$, $\exist \delta$, s. t., $|f(x)| > M$ if $0 < |x-x_0| < \delta$.
+> 
+
+> [!caution]
+>
+> ==上机实验==
+>
+> 两个函数极限的例子:
+> 
+> - limit_fun_sin_over_x.ipynb
+> - limit_fun_sin_1_x.ipynb
 > 
 
 ### 极限的运算
@@ -869,9 +906,12 @@
 > [!tip]
 > 还记得"割圆法"求圆面积的例子吗? 圆的内接正 $n$ 边形的面积当 $n \rightarrow \infty$ 的极限的计算最后就会落到极限 $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x}$ 的计算, 这个极限与圆周率 $\pi$ (**阿基米德数**_~Rd~_)有着深刻的联系.
 
-> [!warning]
+> [!caution]
+>
+> ==上机实验==
+>
+> - limit_fun_sin_over_x.ipynb: 函数极限的例子.
 > 
-> ==圆内接正多边形的面积==
 
 > [!important]
 >
@@ -897,7 +937,7 @@
 >- 由 $\displaystyle \lim_{x\to 0} -x^2 = \lim_{x\to 0} x^2 = 0$ 得证  
 > 
 
-> [!caution]
+> [!warning]
 >
 > **证明** $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1$
 > 
@@ -936,6 +976,13 @@
 >  $
 > 3. 该极限是推导三角函数导数的基础
 
+> [!caution]
+>
+> ==上机实验==
+>
+> - limit_fun_sin_1_x.ipynb: 函数极限的例子.
+> 
+
 #### 重要极限二
 > [!tip]
 > 
@@ -957,6 +1004,14 @@
 > e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n
 > $$
 > ![数列的值](../media/img/limit_to_e.png#400h)
+
+
+> [!caution]
+>
+> ==上机实验==
+>
+> - limit_array_e.ipynb: 函数极限的例子.
+> 
 
 > [!important]
 > 
@@ -1019,7 +1074,7 @@
 > 下面的结论相当于极限运算中的换元法, 在计算极限的时候十分有用.
 > 
 
-> [!caution]
+> [!warning]
 > 
 > 假设 $y=f[g(x)]$,  $\displaystyle \lim_{x\rightarrow x_0}g(x) = u_0$, $\displaystyle \lim_{u\rightarrow u_0}f(x) = A$, 则 $\displaystyle \lim_{x\rightarrow x_0}f[g(x)] = A$.
 > 
@@ -1130,7 +1185,7 @@
 > ![绝对值的倒数](../media/img/chap1_5.1.2.png#200h)
 > 
 
-> [!caution]
+> [!warning]
 > 
 > ==间断函数==
 > 
@@ -1154,7 +1209,7 @@
 > ![震荡函数](../media/img/chap1_5.1.3.png#200h)
 >
 
-> [!caution]
+> [!warning]
 >
 > ==单侧极限==
 >
