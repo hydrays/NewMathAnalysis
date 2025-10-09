@@ -2,61 +2,36 @@
 
 > [!tip] 
 >
-> 微积分是本课程的核心内容, 而极限则是微积分中的核心概念. 极限的概念很直观, 但经过数学的严格化后会变得非常抽象. 可以说极限的公理化是一道门槛, 是我们从中学的初等数学迈向大学的高等数学的必经之路. 要学好极限并不容易, 这里面涉及从有限到无穷的观念转变. 我们会发现这条路一开始会辗转反复, 让人晕头转向, 但是当你学完这门课程再回头来看, 会发现这么做是值得的, 数学概念的严格化其实不是在追求外表的精美, 而是让我们的内心变得更加的强大, 使我们有力量走得更远. 那么, 我们深呼吸一下, 一起敲开通向高等数学的大门吧.
-
-
+> **微积分**是大学数学的核心内容, 是**人工智能**的基础之一, 学好它对我们以后的学习和成长有非常大的好处.
+>
+> 微积分的研究对象是**函数**. 我们中学已经学过函数的概念, 下面我们来复习和巩固一下.
 
 ## 集合与映射
-
-> [!tip]
->
-> ==集合与映射是数学研究从具体到抽象的第一步.==
->
-> 举个例子, 比如我们上这门高数课, 最后需要给每个上课的学生一个成绩. 为了从数学上来更加严格的定义这个任务, 我们可以把所有选课的同学构放到一个**集合** $S$ 中, 同时把所有可能的成绩 (比如A, B, C, D四个档次) 放到另一个**集合** $G$ 中, 那么给学生成绩的这个任务在数学上就可以看成是**从集合 $S$ 到集合 $G$ 的一个映射**. 引入集合和映射的概念可以让一个问题变得更清晰, 更严格.
-> 
-> ![集合是数学抽象](../media/img/chpt1_set_final.svg)
->
 
 ### 集合
 
 > [!TIP]
 > 
-> 当我们用**数学语言**来描述世界时, 首先要把我们**感兴趣的对象**给拿出来, 进行适当的抽象, 然后再研究它们的规律. **集合**就是数学中用来界定对象的一个概念.
+> 集合是数学研究从具体到抽象的第一步. 当我们用**数学语言**来描述世界时, 首先要把我们**感兴趣的对象**给拿出来, 进行适当的抽象, 然后再研究它们的规律. **集合**就是数学中用来界定对象的一个概念.
 > 
 
 > [!Note]
 > 
 > ==集合举例==
 >
-> 1. *`10个阿拉伯数字`* --- $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$
-> 2. *`自然数集`* --- $\mathbb{N} = \left\{0, 1, 2, 3, \cdots \right\}$
-> 3. *`整数集`* --- $\mathbb{Z} = \left\{0, \pm 1, \pm 2, \pm 3, \cdots \right\}$
-> 4. *`实数集`*  --- $\mathbb{R} = \left\{x: -\infty < x < \infty \right\}$
-> 5. *`满足不等式 x-3<10 的所有实数 x`* --- $A=\left \{x < 7\right \}$
+> 1. *`自然数集`* --- $\mathbb{N} = \left\{0, 1, 2, 3, \cdots \right\}$
+> 2. *`实数集`*  --- $\mathbb{R} = \left\{x: -\infty < x < \infty \right\}$
+> 3. *`满足不等式 x-3<10 的所有实数 x`* --- $A=\left \{x < 7\right \}$
 
 > [!Important]
 >
 > ==集合的概念==
 > 
-> 我们把所要研究的对象统称为**元素** (element), 这些元素所组成的总体叫做**集合** (set). 
->
-> 描述集合的方式既可以通过文字叙述, 也可以把所有的元素写在 $\{\}$ 里面, 不管用那种方式, 一定要让人能够判断某个对象是不是在这个集合里.
->
-> 集合需要满足下面两个性质: 
->
-> 1. **互异性**: 集合中的任何两个元素都是不同的. 比如在集合3的例子中, 即使这个班里有3个同学姓“王”, 在集合3中“王”姓也只出现一次, 重复的不算.
->
-> 2. **无序性**: 集合中的元素没有顺序之分. 所以集合 $\{水星, 金星, 地球\}$ 与集合 $\{地球, 水星, 金星\}$ 是没有区别的.
->
-
-> [!Warning]
->
-> 一般用大写字母如 $A, B, C$ 表示集合, 用小写字母如 $x$ 或 $a, b, c$ 来表示集合中的元素.
->
-> 我们说一个对象**在**或**不在**一个集合中, 用数学术语就是**属于**或**不属于**: 
+> 我们把所要研究的对象统称为**元素** (element), 这些元素所组成的总体叫做**集合** (set). 一般用大写字母如 $A, B, C$ 表示集合, 用小写字母如 $x$ 或 $a, b, c$ 来表示集合中的元素.
 >
 > - 如果 $x$ 是集合 $A$ 的元素, 就说 $x$ **属于** 集合 $A$ , 记作 $x\in A$ ; 
 > - 如果 $x$ 不是集合 $A$ 中的元素, 就说 $x$ **不属于** 集合 $A$, 记作 $a \notin A$.
+> - 不包含任何元素的集合叫做 **空集** (emptyset), 记为 $\phi $.
 
 > [!caution]
 >
@@ -71,11 +46,9 @@
 >
 > ==两个集合间的包含关系==
 >
-> 如果集合 $A$ 中**任意**_~Rd~_一个元素都是集合 $B$ 中的元素, 则称 $A$ **包含于** $B$ (或 $B$ **包含**$A$), 记作 $A\subseteq B$ 或 $B\supseteq A$, 此时称 $A$ 为 $B$ 的 **子集** (subset). 
+> 如果集合 $A$ 中**任意**_~Rd~_一个元素都是集合 $B$ 中的元素, 则称 $A$ **包含于** $B$ (或 $B$ **包含**$A$), 记作 $A\subseteq B$ 或 $B\supseteq A$, 此时称 $A$ 为 $B$ 的 **子集** (subset). 空集是任何集合的子集
 > 
-> 基于集合的包含关系我们再引入两个概念: 
-> 1. **空集**: 不包含任何元素的集合叫做 **空集** (emptyset), 记为 $\phi $, 空集是任何集合的子集.
-> 2. **集合相等**: 如果 $A\subseteq B$, 同时 $B\subseteq A$, 则集合 $A$, $B$ 中的元素是完全一样的, 此时我们说集合 $A$ 等于集合 $B$, 记作$A=B$.
+> - **集合相等**: 如果 $A\subseteq B$, 同时 $B\subseteq A$, 则集合 $A$, $B$ 中的元素是完全一样的, 此时我们说集合 $A$ 等于集合 $B$, 记作$A=B$.
 > 
 
 > [!Important]
@@ -128,11 +101,7 @@
 
 > [!TIP]
 >
-> 前面所讲的**集合**的概念是为了给**映射**做铺垫. 映射是集合与集合之间的关联, 集合对数学就好像计算机中的**键盘**, 无非就是100多个键; 而映射对数学就好像计算机中的**程序**, 变幻无穷. 
->
-> 回到我们之前给学生打分的例子, 为了更加合理的给学生打分, 我们可以把学生努力的程度转化成数值, 然后把分数对应成绩点, 从而把打分的问题变成了一个从数到数的映射, 也就是**函数**. 可以看到函数是用来解决具体问题的一个很方便的工具.
->
-> ![图片](../media/img/chpt1_function_final.svg)
+> **集合**的概念是为了给**映射**做铺垫, 映射建立了**集合与集合之间的关联**. 
 >
 
 > [!Important]
@@ -188,24 +157,22 @@
 > 
 > ![Function](../media/img/function.png#200w)
 
-> [!warning]
+### 函数
+
+> [!tip]
 >
 > ==映射与函数==
 >
-> 映射的概念如此重要, 以至于在不同的场合映射还有不同的专业名称. 在计算机编程中, **函数**(function) 就是映射, 是一个从输入 (可以是数、数组、函数等）到输出 (也可以是数、数组、函数等）的一系列操作. 在数学里, 当集合 $A$ 和 $B$ 都是数集的时候, 映射也叫做**函数 **(function), 如函数 $f(x) = 2x+3$ 是一个从实数集到实数集的一个映射. 函数是高等数学上册的主要研究对象, 而多元函数 (从 $n$ 维实数空间到实数空间的映射, $n>2$ )则是高等数学下册的主要研究对象 (前面的给学生打分的例子可以进一步细化成一个多元函数, 也就是把平时, 期中, 期末和其它因素的成绩统一考虑, 然后映射到一个分数上).
->
-> ![图片](../media/img/chpt1_mvfunction_final.svg)
-
-#### 数列
-
-> [!TIP]
+> 函数是一种特殊的映射: 从**数集** $A$ 到**数集** $B$ 的**映射** $f:A \rightarrow B$ 称为**函数** (function). 函数可写成 $y = f(x)$ 的形式, 其中 $x$ 称为**自变量**, $y$ 称为 $x$ 对映的**函数值**.
 > 
-> **数列**是一类特殊的映射, 它把自然数集 $\mathbb{N}$ 映射到实数集 $\mathbb{R}$ 中, 进一步, 这还是一个数到数的映射, 因此同时也是一个函数, 这个函数可以记作 $a(n)$, 不过更多的时候我们会把 $n$ 作为下标, 以 $a_n$ 表示数列得第 $n$ 项, 并以 $\{ a_n \} $ 表示整个数列.
 
----
-
-> [!Note]
-> ==等差数列==
+> [!important]
+> 
+> ==数列==
+> 
+> **数列**是一类特殊的函数, 它把自然数集 $\mathbb{N}$ 映射到实数集 $\mathbb{R}$ 中, 这个函数可以记作 $a(n)$, 不过更多的时候我们会把 $n$ 作为下标, 以 $a_n$ 表示数列得第 $n$ 项, 并以 $\{ a_n \} $ 表示整个数列.
+> 
+> **等差数列**
 > 
 > - 首项为 $a_{1}$,  公差为 $d$ 的等差数列的**通项公式**为
 >
@@ -217,9 +184,8 @@
 > $$
 > \quad S_{n}=na_1+\frac{n(n-1)}{2}d
 > $$
-
-> [!Note]
-> ==等比数列==
+>
+> **等比数列**
 >
 > - 首项为 $a_{1}$ , 公比为 $q$ 的等比数列的**通项公式**为
 > $$
@@ -231,22 +197,8 @@
 > S_{n}=a_{1}\frac{1-q^n }{1-q} （q\ne 1)
 > $$
 
-#### 函数
-
-> [!TIP]
->
-> 函数是用数学解决实际问题的重要**工具**, 函数之于数学就像**程序**之于计算机. 
-> 
-> 学习函数的时候不要去跟冰冷的公式硬刚, 而应该把函数的图像放在心里, 产生画面感, 把公式具象化, 成为直觉的一部分. 因此, **函数的图像非常重要!**_~Rd~_
 
 > [!important]
-> 
-> ==函数的定义==
->
-> 从**数集** $A$ 到**数集** $B$ 的映射 $f:A \rightarrow B$ 称为**函数** (function). 可以把函数写成 $y = f(x)$ 的形式, 并把 $x$ 称为**自变量**, $y$ 称为 $x$ 对映的**函数值**.
-> 
-
-> [!note]
 > 
 > ==初等函数==
 > 
@@ -273,22 +225,12 @@
 > \sigma (x)=\frac{1}{1+e^{-x}}
 > $$
 
-> [!Note]
-> 
-> ==函数的性质==
->
-> - 单调性
-> - 奇偶性
-> - 周期性
-> 
-
-> [!Warning]
+> [!important]
 >
 > ==反函数== 
 >
-> **反函数**是**逆映射**的一个特例, 对于函数 $f: x \rightarrow y$ (也要求 $f$ 是一一映射), 其反函数为 $f^{-1}: y \rightarrow x$.
->
-> [!Note]
+> **反函数**是**逆映射**的一个特例, 对于函数 $f: x \rightarrow y$ (也要求 $f$ 是一一映射), 其反函数为 $f^{-1}: y \rightarrow x$. 例如
+> 
 > - $y = 3x + 1$ 的反函数为 $y = (x-1)/3$
 > - $y = \mathrm{e}^x$ 的反函数为 $y = \mathrm{ln}x$. 
 >
@@ -296,7 +238,7 @@
 > 
 > ![反函数图形的对称性](../media/img/inverse_function.png#400w)
 
-> [!warning]
+> [!important]
 > 
 > ==复合函数==
 > 
@@ -321,12 +263,14 @@
 > $$
 
 > [!Caution]
->
+> 
+> 计算机编程中的**函数**(function) 概念比数学中的函数要广, 它表示从输入 (可以是数、数组、函数等）到输出 (也可以是数、数组、函数等）的一系列操作. 
+> 
 > ==深度学习与复合函数==
 >
 > ![神经网络](../media/img/network.png#400w) 
 >
-> 人工智能中的核心技术为**深度学习**, 深度学习的背后其实就是有很多层 (从几十到几千层都有) 的**神经网络** (Neuron Network). 神经网络的本质正是复合函数. 对于图中所示的神经网络, 从最左端的**输入信号**开始, 之后每一层都是上一层信号的复合, 因此神经网络就是一个复合了很多次的函数, 这个函数把输入 (比如一张图片) 映射到我们关心的结果 (比如图像有猫还是狗的概率). 
+> 人工智能中的核心技术为**深度学习**, 深度学习的背后其实就是有很多层 (从几十到几千层都有) 的**神经网络** (Neuron Network). 神经网络的本质正是复合函数. 对于图中所示的神经网络, 从最左端的**输入信号**开始, 之后每一层都是上一层信号的复合, 因此神经网络就是一个复合了很多次的函数, 这个函数把输入 (比如一张图片) 映射到我们关心的结果 (比如图像是猫还是狗的概率). 
 >
 > ==上机实验==
 > 
@@ -337,11 +281,9 @@
 
 > [!TIP] 
 > 
-> **极限**是高等数学有别于初等数学的核心概念. 极限的出现代表了数学思想的一次转变, 而促成这一转变的动机来自于现实问题中对**曲线**相关问题的需求. 在初等数学中我们会计算矩形的周长和面积, 会计算三角形的周长和面积, 甚至是任意多边形的周长和面积, 但是, 这些都是由直线构成的结构, 而到了曲线大家就不会了. 曲线的长度怎么算? 由曲线构成区域的面积怎么算? 尽管我们初中就知道圆的周长是 $2\pi r$, 面积是 $\pi r^2$, 但是为什么是这样, 只有运用微积分才能给出严格的证明.
+> 极限是微积分中的核心概念. 极限的出现代表了数学思想的一次转变, 而促成这一转变的动机来自于现实问题中对**曲线**相关问题的需求. 在初等数学中我们会计算矩形的周长和面积, 会计算三角形的周长和面积, 甚至是任意多边形的周长和面积, 但是, 这些都是由直线构成的结构, 而到了曲线大家就不会了. 曲线的长度怎么算? 由曲线构成区域的面积怎么算? 尽管我们初中就知道圆的周长是 $2\pi r$, 面积是 $\pi r^2$, 但是为什么是这样, 只有运用微积分才能给出严格的证明.
 > 
-> 如果我们拿西游记作为类比, 那初等数学就是**小乘佛法**, 可以修身养性, 而微积分则是**大乘佛法**, 可以普度众生. 数学史上, 微积分的确立历经了千难万险, 九九八十一难, 要说这里面的**孙悟空**之名, 我认为当属**牛顿**: 牛顿的时代还没有微积分, 正是他开创性的运用我们今天微积分中的各种思想和方法, 成功的解决了**天体运行理论** (注意天体运行的轨迹就是**曲线**), 开启了人类理性思潮的革命.
-> 
-> 今天, 我们将追随西天取经的足迹, 开启一场精神朝圣之旅. 一路上我们会经历重重磨难, 但最终我们会穿上牛顿的衣钵, 运用我们所学的微积分, 来推导**天体运行理论**, 揭示宇宙运行的奥义. 而**极限**_~Rd~_是我们西行路上的第一难, 这个**观念上的转变**是重要的, 我们一开始慢慢来, 好好的理解, 这个转变做得**越深刻越彻底**, 对以后的学习就越有帮助.
+> 极限的概念很直观, 但经过数学的严格化后会变得非常抽象. 可以说极限的公理化是一道门槛, 是我们从中学的初等数学迈向大学的高等数学的必经之路. 要学好极限并不容易, 这里面涉及从有限到无穷的观念转变. 我们会发现这条路一开始会辗转反复, 让人晕头转向, 但是当你学完这门课程再回头来看, 会发现这么做是值得的, 数学概念的严格化其实不是在追求外表的精美, 而是让我们的内心变得更加的强大, 使我们有力量走得更远. 那么, 我们深呼吸一下, 一起敲开通向高等数学的大门吧.
 
 ### 数列极限
 
@@ -349,25 +291,25 @@
 > 
 > ==极限与圆的面积==
 > 
-> 圆的面积怎么算? 我们来看教材 P18 的例子. 这个例子体现了极限中从有限到无限再到极限的思想: 为了计算圆的面积, 我们构造了一**系列**圆的内接正多边形, 这些正多边形的面积是可以通过初等数学计算的, 我们把它们的面积记作 $A_n, n = 1, 2, \cdots$. 通过**直觉**我们能感受到, **当 $n$ 趋于无穷大时, $A_n$ 的面积会无限接近圆的面积**_~Rd~_. 接下来我们要做的就是**把这个直觉通过数学语言给严格化**. 
-> 
->
-> 
-> 极限是一个**动中取静**_~Rd~_的过程. 
-> 
-> - 什么在动?
-> 	在上面的例子中, 我们构造了一个数列 $\{ A_n \}$, 前面说过数列是个从自然数集 $\mathbb{N}$ 到实数集 $\mathbb{R}$ 的映射. 我们说的**动**发生在集合 $\mathbb{N}$ 中, 指标 $n$ 从 1, 2 直到 1千, 一万 ..., 这是**数列极限**概念中**动**的部分. 
-> 
-> - 什么是静?
-> 	**数列极限**概念中**静**的部分来自于集合 $\mathbb{R}$ 中, 它表示 $A_n$ 的取值会慢慢**趋于稳定**, 到最后**几乎不变**了, 数学上我们称这种行为叫**收敛**. 
-> 
+> 圆的面积怎么算? 为了计算圆的面积, 我们构造了一**系列**圆的内接正多边形, 这些正多边形的面积是可以通过初等数学计算的, 我们把它们的面积记作 $A_n, n = 1, 2, \cdots$. 通过**直觉**我们能感受到, **当 $n$ 趋于无穷大时, $A_n$ 的面积会无限接近圆的面积**_~Rd~_. 接下来我们要做的就是**把这个直觉通过数学语言给严格化**. 
 
 
-> [!extent]
+> [!caution]
 >
 > ==上机实验==
 >
 > - limit_array_circle.ipynb: 圆面积的极限.
+
+> [!important]
+> 
+> 极限是一个**动中取静**_~Rd~_的过程. 
+> 
+> - 什么在动?
+> 	数列 $\{ A_n \}$ 中的指标 $n$ 在**动**. 
+> 
+> - 什么是静?
+> 	圆面积是静, $A_n$ 的取值会慢慢**趋于稳定**, 到最后**几乎不变**了, 数学上我们称这种行为叫**收敛**. 
+> 
 
 
 > [!Note]
@@ -436,8 +378,6 @@
 >  
 > 数列 $\{ 1, 2, 3, 4, \cdots\}$ 不收敛, 这个数列不断增长, 直觉告诉我们这个数列也**静**不下来.
 
->**直觉**_~Rd~_: 所以数列 $\{a_n\}$ 有极限就是, 当 $n$ 足够大时, $a_n$ 的值无限接近某个数 $A$.
-
 > [!important]
 > 
 > ==数列极限的定义== (非常重要!!!)
@@ -450,11 +390,10 @@
 > $$
 > \lim_{n\rightarrow \infty} a_n = A.
 > $$
-> 
+>
+> **定义背后的数学直觉**_~Rd~_: 所以数列 $\{a_n\}$ 有极限就是, 当 $n$ 足够大时, $a_n$ 的值无限接近某个数 $A$. 上述定义把数列极限的直觉具象化了, 从而使得直觉变得可操作了. 根据定义, 我们现在可以严格的判断前面例子中数列的极限.
 
 > [!Note]
-> 
-> 上述定义把数列极限的直觉具象化了, 从而使得直觉变得可操作了. 根据定义, 我们现在可以严格的判断前面例子中数列的极限.
 >
 > ==一尺之捶，日取其半 (版本1)==
 > 
@@ -482,11 +421,6 @@
 > **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得 $\displaystyle \left| \frac{(-1)^n}{(n+1)^2} - 0\right| = \frac{1}{(n+1)^2}< \varepsilon$, 取 $N = \left[ \sqrt{1/ \varepsilon}\right]$, 可知当 $n > N$ 时, 总有 $|a_n - 0| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 0$.
 
 > [!warning]
-> 在极限的概念里, **有限**和**无限**, **动**和**静**交汇到了一起.
-> 
-> - 任意改变数列的有限多项, 不影响极限的收敛.
-
-> [!warning]
 > 
 > ==数列极限的几条性质 (了解, 不需要证明)==
 > 
@@ -494,6 +428,7 @@
 > 2. 如果数列 $a_n$ 有极限, 那么数列 $a_n$ 一定有界.
 > 3. 如果 $\displaystyle \lim_{n\rightarrow \infty} a_n = A$, 且 $A > 0$, 那么存在正整数 $N$, 当 $n > N$ 时有 $x_n > 0$.
 > 4. 如果 $\displaystyle \lim_{n\rightarrow \infty} a_n = A$, 那么 $a_n$ 的任一子数列的极限也是 $A$.
+> 5. 任意改变数列的有限多项, 不影响极限的收敛.
 
 ### 函数极限
 
@@ -504,26 +439,14 @@
 >  ![函数极限](../media/img/function_limit.png#400w)
 >  
 
-> [!note]
-> 
-> 考虑函数 $\displaystyle f(x) = \frac{\sin(x)}{x}$ 在 $x \rightarrow 0$ 时的极限. 从下面的表格和图像中我们**感觉**_~Gn~_这个极限等于1. 
-> 
-> *==函数极限举例==*
-> | $x$ | $\displaystyle \frac{\sin(x)}{x}$|
-> |:--:|:--:|
-> |1|0.841471...|
-> |0.1|0.998334...|
-> |0.01|0.999983...|
-> 
-> ![函数图像](../media/img/sinx_over_x.png#200h)
-> 
-
-> [!warning]
->  
-> **直觉**_~Rd~_: 所以函数 $\{f(x)\}$ 在 $x\rightarrow x_0$ 时有极限就是, 当 $x$ 足够接近 $x_0$ 时, $f(x)$ 的值无限接近某个数 $A$.
+> [!caution]
 >
-> 注意跟数列极限进行对比:
-> 数列 $\{a_n\}$ 有极限就是, 当 $n$ 足够大时, $a_n$ 的值无限接近某个数 $A$.
+> ==上机实验==
+>
+> 两个函数极限的例子:
+> 
+> - limit_fun_sin_over_x.ipynb
+> - limit_fun_sin_1_x.ipynb 
 
 > [!important]
 > 
@@ -540,13 +463,12 @@
 > 
 > 上述定义可以通过下图来理解
 > 
-> ![函数极限](../media/img/function_limit_def.jpg)
+> ![函数极限](../media/img/function_limit_def.png#400w)
+> 
+> 所以函数 $\{f(x)\}$ 在 $x\rightarrow x_0$ 时有极限就是, 当 $x$ 足够接近 $x_0$ 时, $f(x)$ 的值无限接近某个数 $A$. 注意跟数列极限进行对比. 跟数列极限的定义一样, 上面关于函数极限的定义提供了一个**可操作的流程**, 能够将我们关于函数极限的直观**具象化**. 
+>
 
 > [!note]
-> 跟数列极限的定义一样, 上面关于函数极限的定义提供了一个**可操作的流程**, 能够将我们关于函数极限的直观**具象化**. 
-> 
-> 
-> ==例1==
 > 
 > **直觉**: $\displaystyle f(x)  = x^2 + 1$ 在 $x_0=2$ 的极限为5.
 > 
@@ -561,16 +483,6 @@
 > $$
 > 
 > 取 $\displaystyle \delta = \frac{\varepsilon}{2.5}$, 可知当 $0< |x-2|<\delta$ 时, 总有 $|f(x) - 5| < \varepsilon$. 因此 $\displaystyle \lim_{x \rightarrow 2} f(x) = 5$.
-> 
-> ![函数极限例1](../media/img/function_limit_of_xsquare.png#400h)
->
-> ==例2==
-> 
-> **直觉**: $\displaystyle \frac{\sin(x)}{x}$ 的极限为1.
-> 
-> **证明**: 根据定义来证明这个极限比较困难, 后面我们会介绍更加强大的方法.
-> 
-> ![一个重要的函数极限](../media/img/sinx_over_x_full.png#400h)
 > 
 
 > [!warning]
@@ -618,16 +530,6 @@
 > $\displaystyle \lim_{x\rightarrow x_0} f(x) = \infty \iff \forall M > 0$, $\exist \delta$, s. t., $|f(x)| > M$ if $0 < |x-x_0| < \delta$.
 > 
 
-> [!caution]
->
-> ==上机实验==
->
-> 两个函数极限的例子:
-> 
-> - limit_fun_sin_over_x.ipynb
-> - limit_fun_sin_1_x.ipynb
-> 
-
 ### 极限的运算
 
 > [!tip]
@@ -640,112 +542,47 @@
 > 注意, 本讲的性质和定理全部都建立在上一讲**极限定义**的基础之上, 其根本还是 $\varepsilon-\delta$ 语言.
 > 
 
-> [!warning]
+> [!caution]
 >
 > ==希尔伯特的旅店==
 >
 > 极限运算涉及到了**无限**_~Rd~_的概念, 对初学者来说这是一个之前从未踏足过的位置领域, 一些**有限世界中的直觉**将不再成立. **希尔伯特的旅店**是一个有趣的故事, 通过这个故事希望能让大家对**无限**_~Rd~_有一颗**敬畏之心**.
 >
-> [待补充]
+> <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=217018325&bvid=BV1Aa411N7Sg&cid=804913368&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 > [!important]
 >
-> **数列极限四则运算**
+> ==数列极限四则运算==
 > 
->  *`加减法`*: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n = A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 则 $\displaystyle \lim_{n\rightarrow \infty}[a_n \pm b_n]= A \pm B$.
->  **证明**:  
->  对任意 $\varepsilon > 0$，存在 $N_1$ 使当 $n > N_1$ 时 $|a_n - A| < \frac{\varepsilon}{2}$，  
->  存在 $N_2$ 使当 $n > N_2$ 时 $|b_n - B|$ < $\frac{\varepsilon}{2}$。  
->  取 
->  $$\small\begin{aligned}|(a_n \pm b_n) - (A \pm B)| &\leq |a_n - A| + |b_n - B| \\&< \varepsilon.\end{aligned}$$
+> - **加减法**: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n = A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 则 $\displaystyle \lim_{n\rightarrow \infty}[a_n \pm b_n]= A \pm B$.
+> 
+>  - **乘法**: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n = A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 则 $\displaystyle \lim_{n\rightarrow \infty}a_nb_n = AB$.
+> 
+>  - **除法**: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n= A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 且 $B \ne 0$, 则 $\displaystyle \lim_{n\rightarrow \infty}\frac{a_n}{b_n}= \frac{A}{B}$.
+>
+> 证明见教学视频或问DeepSeek.
+
+> [!important]
+>
+> ==函数极限四则运算==
+> 
+>  - **加减法**: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 则 $\displaystyle \lim_{x\rightarrow x_0}[f(x) \pm g(x)]= A \pm B$.
 >  
+> - **乘法**: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 则 $\displaystyle \lim_{x\rightarrow x_0}f(x)g(x)= AB$.
 > 
->  *`乘法`*: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n = A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 则 $\displaystyle \lim_{n\rightarrow \infty}a_nb_n = AB$.
->  **证明**:  
->  关键分解：
->$$\small\begin{aligned}|a_nb_n - AB| &= |a_nb_n - Ab_n + Ab_n - AB| \\&\leq |b_n||a_n - A| + |A||b_n - B|  \end{aligned}$$
->  因\{$b_n\}$收敛，故存在M>0使|$b_n|\leq M$  
->  对$\varepsilon > 0$，取$N_1$使当$n>N_1$时$|a_n-A|<\frac{\varepsilon}{2M}$  
->  取$N_2$使当$n>N_2$时$|b_n-B|<\frac{\varepsilon}{2|A|+1}$  
->  取$N=\max\{N_1,N_2\}$，则当$n>N$时：  
->  $|a_nb_n - AB| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$
-> 
->  *`除法`*: 如果 $\displaystyle \lim_{n\rightarrow \infty}a_n= A$, $\displaystyle \lim_{n\rightarrow \infty}b_n = B$, 且 $B \ne 0$, 则 $\displaystyle \lim_{n\rightarrow \infty}\frac{a_n}{b_n}= \frac{A}{B}$.
->  **证明**:  
->  先证$\varepsilon > 0，取$$N_2$使当$n>N_2$时$|b_n-B|<\frac{\varepsilon B^2}{2}$  
->  则当$n>\max\{N_1,N_2\}$时：  
->  $\left|\frac{1}{b_n} - \frac{1}{B}\right| = \frac{|b_n - B|}{|b_nB|} < \frac{2}{|B|^2} \cdot \frac{\varepsilon B^2}{2} = \varepsilon$ 
->  再结合乘法法则即得结论。
-
-> [!important]
+> - **除法**: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 且 $B \ne 0$, 则 $\displaystyle \lim_{x\rightarrow x_0}\frac{f(x)}{g(x)}= \frac{A}{B}$.
 >
-> **函数极限四则运算**
-> 
->  *`加减法`*: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 则 $\displaystyle \lim_{x\rightarrow x_0}[f(x) \pm g(x)]= A \pm B$.
->  **证明**：
-> 
->  对任意$\varepsilon > 0$，由 $lim_{x \to x_0} f(x) = A$，存在 $\delta_1$ > 0，  
->  使得当 $0 < |x - x_0| < \delta_1$ 时，$|f(x) - A| < \frac{\varepsilon}{2}$  
-> 
->  由 $\lim_{x \to x_0} g(x) = B$，存在 $\delta_2 > 0$，  
->  使得当 $0 < |x - x_0| < \delta_2$ 时，$|g(x) - B| < \frac{\varepsilon}{2}$  
-> 
->  取 $\delta = \min\{\delta_1, \delta_2\}$，则当 $0 < |x - x_0| < \delta$ 时：  
->  $$\begin{aligned}  &|[f(x) \pm g(x)] - [A \pm B]| \\\leq &|f(x) - A| + |g(x) - B| \\< &\varepsilon  \end{aligned}$$
-
-> [!important]
-> 
->  *`乘法`*: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 则 $\displaystyle \lim_{x\rightarrow x_0}f(x)g(x)= AB$.
->  **证明**：
-> 
->  对任意$\varepsilon > 0$，由 $\lim_{x \to x_0} f(x) = A$，存在 $\delta_1 > 0$，  
->  使得当 $0 < |x - x_0| < \delta_1$ 时，$|f(x) - A| < \frac{\varepsilon}{2}$  
-> 
->  由 $\lim_{x \to x_0} g(x) = B，存在 \delta_2 > 0$，  
->  使得当 $0 < |x - x_0| < \delta_2$时，$|g(x) - B| < \frac{\varepsilon}{2}$  
-> 
->  取 $\delta = \min\{\delta_1, \delta_2\}，则当 0 < |x - x_0| < \delta$ 时：
->$$ \begin{aligned} &|[f(x) \pm g(x)] - [A \pm B]| \\ \leq &|f(x) - A| + |g(x) - B| \\< &\varepsilon  \end{aligned}$$
-
-> [!important]
-> 
->  *`除法`*: 如果 $\displaystyle \lim_{x\rightarrow x_0}f(x) = A$, $\displaystyle \lim_{x\rightarrow x_0}g(x) = B$, 且 $B \ne 0$, 则 $\displaystyle \lim_{x\rightarrow x_0}\frac{f(x)}{g(x)}= \frac{A}{B}$.
-> 
->  **证明**：
-> 
->  先证 $\lim_{x \to x_0} \frac{1}{g(x)} = \frac{1}{B}$：  
-> 
->  由 $\lim_{x \to x_0} g(x) = B \neq 0，存在 \delta_1 > 0使当 \\0 < |x - x_0| < \delta_1时，|g(x)| > \frac{|B|}{2}$  
-> 
->  - 对任意$\varepsilon > 0$，取 $\delta_2 > 0 使当 0 < |x - x_0| < \delta_2$ 时：  
->    $
->    |g(x) - B| < \frac{\varepsilon B^2}{2}
->    $ 
->  - 取 $\delta = \min\{\delta_1, \delta_2\}$，则当 $0 < |x - x_0| < \delta$ 时：  
->    $
->    \left| \frac{1}{g(x)} - \frac{1}{B} \right| = \frac{|g(x) - B|}{|g(x)B|} < \frac{2}{|B|^2} \cdot \frac{\varepsilon B^2}{2} = \varepsilon
->    $
-> 
->  2. 再结合乘法法则即得：  
->  $$ \displaystyle \begin{aligned}    \lim_{x \to x_0} \frac{f(x)}{g(x)} &= \lim_{x \to x_0} \left( f(x) \cdot \frac{1}{g(x)} \right) \\& =  A \cdot \frac{1}{B} = \frac{A}{B}  \end{aligned}$$
-> 
+> 证明见教学视频或问DeepSeek.
 
 > [!note]
 >
-> ==极限四则运算的例子==
->
->
->
-> **例1**
+> **例1: 证明 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$**
 > 
-> 证明 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$
+> **证明**: 对任意给定的 $\varepsilon > 0$，我们需要找到正整数 $N$，使得当 $n > N$ 时:
 > 
-> **证明**：  
-> 
->  对任意给定的 $\varepsilon > 0$，我们需要找到正整数 $N$，使得当 $n > N$ 时：  
->  $
+>  $$
 >  \left| \frac{1}{n} - 0 \right| = \frac{1}{n} < \varepsilon
->  $ 
+>  $$
 > 
 >  解不等式 $\frac{1}{n} < \varepsilon$ 得 $n > \frac{1}{\varepsilon}$  
 > 
@@ -753,79 +590,40 @@
 > 
 >  则当 $n > N$ 时，必有 $\frac{1}{n} < \varepsilon$  
 > 
->  由极限定义，$\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$ 得证  
->  **几何解释**：  
->  当 $n$ 趋近无穷大时，$\frac{1}{n}$ 无限接近于 $0$，如图像 $y=\frac{1}{x}$ 在 $x\to\infty$ 时的渐近线为 $y=0$。
-> 
+>  故 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$.
 >
-> **例2**
+> **例2: 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{2n}$**
 > 
-> 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{2n}$
 > **解法1（直接法）**：  
-> 由 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$ 可得：  
-> $
-> \lim_{n\rightarrow \infty}\frac{1}{2n} = \frac{1}{2} \cdot \lim_{n\rightarrow \infty}\frac{1}{n} = \frac{1}{2} \times 0 = 0
-> $
-> **解法2（$\varepsilon-N$ 定义证明）**：  
+> 由 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$ 可得：
 > 
-> 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：  
-> $\left| \frac{1}{2n} - 0 \right| = \frac{1}{2n} < \varepsilon
-> $ 
-> 
-> 解不等式得 $n > \frac{1}{2\varepsilon}$  
-> 
-> 取 $N = \left\lfloor \frac{1}{2\varepsilon} \right\rfloor + 1$  ，则当 $n > N$ 时必满足 $\frac{1}{2n} < \varepsilon$  ，故极限为 $0$
->
-> **几何解释**：  
-> 数列 $\frac{1}{2n}$ 的收敛速度是 $\frac{1}{n}$ 的一半，但最终都趋于 $0$。
->
-> **推广结论**：  
-> 对任意常数 $c \neq 0$，有：  
-> $
-> \lim_{n\rightarrow \infty}\frac{c}{n} = 0
-> $
->
-> [注] 两种解法分别展示了：  
-> （1）利用已知极限的性质  
-> （2）严格的 $\varepsilon-N$ 语言验证
->
->
-> **例3**
->>
-> 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n^2}$
->>
-> **解法1（夹逼定理法）**：  
-> 
-> 注意到当 $n \geq 1$ 时：  
-> $
-> 0 < \frac{1}{n^2} \leq \frac{1}{n}
-> $ 
-> 
-> 已知 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n} = 0$  
-> 
-> 由夹逼定理可得：  
-> $
-> \lim_{n\rightarrow \infty}\frac{1}{n^2} = 0
-> $
+> $$
+> \lim_{n\rightarrow \infty}\frac{1}{2n} = \frac{1}{2} \cdot \lim_{n\rightarrow \infty}\frac{1}{n} = 0
+> $$
 > 
 > **解法2（$\varepsilon-N$ 定义证明）**：  
+> 
+> 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：
+> 
+> $$
+> \left| \frac{1}{2n} - 0 \right| = \frac{1}{2n} < \varepsilon
+> $$
+> 
+> 解不等式得 $n > \frac{1}{2\varepsilon}$, 取 $N = \left\lfloor \frac{1}{2\varepsilon} \right\rfloor + 1$  ，则当 $n > N$ 时必满足 $\frac{1}{2n} < \varepsilon$  ，故极限为 $0$
 >
-> 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：  
-> $
+> **例3: 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n^2}$**
+>
+> **解**：  
+>
+> 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：
+> 
+> $$
 > \left| \frac{1}{n^2} - 0 \right| = \frac{1}{n^2} < \varepsilon
-> $ 
+> $$
 > 
-> 解不等式得 $n > \frac{1}{\sqrt{\varepsilon}}$  
-> 
-> 取 $N = \left\lfloor \frac{1}{\sqrt{\varepsilon}} \right\rfloor + 1$  
-> 
-> 则当 $n > N$ 时必满足 $\frac{1}{n^2} < \varepsilon$  
-> 
-> 故极限为 $0$.
+> 解不等式得 $n > \frac{1}{\sqrt{\varepsilon}}$, 取 $N = \left\lfloor \frac{1}{\sqrt{\varepsilon}} \right\rfloor + 1$, 则当 $n > N$ 时必满足 $\frac{1}{n^2} < \varepsilon$, 故极限为 $0$.
 >
-> **例4**
-> 
-> 计算 $\displaystyle \lim_{x\rightarrow 1}(2x-1)$
+> **例4: 计算 $\displaystyle \lim_{x\rightarrow 1}(2x-1)$**
 > 
 >**解法1（直接代入法）**：  
 > 
@@ -844,50 +642,19 @@
 > 2|x-1| < 2 \cdot \frac{\varepsilon}{2} = \varepsilon
 > $ ，故极限为 $1$
 >
-> **几何解释**：
-> 函数 $y=2x-1$ 是斜率为 $2$ 的直线，在 $x=1$ 处函数值自然趋近于 $1$。
+> **例5: 计算 $\displaystyle \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3}$**
 >
+> **解法**： 分子在 $x=2$ 处的值：$2^3 - 1 = 7$, 分母在 $x=2$ 处的值：$2^2 - 5(2) + 3 = -3$, 分母不为零，可直接代入：  
 > 
-> **例5**
-> 
-> 计算 $\displaystyle \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3}$
->
-> **解法1（直接代入法）**：  
-> 
-> 分子在 $x=2$ 处的值：$2^3 - 1 = 7$  
-> 
-> 分母在 $x=2$ 处的值：$2^2 - 5(2) + 3 = -3$  
-> 
-> 分母不为零，可直接代入：  
-> $
+> $$
 > \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3} = \frac{7}{-3} = -\frac{7}{3}
+> $$
+>
+> **例6: 计算 $\displaystyle \lim_{x\rightarrow 3}\frac{x-3}{x^2-9}$**
+>
+> **解法**：识别不定式：直接代入得 $\frac{0}{0}$，需进一步处理, 因式分解分母：
 > $
->
-> **解法2（因式分解验证）**：  
-> 
-> 检查分子分母在 $x=2$ 时是否有公因式：  
-> - 分子：$x^3-1 = (x-1)(x^2+x+1)$  
-> - 分母：$x^2-5x+3$ 在 $x=2$ 处不为零  
-> 
-> 确认无零因子相消，直接代入有效
->
-> **$\varepsilon-\delta$ 证明思路**：  
-> 对于任意 $\varepsilon > 0$，存在 $\delta > 0$ 使得当 $0 < |x-2| < \delta$ 时：  
-> $
-> \left| \frac{x^3-1}{x^2-5x+3} - \left(-\frac{7}{3}\right) \right| < \varepsilon
-> $  
-> 可通过控制 $x$ 在 $2$ 附近的范围（如 $\delta < 0.5$）保证分母不为零，再构造不等式。
-> 
-> **例6**
->
-> 计算 $\displaystyle \lim_{x\rightarrow 3}\frac{x-3}{x^2-9}$
->
-> **解法1（因式分解法）**：
->
-> 识别不定式：直接代入得 $\frac{0}{0}$，需进一步处理
-> 
-> 因式分解分母：
-> $x^2-9 = (x-3)(x+3)
+> x^2-9 = (x-3)(x+3)
 > $
 > 
 > 约去公因式：
@@ -902,16 +669,12 @@
 
 ### 两个重要的极限
 
-#### 重要极限一
-> [!tip]
-> 还记得"割圆法"求圆面积的例子吗? 圆的内接正 $n$ 边形的面积当 $n \rightarrow \infty$ 的极限的计算最后就会落到极限 $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x}$ 的计算, 这个极限与圆周率 $\pi$ (**阿基米德数**_~Rd~_)有着深刻的联系.
 
-> [!caution]
->
-> ==上机实验==
->
-> - limit_fun_sin_over_x.ipynb: 函数极限的例子.
+> [!tip]
 > 
+> ==重要极限一==
+> 
+> 还记得"割圆法"求圆面积的例子吗? 圆的内接正 $n$ 边形的面积当 $n \rightarrow \infty$ 的极限的计算最后就会落到极限 $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x}$ 的计算, 这个极限与圆周率 $\pi$ (**阿基米德数**_~Rd~_)有着深刻的联系.
 
 > [!important]
 >
@@ -930,81 +693,44 @@
 > 2. $\displaystyle \lim_{n\to\infty} b_n = \lim_{n\to\infty} c_n = L$  
 > 则 $\displaystyle \lim_{n\to\infty} a_n = L$。  
 >
-> **示例**：  
-> 证明 $\displaystyle \lim_{x\to 0} x^2 \sin\left(\frac{1}{x}\right) = 0$  
-> 
-> - 因 $-1 \leq \sin\left(\frac{1}{x}\right) \leq 1$，故 $-x^2 \leq x^2 \sin\left(\frac{1}{x}\right) \leq x^2$  
->- 由 $\displaystyle \lim_{x\to 0} -x^2 = \lim_{x\to 0} x^2 = 0$ 得证  
-> 
 
 > [!warning]
 >
 > **证明** $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1$
 > 
-> ![一个重要的函数极限](../media/img/sinx_over_x_full.png#400h)
-> 
-> ##### 几何法证明
-> 1. **单位圆构造**：
->   - 考虑单位圆（半径 \( r = 1 \)）中角度 $x \in \left(0, \frac{\pi}{2}\right)$   定义：
->     -  $sin\:x$  为对边长度
+> 考虑单位圆（半径 \( r = 1 \)）中角度 $x \in \left(0, \frac{\pi}{2}\right)$:
+>     -  $\sin x$  为对边长度
 >     -  $x$  为圆弧长度（弧度制）
->     -  $tan\:x$  为切线长度
-> 2. **面积比较**：
->    $$ \scriptsize\begin{aligned} \text{面积} \triangle OAP < \text{扇形面积} OAP < \text{面积} \triangle OAT \end{aligned}$$
->    即：$ \frac{1}{2} \sin x < \frac{1}{2} x < \frac{1}{2} \tan x $
-> 3. **化简不等式**：
-> $\sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}$
-> 取倒数得：$ \cos x < \frac{\sin x}{x} < 1$
+>     -  $\tan x$  为切线长度
+> $\sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}$, 取倒数得：$ \cos x < \frac{\sin x}{x} < 1$
 > 
-> 4. **应用夹逼定理**：
+> 应用三明治定理:
 >     $
-      \lim_{x \to 0} \cos x = 1 \quad \text{且} \quad \lim_{x \to 0} 1 = 1
-      $
-      故：
-      $
-      \lim_{x \to 0} \frac{\sin x}{x} = 1
-      $
+>       \lim_{x \to 0} \cos x = 1 \quad \text{且} \quad \lim_{x \to 0} 1 = 1
+>       $
+>       故：
+>       $
+>       \lim_{x \to 0} \frac{\sin x}{x} = 1
+>       $
 
 > [!warning]
 > 
-> ==注意事项==
-> 
-> 1. 角度 \( x \) 必须使用弧度制
-> 2. 对于 \( x < 0 \) 的情况，利用奇函数性质：
-> $
+> - \( x \) 必须使用弧度制
+> - 对于 \( x < 0 \) 的情况，利用奇函数性质：
+> $$
 >  \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
->  $
-> 3. 该极限是推导三角函数导数的基础
+> $$
 
-> [!caution]
->
-> ==上机实验==
->
-> - limit_fun_sin_1_x.ipynb: 函数极限的例子.
-> 
 
-#### 重要极限二
 > [!tip]
-> 
+>
+> ==重要极限二==
+>  
 > 极限 $\displaystyle \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n}$ 与无理数 $\mathrm{e}$ (**欧拉数**_~Rd~_)有密切的联系. Jacob Bernoulli 于1683年在研究**复利**的时候考虑过这个数列的极限.
-> 
-> ==复利与无理数 $\mathrm{e}$==
 > 
 > ![Jakob Bernoulli](../media/img/Jakob_Bernoulli.jpg#400h)
 > 
 > **雅各布·伯努利与数e的发现**
->
-> **雅各布·伯努利**（Jacob Bernoulli，1654-1705）在研究**复利计算**时发现, 
-> - 年复利 → 2.00美元  
-> - 半年复利 → 2.25美元  
-> - 日复利 → ≈2.7146美元  
-> 最终确定极限值 ≈ 2.7182818
-> 发现常数**e**：  
-> $$
-> e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n
-> $$
-> ![数列的值](../media/img/limit_to_e.png#400h)
-
 
 > [!caution]
 >
@@ -1018,38 +744,16 @@
 > ==单调有界数列有极限==
 >
 
-> [!note]
+> [!important]
 > **证明** $\displaystyle \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n} = \mathrm{e}$
 >
-> 1. **单调性证明**：
->    - 使用二项式定理展开：
->    $
->    \left(1+\frac{1}{n}\right)^n = \sum_{k=0}^n \binom{n}{k}\frac{1}{n^k}
->    $
->    - 通过比较相邻项证明数列单调递增
->
-> 2. **有界性证明**：
->    - 证明展开式小于3：
->    $$\begin{aligned} \left(1+\frac{1}{n}\right)^n &< 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!} \\&< 3 \end{aligned}$$
->
-> 3. **极限存在性**：
->    - 由单调有界定理，极限存在
->    - 定义该极限为e
-
-> [!note]
->
-> **证明** $\displaystyle \lim_{x\rightarrow 0} \left(1+x\right)^{\frac{1}{x}} = \mathrm{e}$
->
->    对任意小的\( x \)，取整数\( n \)使得：
->    $\frac{1}{n+1} \leq x \leq \frac{1}{n}
->    $
->    - 建立不等式：
->       $
->       \left(1+\frac{1}{n+1}\right)^n \leq (1+x)^{1/x} \leq \left(1+\frac{1}{n}\right)^{n+1}
->       $
->    - 当$ x \to 0 $时$ n \to \infty $，两边极限均为$e$. 
+> 证明见教学视频或问DeepSeek.
 
 > [!warning]
+>
+> $\displaystyle \lim_{x\rightarrow 0} \left(1+x\right)^{\frac{1}{x}} = \mathrm{e}$
+
+> [!caution]
 >
 > 可以证明 
 >
@@ -1124,14 +828,6 @@
 > 
 > $\displaystyle \lim_{n\rightarrow \infty}\frac{\sqrt{n^2 + a^2}}{n}$ (习题1-2: 5(3))
 > 
-> - 方法一: 用定义证明.
-> 解：当 $ a = 0 $ 时，所给数列为常数列，显然有此结论.以下设 $a ≠ 0$.
-> 由不等式变形：
-> $$\begin{aligned}\left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right|&= \frac{\sqrt{n^2 + a^2} - n}{n} \\&= \frac{a^2}{n(\sqrt{n^2 + a^2} + n)} \\&< \frac{a^2}{2n^2}\end{aligned}$$
-> 要使 $\displaystyle \left| \frac{\sqrt{n^2 + a^2}}{n} - 1 \right| < \varepsilon $，只需满足：$\displaystyle \frac{a^2}{2n^2} < \varepsilon \quad \Rightarrow \quad n > \frac{|a|}{\sqrt{2\varepsilon}}$.
-> 取 $ \displaystyle \ N = \left\lceil \frac{|a|}{\sqrt{2\varepsilon}} \right\rceil $，则当 $ n > N $ 时，有：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^2 + a^2}}{n} = 1$
-> 
-> - 方法二: 用极限运算和复合函数的极限证明.
 > 解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
 > 设两个基本函数：内层函数：$\displaystyle \ f(n) = 1 + \frac{a^{2}}{n^{2}}$ ，外层函数：$g(x) = \sqrt{x}$ 
 > 原极限可表示为复合函数：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\lim_{n \to \infty} \left(1 + \frac{a^{2}}{n^{2}}\right)}$
@@ -1142,10 +838,6 @@
 > 
 
 ## 连续函数
-
-> [!tip]
-> 
-> 我们研究**极限**的一个出发点是为了研究*`函数的极大值极小值`*或*`曲线包含区域的面积`*, 要实现这一目的我们还需要引入*`微分`*和*`积分`*等数学工具, 这是后面几章的内容, 所以我们离这个目标还有一定的距离. 但是, 仅用极限的概念, 我们也能初步刻画曲线 (或函数) 本身的一些基本性质, 比如这一讲要讲的**连续性**_~Rd~_.
 
 ### 连续和间断
 
@@ -1227,11 +919,7 @@
 
 > [!note]
 > 
-> ==更多间断函数的例子==
-> 
->
-> 
-> **例5: 符号函数 $\mathrm{sgn}(x)$**
+> ==符号函数 $\mathrm{sgn}(x)$==
 > 
 > $$
 \mathrm{sgn}(x) = \begin{cases}
@@ -1242,10 +930,7 @@
 > $$
 > 该函数在 $x_0=0$ 处不连续, 造成不连续的原因是函数在该点的左极限 ($x$ 从左往右趋于0) 等于 $-1$, 右极限 ($x$ 从右往左趋于0) 等于 $1$, 左右极限不相等. 这种情况也没有办法通过简单的修改 $f(0)$ 的值来让函数连续.
 > 
-> **例6: $\displaystyle f(x) = \frac{1}{|x|}$**
-> 
->  $f(x)$ 在 $x=0$ 点处不连续, 造成不连续的原因是 $f(0)$ 没有定义, 而且 $f(x)$ 在 $x=0$ 左右极限都趋于无穷大, 没有 (有限的) 极限. 这种情况也没有办法通过简单的修改 $f(0)$ 的值来让函数连续.
-> 
+
 
 > [!warning]
 > 
@@ -1272,16 +957,9 @@
 
 > [!important]
 >  
-> **维尔斯特拉斯 (Weierstrass) 极值定理/极大极小值定理**
+> ==维尔斯特拉斯 (Weierstrass) 极值定理/极大极小值定理==
 > 
 > 闭区间 $[a, b]$ 上的连续函数有界, 且至少有一点 $x_1 \in [a, b]$ 使得 $f(x_1)$ 是 $f(x)$ 在 $[a, b]$ 上的最大值, 也至少有一点 $x_2 \in [a, b]$ 使得 $f(x_2)$ 是 $f(x)$ 在 $[a, b]$ 上的最小值. 
-
-> [!warning]
->
-> ==Karl Weierstrass==
->
-> ![Karl Weierstrass](../media/img/karl_weierstrass.jpeg#400h) 
->
 
 > [!note]
 >
@@ -1304,27 +982,14 @@
 
 > [!important]
 > 
-> **布尔查诺 (Bolzano) 定理/介值定理**
+> ==布尔查诺 (Bolzano) 定理/介值定理==
 > 
 > 设闭区间 $[a, b]$ 上的连续函数 $f(x)$ 在端点的值分别为 $f(a) < 0$, $f(b) > 0$, 则一定存在 $x_0 \in [a, b]$ 使得 $f(x_0) = 0$.
-> 
-
-> [!warning]
->
-> ==Bernard Bolzano==
-> 
-> ![Bernard Bolzano](../media/img/bernard_bolzano.jpeg#400h)
 > 
 
 > [!note]
 >
 > **例1：证明方程 $x^{3} - 4x^{2} + 1 = 0$ 在区间 $(0,\,1)$ 内至少有一个根**
 > 
-> 证明：函数 $f ( x ) = x ^ { 3 } - 4 x ^ { 2 } + 1$ 在闭区间 $[0，1]$上连续，又$f ( 0 ) = 1 >0$，$f ( 1 ) = - 2< 0$.
-> 根据介值定理，在 $(0，1)$内至少有一点 $ξ$，使得 $f ( η ) = 0$.
-即 $ ξ ^{3 }- 4 ξ ^{ 2 } + 1 = 0$ $\quad$ $(0<ξ<1)$.
-这等式说明方程 $x ^ { 3 } - 4 x ^ { 2 } + 1 = 0$ 在区间(0，1)内至少有一个根是 $ξ$． 
+> 证明：函数 $f ( x ) = x ^ { 3 } - 4 x ^ { 2 } + 1$ 在闭区间 $[0，1]$上连续，又$f ( 0 ) = 1 >0$，$f ( 1 ) = - 2< 0$. 根据介值定理，区间 $[0，1]$ 内存在 $c$ 满足 $f(c) = 0$, 此即方程 $x ^ { 3 } - 4 x ^ { 2 } + 1 = 0$ 的一个根． 
 >
-> **习题1:  设函数$f ( x )$ 在闭区间 $[ a，b ]$ 上连续，且满足$a ≤ f ( x ) ≤ b$ 对所有$x \in [ a,b ]$ 成立. 证明：存在 $c \in [ a,b ]$，使得$f ( c ) = c$**
-> 
-> 借助**介值定理**可以很容易证明上述定理, 其中的 $c$ 也称为函数 $f(x)$ 的不动点.

@@ -10,6 +10,7 @@ vlook-chp-autonum: h1=off
 vlook-query: vdl=on
 vlook-query: ws=off
 vlook-doc-lib:
+- [序言](chapter0.html?target=_self "序言")
 - [第一章: 极限](chapter1.html?target=_self "第一章")
 - [第二章: 导数](chapter2.html?target=_self "第二章")
 - [第三章: 微分](chapter3.html?target=_self "第三章")
