@@ -12223,18 +12223,18 @@ content>#write .md-alert-caution p>span[md-inline=em]:only-child>em>span[md-inli
 /* 针对 KaTeX 渲染的行内和块级公式 */
 .katex, 
 .katex-display {
-    font-size: 0.8em !important; 
+    font-size: 0.85em !important; 
 }
 
 /* 针对 MathJax 渲染的公式（如果您的文档使用 MathJax）*/
 .mjx-container {
-    font-size: 0.8em !important;
+    font-size: 0.85em !important;
 }
 
 /* 如果您的 Vlook 版本使用了通用的 .md-formula 或 .formula 类 */
 .md-formula,
 .formula { /* .v-segment-btn.formula 类在文件中出现过，但这里更可能是指公式容器类 */
-    font-size: 0.8em !important;
+    font-size: 0.85em !important;
 }
 
 /* 隐藏导航中心的拖拽/浮动 handle */
