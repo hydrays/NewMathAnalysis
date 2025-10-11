@@ -31,11 +31,11 @@ vlook-doc-lib:
 > 如果说微分研究的是函数在**局部**的瞬时变化率，那么积分则致力于从**整体**上把握量的累积效应。
 > 
 > 为什么要引入积分？
-> 让我们从几个经典问题开始思考：
+> 让我们从几个经典问题开始思考: 
 > 
-> 1. **面积问题**：如何计算由任意曲线围成的平面图形的面积？
-> 2. **距离问题**：已知物体运动的速度随时间变化，如何计算它在某段时间内走过的总路程？
-> 3. **体积问题**：如何计算旋转体或不规则立体的体积？
+> 1. **面积问题**: 如何计算由任意曲线围成的平面图形的面积？
+> 2. **距离问题**: 已知物体运动的速度随时间变化，如何计算它在某段时间内走过的总路程？
+> 3. **体积问题**: 如何计算旋转体或不规则立体的体积？
 > 
 > 这些问题看似各异，但本质上都涉及到一个共同的思想——**"化整为零，积零为整"**。
 > 我们将复杂的整体分解为无数个简单的微小部分，分别计算每个微小部分的贡献，然后将这些微小贡献累加起来，当分割无限精细时，就得到了精确的整体量。
@@ -50,27 +50,27 @@ vlook-doc-lib:
  
 > [!tip]
 > 
-> ==问题引入：从规则图形到曲边图形==
+> ==问题引入: 从规则图形到曲边图形==
 > 
 > **什么是面积？**
 > 这是一个看似简单却深奥的问题。
 > 
-> 在初等几何中，我们以边长为1的正方形作为**单位面积**，基于此定义了：
+> 在初等几何中，我们以边长为1的正方形作为**单位面积**，基于此定义了: 
 > - 矩形的面积 = 长 × 宽
 > - 三角形的面积 = ½ × 底 × 高
 > - 多边形的面积可通过分割为三角形求和得到
 > 
 > 这套方法在古代丈量田地时已经足够实用。
-> 然而，当人类文明的触角伸向更精深的科学领域时，我们遇到了新的挑战：
+> 然而，当人类文明的触角伸向更精深的科学领域时，我们遇到了新的挑战: 
 > 
-> - **圆的面积**：如何精确计算圆的面积？
+> - **圆的面积**: 如何精确计算圆的面积？
 > 古希腊的阿基米德用"穷竭法"不断用内接正多边形逼近圆，已经蕴含了积分思想的萌芽。
 > 
-> - **椭圆面积**：行星轨道是椭圆，计算椭圆面积对天文学至关重要。
+> - **椭圆面积**: 行星轨道是椭圆，计算椭圆面积对天文学至关重要。
 > 
-> - **一般曲线围成的面积**：在物理学和工程学中，经常需要计算由复杂曲线围成的区域的面积。
+> - **一般曲线围成的面积**: 在物理学和工程学中，经常需要计算由复杂曲线围成的区域的面积。
 > 
-> 这些问题的共同特点是：**边界不再是直线，而是曲线**。
+> 这些问题的共同特点是: **边界不再是直线，而是曲线**。
 > 传统的几何方法对此无能为力，我们需要一种全新的数学工具——这就是积分诞生的背景。
 > 
 
@@ -78,31 +78,31 @@ vlook-doc-lib:
 > 
 > ==通过极限定义积分==
 > 
-> 让我们从一个具体例子出发：计算由曲线$y = f(x)$、直线$x = a$、$x = b$以及$x$轴所围成的曲边梯形的面积。
+> 让我们从一个具体例子出发: 计算由曲线$y = f(x)$、直线$x = a$、$x = b$以及$x$轴所围成的曲边梯形的面积。
 > 
-> 我们考虑一个具体的函数：半径为$\sqrt{2}$、圆心在$(\sqrt{2}, 0)$的圆的上半部分。
-> 这个圆的方程为：$(x - \sqrt{2})² + y² = 2$，所以上半圆的函数为 $y = f(x) = \sqrt{2 - (x - \sqrt{2})²}$。
+> 我们考虑一个具体的函数: 半径为$\sqrt{2}$、圆心在$(\sqrt{2}, 0)$的圆的上半部分。
+> 这个圆的方程为: $(x - \sqrt{2})² + y² = 2$，所以上半圆的函数为 $y = f(x) = \sqrt{2 - (x - \sqrt{2})²}$。
 > 我们计算这个上半圆在区间 $[0, 2\sqrt{2}]$ 上的面积，这正好是半个圆的面积, 中学我们已经学过圆的面积公式, 知道这半个圆的面积正好等于 $\pi$。
 > 
-> **第一步：分割**
-> 将区间 $[0, 2\sqrt{2}]$ 分成 $n$ 个小区间，设分点为：
+> **第一步: 分割**
+> 将区间 $[0, 2\sqrt{2}]$ 分成 $n$ 个小区间，设分点为: 
 > $0 = x_0 < x_1 < x_2 < \cdots < x_n = 2\sqrt{2}$
 > 每个小区间长度为 $\Delta x_i = x_i - x_{i-1}$
-> 为简单起见，我们可以采用等分，即 $\Delta x = (2\sqrt{2} - 0)/n = 2\sqrt{2}/n$
+> 为简单起见，我们可以采用等分，即 $\displaystyle\Delta x =\frac{(2\sqrt{2} - 0)}{n} = \frac{2\sqrt{2}}{n}$
 > 
-> **第二步：近似代替**
+> **第二步: 近似代替**
 > 在每个小区间 $[x_{i-1}, x_i]$ 上任取一点 $\xi_i$，例如取右端点 $\xi_i = x_i$。
 > 用高为 $f(\xi_i) = \sqrt{2 - (\xi_i - \sqrt{2})^2}$、宽为 $\Delta x$ 的小矩形面积 $f(\xi_i)\Delta x$ 来近似代替该小区间上曲边梯形的面积。
 > 
-> **第三步：求和**
-> 将所有小矩形的面积相加，得到整个曲边梯形面积的近似值：
+> **第三步: 求和**
+> 将所有小矩形的面积相加，得到整个曲边梯形面积的近似值: 
 > $$
 > S_n = \sum_{i=1}^n f(\xi_i)\Delta x
 > $$
 > 这个和称为**黎曼和**(Riemann sum)
 > 
-> **第四步：取极限**
-> 当分割越来越细，即 $n \to \infty$ 时，$\Delta x \to 0$，如果黎曼和的极限存在，我们就定义这个极限值为曲边梯形的面积：
+> **第四步: 取极限**
+> 当分割越来越细，即 $n \to \infty$ 时，$\Delta x \to 0$，如果黎曼和的极限存在，我们就定义这个极限值为曲边梯形的面积: 
 > $$
 > S = \lim_{n\to\infty} S_n = \lim_{n\to\infty} \sum_{i=1}^n f(\xi_i)\Delta x
 > $$
@@ -130,45 +130,55 @@ vlook-doc-lib:
 > 设函数 $f(x)$ 在区间 $[a, b]$ 上有定义。
 > 用分点 $a = x_0 < x_1 < \cdots < x_n = b$ 将区间任意分割成 $n$ 个小区间，在每个小区间 $[x_{i-1}, x_i]$ 上任取一点 $\xi_i$，作黎曼和 $\sum_{i=1}^n f(\xi_i)\Delta x_i$。
 > 
-> 如果当最大小区间长度 $\lambda = \max\{\Delta x_i\} \to 0$ 时，黎曼和的极限存在且与区间的分割方式以及点 $\xi_i$ 的取法无关，则称函数 $f(x)$ 在 $[a, b]$ 上**可积**，并称此极限值为 $f(x)$ 在 $[a, b]$ 上的**定积分**，记作：
+> 如果当最大小区间长度 $\lambda = \max\{\Delta x_i\} \to 0$ 时，黎曼和的极限存在且与区间的分割方式以及点 $\xi_i$ 的取法无关，则称函数 $f(x)$ 在 $[a, b]$ 上**可积**，并称此极限值为 $f(x)$ 在 $[a, b]$ 上的**定积分**，记作: 
 > 
 > $$
 > \int_a^b f(x)\,dx = \lim_{\lambda\to 0} \sum_{i=1}^n f(\xi_i)\Delta x_i
 > $$
 > 
-> 其中：
-> - "$\int$" 是积分号，由莱布尼兹引入，是求和符号 "$S$" 的拉长
+> 其中: 
+> - "$\displaystyle\int$" 是积分号，由莱布尼兹引入，是求和符号 "$S$" 的拉长
 > - $f(x)$ 称为**被积函数**
 > - $f(x)dx$ 称为**被积表达式**
 > - $x$ 称为**积分变量**
 > - $[a, b]$ 称为**积分区间**
 > - $a$ 称为**积分下限**，$b$ 称为**积分上限**
 > 
-> **几何意义**：当 $f(x) \geq 0$ 时，定积分 $\int_a^b f(x)\,dx$ 表示由曲线 $y = f(x)$、直线 $x = a$、$x = b$ 与 $x$ 轴所围成的曲边梯形的面积。
+> **几何意义**: 当 $f(x) \geq 0$ 时，定积分 $\displaystyle\int_a^b f(x)\,dx$ 表示由曲线 $y = f(x)$、直线 $x = a$、$x = b$ 与 $x$ 轴所围成的曲边梯形的面积。
 
 > [!note]
 > 
 > ==通过定义计算积分==
 > 
-> **例1** 计算 $\int_0^1 x\,dx$
+> **例1: 计算 $\displaystyle\int_0^1 x\,dx$**
 > 
-> 解：将 $[0,1]$ $n$ 等分，$\Delta x = 1/n$，取 $\xi_i$ 为每个小区间的右端点，即 $\xi_i = i/n$
+> **解**: 将 $[0,1]$ $n$ 等分，$\Delta x = \displaystyle\frac{1}{n}$，取 $\xi_i$ 为每个小区间的右端点，即 $\displaystyle\xi_i = \frac{i}{n}$
 > 
-> $$\small\displaystyle\begin{aligned}黎曼和 &= \sum_{i=1}^n (i/n)\cdot(1/n) \\&= (1/n^2) \sum_{i=1}^n i \\&= (1/n^2)\cdot n(n+1)/2 \\&= (n+1)/(2n)\end{aligned}$$
-> 
-> 当 $n\to\infty$ 时，$\lim_{n\to\infty} (n+1)/(2n) = 1/2$
+> $\displaystyle\begin{aligned}
+> \text{黎曼和} &= \sum_{i=1}^n \left(\frac{i}{n}\right)\cdot\left(\frac{1}{n}\right) \\
+> &= \left(\frac{1}{n^2}\right) \sum_{i=1}^n i \\
+> &= \left(\frac{1}{n^2}\right)\cdot \frac{n(n+1)}{2} \\
+> &= \frac{n+1}{2n}
+> \end{aligned}$
 >
-> $\int_0^1 x\,dx = 1/2$
-> 
-> **例2** 计算 $\int_0^1 x^2\,dx$
-> 
-> 解：同样 $n$ 等分 $[0,1]$，$\Delta x = 1/n$，取 $\xi_i = i/n$
+> 当 $n\to\infty$ 时，$\displaystyle\lim_{n\to\infty} \frac{n+1}{2n} = \frac{1}{2}$
 >
-> $$\small\begin{aligned}黎曼和 &= \sum_{i=1}^n (i/n)^2\cdot(1/n) \\&= (1/n^3) \sum_{i=1}^n i^2 \\&= (1/n^3)\cdot n(n+1)(2n+1)/6\end{aligned}$$
-> 
-> 当 $n\to\infty$ 时，极限 $= 1/3$
-> 
-> $\int_0^1 x^2\,dx = 1/3$
+> $\displaystyle\int_0^1 x\,dx = \frac{1}{2}$
+>
+> **例2: 计算 $\displaystyle\int_0^1 x^2\,dx$**
+>
+> **解**: 同样 $n$ 等分 $[0,1]$，$\Delta x = \frac{1}{n}$，取 $\xi_i = \frac{i}{n}$
+>
+> $\displaystyle\begin{aligned}
+> \text{黎曼和} &= \sum_{i=1}^n \left(\frac{i}{n}\right)^2\cdot\left(\frac{1}{n}\right) \\
+> &= \left(\frac{1}{n^3}\right) \sum_{i=1}^n i^2 \\
+> &= \left(\frac{1}{n^3}\right)\cdot \frac{n(n+1)(2n+1)}{6} \\
+> &= \frac{(n+1)(2n+1)}{6n^2}
+> \end{aligned}$
+>
+> 当 $n\to\infty$ 时，$\displaystyle\lim_{n\to\infty} \frac{(n+1)(2n+1)}{6n^2} = \frac{1}{3}$
+>
+> $\displaystyle\int_0^1 x^2\,dx = \frac{1}{3}$
 > 
 > 从这两个例子我们看到，用定义计算积分虽然思路直接，但过程繁琐。
 > 在下一节中，我们将介绍微积分基本定理，它提供了计算定积分的强大工具。
@@ -196,22 +206,22 @@ vlook-doc-lib:
 > \int_a^b f(x)\,dx = F(b) - F(a)
 > $$
 > 
-> 通常记作：$\int_a^b f(x)\,dx = F(x)\big|_a^b = F(b) - F(a)$
+> 通常记作: $\displaystyle\int_a^b f(x)\,dx = F(x)\big|_a^b = F(b) - F(a)$
 > 
 > **定理的意义**
 > - 它将复杂的积分计算问题转化为相对简单的求原函数问题。
-> - 它建立了微分与积分之间的互逆关系：求导和积分在某种意义上是"相反"的运算。
+> - 它建立了微分与积分之间的互逆关系: 求导和积分在某种意义上是"相反"的运算。
 > - 它统一了微积分的两大核心操作，揭示了变化率与累积量之间的深刻联系。
 > 
 > **定理的直观证明**
 > 
 > 让我们从直观的角度来理解为什么这个定理成立。
 > 
-> 考虑定积分 $\int_a^b f(x)\,dx$，它表示曲线 $y = f(x)$ 下从 $a$ 到 $b$ 的面积。
+> 考虑定积分 $\displaystyle\int_a^b f(x)\,dx$，它表示曲线 $y = f(x)$ 下从 $a$ 到 $b$ 的面积。
 > 
-> 现在定义一个新的函数：$A(x) = \int_a^x f(t)\,dt$，它表示从 $a$ 到 $x$ 的曲线下面积。
+> 现在定义一个新的函数: $A(x) = \displaystyle\int_a^x f(t)\,dt$，它表示从 $a$ 到 $x$ 的曲线下面积。
 > 
-> **关键洞察**：当我们给 $x$ 一个微小的增量 $\Delta x$ 时，面积 $A$ 的增量为：
+> **关键洞察**: 当我们给 $x$ 一个微小的增量 $\Delta x$ 时，面积 $A$ 的增量为: 
 > $$
 > \Delta A = A(x+\Delta x) - A(x) = \int_x^{x+\Delta x} f(t)\,dt
 > $$
@@ -219,49 +229,54 @@ vlook-doc-lib:
 > 当 $\Delta x$ 很小时，在小区间 $[x, x+\Delta x]$ 上，$f(t)$ 的值近似等于 $f(x)$，
 > 因此 $\Delta A \approx f(x)\Delta x$
 > 
-> 于是有 $\Delta A/\Delta x \approx f(x)$
+> 于是有 $\displaystyle\frac{\Delta A}{\Delta x }\approx f(x)$
 > 
-> 当 $\Delta x \to 0$ 时，这个近似变得精确，所以我们发现：
+> 当 $\Delta x \to 0$ 时，这个近似变得精确，所以我们发现: 
 > $$
 > A'(x) = \lim_{\Delta x\to 0} \frac{\Delta A}{\Delta x} = f(x)
 > $$
 > 
-> 这意味着：**面积函数 $A(x)$ 的导数正好等于被积函数 $f(x)$**！
+> 这意味着: **面积函数 $A(x)$ 的导数正好等于被积函数 $f(x)$**！
 > 
 > 换句话说，$A(x)$ 是 $f(x)$ 的一个原函数。
 > 
 > 现在，设 $F$ 是 $f$ 的任意一个原函数，由于同一函数的任意两个原函数之间只相差一个常数，所以
 > $A(x) = F(x) + C$
 > 
-> 当 $x = a$ 时，$A(a) = \int_a^a f(t)\,dt = 0$，所以
+> 当 $x = a$ 时，$A(a) = \displaystyle\int_a^a f(t)\,dt = 0$，所以
 > $0 = F(a) + C$，即 $C = -F(a)$
 > 
 > 因此 $A(x) = F(x) - F(a)$
 > 
-> 当 $x = b$ 时，$A(b) = \int_a^b f(t)\,dt = F(b) - F(a)$
+> 当 $x = b$ 时，$A(b) = \displaystyle\int_a^b f(t)\,dt = F(b) - F(a)$
 > 
 > 这就完成了证明。
 
 > [!note]
 > 
-> **例1** 计算 $\int_0^1 x^2\,dx$
+> **例1: 计算 $\displaystyle\int_0^1 x^2\,dx$**
 > 
-> 解：$f(x) = x^2$ 的一个原函数是 $F(x) = x^3/3$
-> 根据微积分基本定理：
+> **解**: $f(x) = x^2$ 的一个原函数是 $F(x) =  \displaystyle\frac{x^3}{3}$
+> 根据微积分基本定理: 
 > $$\int_0^1 x^2\,dx = F(1) - F(0) = \frac{1^3}{3} - \frac{0^3}{3} = \frac{1}{3}$$
 > 
 > 这与我们之前用黎曼和极限计算的结果一致，但过程简单得多。
+
+> [!note]
+>
+> **例2: 计算 $\displaystyle\int_0^\pi \sin x\,dx$**
 > 
-> **例2** 计算 $\int_0^\pi \sin x\,dx$
-> 
-> 解：$\sin x$ 的一个原函数是 $-\cos x$
-> 根据微积分基本定理：
+> **解**: $\sin x$ 的一个原函数是 $-\cos x$
+> 根据微积分基本定理: 
 > $$\begin{aligned}\int_0^\pi \sin x\,dx &= [-\cos x]_0^\pi \\&= -\cos\pi - (-\cos 0) \\&= 1 + 1 = 2\end{aligned}$$
 > 
-> **例3** 计算 $\int_1^e \frac{1}{x}\,dx$
+
+> [!note]
+>
+> **例3: 计算 $\displaystyle\int_1^e \frac{1}{x}\,dx$**
 > 
-> 解：$\frac{1}{x}$ 的一个原函数是 $\ln|x|$
-> 根据微积分基本定理：
+> **解**: $\displaystyle\frac{1}{x}$ 的一个原函数是 $\ln|x|$
+> 根据微积分基本定理: 
 > $$\int_1^e \frac{1}{x}\,dx = \ln e - \ln 1 = 1 - 0 = 1$$
 > 
 > 这些例子展示了微积分基本定理的强大威力——它将复杂的极限计算简化为简单的代数运算。
@@ -277,26 +292,26 @@ vlook-doc-lib:
 > 
 > **1. 线性性质**
 > 
-> 若函数 $f$ 和 $g$ 在 $[a, b]$ 上可积，$c$ 为常数，则：
+> 若函数 $f$ 和 $g$ 在 $[a, b]$ 上可积，$c$ 为常数，则: 
 > 
-> - **加法性质**：
->$$\small\int_a^b [f(x) + g(x)]\,dx = \int_a^b f(x)\,dx + \int_a^b g(x)\,dx$$
-> - **数乘性质**：
->$$\small\int_a^b c\cdot f(x)\,dx = c\cdot \int_a^b f(x)\,dx$$
+> - **加法性质**: 
+>$$\int_a^b [f(x) + g(x)]\,dx = \int_a^b f(x)\,dx + \int_a^b g(x)\,dx$$
+> - **数乘性质**: 
+>$$\int_a^b c\cdot f(x)\,dx = c\cdot \int_a^b f(x)\,dx$$
 > 
-> **几何解释**：加法性质表示两个函数围成的总面积等于各自面积的代数和；数乘性质表示函数值按比例缩放时，面积也按相同比例缩放。
+> **几何解释**: 加法性质表示两个函数围成的总面积等于各自面积的代数和；数乘性质表示函数值按比例缩放时，面积也按相同比例缩放。
 >
 
 > [!important]
 >
 > **2. 区间可加性**
 > 
-> 若函数 $f$ 在包含 $a, b, c$ 的区间上可积，则：
+> 若函数 $f$ 在包含 $a, b, c$ 的区间上可积，则: 
 > $$
-> \small\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
+> \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
 > $$
 > 
-> **几何解释**：从 $a$ 到 $b$ 的总面积等于从 $a$ 到 $c$ 的面积加上从 $c$ 到 $b$ 的面积。
+> **几何解释**: 从 $a$ 到 $b$ 的总面积等于从 $a$ 到 $c$ 的面积加上从 $c$ 到 $b$ 的面积。
 >
 
 > [!important]
@@ -304,10 +319,10 @@ vlook-doc-lib:
 > **3. 积分上下限交换**
 > 
 > $$
-> \small\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx
+> \int_a^b f(x)\,dx = -\int_b^a f(x)\,dx
 > $$
 > 
-> **几何解释**：当积分方向反转时，面积值变号，这保证了面积的方向性。
+> **几何解释**: 当积分方向反转时，面积值变号，这保证了面积的方向性。
 >
 
 > [!important]
@@ -315,10 +330,10 @@ vlook-doc-lib:
 > **4. 绝对值不等式**
 > 
 > $$
-> \small\left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
+>\left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
 > $$
 > 
-> **几何解释**：函数积分的绝对值不超过函数绝对值积分，因为绝对值积分计算的是总面积（不考虑正负），而普通积分计算的是代数和。
+> **几何解释**: 函数积分的绝对值不超过函数绝对值积分，因为绝对值积分计算的是总面积（不考虑正负），而普通积分计算的是代数和。
 >
 
 > [!important]
@@ -327,10 +342,10 @@ vlook-doc-lib:
 > 
 > 若在 $[a, b]$ 上 $f(x) \leq g(x)$，则
 > $$
-> \small\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx
+> \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx
 > $$
 > 
-> **几何解释**：函数值较大的曲线在相同区间上围成的面积也较大。
+> **几何解释**: 函数值较大的曲线在相同区间上围成的面积也较大。
 > 
 
 ### 4.3.2 不定积分的运算
@@ -345,29 +360,37 @@ vlook-doc-lib:
 > 
 > 换元积分法源于链式法则的逆运算，是计算积分最强大的工具之一。
 > 
-> **基本思想**：通过变量代换，将复杂的积分转化为简单的积分。
+> **基本思想**: 通过变量代换，将复杂的积分转化为简单的积分。
 > 
-> **定理**：设函数 $f$ 在区间 $I$ 上连续，函数 $\varphi$ 在区间 $J$ 上可导且值域包含于 $I$，则
+> **定理**: 设函数 $f$ 在区间 $I$ 上连续，函数 $\varphi$ 在区间 $J$ 上可导且值域包含于 $I$，则
 > $$
-> \small\int f(\varphi(x))\varphi'(x)\,dx = \int f(u)\,du,\quad u = \varphi(x)
+> \int f(\varphi(x))\varphi'(x)\,dx = \int f(u)\,du,\quad u = \varphi(x)
 > $$
 > 
-> **直观解释**：链式法则告诉我们 $\small\displaystyle(F(\varphi(x)))' = F'(\varphi(x))\cdot\varphi'(x) = f(\varphi(x))\varphi'(x)$
-> 因此，$\int f(\varphi(x))\varphi'(x) dx$ 应该是 $F(\varphi(x)) + C$
-> 这正是 $\int f(u) du$ 在 $u = \varphi(x)$ 时的结果。
+> **直观解释**: 链式法则告诉我们 $ \displaystyle(F(\varphi(x)))' = F'(\varphi(x))\cdot\varphi'(x) = f(\varphi(x))\varphi'(x)$
+> 因此，$\displaystyle\int f(\varphi(x))\varphi'(x) dx$ 应该是 $F(\varphi(x)) + C$
+> 这正是 $\displaystyle\int f(u) du$ 在 $u = \varphi(x)$ 时的结果。
 
 > [!note]
 > 
-> **例1** 计算 $\int 2x\cos(x^2)\,dx$
+> **例1: 计算 $\displaystyle\int 2x\cos(x^2)\,dx$**
 > 
-> 解：令 $u = x^2$，则 $du = 2x\,dx$
-> 原积分 $= \int \cos(u)\,du = \sin(u) + C = \sin(x^2) + C$
+> **解**: 令 $u = x^2$，则 $du = 2x\,dx$
+> 原积分 $= \displaystyle\int \cos(u)\,du = \sin(u) + C = \sin(x^2) + C$
 > 
-> **例2** 计算 $\int x\sqrt{x^2+1}\,dx$
+
+> [!note]
+>
+> **例2: 计算 $\displaystyle\int x\sqrt{x^2+1}\,dx$**
 > 
-> 解：令 $u = x^2+1$，则 $du = 2x\,dx$，$x\,dx = du/2$
-> $$\begin{aligned}原积分 &= \int \sqrt{u}\cdot (du/2) \\&= \frac{1}{2}\int u^{1/2}\,du \\&= \frac{1}{2}\cdot\frac{2}{3}u^{3/2} + C \\&= \frac{1}{3}(x^2+1)^{3/2} + C\end{aligned}$$
+> **解**:  令 $u = x^2+1$，则 $du = 2x\,dx$，$x\,dx = \displaystyle\frac{du}{2}$
 > 
+> $$\begin{aligned}
+> \text{原积分} &= \int \sqrt{u}\cdot \left(\frac{du}{2}\right) \\
+> &= \frac{1}{2}\int u^{\frac{1}{2}}\,du \\
+> &= \frac{1}{2}\cdot\frac{2}{3}u^{\frac{3}{2}} + C \\
+> &= \frac{1}{3}(x^2+1)^{\frac{3}{2}} + C
+> \end{aligned}$$
 
 > [!important]
 > 
@@ -375,60 +398,73 @@ vlook-doc-lib:
 > 
 > 分部积分法源于乘积求导法则的逆运算，适用于计算两个函数乘积的积分。
 > 
-> **基本思想**：将难以直接计算的积分 $\int u\,dv$ 转化为更容易计算的 $\int v\,du$
+> **基本思想**: 将难以直接计算的积分 $\int u\,dv$ 转化为更容易计算的 $\displaystyle\int v\,du$
 > 
-> **公式**：$\int u\,dv = uv - \int v\,du$
+> **公式**: $\displaystyle\int u\,dv = uv - \int v\,du$
 > 
-> **直观解释**：乘积法则告诉我们 $(uv)' = u'v + uv'$
-> 两边积分得：$uv = \int u'v dx + \int uv' dx$
-> 整理得：$\int uv' dx = uv - \int u'v dx$
+> **直观解释**: 乘积法则告诉我们 $(uv)' = u'v + uv'$
+> 两边积分得: $uv = \displaystyle\int u'v dx + \displaystyle\int uv' dx$
+> 整理得: $\displaystyle\int uv' dx = uv - \int u'v dx$
 > 这就是分部积分公式。
 
 > [!note]
 > 
-> **例1** 计算 $\int x e^x\,dx$
+> **例1: 计算 $\displaystyle\int x e^x\,dx$**
 > 
-> 解：令 $u = x, dv = e^x\,dx$，则 $du = dx, v = e^x$
-> 原积分 $= x e^x - \int e^x\,dx = x e^x - e^x + C$
+> **解**: 令 $u = x, dv = e^x\,dx$，则 $du = dx, v = e^x$
+> 原积分 $= x e^x - \displaystyle\int e^x\,dx = x e^x - e^x + C$
 > 
-> **例2** 计算 $\int \ln x\,dx$
+
+> [!note]
+>
+> **例2: 计算 $\displaystyle\int \ln x\,dx$**
 > 
-> 解：令 $u = \ln x, dv = dx$，则 $du = (1/x)\,dx, v = x$
-> $$\begin{aligned}原积分 &= x\ln x - \int x\cdot(1/x)\,dx \\&= x\ln x - \int dx \\&= x\ln x - x + C\end{aligned}$$
+> **解**: 令 $u = \ln x, dv = dx$，则 $du = \displaystyle\frac{1}{x}\,dx, v = x$
+> 
+> $$\begin{aligned}
+> 原积分 &= x\ln x - \int x\cdot\frac{1}{x}\,dx \\
+> &= x\ln x - \int dx \\
+> &= x\ln x - x + C
+> \end{aligned}$$
 > 
 
 ### 4.3.3 定积分的运算
 
 > [!tip]
-> 定积分的计算可以使用与不定积分相同的方法，但有一些重要区别：
+> 定积分的计算可以使用与不定积分相同的方法，但有一些重要区别: 
 
 
 > [!important]
 > 
 > ==定积分的换元法==
 > 
-> 与不定积分的换元法相比，定积分的换元法有一个重要特点：**需要同时改变积分限**。
+> 与不定积分的换元法相比，定积分的换元法有一个重要特点: **需要同时改变积分限**。
 > 
-> **定理**：设函数 $f$ 在区间 $[a, b]$ 上连续，函数 $\varphi$ 在区间 $[\alpha, \beta]$ 上具有连续导数，且 $\varphi(\alpha) = a, \varphi(\beta) = b$，则
+> **定理**: 设函数 $f$ 在区间 $[a, b]$ 上连续，函数 $\varphi$ 在区间 $[\alpha, \beta]$ 上具有连续导数，且 $\varphi(\alpha) = a, \varphi(\beta) = b$，则
 > $$
 > \int_a^b f(x)\,dx = \int_\alpha^\beta f(\varphi(t))\varphi'(t)\,dt
 > $$
 > 
-> **关键区别**：在定积分中使用换元法时，不仅要进行变量代换，还要相应地改变积分上下限。
+> **关键区别**: 在定积分中使用换元法时，不仅要进行变量代换，还要相应地改变积分上下限。
 
 > [!note]
 > 
-> **例1** 计算 $\int_0^{\pi/2} \sin^2 x \cos x\,dx$
+> **例1: 计算 $\displaystyle\int_0^{\frac{pi}{2}} \sin^2 x \cos x\,dx$**
 > 
-> 解：令 $u = \sin x$，则 $du = \cos x\,dx$
-> 当 $x = 0$ 时，$u = \sin 0 = 0$；当 $x = \pi/2$ 时，$u = \sin(\pi/2) = 1$
-> 原积分 $= \int_0^1 u^2\,du = \frac{u^3}{3}\Big|_0^1 = \frac{1}{3}$
+> **解**: 令 $u = \sin x$，则 $du = \cos x\,dx$
 > 
-> **例2** 计算 $\int_1^4 \frac{\sqrt{x}}{1+\sqrt{x}}\,dx$
+> 当 $x = 0$ 时，$u = \sin 0 = 0$；当 $x = \displaystyle\frac{\pi}{2}$ 时，$u = \sin\left(\displaystyle\frac{\pi}{2}\right) = 1$
 > 
-> 解：令 $u = 1+\sqrt{x}$，则 $du = \frac{1}{2\sqrt{x}}\,dx$，$dx = 2(u-1)\,du$
+> 原积分 $\displaystyle = \int_0^1 u^2\,du = \frac{u^3}{3}\Big|_0^1 = \frac{1}{3}$
+> 
+
+> [!note]
+>
+> **例2: 计算 $\displaystyle\int_1^4 \frac{\sqrt{x}}{1+\sqrt{x}}\,dx$**
+> 
+> **解**: 令 $u = 1+\sqrt{x}$，则 $du = \displaystyle\frac{1}{2\sqrt{x}}\,dx$，$dx = 2(u-1)\,du$
 > 当 $x = 1$ 时，$u = 2$；当 $x = 4$ 时，$u = 3$
-> $$\displaystyle\begin{aligned}原积分 &= \int_2^3 \frac{u-1}{u} \cdot 2(u-1)\,du \\&= 2\int_2^3 \frac{(u-1)^2}{u}\,du \\&= 2\int_2^3 (u - 2 + 1/u)\,du \\&= 2\left[\frac{u^2}{2} - 2u + \ln|u|\right]_2^3 \\&= [u^2 - 4u + 2\ln|u|]_2^3 \\&= (9-12+2\ln 3) - (4-8+2\ln 2) \\&= 1 + 2\ln(3/2)\end{aligned}$$
+> $$\displaystyle\begin{aligned}原积分 &= \int_2^3 \frac{u-1}{u} \cdot 2(u-1)\,du \\&= 2\int_2^3 \frac{(u-1)^2}{u}\,du \\&= 2\int_2^3 (u - 2 + \frac{1}{u})\,du \\&= 2\left[\frac{u^2}{2} - 2u + \ln|u|\right]_2^3 \\&= [u^2 - 4u + 2\ln|u|]_2^3 \\&= (9-12+2\ln 3) - (4-8+2\ln 2) \\&= 1 + 2\ln(\frac{3}{2})\end{aligned}$$
 
 
 > [!important]
@@ -437,37 +473,43 @@ vlook-doc-lib:
 > 
 > 定积分的分部积分法与不定积分类似，但结果是一个数值而非函数。
 > 
-> **公式**：$\int_a^b u\,dv = [uv]_a^b - \int_a^b v\,du$
+> **公式**: $\displaystyle\int_a^b u\,dv = [uv]_a^b - \int_a^b v\,du$
 > 
-> **关键区别**：在定积分的分部积分法中，$uv$ 项需要代入上下限计算。
+> **关键区别**: 在定积分的分部积分法中，$uv$ 项需要代入上下限计算。
 
 > [!note]
 > 
-> **例1** 计算 $\int_0^1 x e^x\,dx$
+> **例1: 计算 $\displaystyle\int_0^1 x e^x\,dx$**
 > 
-> 解：令 $u = x, dv = e^x\,dx$，则 $du = dx, v = e^x$。
+> **解**: 令 $u = x, dv = e^x\,dx$，则 $du = dx, v = e^x$。
 > $$\begin{aligned}原积分&= [x e^x]_0^1 - \int_0^1 e^x\,dx \\&= (1\cdot e - 0) - [e^x]_0^1 \\&= e - (e - 1)
 = 1\end{aligned}$$
 > 
-> **例2** 计算 $\int_1^e \ln x\,dx$
+
+> [!note]
+>
+> **例2: 计算 $\displaystyle\int_1^e \ln x\,dx$**
 > 
-> 解：令 $u = \ln x, dv = dx$，则 $du = (1/x)\,dx, v = x$
-> $$\begin{aligned}原积分 &= [x\ln x]_1^e - \int_1^e x\cdot(1/x)\,dx 
-\\&= (e\cdot 1 - 1\cdot 0) - \int_1^e dx \\&= e - [x]_1^e = e - (e - 1) \\&= 1\end{aligned}$$
+> **解**: 令 $u = \ln x, dv = dx$，则 $du =\displaystyle\frac{1}{x},dx, v = x$
+> $$\begin{aligned}原积分 &= [x\ln x]_1^e - \int_1^e x\cdot(\frac{1}{x})\,dx 
+>\\&= (e\cdot 1 - 1\cdot 0) - \int_1^e dx \\&
+>= e - [x]_1^e 
+>=e - (e - 1) \\&
+>= 1\end{aligned}$$
 > 
 
 > [!important]
 > 
 > ==定积分的特殊性质==
 > 
-> 定积分还有一些不定积分不具备的特殊性质：
+> 定积分还有一些不定积分不具备的特殊性质: 
 > 
-> **对称性**：
-> - 若 $f$ 是偶函数（$f(-x) = f(x)$），则 $\int_{-a}^a f(x)\,dx = 2\int_0^a f(x)\,dx$
-> - 若 $f$ 是奇函数（$f(-x) = -f(x)$），则 $\int_{-a}^a f(x)\,dx = 0$
+> **对称性**: 
+> - 若 $f$ 是偶函数（$f(-x) = f(x)$），则 $\displaystyle\int_{-a}^a f(x)\,dx = 2\int_0^a f(x)\,dx$
+> - 若 $f$ 是奇函数（$f(-x) = -f(x)$），则 $\displaystyle\int_{-a}^a f(x)\,dx = 0$
 > 
-> **周期性**：
-> 若 $f$ 是周期为 $T$ 的周期函数，则 $\int_a^{a+T} f(x)\,dx = \int_0^T f(x)\,dx$
+> **周期性**: 
+> 若 $f$ 是周期为 $T$ 的周期函数，则 $\displaystyle\int_a^{a+T} f(x)\,dx = \int_0^T f(x)\,dx$
 > 
 > 这些特殊性质可以大大简化定积分的计算。
 > 
@@ -477,22 +519,22 @@ vlook-doc-lib:
 > 
 > ==人生就像一场积分==
 > 
-> 人生就像一场积分, **考上大学，从一个环境到另一个环境，就像积分中的换元法**。但换元法的精髓在于：**改变变量的同时，必须调整积分的上下限**。
+> 人生就像一场积分, **考上大学，从一个环境到另一个环境，就像积分中的换元法**。但换元法的精髓在于: **改变变量的同时，必须调整积分的上下限**。
 > 
-> 这意味着：
+> 这意味着: 
 > - 你不能用高中的标准来衡量大学的生活
 > - 你不能用过去的思维来解决现在的问题  
 > - 你不能用旧的习惯来面对新的环境
 > 
 > 就像在定积分的换元中，如果只改变被积函数而忘记改变积分限，结果必然是错误的。在人生的换元中，如果只改变环境而不调整自己的心态、目标和行为方式，同样难以获得正确的人生积分。
 > 
-> 每一次重要的转变——无论是升学、就业、结婚，还是任何重大的人生抉择——都是一次换元。成功的换元需要我们：
+> 每一次重要的转变——无论是升学、就业、结婚，还是任何重大的人生抉择——都是一次换元。成功的换元需要我们: 
 > 
-> 1. **认清新旧变量的对应关系**：理解新旧环境之间的差异和联系
-> 2. **准确计算新的上下限**：明确在新阶段中的起点和目标
-> 3. **勇敢地执行变换**：主动适应新的规则和节奏
+> 1. **认清新旧变量的对应关系**: 理解新旧环境之间的差异和联系
+> 2. **准确计算新的上下限**: 明确在新阶段中的起点和目标
+> 3. **勇敢地执行变换**: 主动适应新的规则和节奏
 > 
-> 积分教会我们的不仅是数学技巧，更是一种人生智慧：**懂得在变化中保持本质，在转型中完成累积**。
+> 积分教会我们的不仅是数学技巧，更是一种人生智慧: **懂得在变化中保持本质，在转型中完成累积**。
 > 
 > 愿你善于运用人生的"换元法"，在每一个转折点都能准确调整自己的"积分上下限"，让生命的定积分值不断增长，最终收获丰盈而充实的人生。
 >

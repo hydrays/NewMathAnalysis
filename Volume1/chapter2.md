@@ -52,12 +52,10 @@ vlook-doc-lib:
 >  **问题**: 计算 $\displaystyle f(x) = \sin(x) - \frac{2x}{\pi}$在$\displaystyle [0,{\pi}]$的最大值.
 > 
 >  **求解**: 函数 $f(x)$ 的图像如下图, 问题要求我们找到图像的最高点. 运用导数我们可以很方便的得到最高点的坐标, 我们中学学过: 函数在一点的导数等于函数图像在这一点处的切线斜率, 从图像上看函数的最大值对应切线水平(即斜率为0)的位置. 因此我们可以对函数求导, 得到：
-> $$
-> \displaystyle f'(x) = \cos(x) - \frac{2}{\pi}.
-> $$
+> $$ f'(x) = \cos(x) - \frac{2}{\pi}.$$
 > 令 $f'(x) = 0$，所得的解处的切线斜率为0, 由此解得极值点：
 > $$
-> \displaystyle x^* = \arccos\left(\frac{2}{\pi}\right),
+> \ x^* = \arccos\left(\frac{2}{\pi}\right),
 > $$
 > 所对应的函数值为 $\displaystyle f(x^*)$.
 >  
@@ -72,10 +70,16 @@ vlook-doc-lib:
 >
 > 导数是切线的斜率，而切线的斜率可以定义为割线斜率在割点趋于该点时的极限。
 > 
-> 设函数 $f(x)$ 在点 $x_0$ 附近有定义，则过点 $(x_0, f(x_0))$ 和 $(x_0 + \Delta x, f(x_0 + \Delta x))$ 的割线斜率为 $\displaystyle \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}$, 当 $\Delta x \to 0$ 时，这个割线斜率的极限（若存在）就是切线的斜率，也即导数：
+> 设函数 $f(x)$ 在点 $x_0$ 附近有定义，则过点 $(x_0, f(x_0))$ 和 $(x_0 + \Delta x, f(x_0 + \Delta x))$ 的割线斜率为 
+>$$
+>\frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}
+>$$
+>
+>当 $\Delta x \to 0$ 时，这个割线斜率的极限（若存在）就是切线的斜率，也即导数：
 > $$
-> f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} =\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}.
+> f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} =\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
 > $$
+>
 > 这样，切线的斜率和导数都通过极限的方式被严格定义。
 
 >  ![导数的几何意义](../media/img/derivative.png)
@@ -96,26 +100,28 @@ vlook-doc-lib:
 > 
 > ==由定义计算导数==
 > 
+> **例1: 求 $f(x) = C$ 在 $x_0=1$ 处的导数.**
 > 
-> 
->  ==例1==
+> **解**: 根据导数的定义:
+>
+>$$
+\begin{align*}
+f'(1) &= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x} \\
+&= \lim_{\Delta x \to 0} \frac{C - C}{\Delta x} \\
+&= \lim_{\Delta x \to 0} \frac{0}{\Delta x} \\
+&= 0
+\end{align*}
+>$$
+
+> [!note]
+>
+> **例2: 求 $f(x) = x^2$ 在 $x_0=2$ 处的导数.**
 >  
->  **求 $f(x) = C$ 在 $x_0=1$ 处的导数.**
-> 
->  解：根据导数的定义：
-> $$
-> f'(1) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} = \lim_{\Delta x \to 0} \frac{C - C}{\Delta x} = \lim_{\Delta x \to 0} \frac{0}{\Delta x} = 0.
-> $$
-> 
->  ==例2==
->  
->  **求 $f(x) = x^2$ 在 $x_0=2$ 处的导数.**
->  
-> 解：根据导数的定义：
+> **解**：根据导数的定义：
 > 
 > $$
 > \begin{align*}
-> \displaystyle f'(2) &= \lim_{\Delta x \to 0} \frac{(2 + \Delta x)^2 - 2^2}{\Delta x} \\ 
+> \ f'(2) &= \lim_{\Delta x \to 0} \frac{(2 + \Delta x)^2 - 2^2}{\Delta x} \\ 
 > & = \lim_{\Delta x \to 0} \frac{4 + 4\Delta x + (\Delta x)^2 - 4}{\Delta x} \\
 > & = \lim_{\Delta x \to 0} \frac{\Delta x(4 + \Delta x)}{\Delta x} \\
 > & = \lim_{\Delta x \to 0} (4 + \Delta x) \\
@@ -147,12 +153,11 @@ vlook-doc-lib:
 
 > [!note]
 >
->  ==例3==
->  
->  **求函数 $f(x) = x^2$ 的导函数.**
->  
->  解： 
-> $$
+> **例3: 求函数 $f(x) = x^2$ 的导函数.**
+>
+> **解**：
+>
+>$$
 > \begin{align*}
 > f'(x) & = \lim_{\Delta x\to 0} \frac{(x+\Delta x)^2 - x^2}{\Delta x}\\
 > & = \lim_{\Delta x\to 0} \frac{2x\Delta x + \Delta x^2}{\Delta x} \\
@@ -160,17 +165,17 @@ vlook-doc-lib:
 > & = x.
 > \end{align*}
 > $$
+
+> [!note]
 >
->  ==例4(P78例4)==
->  
->  **求函数 $f(x) = \cos x$ 的导数.**
+>  **例4(P78例4): 求函数 $f(x) = \cos x $ 的导数.**
 >
->  解：
+> **解**：
 > $$
 > \begin{align*}
 > f'(x) & = \lim_{\Delta x \to 0} \frac{\cos(x + \Delta x) - \cos x}{\Delta x} \\
 > & = \lim_{\Delta x \to 0} \frac{-2 \sin\left( x + \frac{\Delta x}{2} \right) \sin\left( \frac{\Delta x}{2} \right)}{\Delta x} \\
-> & = - \lim_{\Delta x \to 0} \sin\left( x + \frac{\Delta x}{2} \right) \cdot \lim_{\Delta x \to 0} \frac{\sin\left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} \\
+> & = - \lim_{\Delta x \to 0} \sin\left( x + \frac{\Delta x}{2} \right) \cdot \lim_{\Delta x \to 0} \frac{\sin \frac{\Delta x}{2}}{\frac{\Delta x}{2}} \\
 > & = \sin{x}.
 > \end{align*}
 > $$
@@ -180,12 +185,12 @@ vlook-doc-lib:
 > 
 > 在物理中, 给定位移关于时间的函数 $s(t)$, 物体的速度 $v(t)$ 便是 $s(t)$ 的导数. 以自由落体为例, 设物体从静止开始自由下落，重力加速度为 $g$，则
 > 
-> - 位移函数为 $s(t) = \frac{1}{2}gt^2$。
+> - 位移函数为 $\displaystyle s(t) = \frac{1}{2}gt^2$。
 > 
-> - 速度为位移的导数：$v(t) = s'(t) = gt$。
+> - 速度为位移的导数：$\displaystyle v(t) = s'(t) = gt$。
 > 
-> - 加速度为速度的导数：$a(t) = v'(t) = g$，为常数。
-> 
+> - 加速度为速度的导数：$\displaystyle a(t) = v'(t) = g$，为常数。
+>  
 
 ### 2.1.3 幂函数, 对数函数和指数函数的导数
 
@@ -195,17 +200,18 @@ vlook-doc-lib:
 > 
 > **求正整数次幂函数 $ f(x) = x^m $ 的导数.**
 > 
-> 解：当 $m = 1$ 时：
+> **解**：
+当 $m = 1$ 时：
 > $$
-> \displaystyle f'(x) = \lim_{\Delta x \to 0} \frac{(x+\Delta x) - x}{\Delta x} = \lim_{\Delta x \to 0} \frac{\Delta x}{\Delta x} = 1
+> \ f'(x) = \lim_{\Delta x \to 0} \frac{(x+\Delta x) - x}{\Delta x} = \lim_{\Delta x \to 0} \frac{\Delta x}{\Delta x} = 1
 >$$
 > 
 > 当 $m > 1$ 时：
 > $$
 > \begin{align*}
-> \displaystyle f'(x) & = \lim_{\Delta x \to 0} \frac{(x+\Delta x)^m - x^m}{\Delta x} \\
->   & = \lim_{\Delta x \to 0} \left[ \frac{x^m + m x^{m-1} \Delta x + \frac{m(m-1)}{2} x^{m-2} (\Delta x)^2 + \cdots + (\Delta x)^m - \Delta x^m}{\Delta x} \right]\\
->   & = \lim_{\Delta x \to 0} \left[ m x^{m-1} + \frac{m(m-1)}{2} x^{m-2} \Delta x + \cdots + (\Delta x)^{m-1} \right] \\ 
+> \ f'(x) & = \lim_{\Delta x \to 0} \frac{(x+\Delta x)^m - x^m}{\Delta x} \\
+> & = \lim_{\Delta x \to 0} \left[ \frac{x^m + m x^{m-1} \Delta x + \frac{m(m-1)}{2} x^{m-2} (\Delta x)^2 + \cdots + (\Delta x)^m - \Delta x^m}{\Delta x} \right]\\
+> & = \lim_{\Delta x \to 0} \left[ m x^{m-1} + \frac{m(m-1)}{2} x^{m-2} \Delta x + \cdots + (\Delta x)^{m-1} \right] \\ 
 > & = m x^{m-1}
 > \end{align*}
 > $$
@@ -234,12 +240,42 @@ vlook-doc-lib:
 >
 > - $\displaystyle \lim_{x \to 0} \frac{\ln(1+ x)}{x} = 1$
 > 
-> **证明:** [待补充]
+> **证明** :
 >
+>令 $\displaystyle t = \ln(1 + x)$，则当 $\displaystyle x \to 0$ 时，$ t \to 0$，且 $\displaystyle x = e^t - 1$，于是
+>$$
+>\begin{align*}
+>\lim_{x \to 0} \frac{\ln(1 + x)}{x} &= \lim_{t \to 0} \frac{t}{e^t - 1} \\
+>&=\lim_{t \to 0} \frac{1}{ \frac{e^t - 1}{t}}
+>\end{align*}
+>$$
+>
+>现在证明 $\displaystyle \lim_{t \to 0} \frac{e^t - 1}{t} = 1$:
+>
+>考虑函数 $g(t) = e^t$，则
+>$$
+>g'(0) = \lim_{t \to 0} \frac{e^t - e^0}{t - 0} = \lim_{t \to 0} \frac{e^t - 1}{t}
+>$$
+>
+>由于 $g'(t) = e^t$，所以 $g'(0) = e^0 = 1$。
+>
+>因此，
+>$$
+>\lim_{x \to 0} \frac{\ln(1 + x)}{x} = \frac{1}{1} = 1
+>$$
+>
+>---
 > - $\displaystyle \lim_{x \to 0} \frac{\log_a(1+ x)}{x} = \frac{1}{\ln a}$
 >
-> **证明:** [待补充]
-> 
+> **证明**:
+> $$
+>\begin{align*}
+>\lim_{x \to 0} \frac{\log_a (1+x)}{x} &= \lim_{x \to 0} \frac{\frac{\ln(1+x)}{\ln a}}{x} \\
+>&= \frac{1}{\ln a} \lim_{x \to 0} \frac{\ln(1+x)}{x} \\
+>&= \frac{1}{\ln a} \cdot 1 \\
+>&= \frac{1}{\ln a}
+>\end{align*}
+>$$
 
 
 > [!important]
@@ -248,17 +284,22 @@ vlook-doc-lib:
 > 
 > **求对数函数 $f(x) = \log_u x$ 的导数, 其中 $u$ 是大于 0 且不等于 1 的常数.**
 > 
-> 解：
+> **解**：
 > $$
 > f'(x) = \lim_{\Delta x \to 0} \frac{\log_u (x + \Delta x) - \log_u x}{\Delta x}
 > $$
 > 
 > 利用换底公式 $\displaystyle \log_u a = \frac{\ln a}{\ln u}$, 
 > 
-> $$
-> f'(x) = \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln x}{\ln u}}{\Delta x} = \frac{1}{x \ln u} \cdot \lim_{\Delta x \to 0} \frac{\ln\left(1 + \frac{\Delta x}{x}\right)}{\frac{\Delta x}{x}}
-> $$
-> 
+>$$
+\begin{align*}
+f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln x}{\ln u}}{\Delta x} \\
+>&= \frac{1}{\ln u} \cdot \lim_{\Delta x \to 0} \frac{\ln(x + \Delta x) - \ln x}{\Delta x} \\
+>&= \frac{1}{\ln u} \cdot \lim_{\Delta x \to 0} \frac{\ln\left(1 + \frac{\Delta x}{x}\right)}{\Delta x} \\
+>&= \frac{1}{x \ln u} \cdot \lim_{\Delta x \to 0} \frac{\ln\left(1 + \frac{\Delta x}{x}\right)}{\frac{\Delta x}{x}}
+>\end{align*}
+>$$
+>
 > 令 $\displaystyle h = \frac{\Delta x}{x}$，当 $\Delta x \to 0$ 时 $h \to 0$，则：
 > $$
 > f'(x) = \frac{1}{x \ln u} \cdot \lim_{h \to 0} \frac{\ln(1 + h)}{h} = \frac{1}{x \ln u}
@@ -268,17 +309,15 @@ vlook-doc-lib:
 >
 > 由此我们得到对数函数的导数为:
 > 
-> $$\boxed{
-> (\log_u x)' = \frac{1}{x \ln u}.
-> }
+> $$
+>\boxed{(\log_u x)' = \frac{1}{x \ln u}}
 > $$
 
 > [!warning]
 >
 > 特别的, 当 $u=e$ 时, $\log_u x = \ln x$, 此时 
-> $$ \boxed{
-> (\ln x)' = \frac{1}{x}.
-> }
+> $$
+>\boxed{(\ln x)' = \frac{1}{x}}
 > $$
 
 > [!important]
@@ -289,30 +328,38 @@ vlook-doc-lib:
 > 
 > 解：
 > 
+>$$
+>\begin{align*}
+>f'(x) &= \lim_{\Delta x \to 0} \frac{q^{x + \Delta x} - q^x}{\Delta x} \\
+>&= \lim_{\Delta x \to 0} \frac{q^x \cdot q^{\Delta x} - q^x}{\Delta x} \\
+>&= q^x \cdot \lim_{\Delta x \to 0} \frac{q^{\Delta x} - 1}{\Delta x}
+>\end{align*}
+>$$
+>
+>我们注意到当 $\displaystyle \Delta x\to 0$ 时, $\displaystyle q^{\Delta x} \to 1$
+>
+>而 $\displaystyle q^{\Delta x} -1 \to 0$, 于是我们把 $\displaystyle q^{\Delta x} -1$ 看作一个新的变量 $h$, 故此时有当 $\displaystyle \Delta x\to 0$ 时 $h \to 0$.
+>
+>于是根据**极限运算的换元法**
 > $$
-> f'(x) = \lim_{\Delta x \to 0} \frac{q^{x + \Delta x} - q^x}{\Delta x}= \lim_{\Delta x \to 0} \frac{q^x \cdot q^{\Delta x} - q^x}{\Delta x}= q^x \cdot \lim_{\Delta x \to 0} \frac{q^{\Delta x} - 1}{\Delta x}
-> $$
->  
-> 我们注意到当 $\Delta x\to 0$ 时, $q^{\Delta x} \to 1$, 而 $q^{\Delta x} -1 \to 0$, 于是我们把 $q^{\Delta x} -1$ 看作一个新的变量 $h$, 故此时有当 $\Delta x\to 0$ 时 $h \to 0$. 于是根据**极限运算的换元法**, 
-> $$
-> \lim_{\Delta x \to 0} \frac{q^{\Delta x} - 1}{\Delta x} = \lim_{h \to 0} \frac{h}{\log_q(1+h)} = \ln q.
+> \lim_{\Delta x \to 0} \frac{q^{\Delta x} - 1}{\Delta x} = \lim_{h \to 0} \frac{h}{\log_q(1+h)} = \ln q
 > $$
 >
 > 上式中的最后一个等式用到了前面的先导结论.
 > 
 > 因此，
-> $$\boxed{
-> (q^x)' = q^x \ln q.
-> }$$
+>$$
+>\boxed{(q^x)' = q^x \ln q}
+>$$
 > 
 > 这就是指数函数的导数公式。
 
 > [!warning]
 > 
 > 特别的, 当 $u = e$ 时，有
-> $$\boxed{
-> (e^x)' = e^x.
-> }$$
+>$$
+>\boxed{(e^x)' = e^x}
+>$$
 > 
 > 也就是说, 以欧拉数 $e$ 为底数的指数函数的导数正是**它自己**, 由此也可以看出 $e$ 在数学上的特殊性.
 
@@ -337,13 +384,15 @@ vlook-doc-lib:
 > $$
 > 
 > 当 $\Delta x < 0$ 时, $\displaystyle \frac{|\Delta x|}{\Delta x} = -1$; 
+>
 > 当 $\Delta x > 0$ 时, $\displaystyle \frac{|\Delta x|}{\Delta x} = 1$, 
+>
 > 左右极限不相等，故极限不存在, 因此，函数 $f(x) = |x|$ 在 $x=0$ 处不可导.
 
 > 
 >  ==连续但不可导的反例2==
 >  
->  **函数 $f(x) = x^{\frac{1}{3}}$ 在 0 点处连续但不可导.**
+>  **函数 $\displaystyle f(x) = x^{\frac{1}{3}}$ 在 0 点处连续但不可导.**
 > 
 >  函数在 $x = 0$ 处连续. 下面我们来计算该函数在 $x=0$ 处的导数.
 >
@@ -352,6 +401,7 @@ vlook-doc-lib:
 > $$
 > \frac{f(0+\Delta x)-f(0)}{\Delta x} = \frac{(0+\Delta x)^{\frac{1}{3}} - 0^{\frac{1}{3}}}{\Delta x} = (\Delta x)^{-\frac{2}{3}}.
 > $$
+>
 > 当 $\Delta x \to 0$ 时，极限趋于无穷大，故函数在 $x = 0$ 处**不可导**.
 >
 > - **方法二: 对导函数取极限**
@@ -381,6 +431,7 @@ vlook-doc-lib:
 > $$
 > f'_-(x_0) = \lim_{\Delta x  \to 0^-} \frac{f(x_0 + \Delta x ) - f(x_0)}{\Delta x },
 > $$
+>
 > 和**右导数**  
 > $$
 > f'_+(x_0) = \lim_{\Delta x  \to 0^+} \frac{f(x_0 + \Delta x ) - f(x_0)}{\Delta x }.
@@ -514,55 +565,68 @@ vlook-doc-lib:
 
 > [!note]
 > 
-> ==P86 例1== 
+> **P86 例1: 求函数 $y = 3x^3 - 4x^2 + 5x - 9$ 的导数 $y'$.**
 > 
-> **求函数 $y = 3x^3 - 4x^2 + 5x - 9$ 的导数 $y'$.**
-> 
-> $\begin{aligned}
-> 解：y' &= (3x^3 - 4x^2 + 5x - 9)' \\
-> &= (3x^3)' - (4x^2)' + (5x)' - (9)' \quad  \\
-> &= 3 \cdot 3x^{3-1} - 4 \cdot 2x^{2-1} + 5 \cdot 1x^{1-1}\\
-> &= 9x^2 - 8x + 5 \quad 
-> \end{aligned}$
-> 
-> 
-> ==P86 例2==
-> 
-> **设 $y = 2e^{x}(\sin x + 2\cos x)$，求 $y'$**\
-> 解：
-> $$\small\begin{aligned}
-> y' &= (2e^{x})'(\sin x + 2\cos x) + 2e^{x}(\sin x + 2\cos x)' \\
-&= 2e^{x}(\sin x + 2\cos x) + 2e^{x}(\cos x - 2\sin x) \\
-&= 2e^{x}\sin x + 4e^{x}\cos x + 2e^{x}\cos x - 4e^{x}\sin x \\
-&= 6e^{x}\cos x - 2e^{x}\sin x \\
-&= 2e^{x}(3\cos x - \sin x)
-\end{aligned}$$
+>**解**：
+>$$
+>\begin{align*}
+>y' &= (3x^3 - 4x^2 + 5x - 9)' \\
+>&= (3x^3)' - (4x^2)' + (5x)' - (9)' \\
+>&= 3 \cdot 3x^{3-1} - 4 \cdot 2x^{2-1} + 5 \cdot 1x^{1-1} \\
+>&= 9x^2 - 8x + 5
+>\end{align*}
+>$$
+
+> [!note]
 >
-> ==P86 例3==
-> 
-> **求函数 $f(x) = x^3 + 3\sin x + \frac{5}{2}$ 的导数 $f'(x)$ 及 $f'\left(\frac{\pi}{4}\right)$**
-> 
-> $\begin{aligned}
->    解：f'(x) &= \left( x^3 + 3\sin x + \frac{5}{2} \right)' \\
->    &= (x^3)' + (3\sin x)' + \left( \frac{5}{2} \right)' \quad \\
->    &= 3x^2 + 3\cos x + 0 \quad \\
->    &= 3x^2 + 3\cos x.
->    \end{aligned}$
-> 
->  $\begin{aligned}\ \ \ \ \ \ \ 
->    f'\left( \frac{\pi}{4} \right) &= 3\left( \frac{\pi}{4} \right)^2 + 3\cos\left( \frac{\pi}{4} \right) \\
->    &= \frac{3\pi^2}{16} + \frac{3\sqrt{2}}{2}.
->    \end{aligned}$
+> **P86 例2: 设 $y = 2e^{x}(\sin x + 2\cos x)$，求 $y'$**
 >
->==P86 例4==
+> **解**：
+>$$
+>\begin{align*}
+>y' &= (2e^{x})'(\sin x + 2\cos x) + 2e^{x}(\sin x + 2\cos x)' \\
+>&= 2e^{x}(\sin x + 2\cos x) + 2e^{x}(\cos x - 2\sin x) \\
+>&= 2e^{x}\sin x + 4e^{x}\cos x + 2e^{x}\cos x - 4e^{x}\sin x \\
+>&= 6e^{x}\cos x - 2e^{x}\sin x \\
+>&= 2e^{x}(3\cos x - \sin x)
+>\end{align*}
+>$$
+
+> [!note]
 >
-> **设 $y = \tan x$，求 $y$ 的导数 $y'$**
+> **P86 例3: 求函数 $f(x) = x^3 + 3\sin x + \frac{5}{2}$ 的导数 $f'(x)$ 及 $f'\left(\frac{\pi}{4}\right)$**
 > 
-> 解：
-> $$\small\displaystyle\begin{aligned}
-y' &= (\tan x)'\\&= \left( \frac{\sin x}{\cos x} \right)' \\&= \frac{(\sin x)' \cos x - \sin x (\cos x)'}{\cos^2 x}\\&= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} \\&= \frac{1}{\cos^2 x} \\&= \sec^2 x
-\end{aligned}
-$$
+>**解**：
+>$$
+>\begin{align*}
+>f'(x) &= \left( x^3 + 3\sin x + \frac{5}{2} \right)' \\
+>&= (x^3)' + (3\sin x)' + \left( \frac{5}{2} \right)' \\
+>&= 3x^2 + 3\cos x + 0 \\
+>&= 3x^2 + 3\cos x
+\end{align*}
+>$$
+>
+>$$
+>\begin{align*}
+>f'\left( \frac{\pi}{4} \right) &= 3\left( \frac{\pi}{4} \right)^2 + 3\cos\left( \frac{\pi}{4} \right) \\
+>&= \frac{3\pi^2}{16} + \frac{3\sqrt{2}}{2}
+>\end{align*}
+>$$
+>
+
+> [!note]
+>
+>**P86 例4: 设 $y = \tan x$，求 $y$ 的导数 $y'$**
+> 
+> **解**：
+>$$
+>\begin{align*}
+>y' &= (\tan x)' = \left( \frac{\sin x}{\cos x} \right)' \\
+>&= \frac{(\sin x)' \cos x - \sin x (\cos x)'}{\cos^2 x} \\
+>&= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} \\
+>&= \sec^2 x
+>\end{align*}
+>$$
 
 
 ### 2.2.3 高阶导数
@@ -583,11 +647,9 @@ $$
 
 > [!note]
 > 
-> ==P97 例1==
+> **P97 例1: 设 $y = ax^2 + bx + c$，求 $y''$**
 > 
-> **设 $y = ax^2 + bx + c$，求 $y''$**
-> 
-> 解： 
+> **解**： 
 > 
 > 一阶导数 $y'$ ：
 > $$
@@ -602,11 +664,9 @@ $$
 
 > [!note]
 > 
-> ==P98 例7==
+> **P98 例7: 求幂函数 $y = x^{a}$ ($a$ 是任意常数) 的 $n$ 阶导数**
 > 
-> **求幂函数 $y = x^{a}$（$a$ 是任意常数）的 $n$ 阶导数**
-> 
-> 解： 
+> **解**： 
 > $$
 > y' = (x^{a})' = a x^{a-1}
 > $$
@@ -645,26 +705,29 @@ $$
 
 > [!caution]
 > 
-> - 导数>0, 单调递增
-> - 导数<0, 单调递减
-> - 导数=0, 无法判断
+> - 导数$>0$, 单调递增
+> - 导数$<0$, 单调递减
+> - 导数$=0$, 无法判断
 >
 
 > [!note]
 > 
+>  **P145 例1: 判定函数 $\displaystyle y = x + \cos x$ 在 $[0, 2\pi]$ 上的单调性**
 > 
-> 
->  ==P145 例1==
-> 
-> **判定函数 $\displaystyle y = x + \cos x$ 在 $[0, 2\pi]$ 上的单调性**
-> 
-> 解： 函数在 $[0, 2\pi]$ 上连续，在 $(0, 2\pi)$ 内可导。求导得：
-> $\displaystyle y' = (x + \cos x)' = 1 - \sin x$
+> **解**： 函数在 $[0, 2\pi]$ 上连续，在 $(0, 2\pi)$ 内可导
+>求导得：
+>$$
+>y' = (x + \cos x)' = 1 - \sin x
+>$$
+>
 > 因为 $\sin x \in [-1, 1]$，
+>
 > 所以：$\displaystyle 1 - \sin x \geq 0 \quad (\forall x \in \mathbb{R})$
+>
 > 当 $\displaystyle x = \frac{\pi}{2}$ 时，$y' = 1 - 1 = 0$ 
 > 
 > 当 $\displaystyle x \neq \frac{\pi}{2}$ 时，$y' > 0$
+>
 > 导数非负且仅在离散点为零时函数单调递增
 > 
 > 故函数 $y = x + \cos x$ 在 $[0, 2\pi]$ 上严格单调递增
@@ -672,21 +735,20 @@ $$
 
 > [!note]
 > 
->  ==P145 例2==
->  
-> **讨论函数 $\displaystyle y = e^x - x + 3$ 的单调性**
+>  **P145 例2: 讨论函数 $\displaystyle y = e^x - x + 3$ 的单调性**
 > 
-> 解： 函数在 $(-\infty, +\infty)$ 上可导，其导数为：
-> $\displaystyle y' = (e^x - x + 3)' = e^x - 1$
+> **解**： 函数在 $(-\infty, +\infty)$ 上可导，其导数为：
+>
+>$$ 
+>y' = (e^x - x + 3)' = e^x - 1
+>$$
 > 
 > 函数 $y = e^x - x - 1$ 的定义域为 $(-\infty, +\infty)$
 > 
-> - 在区间 $(-\infty, 0)$ 内：
-> $\displaystyle y' = e^x - 1 < 0$
-> 因此函数在 $(-\infty, 0]$ 上单调递减。
+> - 在区间 $(-\infty, 0)$ 内：$\displaystyle y' = e^x - 1 < 0$
+>因此函数在 $(-\infty, 0]$ 上单调递减。
 > 
-> - 在区间 $(0, +\infty)$ 内：
-> $\displaystyle y' = e^x - 1 > 0$
+> - 在区间 $(0, +\infty)$ 内：$\displaystyle y' = e^x - 1 > 0$
 > 因此函数在 $[0, +\infty)$ 上单调递增。
 > 
 > 
@@ -694,38 +756,57 @@ $$
 
 > [!caution]
 > 
-> - 导数=0, 二阶导数>0, 极小
-> - 导数=0, 二阶导数<0, 极大
-> - 导数=0, 二阶导数=0, 无法判断. 导数为0的点也称为**驻点**或**临界点**.
+> - 导数$=0$, 二阶导数$>0$, 极小
+> - 导数$=0$, 二阶导数$<0$, 极大
+> - 导数$=0$, 二阶导数$=0$, 无法判断. 
+>导数为 $0$ 的点也称为**驻点**或**临界点**.
 > 
 
 > [!note]
 > 
-> ==P156 例2==
+> **P156 例2: 求函数 $f(x) = x^4 - 4x^2$ 的极值**
 > 
-> **求函数 $f(x) = x^4 - 4x^2$ 的极值**
+> **解**：
+>一阶导数为：
+>$$
+>f'(x) = (x^4 - 4x^2)' = 4x^3 - 8x = 4x(x^2 - 2)
+>$$
 > 
-> 解：一阶导数为：
-> $\small\displaystyle f'(x) = (x^4 - 4x^2)' = 4x^3 - 8x = 4x(x^2 - 2)$
-> 
-> 令 $f'(x) = 0$，解得：
-> $$\begin{aligned}&4x(x^2 - 2) = 0 \\\quad\Rightarrow\quad & x_1 = 0,\quad x_2 = \sqrt{2}, \quad x_3 = -\sqrt{2}\end{aligned}$$
-> 
-> 二阶导数为： 
-> $\displaystyle f''(x) = (4x^3 - 8x)' = 12x^2 - 8$
+>$$
+\begin{align*}
+4x(x^2 - 2) &= 0 \\
+\Rightarrow \quad x_1 &= 0, \quad x_2 = \sqrt{2}, \quad x_3 = -\sqrt{2}
+\end{align*}
+>$$
+>
+> 二阶导数为：
+>
+>$$
+\displaystyle f''(x) = (4x^3 - 8x)' = 12x^2 - 8
+>$$
 > 
 > 在 $x = 0$ 处：
-> $\displaystyle f''(0) = 12 \cdot 0 - 8 = -8 < 0$ 因此 $x = 0$ 处为极大值，极大值为：
->    
-> $\displaystyle f(0) = 0^4 - 4 \cdot 0^2 = 0$
+>
+>$$
+>\displaystyle f''(0) = 12 \cdot 0 - 8 = -8 < 0
+>$$
+>
+>因此 $x = 0$ 处为极大值，极大值为：
+>$$
+\displaystyle f(0) = 0^4 - 4 \cdot 0^2 = 0
+>$$
 > 
 > 在 $x = \pm \sqrt{2}$ 处：
 > 
-> $\displaystyle f''(\pm \sqrt{2}) = 12 \cdot (\sqrt{2})^2 - 8 = 16 > 0$
+>$$
+>\displaystyle f''(\pm \sqrt{2}) = 12 \cdot (\sqrt{2})^2 - 8 = 16 > 0
+>$$
 > 
 > 因此 $x = \pm \sqrt{2}$ 处为极小值，极小值为：
 > 
-> $\displaystyle f(\pm \sqrt{2}) = (\sqrt{2})^4 - 4 \cdot (\sqrt{2})^2 = -4$
+>$$
+>\displaystyle f(\pm \sqrt{2}) = (\sqrt{2})^4 - 4 \cdot (\sqrt{2})^2 = -4
+>$$
 
 >
 > [!caution]
@@ -760,34 +841,48 @@ $$
 > ![](../media/img/chap2_1.png)
 >
 >
-> 光线从 $A$ 到 $P$ 在空气中传播的距离为 $S_1 = \sqrt{h_1^2 + x^2}$，从 $P$ 到 $B$ 在水中传播的距离为 $S_2 = \sqrt{h_2^2 + (l - x)^2}$。
+> 光线从 $A$ 到 $P$ 在空气中传播的距离为 $S_1 = \sqrt{h_1^2 + x^2}$
+>
+>从 $P$ 到 $B$ 在水中传播的距离为 $S_2 = \sqrt{h_2^2 + (l - x)^2}$
 >
 > 根据**光路最短原理（费马原理）**，光线在两点之间传播时，所走的路径是耗时最短的路径。因此，光线从A到B的总传播时间 $T(x)$ 必须取最小值。
 >
-> $$\small\displaystyle\begin{aligned}T(x) = \frac{S_1}{v_1} + \frac{S_2}{v_2} &= \frac{\sqrt{h_1^2 + x^2}}{v_1} + \frac{\sqrt{h_2^2 + (l - x)^2}}{v_2},\\x &\in [0, l]\end{aligned}$$
+>$$
+>\begin{align*}
+T(x) &= \frac{S_1}{v_1} + \frac{S_2}{v_2} \\
+&= \frac{\sqrt{h_1^2 + x^2}}{v_1} + \frac{\sqrt{h_2^2 + (l - x)^2}}{v_2},  x \in[0, l]
+\end{align*}
+>$$
 >
 > 为了找到使 $T(x)$ 最小的 $x$ 值，我们对函数 $T(x)$ 求导并令其等于零。
 >
-> $$T'(x) = \frac{1}{v_1} \cdot \frac{2x}{2\sqrt{h_1^2 + x^2}} + \frac{1}{v_2} \cdot \frac{2(l-x)(-1)}{2\sqrt{h_2^2 + (l - x)^2}}$$
->
-> $$= \frac{1}{v_1} \cdot \frac{x}{\sqrt{h_1^2 + x^2}} - \frac{1}{v_2} \cdot \frac{l - x}{\sqrt{h_2^2 + (l - x)^2}}$$
+>$$
+\begin{align*}
+T'(x) &= \frac{1}{v_1} \cdot \frac{2x}{2\sqrt{h_1^2 + x^2}} + \frac{1}{v_2} \cdot \frac{2(l-x)(-1)}{2\sqrt{h_2^2 + (l - x)^2}} \\
+&= \frac{1}{v_1} \cdot \frac{x}{\sqrt{h_1^2 + x^2}} - \frac{1}{v_2} \cdot \frac{l - x}{\sqrt{h_2^2 + (l - x)^2}}
+\end{align*}
+>$$
 >
 > 令 $T'(x) = 0$，得到：
 >
-> $$\frac{1}{v_1} \cdot \frac{x}{\sqrt{h_1^2 + x^2}} = \frac{1}{v_2} \cdot \frac{l - x}{\sqrt{h_2^2 + (l - x)^2}}$$
+> $$
+>\frac{1}{v_1} \cdot \frac{x}{\sqrt{h_1^2 + x^2}} = \frac{1}{v_2} \cdot \frac{l - x}{\sqrt{h_2^2 + (l - x)^2}}
+>$$
 >
 > 观察几何关系，我们可以看到：
 >
-> * $\frac{x}{\sqrt{h_1^2 + x^2}} = \sin \theta_1$
-> * $\frac{l - x}{\sqrt{h_2^2 + (l - x)^2}} = \sin \theta_2$
+> * $\displaystyle \frac{x}{\sqrt{h_1^2 + x^2}} = \sin \theta_1$
+> * $\displaystyle \frac{l - x}{\sqrt{h_2^2 + (l - x)^2}} = \sin \theta_2$
 >
 > 其中，$\theta_1$ 是入射光线与法线之间的夹角，$\theta_2$ 是折射光线与法线之间的夹角。将这两个关系代入上式，我们得到：
 >
-> $$\frac{\sin \theta_1}{v_1} = \frac{\sin \theta_2}{v_2}$$
+> $$
+>\frac{\sin \theta_1}{v_1} = \frac{\sin \theta_2}{v_2}
+>$$
 >
 > 这就是著名的**斯涅耳定律（Snell's Law）**。它精确地描述了光线在两种介质交界面上发生折射时的行为。
 >
-> **光路最短原理（费马原理，Fermat's Principle**是几何光学中最基本、最重要的原理之一，它指出光在两点之间传播时，所走的路径是光程最短的路径，而非距离最短的路径。这个例子很好地说明了如何利用微积分来证明费马原理与斯涅耳定律的等价性。
+>**光路最短原理（费马原理，Fermat's Principle）**，是几何光学中最基本、最重要的原理之一，它指出光在两点之间传播时，所走的路径是光程最短的路径，而非距离最短的路径。这个例子很好地说明了如何利用微积分来证明费马原理与斯涅耳定律的等价性。
 
 ### 2.3.3 凸性
 
@@ -806,23 +901,28 @@ $$
 > 
 > ==根据二阶导数判定函数的凸性==
 > 
-> 二阶导数<0, 凸函数
-> 二阶导数>0, 凹函数
-> 二阶导数=0, 可能是拐点
+> 二阶导数$<0$, 凸函数
+> 二阶导数$>0$, 凹函数
+> 二阶导数$=0$, 可能是拐点
 > 一般地，如果曲线在经过点 $(x_0, y_0)$时，曲线的凹凸性改变了，那么就称点 $(x_0, y_0)$ 为这曲线的**拐点**
 > 
 
 
 > [!note]
 > 
-> ==P148 例1==
+> **P148 例1:判定曲线 $y = \sqrt{x}$ 的凹凸性**
 > 
->  **判定曲线 $y = \sqrt{x}$ 的凹凸性**
-> 
-> 解： 一阶导数：
-> $\displaystyle y' = (\sqrt{x})' = \frac{1}{2\sqrt{x}}$
-> 二阶导数：$\displaystyle y'' = \left( \frac{1}{2\sqrt{x}} \right)' = -\frac{1}{4x^{3/2}}$
-> 
+> **解**：
+>一阶导数：
+>$$
+>y' = (\sqrt{x})' = \frac{1}{2\sqrt{x}}
+>$$
+>
+>二阶导数：
+>$$
+>y'' = \left( \frac{1}{2\sqrt{x}} \right)' = -\frac{1}{4x^{3/2}}
+>$$
+>
 > 在函数定义域 $(0, +\infty)$ 内：
 > $$\begin{aligned}\displaystyle x > 0 &\quad \Rightarrow \quad x^{3/2} > 0 \\ &\quad\Rightarrow \quad y'' = -\frac{1}{4x^{3/2}} < 0\end{aligned}$$
 > 
@@ -831,19 +931,18 @@ $$
 
 > [!note]
 > 
-> ==P149 例2==
+>**P149 例2: 判定曲线 $y = x^3 - 3x$ 的凹凸性**
+>
+>**解**：
+一阶导数：$\displaystyle y' = 3x^2 - 3$
 > 
->  **判定曲线 $y = x^3 - 3x$ 的凹凸性**
-> 
-> 解： 一阶导数：$\displaystyle y' = 3x^2 - 3$
-> 
-> 二阶导数：  $\displaystyle y'' = 6x$
+>二阶导数：  $\displaystyle y'' = 6x$
 > 
 >  - 当 $x < 0$：
->    $\displaystyle y'' = 6x < 0 \quad (\text{因为 } x < 0)$ 此时曲线为**凸的**
+>    $\displaystyle y'' = 6x < 0$    (因为 $x < 0$) 此时曲线为**凸的**
 > 
 >  - 当 $x > 0$：
->    $\displaystyle y'' = 6x > 0 \quad (\text{因为 } x > 0)$ 此时曲线为**凹的**
+>    $\displaystyle y'' = 6x > 0$    (因为 $x > 0$)此时曲线为**凹的**
 
 ## 2.4 导数在人工智能中的应用: 梯度下降法
 

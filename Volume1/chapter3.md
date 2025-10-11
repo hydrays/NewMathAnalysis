@@ -76,23 +76,32 @@ vlook-doc-lib:
 >
 > 我们首先通过数值计算来验证上述关系.
 > 
-> 例1: 我们分别考虑两种直线运动: **匀速运动** 和 **匀加速运动**. 对于匀速运动,
+>  **例1: 我们分别考虑两种直线运动: **匀速运动** 和 **匀加速运动**.** 
+> 
+> 对于匀速运动,
 >  
-> $$ s = s_0 + vt $$
+> $$
+> s = s_0 + vt 
+> $$
 > 
 > 根据微分公式, 位移的微分与时间的微分满足关系:
-> 
-> $$ ds = vdt$$
+> $$
+> ds = vdt
+> $$
 >
 > 对于初速度为0的匀加速运动, 其位移随时间的函数为
 > 
-> $$ s = s_0 + \frac{1}{2} a t^2 $$
+> $$ 
+> s = s_0 + \frac{1}{2} a t^2 
+> $$
 >
 > 根据微分公式, 位移的微分与时间的微分满足关系:
 >
-> $$ ds = a t dt$$
+> $$ 
+> ds = a t dt
+> $$
 > 
-> 下表给出了 $\Delta x$ 取不同数值时所对应得 $\Delta s$ 的真实值和微分公式的预测值 ($v = 2m/s, a = 2m/s^2, t=1s$).
+> 下表给出了 $\Delta x$ 取不同数值时所对应得 $\Delta s$ 的真实值和微分公式的预测值 ( $v = 2m/s, a = 2m/s^2, t=1s$ ).
 >
 > ![表格1](..\media\img\table1.png)
 > 
@@ -108,7 +117,7 @@ vlook-doc-lib:
 > 根据微分公式, 我们有
 > 
 > $$
-> dx = -b \frac{1}{\sin^2 \theta}d\theta
+> x = -b \frac{1}{\sin^2 \theta}d\theta
 > $$
 >
 > 也就是说, 激光出射角度每增加 $d\theta$, 光斑就会左移(负号) $\displaystyle b \frac{1}{\sin^2 \theta}d \theta$.
@@ -122,24 +131,28 @@ vlook-doc-lib:
 > $$
 > dl = -b \frac{\cos \theta}{\sin^2 \theta}d\theta
 > $$
-> 也就是说, 激光出射角度每增加 $d\theta$, 激光得飞行距离就会缩短(负号) $\displaystyle -b \frac{\cos \theta}{\sin^2 \theta}d\theta$.
+> 也就是说, 激光出射角度每增加 $d\theta$, 激光得飞行距离就会缩短(负号)  $\displaystyle -b \frac{\cos \theta}{\sin^2 \theta}d\theta$. 
 >
-> 下表给出了取不同的 $\Delta \theta$ 时 $x$ 和 $l$ 的真实变化量和微分公式预测的变化量的对比($\theta = \pi/3$):
+> 下表给出了取不同的 $\Delta \theta$ 时 $x$ 和 $l$ 的真实变化量和微分公式预测的变化量的对比( $\theta = \pi/3$ ):
 > 
 > ![表2](..\media\img\table2.png)
 >
 > 从表中可以看出, 随着 $\Delta \theta$ 的减小, 微分公式与精确值的误差也迅速减小, 提示当 $\Delta t\to 0$ 时, 误差的极限也区域0.
 >
 > 综合上面的例子可以得到如下结论: 当 $\Delta x$ 很小时, 近似满足
-> $$ \Delta y \approx f'(x) \Delta x$$
+> $$ 
+> \Delta y \approx f'(x) \Delta x
+> $$
 >
-> 而取 $\Delta x \to 0$ 的极限, 上式约等于变成等于
+>而取 $\Delta x \to 0$ 的极限, 上式约等于变成等于
 >
-> $$ d y = f'(x) d x$$
+> $$ 
+> d y = f'(x) d x
+> $$
 
 > [!warning]
 >
-> 接下来我们结合导数的定义来理解微分公式. 在上一章中，我们曾从函数图像切线的角度出发，借助极限给出导数的定义：
+> 接下来我们结合导数的定义来理 解微分公式. 在上一章中，我们曾从函数图像切线的角度出发，借助极限给出导数的定义: 
 >
 > $$
 > f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}.
@@ -154,7 +167,7 @@ vlook-doc-lib:
 >
 > 由此可见，当 $\Delta x \to 0$ 时，差分商 $\Delta y / \Delta x$ 的极限正是微分之商 $dy/dx$。
 >
-> 在微积分的逻辑体系内，dy/dx 最初是一个整体符号代表导数。事实上，我们也常用符号 $\dfrac{dy}{dx}$ 表示导数，常见的表达方式包括：
+> 在微积分的逻辑体系内，dy/dx 最初是一个整体符号代表导数。事实上，我们也常用符号 $\dfrac{dy}{dx}$ 表示导数，常见的表达方式包括: 
 >
 > $$
 > \frac{dy}{dx} \sim y'(x)
@@ -185,7 +198,7 @@ vlook-doc-lib:
 > 微分公式表明函数值 $y$ 的微分与自变量 $x$ 的微分呈线性关系，它的背后体现了**化曲为直**的思想, 具体体现在
 >
 > $$
-> \begin{align*}
+>\begin{align*}
 > &\boxed{dy = f'(x_0) dx} \\
 > &\quad \downarrow \\
 > &\boxed{\Delta y \approx f'(x_0) \Delta x} \\
@@ -223,7 +236,7 @@ vlook-doc-lib:
 > 
 > ==链式法则 (Chain Rule)==
 > 
-> 若函数 $y = f(u)$ 在点 $u = g(x)$ 可导，且 $u = g(x)$ 在点 $x$ 可导，则：
+> 若函数 $y = f(u)$ 在点 $u = g(x)$ 可导，且 $u = g(x)$ 在点 $x$ 可导，则: 
 > $$
 > [f(g(x))]' = f'(g(x)) g'(x)
 > $$
@@ -237,156 +250,219 @@ vlook-doc-lib:
 
 > [!note]
 > 
-> ==P90 例9== 
+>  **P90 例9: 设函数 $y = e^{x^2}$，求 $\frac{dy}{dx}$**
 > 
->  **设函数 $y = e^{x^2}$，求 $\frac{dy}{dx}$**
-> 
-> 解：$y = e^{x^2}$ 可看作由 $y = e^u$，$u = x^2$ 复合而成，因此：
+> **解**: 
+> $y = e^{x^2}$ 可看作由 $y = e^u$，$u = x^2$ 复合而成，因此: 
 >   
-> $$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = e^u \cdot 2x = 2xe^{x^2}.$$
+> $$
+> \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = e^u \cdot 2x = 2xe^{x^2}.
+> $$
 
 > [!note]
 > 
-> ==P90 例10==
+> **P90 例10: 设函数 $y = \cos \frac{x^2-1}{3x}$，求 $\frac{dy}{dx}$**
 > 
-> **设函数 $y = \cos \frac{x^2-1}{3x}$，求 $\frac{dy}{dx}$**
-> 
-> 解：$y = \cos \frac{x^2-1}{3x}$ 可看作由 $\displaystyle  y = \cos u, u = \frac{x^2-1}{3x}$ 复合而成。因
+> **解**:
+> $y = \cos \frac{x^2-1}{3x}$ 可看作由 $\displaystyle  y = \cos u, u = \frac{x^2-1}{3x}$ 复合而成。因
 > $\displaystyle \frac{dy}{du} = -\sin u,$
 > $\displaystyle \frac{du}{dx} = \frac{x^2 + 1}{3x^2},$
 > 所以
-> $$ \frac{dy}{dx} = -\sin u \cdot \frac{x^2 + 1}{3x^2} = -\frac{x^2 + 1}{3x^2} \cdot \sin \frac{x^2-1}{3x}.$$
->
+> $$
+\begin{align*}
+\frac{dy}{dx} &= -\sin u \cdot \frac{x^2 + 1}{3x^2}' \\
+&= -\frac{x^2 + 1}{3x^2} \cdot \sin \frac{x^2-1}{3x}
+\end{align*}
+> $$
 
 
 > [!note]
 > 
-> ==P91 例11==
+> **P91 例11: 设 $y = \ln \cos x$，求 $\frac{dy}{dx}$**.
 > 
-> **设 $y = \ln \cos x$，求 $\frac{dy}{dx}$**.
-> 
-> 解：$y = \ln \cos x$ 可看作由 $y = \ln u$，$u = \cos x$ 复合而成。所以
->$$ \small\displaystyle\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \frac{1}{\cos x} \cdot (-\sin x) = -\tan x.$$
+> **解**: $y = \ln \cos x$ 可看作由 $y = \ln u$，$u = \cos x$ 复合而成。所以
+> $$ 
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \frac{1}{\cos x} \cdot (-\sin x) = -\tan x.
+> $$
+
 
 > [!note]
 > 
-> ==P92 例12==
+> **P92 例12: 设 $y = \sqrt{1 + 3x^3}$，求 $\frac{dy}{dx}$.**
 > 
-> **设 $y = \sqrt{1 + 3x^3}$，求 $\frac{dy}{dx}$.**
-> 
-> 解：$y = \sqrt{1 + 3x^3} = (1 + 3x^3)^{\frac{1}{2}}$ 可看作由 $y = u^{\frac{1}{2}}$， $u = 1 + 3x^3$ 复合而成。
+>  **解** : $y = \sqrt{1 + 3x^3} = (1 + 3x^3)^{\frac{1}{2}}$ 可看作由 $y = u^{\frac{1}{2}}$， $u = 1 + 3x^3$ 复合而成。
 > 所以
-> $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \frac{1}{2\sqrt{1 + 3x^3}} \cdot 9x^2 = \frac{9x^2}{2\sqrt{1 + 3x^3}}.$$
+> $$
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \frac{1}{2\sqrt{1 + 3x^3}} \cdot 9x^2 = \frac{9x^2}{2\sqrt{1 + 3x^3}}.
+> $$
+
 
 > [!note]
 > 
-> ==P92 例13==
-> 
-> **设 $y = \ln \sin(2x^2)$，求 $\frac{dy}{dx}$**
+> **P92 例13: 设 $y = \ln \sin(2x^2)$，求 $\frac{dy}{dx}$**
 >  
-> 解：所给函数可分解为 $y = \ln u, u = \sin v, v = 2x^2$。
-> $$\small\displaystyle\begin{aligned}\frac{dy}{dx} &= \frac{1}{u} \cdot \cos v \cdot 4x \\&= \frac{\cos(2x^2)}{\sin(2x^2)} \cdot 4x \\&= 4x \cot(2x^2).\end{aligned}$$
->
+> **解**: 所给函数可分解为 $y = \ln u, u = \sin v, v = 2x^2$。
+> $$
+\begin{aligned}
+\frac{dy}{dx} &= \frac{1}{u} \cdot \cos v \cdot 4x \\
+&= \frac{\cos(2x^2)}{\sin(2x^2)} \cdot 4x \\
+&= 4x \cot(2x^2).
+\end{aligned}
+> $$
+
 
 > [!note]
 > 
-> ==P92 例14==
+> **P92 例14: 设 $y = e^{\cos \sqrt{x}}$，求 $y'$**
 > 
-> **设 $y = e^{\cos \sqrt{x}}$，求 $y'$**
+> **解**: 
 > 
-> 解：逐层求导：
-> $\displaystyle \frac{dy}{du} = e^u = e^{\cos \sqrt{x}}$
-> $\displaystyle \frac{du}{dv} = -\sin v = -\sin \sqrt{x}$
-> $\displaystyle \frac{dv}{dx} = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}$
+> 逐层求导: 
 > 
-> 根据链式法则：
+> $$ 
+\frac{dy}{du} = e^u = e^{\cos \sqrt{x}}
+> $$
 > 
-> $$\small\displaystyle\begin{aligned} y'& = \frac{dy}{du} \cdot \frac{du}{dv} \cdot \frac{dv}{dx} \\&= e^{\cos \sqrt{x}} \cdot (-\sin \sqrt{x}) \cdot \frac{1}{2\sqrt{x}}\\&= -\frac{e^{\cos \sqrt{x}} \sin \sqrt{x}}{2\sqrt{x}}\end{aligned}$$
->
->
+> $$ 
+\frac{du}{dv} = -\sin v = -\sin \sqrt{x}
+> $$
+> 
+> $$ 
+\frac{dv}{dx} = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}
+> $$
+> 
+> 根据链式法则: 
+> 
+> $$
+\begin{aligned} 
+y'& = \frac{dy}{du} \cdot \frac{du}{dv} \cdot \frac{dv}{dx} \\
+&= e^{\cos \sqrt{x}} \cdot (-\sin \sqrt{x}) \cdot \frac{1}{2\sqrt{x}}\\
+&= -\frac{e^{\cos \sqrt{x}} \sin \sqrt{x}}{2\sqrt{x}}.
+\end{aligned}
+> $$
+
 
 > [!note]
 > 
-> ==P93 例15==
+> **P93 例15: 设 $y = \cos 2x \cdot \cos^2 x$，求 $y'$**
 > 
-> **设 $y = \cos 2x \cdot \cos^2 x$，求 $y'$**
+> **解** : 
 > 
-> 解：
-> 
-> $y' = (\cos 2x)' \cos^2 x + \cos 2x (\cos^2 x)'$
-> $= -2\sin 2x \cos^2 x + \cos 2x (-2\sin x \cos x)$
-$= -2\cos x (\sin 2x \cos x + \cos 2x \sin x)$
-$= -2\cos x \sin 3x$
+> $$
+\begin{aligned}  
+y'& = (\cos 2x) \cos^2 x + \cos 2x (\cos^2 x)\\
+&= -2\sin 2x \cos^2 x + \cos 2x (-2\sin x \cos x)\\
+&= -2\cos x (\sin 2x \cos x + \cos 2x \sin x)\\
+&= -2\cos x \sin 3x.
+\end{aligned}
+> $$
 
 ### 3.2.2 隐函数求导
 
 > [!tip]
 > 
 > 隐函数将自变量 $x$ 和函数值 $y$ 通过某个等式联系起来, 从这个等式里我们可以推测 $dy$ 和 $dx$ 之间的关系, 一些复杂的函数的导数通过隐函数更容易计算.
-> 
+
 
 > [!note]
 > 
-> ==P101 例1==
+> **P101 例1: 求由方程 $\ln y + x^2y - 1 = 0$ 所确定的隐函数的导数 $\frac{dy}{dx}$**.
 > 
-> **求由方程 $\ln y + x^2y - 1 = 0$ 所确定的隐函数的导数 $\frac{dy}{dx}$**.
+> **解** : 将方程两边对 $ x $ 求导，注意 $ y $ 是 $ x $ 的函数: 
 > 
-> 解：将方程两边对 $ x $ 求导，注意 $ y $ 是 $ x $ 的函数：
+> 左边求导: 
 > 
-> 左边求导：
->$\small\displaystyle \frac{d}{dx}(\ln y + x^2y - 1) = \frac{1}{y}\frac{dy}{dx} +2xy + x^2\frac{dy}{dx}$
+> $$
+\frac{d}{dx}(\ln y + x^2y - 1) = \frac{1}{y}\frac{dy}{dx} +2xy + x^2\frac{dy}{dx}
+> $$
 >
-> 右边求导：$\displaystyle \frac{d}{dx}(0) = 0$
+> 右边求导:
 > 
-> 令两边相等：$\displaystyle \frac{1}{y}\frac{dy}{dx} + 2xy + x^2\frac{dy}{dx} = 0$
+> $$
+\frac{d}{dx}(0) = 0
+> $$
 > 
-> 合并关于 $\frac{dy}{dx}$ 的项：
-> $\displaystyle \left(\frac{1}{y} + x^2\right)\frac{dy}{dx} = -2xy$
+> 令两边相等: 
 > 
-> 解得：$\displaystyle \frac{dy}{dx} = -\frac{2xy}{\frac{1}{y} + x^2} = -\frac{2xy^2}{1 + x^2y} \quad (y \ne 0)$
-> 即 $\displaystyle \frac{dy}{dx} = -\frac{2xy^2}{1 + x^2y}$
+> $$ 
+\frac{1}{y}\frac{dy}{dx} + 2xy + x^2\frac{dy}{dx} = 0
+> $$
+> 
+> 合并关于 $\frac{dy}{dx}$ 的项: 
+> $$ 
+\left(\frac{1}{y} + x^2\right)\frac{dy}{dx} = -2xy
+> $$
+> 
+> 解得: $\displaystyle \frac{dy}{dx} = -\frac{2xy}{\frac{1}{y} + x^2} = -\frac{2xy^2}{1 + x^2y}  (y \ne 0)$,
+> 即 $\displaystyle \frac{dy}{dx} = -\frac{2xy^2}{1 + x^2y}$.
 
 
 > [!note]
 > 
-> ==P102 例2==
+> **P102 例2: 求由方程 $ y^3 + 3y - x^2 - 2x^5 = 0 $ 所确定的隐函数在 $x = 0$ 处的导数 $\left.\frac{dy}{dx}\right|_{x=0}$**.
 > 
-> **求由方程 $ y^3 + 3y - x^2 - 2x^5 = 0 $ 所确定的隐函数在 $ x = 0$ 处的导数 $\left.\frac{dy}{dx}\right|_{x=0}$**.
+>  **解** : 
 > 
-> 解：将方程两边对 $ x $ 求导（注意 $ y $ 是 $ x $ 的函数）：$\displaystyle \frac{d}{dx}(y^3 + 3y - x^2 - 2x^5) $
+> 将方程两边对 $x$ 求导（注意 $y$ 是 $x$ 的函数）: 
 > 
-> $\displaystyle = 3y^2 \frac{dy}{dx} + 3 \frac{dy}{dx} - 2x - 10x^4 = 0$
+> $$
+\frac{d}{dx}(y^3 + 3y - x^2 - 2x^5) = 3y^2 \frac{dy}{dx} + 3 \frac{dy}{dx} - 2x - 10x^4 = 0
+> $$
 > 
-> 解关于 $\displaystyle\frac{dy}{dx}$的方程:
+> 解关于 $\displaystyle\frac{dy}{dx}$的方程: 
 > 
-> $\displaystyle (3y^2 + 3)\frac{dy}{dx} = 2x + 10x^4$
+> $$ 
+(3y^2 + 3)\frac{dy}{dx} = 2x + 10x^4
+> $$
 > 
-> 解得:$\displaystyle \frac{dy}{dx} = \frac{2x + 10x^4}{3y^2 + 3}$
+> 解得
+> $$
+\frac{dy}{dx} = \frac{2x + 10x^4}{3y^2 + 3}
+> $$
 > 
-> 求 $ x = 0 $ 时的 $ y $ 值:
+> 求 $x = 0$ 时的 $y$ 值:
 > 
-> $$\displaystyle\begin{aligned} y^3 + 3y - 0 - 0 = 0 &\;\Rightarrow \;y^3 + 3y = 0 \\&\;\Rightarrow\; y(y^2 + 3) = 0\end{aligned}$$
+> $$
+\begin{aligned}
+ y^3 + 3y - 0 - 0 = 0 
+ &\;\Rightarrow \;y^3 + 3y = 0 \\
+ &\;\Rightarrow\; y(y^2 + 3) = 0
+ \end{aligned}
+> $$
 > 
-> 解得实数解为 $ y = 0 $
+> 解得实数解为 $y = 0$
 > 
-> 计算 $ x = 0 $ 处的导数值:
-> 将 $ x = 0 $, $ y = 0 $ 代入导数表达式：$\displaystyle \left.\frac{dy}{dx}\right|_{x=0}= \frac{0 + 0}{0 + 3} = 0$
+> 计算 $x = 0$ 处的导数值:
+> 将 $x = 0$, $y = 0$ 代入导数表达式: $\displaystyle \left.\frac{dy}{dx}\right|_{x=0}= \frac{0 + 0}{0 + 3} = 0$
+
 
 > [!note]
+>
+> **P102 例3: 求双曲线 $\frac{x^2}{9} - \frac{y^2}{4} = 1$ 在点 $(3\sqrt{2}, 2)$ 处的切线方程**.
 > 
->==P102 例3==
->**求双曲线 $\frac{x^2}{9} - \frac{y^2}{4} = 1$ 在点 $(3\sqrt{2}, 2)$ 处的切线方程**.
+> **解** : 对双曲线方程两边关于 $x$ 求导: 
 > 
->  解：对双曲线方程两边关于 $x$ 求导：
+> $$
+\frac{2x}{9} - \frac{2y}{4}\cdot\frac{dy}{dx} = 0 \Rightarrow \frac{x}{9} - \frac{y}{2}\cdot\frac{dy}{dx} = 0
+> $$
 > 
-> $\displaystyle \frac{2x}{9} - \frac{2y}{4}\cdot\frac{dy}{dx} = 0 \Rightarrow \frac{x}{9} - \frac{y}{2}\cdot\frac{dy}{dx} = 0$
+> 解得
+> $$
+\frac{dy}{dx} = \frac{2x}{9y}
+> $$
 > 
-> 解得：$\displaystyle \frac{dy}{dx} = \frac{2x}{9y}$
+> 计算切点处斜率,在点 $(3\sqrt{2}, 2)$ 处:
+> $$ 
+k = \left.\frac{dy}{dx}\right|_{(3\sqrt{2},2)} = \frac{2 \times 3\sqrt{2}}{9 \times 2} = \frac{\sqrt{2}}{3}
+> $$
 > 
-> 计算切点处斜率,在点 $(3\sqrt{2}, 2)$ 处：$\displaystyle k = \left.\frac{dy}{dx}\right|_{(3\sqrt{2},2)} = \frac{2 \times 3\sqrt{2}}{9 \times 2} = \frac{\sqrt{2}}{3}$
-> 
-> 于是所求的切线方程为：
-> $$\small\begin{aligned}\displaystyle y - 2 = \frac{\sqrt{2}}{3}(x - 3\sqrt{2})&\;\Rightarrow 3y - 6 = \sqrt{2}x - 6 \\&\;\Rightarrow \;\sqrt{2}x - 3y = 0\end{aligned}$$
+> 于是所求的切线方程为: 
+> $$
+\begin{aligned}
+ y - 2 = \frac{\sqrt{2}}{3}(x - 3\sqrt{2})&\;\Rightarrow 3y - 6 = \sqrt{2}x - 6 \\
+ &\;\Rightarrow \;\sqrt{2}x - 3y = 0
+ \end{aligned}
+> $$
 > 
 
 ### 3.2.3 反函数求导
@@ -396,84 +472,118 @@ $= -2\cos x \sin 3x$
 > 反函数求导可以看作是隐函数求导的特例.
 > 
 
+
 > [!note]
 >
-> ==P88 例6==
->  [不要用书上的做法, 用隐函数求导]
->  **设 $ y = \arcsin x $ ($ -1 < x < 1 $)，用隐函数求导法求 $ y' $**
+> [不要用书上的做法, 用隐函数求导]
+> **P88 例6: 设$y = \arcsin x$ ($-1 < x < 1$)，用隐函数求导法求 $y'$**
 > 
->  解：由 $ y = \arcsin x $ 可得直接函数关系：$x = \sin y$
->  对 $ x = \sin y $ 两边关于 $ x $ 求导（注意 $ y $ 是 $ x $ 的函数）：
->  $\displaystyle \frac{d}{dx}(x) = \frac{d}{dx}(\sin y)$
+> **解** : 由 $y = \arcsin x$ 可得直接函数关系: $x = \sin y$,
+> 对 $x = \sin y$ 两边关于 $x$ 求导（注意 $y$ 是 $x$ 的函数）: 
+> $$\frac{d}{dx}(x) = \frac{d}{dx}(\sin y)$$
 > 
->  $\displaystyle1 = \cos y \cdot \frac{dy}{dx}$
+> $$1 = \cos y \cdot \frac{dy}{dx}$$
 > 
-> 将 $\cos y $用$ x $表示
+> 将 $\cos y$用$x$表示:
 > 
->  利用三角恒等式：
->  $\displaystyle \cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - x^2}$（当 $ -\frac{\pi}{2} < y < \frac{\pi}{2} $ 时，$ \cos y > 0 $，故取正根）
+> 利用三角恒等式: 
+> $\displaystyle \cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - x^2}$（当 $-\frac{\pi}{2} < y < \frac{\pi}{2}$ 时，$\cos y > 0$，故取正根）
 > 
->  故得到结果：$\displaystyle \frac{dy}{dx} =(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$
->  用类似的方法可得反余弦函数的导数公式
->  $\displaystyle (\arccos x)' = -\frac{1}{\sqrt{1-x^2}}$
-> 
->  ==P88 例7==
->  [不要用书上的做法, 用隐函数求导]
->  **设 $ y = \arctan x $ ($ x \in \mathbb{R} $)，用隐函数求导法求 $ y' $**
-> 
->  解：由 $ y = \arctan x $ 可得直接函数关系：$x = \tan y$
->  对 $ x = \tan y $ 两边关于 $ x $ 求导（注意 $ y $ 是 $ x $ 的函数）：
->  $\displaystyle \frac{d}{dx}(x) = \frac{d}{dx}(\tan y)$
-> 
-> $\displaystyle 1 = \sec^2 y \cdot \frac{dy}{dx}$
-> 
-> $\displaystyle \frac{dy}{dx} = \frac{1}{\sec^2 y}$
-> 
->  将 $ \sec^2 y $ 用 $ x $ 表示:
-> 
->  利用三角恒等式：$\displaystyle \sec^2 y = 1 + \tan^2 y = 1 + x^2$ 故得到结果：
->  $\displaystyle \frac{dy}{dx}=(\arctan x)' = \frac{1}{1 + x^2}$
->  用类似的方法可得反余切函数的导数公式 $\displaystyle (arccot x)' = -\frac{1}{1+x^2}$
+> 故得到结果: $\displaystyle \frac{dy}{dx} =(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$
+>  
+> 用类似的方法可得反余弦函数的导数公式
+> $\displaystyle (\arccos x)' = -\frac{1}{\sqrt{1-x^2}}$.
+
 
 > [!note]
 > 
-> ==P103 例5==
+> [不要用书上的做法, 用隐函数求导]
 > 
-> **求 $y = (x^2)^{\ln x}$（$x > 0$）的导数**
+> **P88 例7: 设 $y = \arctan x$ ($x \in \mathbb{R}$)，用隐函数求导法求 $y'$**
 > 
-> 解： 利用对数求导法
+> **解** : 
+> 
+> 由 $y = \arctan x$ 可得直接函数关系: $x = \tan y$,
+> 对 $x = \tan y$ 两边关于 $x$ 求导（注意 $y$ 是 $x$ 的函数）: 
+> $$
+\frac{d}{dx}(x) = \frac{d}{dx}(\tan y)
+> $$
+> 
+> $$ 
+1 = \sec^2 y \cdot \frac{dy}{dx}
+> $$
+> 
+> $$ 
+\frac{dy}{dx} = \frac{1}{\sec^2 y}
+> $$
+> 
+> 将 $\sec^2 y$ 用 $x$ 表示:
+> 
+> 利用三角恒等式: 
+> $$
+\sec^2 y = 1 + \tan^2 y = 1 + x^2
+> $$
+> 
+> 故得到结果: 
+> 
+> $$
+> \frac{dy}{dx}=(\arctan x)' = \frac{1}{1 + x^2}
+> $$
+> 
+>  用类似的方法可得反余切函数的导数公式 $\displaystyle (arccot x)' = -\frac{1}{1+x^2}$.
+
+
+> [!note]
+> 
+> **P103 例5: 求 $y = (x^2)^{\ln x}$（$x > 0$）的导数**
+> 
+> **解** :  利用对数求导法
 > 两边取对数: 
-> $$\small\begin{aligned}\displaystyle\ln y &= \ln \left( (x^2)^{\ln x} \right) \\&= \ln x \cdot \ln(x^2)\\&=\ln x \cdot 2\ln x\\&=2(\ln x)^2\end{aligned}$$
+> $$
+\begin{aligned}
+\ln y &= \ln \left( (x^2)^{\ln x} \right) \\
+&= \ln x \cdot \ln(x^2)\\
+&=\ln x \cdot 2\ln x\\
+&=2(\ln x)^2
+\end{aligned}
+> $$
 > 
-> 两边对 $x$ 求导得：
+> 两边对 $x$ 求导得: 
 > $\displaystyle\frac{1}{y} \cdot y' = 2 \cdot 2\ln x \cdot \frac{1}{x} = \frac{4\ln x}{x}$
 > 
 > 解出 $y'$得到:
 > 
-> $\displaystyle\ y' = y \cdot \frac{4\ln x}{x} = (x^2)^{\ln x} \cdot \frac{4\ln x}{x}$
->  
+> $$\ y' = y \cdot \frac{4\ln x}{x} = (x^2)^{\ln x} \cdot \frac{4\ln x}{x}$$
+
+
+> [!note]
 > 
-> ==P103 例6==
+> **P103 例6: 求 $\displaystyle y = \sqrt{\frac{(x-1)(x-2)}{(x-4)(x-5)} }$ 的导数**
 > 
-> **求 $\displaystyle y = \sqrt{\frac{(x-1)(x-2)}{(x-4)(x-5)} }$ 的导数**
+>  **解** : 假设 $x > 5$，在等式两边取对数: 
 > 
-> 解：假设 $x > 5$，在等式两边取对数：
-> $\displaystyle\ln y = \frac{1}{2} [ \ln(x-1) + \ln(x-2) \\- \ln(x-4) - \ln(x-5) ]$
+> $$
+\ln y = \frac{1}{2} [ \ln(x-1) + \ln(x-2) - \ln(x-4) - \ln(x-5) 
+> $$
 > 
-> 对两边关于 $x$ 求导（注意 $y$ 是 $x$ 的函数）：
+> 对两边关于 $x$ 求导（注意 $y$ 是 $x$ 的函数）: 
 > 
-> $\displaystyle\frac{1}{y} y' = \frac{1}{2} ( \frac{1}{x-1} + \frac{1}{x-2}$
-> $\displaystyle  - \frac{1}{x-4} - \frac{1}{x-5})$
+> $$
+\frac{1}{y} y' = \frac{1}{2} ( \frac{1}{x-1} + \frac{1}{x-2}- \frac{1}{x-4} - \frac{1}{x-5})
+> $$
 > 
-> 整理得到导数表达式：
+> 整理得到导数表达式: 
 > 
-> $\displaystyle\ y' = \frac{y}{2} ( \frac{1}{x-1} + \frac{1}{x-2}$
-> $\displaystyle - \frac{1}{x-4} - \frac{1}{x-5})$
+> $$ 
+y' = \frac{y}{2} ( \frac{1}{x-1} + \frac{1}{x-2}- \frac{1}{x-4} - \frac{1}{x-5})
+> $$
 > 
-> 将 $\displaystyle y = \sqrt{\frac{(x-1)(x-2)}{(x-4)(x-5)} }$ 代入：
+> 将 $\displaystyle y = \sqrt{\frac{(x-1)(x-2)}{(x-4)(x-5)} }$ 代入,得: 
 > 
-> $\displaystyle\ y' = \frac{1}{2} \sqrt{\frac{(x-1)(x-2)}{(x-4)(x-5)}}( \frac{1}{x-1}$
-> $\displaystyle + \frac{1}{x-2} - \frac{1}{x-4} - \frac{1}{x-5})$
+> $$
+\ y' = \frac{1}{2} \sqrt{\frac{(x-1)(x-2)}{(x-4)(x-5)}}( \frac{1}{x-1}+ \frac{1}{x-2} - \frac{1}{x-4} - \frac{1}{x-5})
+> $$
+
 
 ### 3.2.4 更多的高阶导数计算
 
@@ -490,91 +600,111 @@ $= -2\cos x \sin 3x$
 > - $\displaystyle \frac{d}{dx}f(x)$, $\displaystyle \frac{d^2}{dx^2}f(x)$, $\displaystyle \frac{d^3}{dx^3}f(x)$, $\displaystyle \frac{d^{n}}{dx^{n}}f(x)$, $\cdots$.
 > 
 
+
 > [!note]
 > 
-> ==P97 例2==
+> **P97 例2: 设 $y =\cos ax$，求 $y''$**
 > 
-> **设 $y = \cos(a x)$，求 $y''$**
+> **解** :  求一阶导数 $y'$, 
 > 
-> 解： 求一阶导数 $y'$, 
-> 
-> $$y' = \frac{d}{dx} \cos(a x) = -a \sin(a x)$$
+> $$
+y' = \frac{d}{dx} \cos ax = -a \sin ax
+> $$
 > 
 > 求二阶导数 $y''$: 
-> $$\small\begin{aligned}y'' &= \frac{d}{dx} \left( -a \sin(a x) \right) \\&= -a \cdot a \cos(a x) \\&= -a^2 \cos(a x)\end{aligned}$$
+> $$
+\begin{aligned}
+y'' &= \frac{d}{dx} \left( -a \sin ax \right) \\
+&= -a \cdot a \cos ax \\
+&= -a^2 \cos ax
+\end{aligned}
+> $$
 > 
-> 最终得到：
-> $$y'' = -a^2 \cos(a x)$$
+> 最终得到: 
+> $$
+y'' = -a^2 \cos ax
+> $$
 >
 
 
 > [!note]
 > 
-> ==P97 例4==
+> **P97 例4: 求指数函数 $y = e^{kx}$（$k$ 为常数）的 $n$ 阶导数**
 > 
-> **求指数函数 $y = e^{kx}$（$k$ 为常数）的 $n$ 阶导数**
+> **解** :  
+> 一阶导数: $\displaystyle y' = \frac{d}{dx} e^{kx} = ke^{kx}$
 > 
-> 解： 一阶导数：$\displaystyle y' = \frac{d}{dx} e^{kx} = ke^{kx}$
+> 二阶导数: $\displaystyle y'' = \frac{d}{dx} (ke^{kx}) = k^2 e^{kx}$
 > 
-> 二阶导数：$\displaystyle y'' = \frac{d}{dx} (ke^{kx}) = k^2 e^{kx}$
+> 三阶导数: $\displaystyle y''' = \frac{d}{dx} (k^2 e^{kx}) = k^3 e^{kx}$
 > 
-> 三阶导数：$\displaystyle y''' = \frac{d}{dx} (k^2 e^{kx}) = k^3 e^{kx}$
+> 四阶导数: $\displaystyle y^{(4)} = \frac{d}{dx}(k^3 e^{kx})=k^4 e^{kx}$
 > 
-> 四阶导数：$\displaystyle y^{(4)} = \frac{d}{dx}(k^3 e^{kx})=k^4 e^{kx}$
-> 
-> 观察规律可知，每求导一次会多乘一个系数 $k$，因此一般形式为：$\displaystyle y^{(n)} = k^n e^{kx}$
+> 观察规律可知，每求导一次会多乘一个系数 $k$，因此一般形式为: $\displaystyle y^{(n)} = k^n e^{kx}$
 > 
 
 > [!note]
 > 
-> ==P103 例4==
+> **P103 例4: 求由方程 $x + 2y - \frac{1}{3}\cos y = 0$ 所确定的隐函数的二阶导数 $\frac{d^2y}{dx^2}$.**
 > 
-> **求由方程 $x + 2y - \frac{1}{3}\cos y = 0$ 所确定的隐函数的二阶导数 $\frac{d^2y}{dx^2}$**
+>  **解** :  对原方程两边关于 $x$ 求导: 
 > 
-> 解： 对原方程两边关于 $x$ 求导：
+> $$ 
+\frac{d}{dx}\left(x + 2y - \frac{1}{3}\cos y\right) = 0
+> $$
 > 
-> $\displaystyle \frac{d}{dx}\left(x + 2y - \frac{1}{3}\cos y\right) = 0$
+> $$ 
+1 + 2\frac{dy}{dx} + \frac{1}{3}\sin y \cdot \frac{dy}{dx} =0 
+> $$
 > 
-> $\displaystyle 1 + 2\frac{dy}{dx} + \frac{1}{3}\sin y \cdot \frac{dy}{dx} =0$
+> $$ 
+\frac{dy}{dx} \left(2 + \frac{1}{3}\sin y\right) = -1
+> $$
 > 
-> $\displaystyle \frac{dy}{dx} \left(2 + \frac{1}{3}\sin y\right) = -1$
+> $$ 
+\frac{dy}{dx} = \frac{-1}{2 + \frac{1}{3}\sin y} = \frac{-3}{6 + \sin y} 
+> $$
 > 
-> $\displaystyle \frac{dy}{dx} = \frac{-1}{2 + \frac{1}{3}\sin y} = \frac{-3}{6 + \sin y}$
+> 对一阶导数 $\displaystyle\frac{dy}{dx} = \frac{-3}{6 + \sin y}$ 两边关于 $x$ 求导: 
 > 
-> 对一阶导数 $\displaystyle\frac{dy}{dx} = \frac{-3}{6 + \sin y}$ 两边关于 $x$ 求导：
+> $$ 
+\frac{d^2y}{dx^2} = \frac{3\cos y \cdot \frac{-3}{6 + \sin y}}{(6 + \sin y)^2} 
+> $$
 > 
-> $\displaystyle \frac{d^2y}{dx^2} = \frac{3\cos y \cdot \frac{-3}{6 + \sin y}}{(6 + \sin y)^2}$
-> 
-> 代入 $\displaystyle\frac{dy}{dx}$ 得到：$\displaystyle \frac{d^2y}{dx^2} = \frac{-9\cos y}{(6 + \sin y)^3}$
+> 代入 $\displaystyle\frac{dy}{dx}$ 得到: 
+> $$ 
+\frac{d^2y}{dx^2} = \frac{-9\cos y}{(6 + \sin y)^3}. 
+> $$
+
 
 > [!note]
 >
 > 最后我们回过头来看一下图2中所给出的例子. 上面我们已经得到
-> $$
+>$$
 > dx = -b \frac{1}{\sin^2 \theta}d\theta, \quad dl = -b \frac{\cos \theta}{\sin^2 \theta}d\theta
-> $$
+>$$
 >
-> 如果我们希望计算 $dx$ 与 $dl$ 的关系，即 $\dfrac{dx}{dl}$，可以采用以下两种方法：
+> 如果我们希望计算 $dx$ 与 $dl$ 的关系，即 $\dfrac{dx}{dl}$，可以采用以下两种方法: 
 >
-> **方法一：建立 x 与 l 的显式函数关系**
+> **方法一: 建立 x 与 l 的显式函数关系**
 >
-> 由 $l = \dfrac{b}{\sin \theta}$ 可得 $\sin \theta = \dfrac{b}{l}$，代入 $x = \dfrac{b}{\tan \theta} = b\dfrac{\cos \theta}{\sin \theta}$ 得：
-> $$
-> x = b \cdot \frac{\cos \theta}{\sin \theta} = b \cdot \frac{\sqrt{1 - \sin^2 \theta}}{\sin \theta} = b \cdot \frac{\sqrt{1 - (b/l)^2}}{b/l} = l \cdot \sqrt{1 - \left(\frac{b}{l}\right)^2}
-> $$
+> 由 $l = \dfrac{b}{\sin \theta}$ 可得 $\sin \theta = \dfrac{b}{l}$，代入 $x = \dfrac{b}{\tan \theta} = b\dfrac{\cos \theta}{\sin \theta}$ 得: 
+>$$
+x = b \cdot \frac{\cos \theta}{\sin \theta} = b \cdot \frac{\sqrt{1 - \sin^2 \theta}}{\sin \theta} = b \cdot \frac{\sqrt{1 - (b/l)^2}}{b/l} = l \cdot \sqrt{1 - \left(\frac{b}{l}\right)^2}
+>$$
 >
-> 对 $l$ 求导得：
+> 对 $l$ 求导得: 
 > $$
-> \frac{dx}{dl} = \sqrt{1 - \left(\frac{b}{l}\right)^2} + l \cdot \frac{1}{2\sqrt{1 - (b/l)^2}} \cdot \frac{2b^2}{l^3} = \frac{1}{\sqrt{1 - (b/l)^2}} = \frac{1}{\cos \theta}
+\frac{dx}{dl} = \sqrt{1 - \left(\frac{b}{l}\right)^2} + l \cdot \frac{1}{2\sqrt{1 - (b/l)^2}} \cdot \frac{2b^2}{l^3} = \frac{1}{\sqrt{1 - (b/l)^2}} = \frac{1}{\cos \theta}
 > $$
 >
 > 因此 $dx = \dfrac{1}{\cos \theta} dl$。
 >
-> **方法二：直接利用微分之比**
+> **方法二: 直接利用微分之比**
 >
-> 由 $dx$ 和 $dl$ 的表达式直接相除：
+> 由 $dx$ 和 $dl$ 的表达式直接相除: 
 > $$
-> \frac{dx}{dl} = \frac{-b \frac{1}{\sin^2 \theta}d\theta}{-b \frac{\cos \theta}{\sin^2 \theta}d\theta} = \frac{1}{\cos \theta}
+\frac{dx}{dl} = \frac{-b \frac{1}{\sin^2 \theta}d\theta}{-b \frac{\cos \theta}{\sin^2 \theta}d\theta} = \frac{1}{\cos \theta}
 > $$
 >
 > 同样得到 $dx = \dfrac{1}{\cos \theta} dl$。
@@ -586,8 +716,8 @@ $= -2\cos x \sin 3x$
 
 > [!tip]
 > 
-> 借助微分的思想和符号还可以帮助我们去理解一个较为使用的求极限方法: 洛必达法则.
->
+> 借助微分的思想和符号还可以帮助我们去理 **解** 一个较为使用的求极限方法: 洛必达法则.
+
 
 ### 3.3.1 洛必达法则
 
@@ -595,7 +725,7 @@ $= -2\cos x \sin 3x$
 >
 > **洛必达法则**是用于计算在不定形式 (未定式, 即: $0/0$或$\infty/\infty$) 下极限的有力工具.
 >
-> 如果函数 $f(x)$ 和 $g(x)$ 在点 $x=c$ 的某个邻域内可导，且在该点附近有：
+> 如果函数 $f(x)$ 和 $g(x)$ 在点 $x=c$ 的某个邻域内可导，且在该点附近有: 
 >
 > - $f(c) = 0$ 且 $g(c) = 0$ (或 $f(x)$ 和 $g(x)$ 的极限趋于 $\infty$). 
 > - $g'(x) ≠ 0$.
@@ -603,9 +733,9 @@ $= -2\cos x \sin 3x$
 > 那么
 >
 > $$
-> \displaystyle \lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \lim_{x\rightarrow c} \frac{f'(x)}{g'(x)},
+\lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \lim_{x\rightarrow c} \frac{f'(x)}{g'(x)},
 > $$
->
+> 
 > 前提是后者的极限存在.
 >
 > **注意**:  有时可能需要多次应用洛必达法则, 特别是当 $f'(x)/g'(x)$ 仍然是 $0/0$ 或 $\infty/\infty$ 的形式时.
@@ -613,34 +743,34 @@ $= -2\cos x \sin 3x$
 
 > [!warning]
 > 
-> 下面我们借助微分的思想来理解洛必达法则.
-
-> 当 $x$ 充分接近 $c$ 时，我们可以用函数的线性近似（即微分）来替代原函数。由于 $f(c) = g(c) = 0$，在点 $c$ 附近有：
+> 下面我们借助微分的思想来理 **解** 洛必达法则.
+> 
+> 当 $x$ 充分接近 $c$ 时，我们可以用函数的线性近似（即微分）来替代原函数。由于 $f(c) = g(c) = 0$，在点 $c$ 附近有: 
 > 
 > $$
-> f(x) \approx f(c) + f'(c)(x - c) = f'(c)(x - c)
+f(x) \approx f(c) + f'(c)(x - c) = f'(c)(x - c)
 > $$
 > 
 > $$
-> g(x) \approx g(c) + g'(c)(x - c) = g'(c)(x - c)
+g(x) \approx g(c) + g'(c)(x - c) = g'(c)(x - c)
 > $$
 > 
-> 因此，原比式的极限可近似表示为：
+> 因此，原比式的极限可近似表示为: 
 > 
 > $$
-> \frac{f(x)}{g(x)} \approx \frac{f'(c)(x - c)}{g'(c)(x - c)} = \frac{f'(c)}{g'(c)}
+\frac{f(x)}{g(x)} \approx \frac{f'(c)(x - c)}{g'(c)(x - c)} = \frac{f'(c)}{g'(c)}
 > $$
 > 
 > 当 $x \to c$ 时，这一近似将趋于精确。这正是洛必达法则的直观含义——在极限过程中，分子与分母的**变化趋势**由它们在该点的导数之比决定。
 > 
-> 对于 $\infty/\infty$ 型未定式，虽然不能直接使用上述推导，但微分思想仍然适用：此时我们比较的是 $f(x)$ 与 $g(x)$ 在 $x \to c$ 过程中的**相对变化速率**，而导数正是刻画这种瞬时变化率的工具。
+> 对于 $\infty/\infty$ 型未定式，虽然不能直接使用上述推导，但微分思想仍然适用: 此时我们比较的是 $f(x)$ 与 $g(x)$ 在 $x \to c$ 过程中的**相对变化速率**，而导数正是刻画这种瞬时变化率的工具。
 > 
-> 需要强调的是，上述推导仅为理解洛必达法则提供了直观的几何图像。严格证明需依赖**柯西中值定理**，该定理能够将 $\dfrac{f'(c)}{g'(c)}$ 替换成 $\dfrac{f'(\xi)}{g'(\xi)}$，其中 $\xi$ 位于 $x$ 与 $c$ 之间, 从而得到使用起来更加灵活的洛必达法则。这部分内容我们放在了后面的章节中. 
->
-> 
+> 需要强调的是，上述推导仅为理 **解** 洛必达法则提供了直观的几何图像。严格证明需依赖**柯西中值定理**，该定理能够将 $\dfrac{f'(c)}{g'(c)}$ 替换成 $\dfrac{f'(\xi)}{g'(\xi)}$，其中 $\xi$ 位于 $x$ 与 $c$ 之间, 从而得到使用起来更加灵活的洛必达法则。这部分内容我们放在了后面的章节中. 
+
+
 > [!note]
 > 
-> P134-P136, 例1-10.
+> **P134-P136, 例1-10.**
 
 
 > [!warning]
