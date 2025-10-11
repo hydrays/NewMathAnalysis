@@ -22,7 +22,7 @@
 >  
 >  该定理的几何意义是：在曲线 $y = f(x)$ 上，至少存在一点 $c$，它的切线斜率等于割线通过点 $(a, f(a))$ 和 $(b, f(b))$ 的斜率。
 > 
->  ![中值定理](../media/img/mean_value_theorem.png#400h)
+>  ![中值定理](../media/img/chpt5_mean_value_theorem.png#400h)
 >  
 
 > [!warning]
@@ -81,7 +81,7 @@
 > ==反例==
 > 
 > 如下图，该函数在 $ (0, 2) $ 上不可导，不满足拉格朗日中值定理的前提条件，所以不能应用该定理。
->![](../media/img/chap2_2.png)
+>![](../media/img/chpt5_5.1.1_counterexample.png)
 >
 
 > [!note]

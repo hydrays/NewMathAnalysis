@@ -16,7 +16,7 @@
 > 
 > 导数是一种通过极限定义的运算, 由此可见极限的重要性, 在后面的章节中, 我们还将从极限出发引出积分的概念. 本课程各部分内容之间的关系如图.
 > 
-> ![微积分思维导图](../media/img/chpt2_derivative.png#400h)
+> ![微积分思维导图](../media/img/chpt2_continuous_function_properties.png#400h)
 
 ## 导数和导函数
 
@@ -34,7 +34,7 @@
 > $$
 > 所对应的函数值为 $\displaystyle f(x^*)$.
 >  
->  ![导数的作用](../media/img/chap2_0.png)
+>  ![导数的作用](../media/img/chpt2_derivatives.png)
 
 ### 导数的定义
 
@@ -57,7 +57,7 @@
 >
 > 这样，切线的斜率和导数都通过极限的方式被严格定义。
 
->  ![导数的几何意义](../media/img/derivative.png)
+>  ![导数的几何意义](../media/img/chpt2_derivative.png)
 >  
 
 > [!extension]
@@ -813,7 +813,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > * 点 $B$ 的坐标为 $(l, -h_2)$。
 > * 点 $P$ 的坐标为 $(x, 0)$。
 >
-> ![](../media/img/chap2_1.png)
+> ![](../media/img/chpt2_light_shortest_problem.png)
 >
 >
 > 光线从 $A$ 到 $P$ 在空气中传播的距离为 $S_1 = \sqrt{h_1^2 + x^2}$
@@ -934,7 +934,7 @@ T'(x) &= \frac{1}{v_1} \cdot \frac{2x}{2\sqrt{h_1^2 + x^2}} + \frac{1}{v_2} \cdo
 >  
 >我们的目标，就是找到让 $L(w)$ 最小的那个 $w$，也就是杂音最小、声音最清晰的旋钮位置。
 >
->![收音机](../media/img/gd_1.png)
+>![收音机](../media/img/chpt2_gd_1.png)
 >
 > **导数的含义**
 > 
@@ -951,7 +951,7 @@ T'(x) &= \frac{1}{v_1} \cdot \frac{2x}{2\sqrt{h_1^2 + x^2}} + \frac{1}{v_2} \cdo
 >- 如果 $\eta$ 太大 → 你猛地把旋钮转过头，直接跨过谷底，来回震荡，甚至跑到更高的山上  
 >- 如果 $\eta$ 太小 → 你像用牙签拨旋钮，一次几乎没动，走到谷底需要很久  
 >
->![学习率](../media/img/gd_2.png)
+>![学习率](../media/img/chpt2_gd_2.png)
 >
 > **收敛**
 >
