@@ -41,7 +41,7 @@ vlook-doc-lib:
 > 
 > 导数是一种通过极限定义的运算, 由此可见极限的重要性, 在后面的章节中, 我们还将从极限出发引出积分的概念. 本课程各部分内容之间的关系如图.
 > 
-> ![微积分思维导图](../media/img/chpt2_derivative.png#400h)
+> ![微积分思维导图](../media/img/chpt2_continuous_function_properties.png#400h)
 
 ## 2.1 导数和导函数
 
@@ -49,17 +49,19 @@ vlook-doc-lib:
 >
 > 导数是函数某处的**切线斜率**, 是研究函数性质的重要工具.
 > 
->  **问题**: 计算 $\displaystyle f(x) = \sin(x) - \frac{2x}{\pi}$在$\displaystyle [0,{\pi}]$的最大值.
+>  **问题**: 求使得函数 $\displaystyle f(x) = \sin(x) - \frac{2x}{\pi}$ 最大的的 $x \ (0 \le x \le \pi)$ 的值.
 > 
->  **求解**: 函数 $f(x)$ 的图像如下图, 问题要求我们找到图像的最高点. 运用导数我们可以很方便的得到最高点的坐标, 我们中学学过: 函数在一点的导数等于函数图像在这一点处的切线斜率, 从图像上看函数的最大值对应切线水平(即斜率为0)的位置. 因此我们可以对函数求导, 得到：
-> $$ f'(x) = \cos(x) - \frac{2}{\pi}.$$
-> 令 $f'(x) = 0$，所得的解处的切线斜率为0, 由此解得极值点：
+>  **求解**: $f(x)$ 的图像如图, 问题要求我们找到图像的最高点, 从图像上看函数的最高点处的切线是水平的(即斜率为0), 为了计算斜率我们可以对函数求导, 得到：
 > $$
-> \ x^* = \arccos\left(\frac{2}{\pi}\right),
+> f'(x) = \cos(x) - \frac{2}{\pi}.
 > $$
-> 所对应的函数值为 $\displaystyle f(x^*)$.
+> 再令 $f'(x) = 0$，解得切线水平的地方位于：
+> $$
+> x^* = \arccos\left(\frac{2}{\pi}\right),
+> $$
+> 所使得函数 $\displaystyle f(x)$ 最大的 $x$.
 >  
->  ![导数的作用](../media/img/chap2_0.png)
+>  ![导数的作用](../media/img/chpt2_derivatives.png#400w)
 
 ### 2.1.1 导数的定义
 
@@ -68,21 +70,21 @@ vlook-doc-lib:
 > 
 >  ==导数的定义==
 >
-> 导数是切线的斜率，而切线的斜率可以定义为割线斜率在割点趋于该点时的极限。
+> 导数是切线的斜率，而切线的斜率可以定义为割线在割距趋于 0 的斜率的极限。
 > 
 > 设函数 $f(x)$ 在点 $x_0$ 附近有定义，则过点 $(x_0, f(x_0))$ 和 $(x_0 + \Delta x, f(x_0 + \Delta x))$ 的割线斜率为 
 >$$
 >\frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}
 >$$
 >
->当 $\Delta x \to 0$ 时，这个割线斜率的极限（若存在）就是切线的斜率，也即导数：
+>当 $\Delta x \to 0$ 时，这个割线斜率的**极限**（若存在）就是切线的斜率，也即**导数**：
 > $$
 > f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} =\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
 > $$
 >
 > 这样，切线的斜率和导数都通过极限的方式被严格定义。
 
->  ![导数的几何意义](../media/img/derivative.png)
+>  ![导数的几何意义](../media/img/chpt2_derivative.png)
 >  
 
 > [!extension]
@@ -100,16 +102,14 @@ vlook-doc-lib:
 > 
 > ==由定义计算导数==
 > 
-> **例1: 求 $f(x) = C$ 在 $x_0=1$ 处的导数.**
+> **例1: 求 $f(x) = c$ 在 $x_0=1$ 处的导数.**
 > 
 > **解**: 根据导数的定义:
 >
 >$$
 \begin{align*}
 f'(1) &= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x} \\
-&= \lim_{\Delta x \to 0} \frac{C - C}{\Delta x} \\
-&= \lim_{\Delta x \to 0} \frac{0}{\Delta x} \\
-&= 0
+&= \lim_{\Delta x \to 0} \frac{C - C}{\Delta x} = 0.
 \end{align*}
 >$$
 
@@ -123,9 +123,7 @@ f'(1) &= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x} \\
 > \begin{align*}
 > \ f'(2) &= \lim_{\Delta x \to 0} \frac{(2 + \Delta x)^2 - 2^2}{\Delta x} \\ 
 > & = \lim_{\Delta x \to 0} \frac{4 + 4\Delta x + (\Delta x)^2 - 4}{\Delta x} \\
-> & = \lim_{\Delta x \to 0} \frac{\Delta x(4 + \Delta x)}{\Delta x} \\
-> & = \lim_{\Delta x \to 0} (4 + \Delta x) \\
-> & = 4
+> & = \lim_{\Delta x \to 0} (4 + \Delta x)  = 4.
 > \end{align*}
 > $$
 
@@ -161,14 +159,16 @@ f'(1) &= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x} \\
 > \begin{align*}
 > f'(x) & = \lim_{\Delta x\to 0} \frac{(x+\Delta x)^2 - x^2}{\Delta x}\\
 > & = \lim_{\Delta x\to 0} \frac{2x\Delta x + \Delta x^2}{\Delta x} \\
-> & = \lim_{\Delta x\to 0} 2x + \Delta x \\
-> & = x.
+> & = \lim_{\Delta x\to 0} 2x + \Delta x = x.
 > \end{align*}
 > $$
+> 
+> ![函数与导函数](../media/img/chpt2_derivative_ex1.svg#200w)
+
 
 > [!note]
 >
->  **例4(P78例4): 求函数 $f(x) = \cos x $ 的导数.**
+>  **例4: 求函数 $f(x) = \cos x$ 的导数.**
 >
 > **解**：
 > $$
@@ -179,18 +179,8 @@ f'(1) &= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x} \\
 > & = \sin{x}.
 > \end{align*}
 > $$
->
-
-> [!warning]
 > 
-> 在物理中, 给定位移关于时间的函数 $s(t)$, 物体的速度 $v(t)$ 便是 $s(t)$ 的导数. 以自由落体为例, 设物体从静止开始自由下落，重力加速度为 $g$，则
-> 
-> - 位移函数为 $\displaystyle s(t) = \frac{1}{2}gt^2$。
-> 
-> - 速度为位移的导数：$\displaystyle v(t) = s'(t) = gt$。
-> 
-> - 加速度为速度的导数：$\displaystyle a(t) = v'(t) = g$，为常数。
->  
+> ![函数与导函数](../media/img/chpt2_derivative_ex2.svg#400w)
 
 ### 2.1.3 幂函数, 对数函数和指数函数的导数
 
@@ -198,7 +188,7 @@ f'(1) &= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x} \\
 >
 >  ==幂函数的导数== 
 > 
-> **求正整数次幂函数 $ f(x) = x^m $ 的导数.**
+> **例5: 求正整数次幂函数 $f(x) = x^m$ 的导数.**
 > 
 > **解**：
 当 $m = 1$ 时：
@@ -210,7 +200,7 @@ f'(1) &= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x} \\
 > $$
 > \begin{align*}
 > \ f'(x) & = \lim_{\Delta x \to 0} \frac{(x+\Delta x)^m - x^m}{\Delta x} \\
-> & = \lim_{\Delta x \to 0} \left[ \frac{x^m + m x^{m-1} \Delta x + \frac{m(m-1)}{2} x^{m-2} (\Delta x)^2 + \cdots + (\Delta x)^m - \Delta x^m}{\Delta x} \right]\\
+> & = \lim_{\Delta x \to 0} \left[ \frac{x^m + m x^{m-1} \Delta x + \frac{m(m-1)}{2} x^{m-2} (\Delta x)^2 + \cdots + (\Delta x)^m -  x^m}{\Delta x} \right]\\
 > & = \lim_{\Delta x \to 0} \left[ m x^{m-1} + \frac{m(m-1)}{2} x^{m-2} \Delta x + \cdots + (\Delta x)^{m-1} \right] \\ 
 > & = m x^{m-1}
 > \end{align*}
@@ -232,51 +222,32 @@ f'(1) &= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) - f(1)}{\Delta x} \\
 > 
 
 
-> [!warning]
+> [!note]
 > 
 > ==先导结论==
 >
-> 在计算指数函数和对数函数的导数时我们需要用到下面的一些结论.
+> 在计算**指数函数**和**对数函数**的导数时我们需要用到下面的结论. 我们可以把他们当作求极限的练习题.
 >
-> - $\displaystyle \lim_{x \to 0} \frac{\ln(1+ x)}{x} = 1$
+> **先导结论1: $\displaystyle \lim_{x \to 0} \frac{\ln(1+ x)}{x} = 1$**
 > 
-> **证明** :
->
->令 $\displaystyle t = \ln(1 + x)$，则当 $\displaystyle x \to 0$ 时，$ t \to 0$，且 $\displaystyle x = e^t - 1$，于是
->$$
+> **证明**: 利用重要极限的结论,
+> $$
 >\begin{align*}
->\lim_{x \to 0} \frac{\ln(1 + x)}{x} &= \lim_{t \to 0} \frac{t}{e^t - 1} \\
->&=\lim_{t \to 0} \frac{1}{ \frac{e^t - 1}{t}}
+>\lim_{x \to 0} \frac{\ln(1 + x)}{x} &= \lim_{x \to 0} \ln (1+x)^{\frac{1}{x}} \\
+>&=\ln e = 1
 >\end{align*}
 >$$
 >
->现在证明 $\displaystyle \lim_{t \to 0} \frac{e^t - 1}{t} = 1$:
+> **先导结论2: $\displaystyle \lim_{x \to 0} \frac{\log_a(1+ x)}{x} = \frac{1}{\ln a}$**
 >
->考虑函数 $g(t) = e^t$，则
->$$
->g'(0) = \lim_{t \to 0} \frac{e^t - e^0}{t - 0} = \lim_{t \to 0} \frac{e^t - 1}{t}
->$$
->
->由于 $g'(t) = e^t$，所以 $g'(0) = e^0 = 1$。
->
->因此，
->$$
->\lim_{x \to 0} \frac{\ln(1 + x)}{x} = \frac{1}{1} = 1
->$$
->
->---
-> - $\displaystyle \lim_{x \to 0} \frac{\log_a(1+ x)}{x} = \frac{1}{\ln a}$
->
-> **证明**:
+> **证明**: 利用对数换底公式, 
 > $$
 >\begin{align*}
 >\lim_{x \to 0} \frac{\log_a (1+x)}{x} &= \lim_{x \to 0} \frac{\frac{\ln(1+x)}{\ln a}}{x} \\
 >&= \frac{1}{\ln a} \lim_{x \to 0} \frac{\ln(1+x)}{x} \\
->&= \frac{1}{\ln a} \cdot 1 \\
 >&= \frac{1}{\ln a}
 >\end{align*}
 >$$
-
 
 > [!important]
 > 
@@ -356,7 +327,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 
 > [!warning]
 > 
-> 特别的, 当 $u = e$ 时，有
+> 特别的, 当 $q = e$ 时，有
 >$$
 >\boxed{(e^x)' = e^x}
 >$$
@@ -388,6 +359,8 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > 当 $\Delta x > 0$ 时, $\displaystyle \frac{|\Delta x|}{\Delta x} = 1$, 
 >
 > 左右极限不相等，故极限不存在, 因此，函数 $f(x) = |x|$ 在 $x=0$ 处不可导.
+> 
+> ![连续但不可导示例](../media/img/chpt2_derivative_ex3.svg#200w)
 
 > 
 >  ==连续但不可导的反例2==
@@ -417,7 +390,8 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > **注意:** 
 >
 > 上述两种方法都涉及到极限, 但是取极限的对象不同, 方法一中是对 $\Delta x$ 取极限, 而方法二中是对 $x$ 取极限, 尽管都趋于无穷大(而且指数项都是 $-\frac{2}{3}$), 但两者的意义是不一样的, 请注意体会.
-> 
+>
+> ![连续但不可导示例](../media/img/chpt2_derivative_ex4.svg#200w)
 
 ### 2.1.5 单侧导数
 
@@ -504,7 +478,9 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > - **加法**: 若函数 $f(x)$ 和 $g(x)$ 在点 $x$ 处可导，则：
 >
 > $$
+> \boxed{
 > [f(x) + g(x)]' = f'(x) + g'(x)
+> }
 > $$
 >
 > **证明**:
@@ -522,14 +498,18 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > - **减法**: 若函数 $f(x)$ 和 $g(x)$ 在点 $x$ 处可导，则：
 >
 > $$
+> \boxed{
 > [f(x) - g(x)]' = f'(x) - g'(x)
+> }
 > $$
 >
 > 该性质的证明跟导数的加法运算完全类似.
 > 
 > - **乘法**: 若函数 $f(x)$ 和 $g(x)$ 在点 $x$ 处可导，则：
 > $$
+> \boxed{
 > [f(x) \cdot g(x)]' = f'(x)g(x) + f(x)g'(x)
+> }
 > $$
 >
 > **证明：**
@@ -547,39 +527,36 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > - **除法**
 > 若函数 $f(x)$ 和 $g(x)$ 在点 $x$ 处可导，且 $g(x) \ne 0$，则：
 >$$
-> \displaystyle\left[ \frac{f(x)}{g(x)} \right]' = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}
+> \boxed{
+> \left[ \frac{f(x)}{g(x)} \right]' = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}
+> }
 > $$
 > 
->**证明：**
-> 根据导数的定义：
+>**证明**: $\dfrac{f(x)}{g(x)}$ 可以看作 $f(x)$ 与 $\dfrac{1}{g(x)}$ 的乘积, 而 $\dfrac{1}{g(x)}$ 可以看成是函数 $\dfrac{1}{x}$ 与 $g(x)$ 的复合. 于是我们可以联合复合函数求导和上面的乘法求导法则来推导上述除法求导公式.
 > $$
 > \begin{align*}
-> \left[ \frac{f(x)}{g(x)} \right]' &= \lim_{h \to 0} \frac{\frac{f(x+h)}{g(x+h)} - \frac{f(x)}{g(x)}}{h} \\
-> &= \lim_{h \to 0} \frac{f(x+h)g(x) - f(x)g(x+h)}{h \cdot g(x)g(x+h)} \\
-> &= \lim_{h \to 0} \left( \frac{f(x+h) - f(x)}{h} \cdot \frac{g(x)}{g(x)g(x+h)} - \frac{g(x+h) - g(x)}{h} \cdot \frac{f(x)}{g(x)g(x+h)}\right) \\
-> &= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \cdot \lim_{h \to 0} \frac{g(x)}{g(x)g(x+h)} - \lim_{h \to 0} \frac{g(x+h) - g(x)}{h} \cdot\lim_{h \to 0} \frac{f(x)}{g(x)g(x+h)} \\
-> &= f'(x) \cdot \frac{1}{g(x)} - g'(x) \cdot \frac{f(x)}{[g(x)]^2} \\
+> \left[ \frac{f(x)}{g(x)} \right]' &= f'(x)\left[ \dfrac{1}{g(x)} \right] + f(x)\left[ \dfrac{1}{g(x)} \right]'\\
+> &= \dfrac{f'(x)}{g(x)} - f(x) \cdot \dfrac{g'(x)}{[g(x)]^2} \\
 > &= \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}
 > \end{align*}
 > $$
 
 > [!note]
 > 
-> **P86 例1: 求函数 $y = 3x^3 - 4x^2 + 5x - 9$ 的导数 $y'$.**
+> **例1: 求函数 $y = 3x^3 - 4x^2 + 5x - 9$ 的导数.**
 > 
 >**解**：
 >$$
 >\begin{align*}
->y' &= (3x^3 - 4x^2 + 5x - 9)' \\
->&= (3x^3)' - (4x^2)' + (5x)' - (9)' \\
->&= 3 \cdot 3x^{3-1} - 4 \cdot 2x^{2-1} + 5 \cdot 1x^{1-1} \\
+>y' &= (3x^3)' - (4x^2)' + (5x)' - (9)' \\
+>&= 3 \cdot 3x^{3-1} - 4 \cdot 2x^{2-1} + 5 \cdot 1x^{1-1} - 0\\
 >&= 9x^2 - 8x + 5
 >\end{align*}
 >$$
 
 > [!note]
 >
-> **P86 例2: 设 $y = 2e^{x}(\sin x + 2\cos x)$，求 $y'$**
+> **例2: 求函数 $y = 2e^{x}(\sin x + 2\cos x)$ 的导数.**
 >
 > **解**：
 >$$
@@ -594,37 +571,28 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 
 > [!note]
 >
-> **P86 例3: 求函数 $f(x) = x^3 + 3\sin x + \frac{5}{2}$ 的导数 $f'(x)$ 及 $f'\left(\frac{\pi}{4}\right)$**
+> **例3: 求函数 $f(x) = x^3 + 3\sin x + \dfrac{5}{2}$ 的导数 $f'(x)$ 及 $f'\left(\dfrac{\pi}{4}\right)$**
 > 
 >**解**：
 >$$
 >\begin{align*}
->f'(x) &= \left( x^3 + 3\sin x + \frac{5}{2} \right)' \\
->&= (x^3)' + (3\sin x)' + \left( \frac{5}{2} \right)' \\
->&= 3x^2 + 3\cos x + 0 \\
->&= 3x^2 + 3\cos x
-\end{align*}
->$$
->
->$$
->\begin{align*}
->f'\left( \frac{\pi}{4} \right) &= 3\left( \frac{\pi}{4} \right)^2 + 3\cos\left( \frac{\pi}{4} \right) \\
->&= \frac{3\pi^2}{16} + \frac{3\sqrt{2}}{2}
+>f'(x) &= (x^3)' + (3\sin x)' + \left( \frac{5}{2} \right)' \\
+>&= 3x^2 + 3\cos x \\
+>f'\left( \frac{\pi}{4} \right) &= \frac{3\pi^2}{16} + \frac{3\sqrt{2}}{2}
 >\end{align*}
 >$$
 >
 
 > [!note]
 >
->**P86 例4: 设 $y = \tan x$，求 $y$ 的导数 $y'$**
+>**例4: 求函数 $y = \tan x$ 的导数.**
 > 
 > **解**：
 >$$
 >\begin{align*}
->y' &= (\tan x)' = \left( \frac{\sin x}{\cos x} \right)' \\
+>y' &= \left( \frac{\sin x}{\cos x} \right)' \\
 >&= \frac{(\sin x)' \cos x - \sin x (\cos x)'}{\cos^2 x} \\
->&= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} \\
->&= \sec^2 x
+>&= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x}
 >\end{align*}
 >$$
 
@@ -647,180 +615,207 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 
 > [!note]
 > 
-> **P97 例1: 设 $y = ax^2 + bx + c$，求 $y''$**
+> **例1: 设 $y = ax^2 + bx + c$，求 $y''$**
 > 
 > **解**： 
 > 
-> 一阶导数 $y'$ ：
+> 一阶导数: 
 > $$
-> y' = (ax^2)' + (bx)' + (c)' = 2ax + b 
+> y' = 2ax + b 
 > $$
 > 
-> 二阶导数 $y''$ ：
+> 二阶导数:
 > $$
-> y'' = (2ax)' + (b)' = 2a + 0 = 2a
+> y'' = 2a
 > $$
 >
 
 > [!note]
 > 
-> **P98 例7: 求幂函数 $y = x^{a}$ ($a$ 是任意常数) 的 $n$ 阶导数**
+> **例2: 求幂函数 $y = x^{a}$ ($a$ 是任意常数) 的 $n$ 阶导数**
 > 
-> **解**： 
+> **解**:
 > $$
-> y' = (x^{a})' = a x^{a-1}
+> \begin{align*}
+> y' &= a x^{a-1}\\
+> y'' & = a (a - 1) x^{a-2}\\
+> y''' & = a (a - 1)(a - 2) x^{a-3}\\
+> \end{align*}
 > $$
-> 
-> $$
-> y'' = \left( a x^{a-1} \right)' = a (a - 1) x^{a-2}
-> $$
-> 
-> $$
-> y''' = \left( a (a - 1) x^{a-2} \right)' = a (a - 1)(a - 2) x^{a-3}
-> $$
-> 
-> $$\cdots $$
-> 
+> 一般的,
 > $$
 > y^{(n)} = a (a - 1)(a - 2) \cdots (a - n + 1) x^{a-n}
 > $$
 >
-> 特别的, 当 $a = n$ 为正整数时,
+> 特别的, 当 $a = n$ 为整数时,
 > $$
-> (x^n)^{(n)} = n(n-1)(n-2) \cdot \cdots \cdot 3 \cdot 2 \cdot 1 = n!
+> (x^n)^{(m)} = 
+> \begin{cases}
+> C_n^m x^{n-m}, & m \le n, \\
+> 0, & m > n.
+> \end{cases}
+> $$
+
+> [!warning]
+>
+> ==导数与物体运动==
+> 
+> 在物理中, 给定位移关于时间的函数 $s(t)$, 物体的速度 $v(t)$ 便是 $s(t)$ 的导数. 
+> 
+> 我们来看两个例子. 
+>
+> **自由落体运动** 
+>
+> ![自由落体](../media/img/chpt2_freefall.png#200w)
+>
+> 从静止开始的自由落体物体, 其位移随时间的函数为
+>  
+> $$
+> s(t) = \frac{1}{2}gt^2.
 > $$
 > 
+> 该物体的速度对应 $s(t)$ 的**导数**, 即 
 > $$
-> (x^n)^{m} = 0 \quad m > n.
+> v(t) = s'(t) = gt.
+> $$
+> 
+> 其加速度对应 $v(t)$ 的导数, 或 $s(t)$ 的**二阶导数**,
+> $$
+> a(t) = v'(t) = s''(t) = g.
+> $$
+> 
+> 所以自由落体为加速度等于 $g$ 的**匀加速直线运动**. 这与自由下落物体的**牛顿第二定律** $F = mg = ma$ 是吻合的.
+>
+>![自由落体](../media/img/chpt2_motion_freefall.svg#800w)
+>
+> **简谐振动**
+>
+> ![简谐振动](../media/img/chpt2_spring.png#200w)
+> 
+> 连结弹簧的小球在光滑水平面上围绕平衡位置做震荡运动, 其位移随时间的函数为
+> 
+> $$
+> x(t) = A \sin (\omega t).
+> $$
+> 
+> 其瞬时速度为 $x(t)$ 的**导数**, 即 
+> $$
+> v(t) = x'(t) = A \omega \cos(\omega t).
+> $$
+> 
+> 其加速度对应 $v(t)$ 的导数, 或 $x(t)$ 的**二阶导数**,
+> $$
+> a(t) = v'(t) = x''(t) = - A \omega^2 \sin (\omega t).
 > $$
 >
+> 对 $A = 2$, $\omega = \dfrac{2\pi}{3}$, 小球的位移, 速度和加速度如下图.
+>
+> ![自由落体](../media/img/chpt2_motion_spring.svg#800w)
+> 
+> 注意, 加速度和位移满足关系
+> $$
+> a(t) = -k x(t)
+> $$
+> 其中常数 $k = \omega^2$. 而另一方面, 由**胡克定律**和**牛顿第二定律**, 我们可以得到小球的运动方程为
+> $$
+> F = ma(t) = -kx(t)
+> $$
+> 可见我们刚才从运动方程中的到的加速度与位移的关系与牛顿定律的结论是吻合的(在相差一个可约化的常数 $m$ 的意义下).
+> 
 
 ## 2.3 利用导数来研究函数的性质
 
 > [!tip]
 > 
-> 导数可以用来研究**函数的变化率**, 仅仅这一条已经很强大了, 下面的应用都源自于导数的这一功能.
+> 导数是用来研究函数性质的**直观工具**.
 
 ### 2.3.1 单调性
 
-> [!caution]
+> [!important]
 > 
-> - 导数$>0$, 单调递增
-> - 导数$<0$, 单调递减
-> - 导数$=0$, 无法判断
+> - 导数$>0$, 单调递增;
+> - 导数$<0$, 单调递减;
+> - 导数$=0$, 无法判断.
 >
 
 > [!note]
 > 
->  **P145 例1: 判定函数 $\displaystyle y = x + \cos x$ 在 $[0, 2\pi]$ 上的单调性**
+>  **例1: 讨论函数 $y = x + \cos x$ 在 $[0, 2\pi]$ 上的单调性**
 > 
-> **解**： 函数在 $[0, 2\pi]$ 上连续，在 $(0, 2\pi)$ 内可导
->求导得：
+> **解**： 函数在 $[0, 2\pi]$ 上连续，在 $(0, 2\pi)$ 内可导. 求导得
 >$$
->y' = (x + \cos x)' = 1 - \sin x
+>y' = 1 - \sin x \ge 0.
 >$$
 >
-> 因为 $\sin x \in [-1, 1]$，
->
-> 所以：$\displaystyle 1 - \sin x \geq 0 \quad (\forall x \in \mathbb{R})$
->
-> 当 $\displaystyle x = \frac{\pi}{2}$ 时，$y' = 1 - 1 = 0$ 
-> 
-> 当 $\displaystyle x \neq \frac{\pi}{2}$ 时，$y' > 0$
->
-> 导数非负且仅在离散点为零时函数单调递增
-> 
-> 故函数 $y = x + \cos x$ 在 $[0, 2\pi]$ 上严格单调递增
+> 故函数 $y = x + \cos x$ 在 $[0, 2\pi]$ 上单调递增
 >
 
 > [!note]
 > 
->  **P145 例2: 讨论函数 $\displaystyle y = e^x - x + 3$ 的单调性**
+>  **例2: 讨论函数 $\displaystyle y = e^x - x + 3$ 的单调性**
 > 
-> **解**： 函数在 $(-\infty, +\infty)$ 上可导，其导数为：
->
+> **解**： 对函数求导得
 >$$ 
->y' = (e^x - x + 3)' = e^x - 1
+>y' = e^x - 1.
 >$$
 > 
-> 函数 $y = e^x - x - 1$ 的定义域为 $(-\infty, +\infty)$
-> 
-> - 在区间 $(-\infty, 0)$ 内：$\displaystyle y' = e^x - 1 < 0$
->因此函数在 $(-\infty, 0]$ 上单调递减。
-> 
-> - 在区间 $(0, +\infty)$ 内：$\displaystyle y' = e^x - 1 > 0$
-> 因此函数在 $[0, +\infty)$ 上单调递增。
-> 
-> 
+> 当 $x < 0$ 时, $y' < 0$, 故函数在 $(-\infty, 0]$ 上单调递减;
+> 当 $x \ge 0$ 时, $y' \ge 0$, 故函数在 $[0, +\infty)$ 上单调递增.
+
+
 ### 2.3.2 极值
 
-> [!caution]
-> 
-> - 导数$=0$, 二阶导数$>0$, 极小
-> - 导数$=0$, 二阶导数$<0$, 极大
-> - 导数$=0$, 二阶导数$=0$, 无法判断. 
->导数为 $0$ 的点也称为**驻点**或**临界点**.
-> 
+> [!important]
+>
+> 导数为 $0$ 的点也称为**驻点**或**临界点**, 在临界点处:
+>  
+> - 二阶导数 $>0 \Rightarrow$ 极小
+> - 二阶导数 $<0 \Rightarrow$ 极大
+> - 二阶导数 $=0 \Rightarrow$ 无法判断. 
 
 > [!note]
 > 
-> **P156 例2: 求函数 $f(x) = x^4 - 4x^2$ 的极值**
+> **例1: 求函数 $f(x) = x^4 - 4x^2$ 的极值**
 > 
-> **解**：
->一阶导数为：
+> **解**：令一阶导数等于0, 得到方程
 >$$
->f'(x) = (x^4 - 4x^2)' = 4x^3 - 8x = 4x(x^2 - 2)
->$$
-> 
->$$
-\begin{align*}
-4x(x^2 - 2) &= 0 \\
-\Rightarrow \quad x_1 &= 0, \quad x_2 = \sqrt{2}, \quad x_3 = -\sqrt{2}
-\end{align*}
+>f'(x) = 4x^3 - 8x = 4x(x^2 - 2) = 0
 >$$
 >
-> 二阶导数为：
->
->$$
-\displaystyle f''(x) = (4x^3 - 8x)' = 12x^2 - 8
->$$
+> 其根(临界点)为
 > 
-> 在 $x = 0$ 处：
->
 >$$
->\displaystyle f''(0) = 12 \cdot 0 - 8 = -8 < 0
+> x_1 = 0, \quad x_2 = \sqrt{2}, \quad x_3 = -\sqrt{2}
 >$$
 >
->因此 $x = 0$ 处为极大值，极大值为：
+> $f(x)$ 的二阶导数为
+>
 >$$
-\displaystyle f(0) = 0^4 - 4 \cdot 0^2 = 0
+> f''(x) = (4x^3 - 8x)' = 12x^2 - 8
 >$$
+>
+> 下面计算临界点处的二阶导数值:
 > 
-> 在 $x = \pm \sqrt{2}$ 处：
-> 
->$$
->\displaystyle f''(\pm \sqrt{2}) = 12 \cdot (\sqrt{2})^2 - 8 = 16 > 0
->$$
-> 
-> 因此 $x = \pm \sqrt{2}$ 处为极小值，极小值为：
-> 
->$$
->\displaystyle f(\pm \sqrt{2}) = (\sqrt{2})^4 - 4 \cdot (\sqrt{2})^2 = -4
->$$
+> - $x_1: \quad f''(x_1) = -8 < 0$, 为极大值，此时 $f(x_1) = 0$.
+> - $x_2: \quad f''(x_2) = 16 > 0$, 为极小值，此时 $f(x_2) = -4$.
+> - $x_3: \quad f''(x_3) = 16 > 0$, 为极小值，此时 $f(x_3) = -4$.
 
 >
-> [!caution]
+> [!important]
 > 
-> ==极值和最值==
+> ==闭区间上连续函数最值的求解步骤==
 > 
->闭区间上连续函数最值的求解步骤
->设 $f(x)$ 在 $[a, b]$ 上连续，则其最大值和最小值可按以下步骤求解：
+> 设 $f(x)$ 在 $[a, b]$ 上连续，则其最大值和最小值可按以下步骤求解：
+> 
 > 1. **确定临界点**：
-> - 求 $f(x)$ 在 $(a, b)$ 内的 **驻点**（即 $f'(x) = 0$ 的解）；
-> - 找出 $f(x)$ 的 **不可导点**（如分段点、尖点等）。
+>   - 求 $f(x)$ 在 $(a, b)$ 内的 **驻点** (即 $f'(x) = 0$ 的解);
+>   - 找出 $f(x)$ 的 **不可导点** (如间断点、无穷大点等).
+> 
 > 2. **计算候选值**：
+> 
 > - 计算驻点、不可导点处的函数值 $f(x_i)$；
 > - 计算端点值 $f(a)$ 和 $f(b)$。
+> 
 > 3. **比较结果**：选出最大值和最小值
 
 
@@ -838,7 +833,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > * 点 $B$ 的坐标为 $(l, -h_2)$。
 > * 点 $P$ 的坐标为 $(x, 0)$。
 >
-> ![](../media/img/chap2_1.png)
+> ![](../media/img/chpt2_light_shortest_problem.png)
 >
 >
 > 光线从 $A$ 到 $P$ 在空气中传播的距离为 $S_1 = \sqrt{h_1^2 + x^2}$
@@ -890,59 +885,172 @@ T'(x) &= \frac{1}{v_1} \cdot \frac{2x}{2\sqrt{h_1^2 + x^2}} + \frac{1}{v_2} \cdo
 > 
 > ==凸函数的定义==
 >
-> 设 $f(x)$ 是定义在实数集上的函数。如果对于定义域内任意的 $x_1, x_2$，都有：
+> 如果函数 $f(x)$ 满足: 对于定义域内**任意**的 $x_1, x_2$，都有
 > $$
 > f\left(\frac{x_1 + x_2}{2}\right) \leq \frac{f(x_1) + f(x_2)}{2}
 > $$
-> 则称函数 $f(x)$ 是凸函数。
+> 则称函数 $f(x)$ 是**凸函数**。
 > 
+> 更一般地，对于任意 $t \in [0,1]$，都有：
+> $$
+> f(tx_1 + (1-t)x_2) \leq tf(x_1) + (1-t)f(x_2)
+> $$
+> 这称为**Jensen不等式**，是凸函数的**等价**定义。
+>
+> 与凸函数相对的, 我们还有**凹函数**的概念. 如果在上面的定义中把不等号反向, 我们就得到了凹函数的定义. 不难发现, 讨论函数 $f(x)$ 的凹性等价于讨论函数 $-f(x)$ 的凸性, 所以我们有凸性的定义就够用了. 
+> 
+> **注意**：这里采用的是**国际通用的凸函数定义**（"凸"对应英文的"convex"），与某些国内教材的定义可能相反。
+
+> [!warning]
+>
+> ==凸函数的几何意义==
+>
+>![凸函数](../media/img/chpt2_convex_function.svg#400w)
+>
+> 1. **弦在图像上方**：凸函数图像上任意两点间的弦（连接这两点的线段）始终位于函数图像之上或与之重合。
+>
+> 2. **切线在图像下方**：对于可导的凸函数，其图像上任意一点的切线都位于函数图像之下。
+>
+> 3. **局部极小即全局极小**：凸函数的任何局部极小值点都是全局极小值点，这一性质在优化问题中极为重要。
+
+> [!important]
+> 
+> ==根据二阶导数判定函数的凸凹性==
+> 
+> 对于二阶可导的函数 $f(x)$：
+> 
+> - 若在区间 $I$ 上 $f''(x) \geq 0$，则 $f(x)$ 在 $I$ 上是凸函数
+> - 若在区间 $I$ 上 $f''(x) \leq 0$，则 $f(x)$ 在 $I$ 上是凹函数
+> - 若在区间 $I$ 上 $f''(x) > 0$，则 $f(x)$ 在 $I$ 上是严格凸函数
+> - 若在区间 $I$ 上 $f''(x) < 0$，则 $f(x)$ 在 $I$ 上是严格凹函数
+>
+
+
+> [!warning]
+> 
+> ==凸函数的性质==
+> 
+> - 凸函数的局部极小值就是全局极小值.
+> - 严格凸函数若有极小值，则极小值点唯一.
+> 
+> **凸函数的良好性质使其在优化理论中占据核心地位**：
+> - **全局最优性**：凸优化问题的任何局部最优解都是**全局最优解**.
+> - **高效算法**：存在多种高效算法（如**梯度下降法**、**内点法**等）求解凸优化问题.
+
+> [!note]
+> 
+> **例1: 判断函数 $y = \sqrt{x} (x \ge 0)$ 的凹凸性**
+> 
+> **解**：函数的一阶导数和二阶导数分别为
+>$$
+> \begin{align*}
+> y' &= \frac{1}{2\sqrt{x}} \\
+> y'' &= -\frac{1}{4x^{3/2}} 
+> \end{align*}
+>$$
+>
+> 在函数定义域 $(0, +\infty)$ 内 $y'' < 0$，故 $y = \sqrt{x}$ 为凹函数。
+
+> [!note]
+> 
+> **例2: 判断函数 $y = x^2$ 的凹凸性**
+> 
+> **解**：计算二阶导数：$y'' = 2 > 0$，故 $y = x^2$ 为凸函数。
+
+> [!note]
+> 
+> **例3: 判断函数 $y = \ln(x) (x>0)$ 的凹凸性**
+> 
+> **解**：计算二阶导数：$y'' = -\frac{1}{x^2} < 0$，故 $y = \ln(x)$ 为凹函数。
+
+
+> [!warning] 
+> 
+> ==保凸运算==
+> 
+> - **凸函数的非负加权和仍是凸函数** 
+> 
+> **定理**: 若 $f_1(x), f_2(x), \ldots, f_n(x)$ 都是凸函数，且 $\alpha_1, \alpha_2, \ldots, \alpha_n \geq 0$，则函数
+> 
+> $$
+> g(x) = \alpha_1 f_1(x) + \alpha_2 f_2(x) + \cdots + \alpha_n f_n(x)
+> $$
+> 
+> 也是凸函数。
+> 
+> - **凸函数的逐点最大值仍是凸函数**
+>
+> **定理**：若 $f_1(x), f_2(x), \ldots, f_n(x)$ 都是凸函数，则函数
+> $$
+> h(x) = \max\{f_1(x), f_2(x), \ldots, f_n(x)\}
+> $$
+> 也是凸函数。
+> 
+> - **凸函数的仿射变换仍是凸函数**
+> 
+> **定理**：若 $f(x)$ 是凸函数，则对于任意 $a \neq 0$ 和任意 $b$，函数
+> $$
+> k(x) = f(ax + b)
+> $$
+> 也是凸函数。
+> 
+> **几何解释**：仿射变换 $ax + b$ 对应于坐标轴的缩放和平移，这些操作不会改变函数的凸性。
+
+> [!note]
+> 
+> 考虑两个凸函数：
+> - $f_1(x) = x^2$（凸函数，因为 $f_1''(x) = 2 > 0$）
+> - $f_2(x) = e^x$（凸函数，因为 $f_2''(x) = e^x > 0$）
+> 
+> 取非负权重 $\alpha_1 = 2, \alpha_2 = 1$，则
+> $$
+> g(x) = 2x^2 + e^x
+> $$
+> 也是凸函数，因为
+> $$
+> g''(x) = 4 + e^x > 0
+> $$
+
+> [!note]
+> 
+> 考虑两个凸函数：$f_1(x) = x^2$, $f_2(x) = (x-1)^2 + 1$
+> 则它们的逐点最大值
+> $$
+> h(x) = \max\{x^2, (x-1)^2 + 1\}
+> $$
+> 也是凸函数。
+
+> [!note]
+> 考虑凸函数 $f(x) = x^2$，取 $a = 2, b = 1$，则
+> $$
+> k(x) = f(2x + 1) = (2x + 1)^2 = 4x^2 + 4x + 1
+> $$
+> 也是凸函数，因为
+> $$
+> k''(x) = 8 > 0
+> $$
 
 > [!caution]
-> 
-> ==根据二阶导数判定函数的凸性==
-> 
-> 二阶导数$<0$, 凸函数
-> 二阶导数$>0$, 凹函数
-> 二阶导数$=0$, 可能是拐点
-> 一般地，如果曲线在经过点 $(x_0, y_0)$时，曲线的凹凸性改变了，那么就称点 $(x_0, y_0)$ 为这曲线的**拐点**
-> 
-
-
-> [!note]
-> 
-> **P148 例1:判定曲线 $y = \sqrt{x}$ 的凹凸性**
-> 
-> **解**：
->一阶导数：
->$$
->y' = (\sqrt{x})' = \frac{1}{2\sqrt{x}}
->$$
 >
->二阶导数：
->$$
->y'' = \left( \frac{1}{2\sqrt{x}} \right)' = -\frac{1}{4x^{3/2}}
->$$
+> ==支持向量机中的优化问题==
 >
-> 在函数定义域 $(0, +\infty)$ 内：
-> $$\begin{aligned}\displaystyle x > 0 &\quad \Rightarrow \quad x^{3/2} > 0 \\ &\quad\Rightarrow \quad y'' = -\frac{1}{4x^{3/2}} < 0\end{aligned}$$
+> 支持向量机(SVM)是机器学习中的重要算法. SVM的优化问题利用了保凸运算的性质, 其待优化的目标函数可以表示为：
+> $$
+> \min_{w,b} \frac{1}{2}\|w\|^2 + C\sum_{i=1}^n \max(0, 1-y_i(w^T x_i + b))
+> $$
 > 
-> 当 $y'' < 0$ 时，曲线为**凸的**，则曲线 $y = \sqrt{x}$ 在定义域 $(0, +\infty)$ 内始终为凸曲线
-
-
-> [!note]
+> 其中向量 $w$ 和标量 $b$ 是待优化的自变量. 这里：
+> - $\frac{1}{2}\|w\|^2$ 是凸函数（二次函数的叠加）
+> - $\max(0, 1-y_i(w^T x_i + b))$ 是凸函数（凸函数的逐点最大值）
+> - 它们的非负加权和（$C > 0$）仍然是凸函数
 > 
->**P149 例2: 判定曲线 $y = x^3 - 3x$ 的凹凸性**
+> 因此，SVM的优化问题是凸优化问题，保证了全局最优解的存在性和高效求解的可能性。
+
+> [!caution]
 >
->**解**：
-一阶导数：$\displaystyle y' = 3x^2 - 3$
-> 
->二阶导数：  $\displaystyle y'' = 6x$
-> 
->  - 当 $x < 0$：
->    $\displaystyle y'' = 6x < 0$    (因为 $x < 0$) 此时曲线为**凸的**
-> 
->  - 当 $x > 0$：
->    $\displaystyle y'' = 6x > 0$    (因为 $x > 0$)此时曲线为**凹的**
+> ==神经网络的损失函数并非凸函数==
+>
+
 
 ## 2.4 导数在人工智能中的应用: 梯度下降法
 
@@ -959,7 +1067,7 @@ T'(x) &= \frac{1}{v_1} \cdot \frac{2x}{2\sqrt{h_1^2 + x^2}} + \frac{1}{v_2} \cdo
 >  
 >我们的目标，就是找到让 $L(w)$ 最小的那个 $w$，也就是杂音最小、声音最清晰的旋钮位置。
 >
->![收音机](../media/img/gd_1.png)
+>![收音机](../media/img/chpt2_gd_1.png)
 >
 > **导数的含义**
 > 
@@ -976,7 +1084,7 @@ T'(x) &= \frac{1}{v_1} \cdot \frac{2x}{2\sqrt{h_1^2 + x^2}} + \frac{1}{v_2} \cdo
 >- 如果 $\eta$ 太大 → 你猛地把旋钮转过头，直接跨过谷底，来回震荡，甚至跑到更高的山上  
 >- 如果 $\eta$ 太小 → 你像用牙签拨旋钮，一次几乎没动，走到谷底需要很久  
 >
->![学习率](../media/img/gd_2.png)
+>![学习率](../media/img/chpt2_gd_2.png)
 >
 > **收敛**
 >

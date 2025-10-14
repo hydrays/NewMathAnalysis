@@ -65,7 +65,7 @@
 > 
 > 下图展示了交集运算: 
 > 
-> ![交集](../media/img/chpt1_intersection.png)
+> ![交集](../media/img/chpt1_intersection.png#200w)
 >
 > **并集**
 >
@@ -77,7 +77,7 @@
 > 
 > 下图展示了并集运算: 
 > 
-> ![并集](../media/img/chpt1_union.png)
+> ![并集](../media/img/chpt1_union.png#200w)
 > 
 > **补集**
 > 
@@ -89,7 +89,7 @@
 > 
 > 下图展示了补集运算: 
 > 
-> ![补集](../media/img/chpt1_complement.png)
+> ![补集](../media/img/chpt1_complement.png#200w)
 
 > [!caution]
 >
@@ -472,18 +472,20 @@
 > 
 > **直觉**: $\displaystyle f(x)  = x^2 + 1$ 在 $x_0=2$ 的极限为5.
 > 
-> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $\delta$ 使得只要 $0 < |x-2|< \delta$, 总有 
-> $$
-> \begin{align*}
-> \left|f(x) - 5\right| &= \left| x^2+1 - 5\right| \\
-> & = \left| x^2 - 4\right| \\
-> & = \left| x - 2\right| \left| x + 2\right|  \\
-> & < 2.5|x-2| < \varepsilon
-> \end{align*}
-> $$
+> **证明**: 对于任意 $\varepsilon > 0$，我们想要找到 $\delta > 0$，使得当 $0 < |x - > 2| < \delta$ 时，有 $|f(x) - 5| < \varepsilon$。
 > 
-> 取 $\displaystyle \delta = \frac{\varepsilon}{2.5}$, 可知当 $0< |x-2|<\delta$ 时, 总有 $|f(x) - 5| < \varepsilon$. 因此 $\displaystyle \lim_{x \rightarrow 2} f(x) = 5$.
+> 注意到
+> $$
+> |f(x) - 5| = |x^2 - 4| = |x + 2| \cdot |x - 2|
+> $$
+> 上式中有两项, 为了控制 $|x + 2|$，我们假设 $\delta \leq 1$。那么当 $|x - 2| < 1$ 时，有 $1 < x < 3$，所以 $|x + 2| < 5$（因为当 $x=3$ 时，$|x+2|=5$，但 $x<3$，所以实际上 $|x+2| < 5$，但为了安全，我们取上界 5）。
 > 
+> 此时 $|f(x) - 5| < 5 |x - 2|$。现在，我们希望 $5 |x - 2| < \varepsilon$，即 $|x - 2| < \frac{\varepsilon}{5}$。
+> 所以，我们取 $\delta = \min\left\{1, \frac{\varepsilon}{5}\right\}$。这样，当 $0 < |x - 2| < \delta$ 时：
+> - 由于 $\delta \leq 1$，有 $|x + 2| < 5$，所以 $|f(x) - 5| < 5 |x - 2|$.
+> - 由于 $\delta \leq \frac{\varepsilon}{5}$，有 $5 |x - 2| < 5 \cdot \frac{\varepsilon}{5} = \varepsilon$。
+> 
+> 因此，$|f(x) - 5| < \varepsilon$，证明完成。
 
 > [!warning]
 > 
@@ -698,7 +700,7 @@
 >
 > **证明** $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1$
 > 
-> 考虑单位圆（半径 \( r = 1 \)）中角度 $x \in \left(0, \frac{\pi}{2}\right)$:
+> 考虑单位圆（半径 $ r = 1 $）中角度 $x \in \left(0, \frac{\pi}{2}\right)$:
 >     -  $\sin x$  为对边长度
 >     -  $x$  为圆弧长度（弧度制）
 >     -  $\tan x$  为切线长度
@@ -715,8 +717,8 @@
 
 > [!warning]
 > 
-> - \( x \) 必须使用弧度制
-> - 对于 \( x < 0 \) 的情况，利用奇函数性质：
+> - $ x $ 必须使用弧度制
+> - 对于 $ x < 0 $ 的情况，利用奇函数性质：
 > $$
 >  \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
 > $$

@@ -22,13 +22,13 @@
 > 
 > 如图, 考虑一个做直线运动的物体, 它在经过一小段时间 $\Delta t$ 之后位移的变化量为 $\Delta s = s(t +\Delta t) - s(t)$. 此时我们考虑 $\Delta t \to 0$ 的极限, 就得到**时间的微分** $dt$ 以及对应的**位移的微分** $ds$.
 > 
-> ![微分的例子1](../media/img/chpt3_diff_example_1.png)
+> ![微分的例子1](../media/img_new/chpt3_diff_example_1.png)
 
 > [!note]
 > 
 > 如图, 从原点位置以角度 $\theta$ 发射一束激光, 设激光与直线 $y = b$ 的交点坐标为 $(x, b)$. 如果我们将发射角做一个微小的改变 $\Delta \theta$, 与之对应的激光光斑的位置会在 $x$-轴方向上发生了一个 $\Delta x$ 的偏移. 此时我们考虑 $\Delta \theta \to 0$ 的极限, 就得到**角度的微分** $d\theta$ 以及对应的**x的微分** $dx$.
 > 
-> ![微分的例子2](../media/img/chpt3_diff_example_2.png)
+> ![微分的例子2](../media/img_new/chpt3_diff_example_2.png)
 > 
 
 
@@ -78,16 +78,13 @@
 > 
 > 下表给出了 $\Delta x$ 取不同数值时所对应得 $\Delta s$ 的真实值和微分公式的预测值 ( $v = 2m/s, a = 2m/s^2, t=1s$ ).
 >
-> ![表格1](..\media\img\chpt3_table1.png)
+> ![表格1](..\media\img_new\chpt3_table1.png)
 > 
-> 从表中可以看到, 对于匀速运动, 所有情况下差值均为 0, 这表明对于线性函数，微分给出的是**精确**的, 但这仅限于线性函数的特例. 对于更加一般的匀加速运动, 差值不等于0, 但会随着 Δt 的减小而迅速减小. 这一观察提示我们, 当 $\Delta t\to 0$ 时, 误差的极限也区域0, 由此得到微分公式中的等式成立.
->
+> 从表中可以看到, 对于匀速运动, 所有情况下差值均为 0, 这表明对于线性函数，微分给出的是**精确**的, 但这仅限于线性函数的特例. 对于更加一般的匀加速运动, 差值不等于0, 但会随着 $\Delta t$ 的减小而迅速减小. 这一观察提示我们, 当 $\Delta t\to 0$ 时, 误差的极限也区域0, 由此得到微分公式中的等式成立.
+
+> [!note]
 > 
-> 例2: 在这个例子中, $x$ 与 $\theta$ 的函数关系为
->
-> $$
-> x = \frac{b}{\tan \theta}
-> $$
+>  **例2: 在这个例子中, $x$ 与 $\theta$ 的函数关系为 $\displaystyle x = \frac{b}{\tan \theta}$**
 >
 > 根据微分公式, 我们有
 > 
@@ -110,7 +107,7 @@
 >
 > 下表给出了取不同的 $\Delta \theta$ 时 $x$ 和 $l$ 的真实变化量和微分公式预测的变化量的对比( $\theta = \pi/3$ ):
 > 
-> ![表2](..\media\img\chpt3_table2.png)
+> ![表2](..\media\img_new\chpt3_table2.png)
 >
 > 从表中可以看出, 随着 $\Delta \theta$ 的减小, 微分公式与精确值的误差也迅速减小, 提示当 $\Delta t\to 0$ 时, 误差的极限也区域0.
 >
@@ -127,7 +124,7 @@
 
 > [!warning]
 >
-> 接下来我们结合导数的定义来理 解微分公式. 在上一章中，我们曾从函数图像切线的角度出发，借助极限给出导数的定义: 
+> 接下来我们结合导数的定义来理解微分公式. 在上一章中，我们曾从函数图像切线的角度出发，借助极限给出导数的定义: 
 >
 > $$
 > f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}.
@@ -140,9 +137,9 @@
 > $$
 >  
 >
-> 由此可见，当 $\Delta x \to 0$ 时，差分商 $\Delta y / \Delta x$ 的极限正是微分之商 $dy/dx$。
+> 由此可见，当 $\Delta x \to 0$ 时，差分商 $\displaystyle\frac{\Delta y}{\Delta x}$ 的极限正是微分之商 $\displaystyle\frac{dy}{dx}$。
 >
-> 在微积分的逻辑体系内，dy/dx 最初是一个整体符号代表导数。事实上，我们也常用符号 $\dfrac{dy}{dx}$ 表示导数，常见的表达方式包括: 
+> 在微积分的逻辑体系内，$\displaystyle\frac{dy}{dx}$ 最初是一个整体符号代表导数。事实上，我们也常用符号 $\dfrac{dy}{dx}$ 表示导数，常见的表达方式包括: 
 >
 > $$
 > \frac{dy}{dx} \sim y'(x)
@@ -156,7 +153,7 @@
 > \left. \frac{df(x)}{dx} \right\rvert_{x = x_0} \sim f'(x_0)
 > $$
 > 
-> 但这里我们形式上将 dx 和 dy 作为独立的“微分”概念，从而将导数的定义式
+> 但这里我们形式上将 $dx$ 和 $dy$ 作为独立的“微分”概念，从而将导数的定义式
 >
 > $$
 > \frac{dy}{dx} = f'(x)
@@ -184,7 +181,7 @@
 > \end{align*}
 > $$
 >
-> ![微分与线性近似](..\media\img\chpt3_diff_linear_approx.png)
+> ![微分与线性近似](..\media\img_new\chpt3_diff_linear_approx.png)
 >
 > 最后一个公式说明，函数在 $x_0$ 附近可近似看作一条过点 $(x_0, f(x_0))$、斜率为 $f'(x_0)$ 的**直线**. **在局部用一条直线来近似函数**也就是所谓的**化曲为直**, 这是微积分中一个极其重要的思想.
 >
@@ -225,7 +222,7 @@
 
 > [!note]
 > 
->  **P90 例9: 设函数 $y = e^{x^2}$，求 $\frac{dy}{dx}$**
+>  **P90 例9: 设函数 $y = e^{x^2}$，求 $\displaystyle\frac{dy}{dx}$**
 > 
 > **解**: 
 > $y = e^{x^2}$ 可看作由 $y = e^u$，$u = x^2$ 复合而成，因此: 
@@ -236,10 +233,10 @@
 
 > [!note]
 > 
-> **P90 例10: 设函数 $y = \cos \frac{x^2-1}{3x}$，求 $\frac{dy}{dx}$**
+> **P90 例10: 设函数 $y = \displaystyle\cos \frac{x^2-1}{3x}$，求 $\displaystyle\frac{dy}{dx}$**
 > 
 > **解**:
-> $y = \cos \frac{x^2-1}{3x}$ 可看作由 $\displaystyle  y = \cos u, u = \frac{x^2-1}{3x}$ 复合而成。因
+> $y = \displaystyle\cos \frac{x^2-1}{3x}$ 可看作由 $\displaystyle  y = \cos u, u = \frac{x^2-1}{3x}$ 复合而成。因
 > $\displaystyle \frac{dy}{du} = -\sin u,$
 > $\displaystyle \frac{du}{dx} = \frac{x^2 + 1}{3x^2},$
 > 所以
@@ -253,7 +250,7 @@
 
 > [!note]
 > 
-> **P91 例11: 设 $y = \ln \cos x$，求 $\frac{dy}{dx}$**.
+> **P91 例11: 设 $y = \ln \cos x$，求 $\displaystyle\frac{dy}{dx}$**.
 > 
 > **解**: $y = \ln \cos x$ 可看作由 $y = \ln u$，$u = \cos x$ 复合而成。所以
 > $$ 
@@ -263,7 +260,7 @@
 
 > [!note]
 > 
-> **P92 例12: 设 $y = \sqrt{1 + 3x^3}$，求 $\frac{dy}{dx}$.**
+> **P92 例12: 设 $y = \sqrt{1 + 3x^3}$，求 $\displaystyle\frac{dy}{dx}$.**
 > 
 >  **解** : $y = \sqrt{1 + 3x^3} = (1 + 3x^3)^{\frac{1}{2}}$ 可看作由 $y = u^{\frac{1}{2}}$， $u = 1 + 3x^3$ 复合而成。
 > 所以
@@ -274,7 +271,7 @@
 
 > [!note]
 > 
-> **P92 例13: 设 $y = \ln \sin(2x^2)$，求 $\frac{dy}{dx}$**
+> **P92 例13: 设 $y = \ln \sin(2x^2)$，求 $\displaystyle\frac{dy}{dx}$**
 >  
 > **解**: 所给函数可分解为 $y = \ln u, u = \sin v, v = 2x^2$。
 > $$
@@ -341,9 +338,9 @@ y'& = (\cos 2x) \cos^2 x + \cos 2x (\cos^2 x)\\
 
 > [!note]
 > 
-> **P101 例1: 求由方程 $\ln y + x^2y - 1 = 0$ 所确定的隐函数的导数 $\frac{dy}{dx}$**.
+> **P101 例1: 求由方程 $\ln y + x^2y - 1 = 0$ 所确定的隐函数的导数 $\displaystyle\frac{dy}{dx}$**.
 > 
-> **解** : 将方程两边对 $ x $ 求导，注意 $ y $ 是 $ x $ 的函数: 
+> **解** : 将方程两边对 $x$ 求导，注意 $y$ 是 $x$ 的函数: 
 > 
 > 左边求导: 
 > 
@@ -374,9 +371,9 @@ y'& = (\cos 2x) \cos^2 x + \cos 2x (\cos^2 x)\\
 
 > [!note]
 > 
-> **P102 例2: 求由方程 $ y^3 + 3y - x^2 - 2x^5 = 0 $ 所确定的隐函数在 $x = 0$ 处的导数 $\left.\frac{dy}{dx}\right|_{x=0}$**.
+> **P102 例2: 求由方程 $y^3 + 3y - x^2 - 2x^5 = 0$ 所确定的隐函数在 $x = 0$ 处的导数 $\displaystyle\left.\frac{dy}{dx}\right|_{x=0}$**.
 > 
->  **解** : 
+> **解** : 
 > 
 > 将方程两边对 $x$ 求导（注意 $y$ 是 $x$ 的函数）: 
 > 
@@ -413,7 +410,7 @@ y'& = (\cos 2x) \cos^2 x + \cos 2x (\cos^2 x)\\
 
 > [!note]
 >
-> **P102 例3: 求双曲线 $\frac{x^2}{9} - \frac{y^2}{4} = 1$ 在点 $(3\sqrt{2}, 2)$ 处的切线方程**.
+> **P102 例3: 求双曲线 $\displaystyle\frac{x^2}{9} - \frac{y^2}{4} = 1$ 在点 $(3\sqrt{2}, 2)$ 处的切线方程**.
 > 
 > **解** : 对双曲线方程两边关于 $x$ 求导: 
 > 
@@ -462,7 +459,7 @@ k = \left.\frac{dy}{dx}\right|_{(3\sqrt{2},2)} = \frac{2 \times 3\sqrt{2}}{9 \ti
 > 将 $\cos y$用$x$表示:
 > 
 > 利用三角恒等式: 
-> $\displaystyle \cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - x^2}$（当 $-\frac{\pi}{2} < y < \frac{\pi}{2}$ 时，$\cos y > 0$，故取正根）
+> $\displaystyle \cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - x^2}$（当 $\displaystyle-\frac{\pi}{2} < y < \frac{\pi}{2}$ 时，$\cos y > 0$，故取正根）
 > 
 > 故得到结果: $\displaystyle \frac{dy}{dx} =(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$
 >  
@@ -620,7 +617,7 @@ y'' = -a^2 \cos ax
 
 > [!note]
 > 
-> **P103 例4: 求由方程 $x + 2y - \frac{1}{3}\cos y = 0$ 所确定的隐函数的二阶导数 $\frac{d^2y}{dx^2}$.**
+> **P103 例4: 求由方程 $\displaystyle x + 2y - \frac{1}{3}\cos y = 0$ 所确定的隐函数的二阶导数 $\displaystyle\frac{d^2y}{dx^2}$.**
 > 
 >  **解** :  对原方程两边关于 $x$ 求导: 
 > 
@@ -691,7 +688,7 @@ x = b \cdot \frac{\cos \theta}{\sin \theta} = b \cdot \frac{\sqrt{1 - \sin^2 \th
 
 > [!tip]
 > 
-> 借助微分的思想和符号还可以帮助我们去理 **解** 一个较为使用的求极限方法: 洛必达法则.
+> 借助微分的思想和符号还可以帮助我们去理解一个较为使用的求极限方法: 洛必达法则.
 
 
 ### 洛必达法则
@@ -708,17 +705,17 @@ x = b \cdot \frac{\cos \theta}{\sin \theta} = b \cdot \frac{\sqrt{1 - \sin^2 \th
 > 那么
 >
 > $$
-\lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \lim_{x\rightarrow c} \frac{f'(x)}{g'(x)},
+>\lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \lim_{x\rightarrow c} \frac{f'(x)}{g'(x)},
 > $$
 > 
 > 前提是后者的极限存在.
 >
-> **注意**:  有时可能需要多次应用洛必达法则, 特别是当 $f'(x)/g'(x)$ 仍然是 $0/0$ 或 $\infty/\infty$ 的形式时.
+> **注意**:  有时可能需要多次应用洛必达法则, 特别是当 $\displaystyle\frac{f'(x)}{g'(x)}$ 仍然是 $\displaystyle\frac{0}{0}$ 或 $\displaystyle\frac{\infty}{\infty}$ 的形式时.
 >
 
 > [!warning]
 > 
-> 下面我们借助微分的思想来理 **解** 洛必达法则.
+> 下面我们借助微分的思想来理解洛必达法则.
 > 
 > 当 $x$ 充分接近 $c$ 时，我们可以用函数的线性近似（即微分）来替代原函数。由于 $f(c) = g(c) = 0$，在点 $c$ 附近有: 
 > 
@@ -740,7 +737,7 @@ g(x) \approx g(c) + g'(c)(x - c) = g'(c)(x - c)
 > 
 > 对于 $\infty/\infty$ 型未定式，虽然不能直接使用上述推导，但微分思想仍然适用: 此时我们比较的是 $f(x)$ 与 $g(x)$ 在 $x \to c$ 过程中的**相对变化速率**，而导数正是刻画这种瞬时变化率的工具。
 > 
-> 需要强调的是，上述推导仅为理 **解** 洛必达法则提供了直观的几何图像。严格证明需依赖**柯西中值定理**，该定理能够将 $\dfrac{f'(c)}{g'(c)}$ 替换成 $\dfrac{f'(\xi)}{g'(\xi)}$，其中 $\xi$ 位于 $x$ 与 $c$ 之间, 从而得到使用起来更加灵活的洛必达法则。这部分内容我们放在了后面的章节中. 
+> 需要强调的是，上述推导仅为理解洛必达法则提供了直观的几何图像。严格证明需依赖**柯西中值定理**，该定理能够将 $\dfrac{f'(c)}{g'(c)}$ 替换成 $\dfrac{f'(\xi)}{g'(\xi)}$，其中 $\xi$ 位于 $x$ 与 $c$ 之间, 从而得到使用起来更加灵活的洛必达法则。这部分内容我们放在了后面的章节中. 
 
 
 > [!note]

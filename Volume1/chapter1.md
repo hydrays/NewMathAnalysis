@@ -90,7 +90,7 @@ vlook-doc-lib:
 > 
 > 下图展示了交集运算: 
 > 
-> ![交集](../media/img/1.4.jpg)
+> ![交集](../media/img/chpt1_intersection.png#200w)
 >
 > **并集**
 >
@@ -102,7 +102,7 @@ vlook-doc-lib:
 > 
 > 下图展示了并集运算: 
 > 
-> ![并集](../media/img/1.3.jpg)
+> ![并集](../media/img/chpt1_union.png#200w)
 > 
 > **补集**
 > 
@@ -114,7 +114,7 @@ vlook-doc-lib:
 > 
 > 下图展示了补集运算: 
 > 
-> ![补集](../media/img/1.5.jpg)
+> ![补集](../media/img/chpt1_complement.png#200w)
 
 > [!caution]
 >
@@ -146,7 +146,7 @@ vlook-doc-lib:
 >
 > 映射可以通过下面的图像来理解: 
 >
-> ![映射](../media/img/Function_color_example_3.svg.png#200h)
+> ![映射](../media/img/chpt1_Function_color_example.png#200h)
 > 
 > 图中箭头表示了集合 $A$ 中元素与集合 $B$ 中元素的对映关系. 
 > 
@@ -180,7 +180,7 @@ vlook-doc-lib:
 > 
 > 从上面的例子可以感受到, 映射的作用在于把集合 $A$ 中的元素作为**输入信号**, 例如如不同的人、GPS坐标、光的波长等, 经过某种操作, 转换成我们关心的输出, 如名字、位置和颜色. 从这个意义上理解, 映射就是就是把输入 $x$ 转化成 $f(x)$ 的一个机器.
 > 
-> ![Function](../media/img/function.png#200w)
+> ![Function](../media/img/chpt1_function.png#200w)
 
 ### 1.1.3 函数
 
@@ -261,7 +261,7 @@ vlook-doc-lib:
 >
 > 反函数本质上是把 $x$ 和 $y$ 的顺序对调了一下, 因此不难发现原函数与反函数的图像是关于直线 $y = x$ 对称的.
 > 
-> ![反函数图形的对称性](../media/img/inverse_function.png#400w)
+> ![反函数图形的对称性](../media/img/chpt1_inverse_function.png#400w)
 
 > [!important]
 > 
@@ -293,7 +293,7 @@ vlook-doc-lib:
 > 
 > ==深度学习与复合函数==
 >
-> ![神经网络](../media/img/network.png#400w) 
+> ![神经网络](../media/img/chpt1_network.png#400w) 
 >
 > 人工智能中的核心技术为**深度学习**, 深度学习的背后其实就是有很多层 (从几十到几千层都有) 的**神经网络** (Neuron Network). 神经网络的本质正是复合函数. 对于图中所示的神经网络, 从最左端的**输入信号**开始, 之后每一层都是上一层信号的复合, 因此神经网络就是一个复合了很多次的函数, 这个函数把输入 (比如一张图片) 映射到我们关心的结果 (比如图像是猫还是狗的概率). 
 >
@@ -461,7 +461,7 @@ vlook-doc-lib:
 > 
 > 函数极限跟数列极限本质上都是极限, 都是**动中取静**, 只不过数列极限中动的是 $n$, 而函数极限中动的是自变量 $x$. 之前我们强调过**函数图像**的重要性, 函数的极限过程同样可以通过函数图像来理解. 下面这张图可以作为我们对函数极限的**直觉**, 图中展示了 $\displaystyle \lim_{x\rightarrow 2} f(x) = 4$, 请大家想想在这个极限过程中什么在**动**, 什么是**静**?
 >
->  ![函数极限](../media/img/function_limit.png#400w)
+>  ![函数极限](../media/img/chpt1_function_limit.png#400w)
 >  
 
 > [!caution]
@@ -488,7 +488,7 @@ vlook-doc-lib:
 > 
 > 上述定义可以通过下图来理解
 > 
-> ![函数极限](../media/img/function_limit_def.png#400w)
+> ![函数极限](../media/img/chpt1_function_limit_def.png#400w)
 > 
 > 所以函数 $\{f(x)\}$ 在 $x\rightarrow x_0$ 时有极限就是, 当 $x$ 足够接近 $x_0$ 时, $f(x)$ 的值无限接近某个数 $A$. 注意跟数列极限进行对比. 跟数列极限的定义一样, 上面关于函数极限的定义提供了一个**可操作的流程**, 能够将我们关于函数极限的直观**具象化**. 
 >
@@ -497,18 +497,20 @@ vlook-doc-lib:
 > 
 > **直觉**: $\displaystyle f(x)  = x^2 + 1$ 在 $x_0=2$ 的极限为5.
 > 
-> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $\delta$ 使得只要 $0 < |x-2|< \delta$, 总有 
-> $$
-> \begin{align*}
-> \left|f(x) - 5\right| &= \left| x^2+1 - 5\right| \\
-> & = \left| x^2 - 4\right| \\
-> & = \left| x - 2\right| \left| x + 2\right|  \\
-> & < 2.5|x-2| < \varepsilon
-> \end{align*}
-> $$
+> **证明**: 对于任意 $\varepsilon > 0$，我们想要找到 $\delta > 0$，使得当 $0 < |x - > 2| < \delta$ 时，有 $|f(x) - 5| < \varepsilon$。
 > 
-> 取 $\displaystyle \delta = \frac{\varepsilon}{2.5}$, 可知当 $0< |x-2|<\delta$ 时, 总有 $|f(x) - 5| < \varepsilon$. 因此 $\displaystyle \lim_{x \rightarrow 2} f(x) = 5$.
+> 注意到
+> $$
+> |f(x) - 5| = |x^2 - 4| = |x + 2| \cdot |x - 2|
+> $$
+> 上式中有两项, 为了控制 $|x + 2|$，我们假设 $\delta \leq 1$。那么当 $|x - 2| < 1$ 时，有 $1 < x < 3$，所以 $|x + 2| < 5$（因为当 $x=3$ 时，$|x+2|=5$，但 $x<3$，所以实际上 $|x+2| < 5$，但为了安全，我们取上界 5）。
 > 
+> 此时 $|f(x) - 5| < 5 |x - 2|$。现在，我们希望 $5 |x - 2| < \varepsilon$，即 $|x - 2| < \frac{\varepsilon}{5}$。
+> 所以，我们取 $\delta = \min\left\{1, \frac{\varepsilon}{5}\right\}$。这样，当 $0 < |x - 2| < \delta$ 时：
+> - 由于 $\delta \leq 1$，有 $|x + 2| < 5$，所以 $|f(x) - 5| < 5 |x - 2|$.
+> - 由于 $\delta \leq \frac{\varepsilon}{5}$，有 $5 |x - 2| < 5 \cdot \frac{\varepsilon}{5} = \varepsilon$。
+> 
+> 因此，$|f(x) - 5| < \varepsilon$，证明完成。
 
 > [!warning]
 > 
@@ -723,7 +725,7 @@ vlook-doc-lib:
 >
 > **证明** $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1$
 > 
-> 考虑单位圆（半径 \( r = 1 \)）中角度 $x \in \left(0, \frac{\pi}{2}\right)$:
+> 考虑单位圆（半径 $ r = 1 $）中角度 $x \in \left(0, \frac{\pi}{2}\right)$:
 >     -  $\sin x$  为对边长度
 >     -  $x$  为圆弧长度（弧度制）
 >     -  $\tan x$  为切线长度
@@ -740,8 +742,8 @@ vlook-doc-lib:
 
 > [!warning]
 > 
-> - \( x \) 必须使用弧度制
-> - 对于 \( x < 0 \) 的情况，利用奇函数性质：
+> - $ x $ 必须使用弧度制
+> - 对于 $ x < 0 $ 的情况，利用奇函数性质：
 > $$
 >  \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
 > $$
@@ -753,7 +755,7 @@ vlook-doc-lib:
 >  
 > 极限 $\displaystyle \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n}$ 与无理数 $\mathrm{e}$ (**欧拉数**_~Rd~_)有密切的联系. Jacob Bernoulli 于1683年在研究**复利**的时候考虑过这个数列的极限.
 > 
-> ![Jakob Bernoulli](../media/img/Jakob_Bernoulli.jpg#400h)
+> ![Jakob Bernoulli](../media/img/chpt1_Jakob_Bernoulli.jpg#400h)
 > 
 > **雅各布·伯努利与数e的发现**
 
@@ -893,13 +895,13 @@ vlook-doc-lib:
 > 
 >  $f(x)$ 在 $(-\infty, +\infty)$ 上连续.
 > 
-> ![绝对值函数](../media/img/chap1_5.1.1.png#200h)
+> ![绝对值函数](../media/img/chpt1_continuous_function_example1.png#200h)
 > 
 > **例2: $\displaystyle f(x) = \frac{1}{|x|}$**
 > 
 >  $f(x)$ 在 $(-\infty,0)\bigcup (0, +\infty)$ 上连续, 但是在 0 点处不连续.
 > 
-> ![绝对值的倒数](../media/img/chap1_5.1.2.png#200h)
+> ![绝对值的倒数](../media/img/chpt1_continuous_function_example2.png#200h)
 > 
 
 > [!warning]
@@ -923,7 +925,7 @@ vlook-doc-lib:
 > 
 > $f(x)$ 在 $x=0$ 点处不连续. 造成不连续的原因跟*`例3`*一样也是 $f(0)$ 没有定义. 不幸的是,  $f(x)$ 在 $x=0$ 处无限震荡, 没有极限, 所以这个函数没法像*`例3`*一样简单的补上一个点就成为连续函数.
 > 
-> ![震荡函数](../media/img/chap1_5.1.3.png#200h)
+> ![震荡函数](../media/img/chpt1_continuous_function_example4.png#200h)
 >
 
 > [!warning]
