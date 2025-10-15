@@ -65,7 +65,7 @@
 > 
 > 下图展示了交集运算: 
 > 
-> ![交集](../media/img/chpt1_intersection.png#200w)
+> ![交集](../media/img/1.4.jpg)
 >
 > **并集**
 >
@@ -77,7 +77,7 @@
 > 
 > 下图展示了并集运算: 
 > 
-> ![并集](../media/img/chpt1_union.png#200w)
+> ![并集](../media/img/1.3.jpg)
 > 
 > **补集**
 > 
@@ -89,7 +89,7 @@
 > 
 > 下图展示了补集运算: 
 > 
-> ![补集](../media/img/chpt1_complement.png#200w)
+> ![补集](../media/img/1.5.jpg)
 
 > [!caution]
 >
@@ -121,7 +121,7 @@
 >
 > 映射可以通过下面的图像来理解: 
 >
-> ![映射](../media/img/chpt1_Function_color_example.png#200h)
+> ![映射](../media/img/Function_color_example_3.svg.png#200h)
 > 
 > 图中箭头表示了集合 $A$ 中元素与集合 $B$ 中元素的对映关系. 
 > 
@@ -155,7 +155,7 @@
 > 
 > 从上面的例子可以感受到, 映射的作用在于把集合 $A$ 中的元素作为**输入信号**, 例如如不同的人、GPS坐标、光的波长等, 经过某种操作, 转换成我们关心的输出, 如名字、位置和颜色. 从这个意义上理解, 映射就是就是把输入 $x$ 转化成 $f(x)$ 的一个机器.
 > 
-> ![Function](../media/img/chpt1_function.png#200w)
+> ![Function](../media/img/function.png#200w)
 
 ### 函数
 
@@ -231,12 +231,12 @@
 >
 > **反函数**是**逆映射**的一个特例, 对于函数 $f: x \rightarrow y$ (也要求 $f$ 是一一映射), 其反函数为 $f^{-1}: y \rightarrow x$. 例如
 > 
-> - $y = 3x + 1$ 的反函数为 $y = (x-1)/3$
+> - $y = 3x + 1$ 的反函数为 $\displaystyle y = \frac{x - 1}{3} $
 > - $y = \mathrm{e}^x$ 的反函数为 $y = \mathrm{ln}x$. 
 >
 > 反函数本质上是把 $x$ 和 $y$ 的顺序对调了一下, 因此不难发现原函数与反函数的图像是关于直线 $y = x$ 对称的.
 > 
-> ![反函数图形的对称性](../media/img/chpt1_inverse_function.png#400w)
+> ![反函数图形的对称性](../media/img/inverse_function.png#400w)
 
 > [!important]
 > 
@@ -268,7 +268,7 @@
 > 
 > ==深度学习与复合函数==
 >
-> ![神经网络](../media/img/chpt1_network.png#400w) 
+> ![神经网络](../media/img/network.png#400w) 
 >
 > 人工智能中的核心技术为**深度学习**, 深度学习的背后其实就是有很多层 (从几十到几千层都有) 的**神经网络** (Neuron Network). 神经网络的本质正是复合函数. 对于图中所示的神经网络, 从最左端的**输入信号**开始, 之后每一层都是上一层信号的复合, 因此神经网络就是一个复合了很多次的函数, 这个函数把输入 (比如一张图片) 映射到我们关心的结果 (比如图像是猫还是狗的概率). 
 >
@@ -323,10 +323,10 @@
 > $$
 > \begin{align*}
 > a_0 &= 1,  \\
-> a_1 &= 1/2,  \\
-> a_2 &= 1/4,  \\
+> a_1 &= \frac{1}{2},  \\
+> a_2 &= \frac{1}{4},  \\
 > & \cdots \\
-> a_n & = 1/2^n, \\
+> a_n & = \frac{1}{2^n}, \\
 > & \cdots
 > \end{align*}
 > $$
@@ -340,10 +340,10 @@
 > $$
 > \begin{align*}
 > b_0 &= 0,  \\
-> b_1 &= 1/2,  \\
-> b_2 &= 1/2 + 1/4 = 3/4,  \\
+> b_1 &= \frac{1}{2},  \\
+> b_2 &= \frac{1}{2} + \frac{1}{4} = \frac{3}{4},  \\
 > & \cdots \\
-> b_n & = 1/2 + 1/4 + \cdots + 1/2^n = 1 - \frac{1}{2^n}, \\
+> b_n & = \frac{1}{2} + \frac{1}{4} + \cdots + \frac{1}{2^n} = 1 - \frac{1}{2^n}, \\
 > & \cdots
 > \end{align*}
 > $$
@@ -383,9 +383,11 @@
 > ==数列极限的定义== (非常重要!!!)
 > 
 > 设 $\{a_n\}$ 为一数列, $A$ 为一常数, 如果**对于任意给定的正数 $\varepsilon$**, **总存在正整数 $N$**, 使得当 $n>N$ 时有
+>
 > $$
 > |a_n - A| < \varepsilon,
 > $$
+>
 > 则称 $A$ 为数列 $\{a_n\}$ 的**极限**, 记作
 > $$
 > \lim_{n\rightarrow \infty} a_n = A.
@@ -397,28 +399,53 @@
 >
 > ==一尺之捶，日取其半 (版本1)==
 > 
-> **直觉**: $a_n  = 1/2^n$ 的极限为0.
+> **直觉**: $\displaystyle a_n  = \frac{1}{2^n}$ 的极限为0.
 > 
-> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得 $|1/2^N - 0| = 1/2^N < \varepsilon$, 取 $N = \left[ -\mathrm{ln} \varepsilon / \mathrm{ln} 2 \right] + 1$, 可知当 $n > N$ 时, 总有 $|a_n - 0| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 0$.
+> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得 
+>$$
+>| \frac{1}{2^N} - 0 | = \frac{1}{2^N} < \varepsilon
+>$$
+>
+>取 $\displaystyle N = \left[ \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1 $, 可知当 $n > N$ 时, 总有 $|a_n - 0| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 0$.
 > 
 > ==一尺之捶，日取其半 (版本2)==
 > 
-> **直觉**: $b_n  = 1 - \frac{1}{2^n}$ 的极限为1.
+> **直觉**: $\displaystyle b_n  = 1 - \frac{1}{2^n}$ 的极限为1.
 > 
-> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得 $|1-1/2^N - 1| = 1/2^N< \varepsilon$, 取 $N = \left[ -\mathrm{ln} \varepsilon / \mathrm{ln} 2 \right] + 1$, 可知当 $n > N$ 时, 总有 $|b_n - 1| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} b_n = 1$.
+> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得
+>$$
+>|1 - \frac{1}{2^N} - 1| = \frac{1}{2^N} < \varepsilon
+>$$
 >
+> 取 $\displaystyle N = \left[ \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1 $, 可知当 $n > N$ 时, 总有 $|b_n - 1| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} b_n = 1$.
+>
+
+> [!Note]
 >
 > ==P21 例1==
 > 
-> **直觉**: $\displaystyle a_n  = \frac{n + (-1)^{n-1}}{n}$ 的极限为1.
+> **直觉: $\displaystyle a_n  = \frac{n + (-1)^{n-1}}{n}$ 的极限为1**.
 > 
-> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得 $\displaystyle \left|\frac{n + (-1)^{n-1}}{n} - 1\right| = \frac{1}{n}< \varepsilon$, 取 $N = \left[ 1/ \varepsilon\right] + 1$, 可知当 $n > N$ 时, 总有 $|a_n - 1| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 1$.
+> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得
+>$$
+>\left|\frac{n + (-1)^{n-1}}{n} - 1\right| = \frac{1}{n}< \varepsilon
+>$$
+>
+>取 $\displaystyle N = \left[ \frac{1}{\varepsilon} \right] + 1 $, 可知当 $n > N$ 时, 总有 $|a_n - 1| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 1$.
+>
+
+> [!Note]
 >
 > ==P22 例2==
 > 
-> **直觉**: $\displaystyle a_n  = \frac{(-1)^n}{(n+1)^2}$ 的极限为0.
+> **直觉: $\displaystyle a_n  = \frac{(-1)^n}{(n+1)^2}$ 的极限为0**.
 > 
-> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得 $\displaystyle \left| \frac{(-1)^n}{(n+1)^2} - 0\right| = \frac{1}{(n+1)^2}< \varepsilon$, 取 $N = \left[ \sqrt{1/ \varepsilon}\right]$, 可知当 $n > N$ 时, 总有 $|a_n - 0| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 0$.
+> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $N$ 使得
+> $$
+>\left| \frac{(-1)^n}{(n+1)^2} - 0\right| = \frac{1}{(n+1)^2}< \varepsilon
+>$$
+>
+>取 $\displaystyle N = \left[ \sqrt{\frac{1}{\varepsilon}} \right] $, 可知当 $n > N$ 时, 总有 $|a_n - 0| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 0$.
 
 > [!warning]
 > 
@@ -436,7 +463,7 @@
 > 
 > 函数极限跟数列极限本质上都是极限, 都是**动中取静**, 只不过数列极限中动的是 $n$, 而函数极限中动的是自变量 $x$. 之前我们强调过**函数图像**的重要性, 函数的极限过程同样可以通过函数图像来理解. 下面这张图可以作为我们对函数极限的**直觉**, 图中展示了 $\displaystyle \lim_{x\rightarrow 2} f(x) = 4$, 请大家想想在这个极限过程中什么在**动**, 什么是**静**?
 >
->  ![函数极限](../media/img/chpt1_function_limit.png#400w)
+>  ![函数极限](../media/img/function_limit.png#400w)
 >  
 
 > [!caution]
@@ -456,6 +483,7 @@
 > $$
 > |f(x) - A| < \varepsilon,
 > $$
+>
 > 则称 $A$ 为函数 $\{f(x)\}$ 在 $x_0$ 的**极限**, 记作
 > $$
 > \lim_{x\rightarrow x_0} f(x) = A.
@@ -463,29 +491,58 @@
 > 
 > 上述定义可以通过下图来理解
 > 
-> ![函数极限](../media/img/chpt1_function_limit_def.png#400w)
+> ![函数极限](../media/img/function_limit_def.png#400w)
 > 
 > 所以函数 $\{f(x)\}$ 在 $x\rightarrow x_0$ 时有极限就是, 当 $x$ 足够接近 $x_0$ 时, $f(x)$ 的值无限接近某个数 $A$. 注意跟数列极限进行对比. 跟数列极限的定义一样, 上面关于函数极限的定义提供了一个**可操作的流程**, 能够将我们关于函数极限的直观**具象化**. 
 >
 
 > [!note]
 > 
-> **直觉**: $\displaystyle f(x)  = x^2 + 1$ 在 $x_0=2$ 的极限为5.
+>**直觉: $\displaystyle \lim\limits_{x \to 1}(2x - 1) = 1$**.
+>
+>**证**: 由于
+>$$
+>|f(x) - A| = |(2x - 1) - 1| = 2|x - 1|
+>$$
+>
+>为了使 $\displaystyle |f(x) - A| < \varepsilon$，只要
+>$$
+>|x - 1| < \frac{\varepsilon}{2}
+>$$
+>
+>所以，$\forall \varepsilon > 0$，可取$\displaystyle \delta = \frac{\varepsilon}{2}$，则当 $x$ 适合不等式
+>$$
+>0 < |x - 1| < \delta
+>$$
+>
+>时，对应的函数值$f(x)$就满足不等式
+>$$
+>|f(x) - 1| = |(2x - 1) - 1| < \varepsilon
+>$$
+>
+>从而
+>$$
+>\lim\limits_{x \to 1}(2x - 1) = 1
+>$$
+
+> [!note]
 > 
-> **证明**: 对于任意 $\varepsilon > 0$，我们想要找到 $\delta > 0$，使得当 $0 < |x - > 2| < \delta$ 时，有 $|f(x) - 5| < \varepsilon$。
+> **直觉: $\displaystyle f(x)  = x^2 + 1$ 在 $x_0=2$ 的极限为5**.
 > 
-> 注意到
+> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $\delta$ 使得只要 $0 < |x-2|< \delta$, 总有 
 > $$
-> |f(x) - 5| = |x^2 - 4| = |x + 2| \cdot |x - 2|
+> \begin{align*}
+> \left|f(x) - 5\right| &= \left| x^2+1 - 5\right| \\
+> & = \left| x^2 - 4\right| \\
+> & = \left| x - 2\right| \left| x + 2\right|  \\
+> & < 2.5|x-2| < \varepsilon
+> \end{align*}
 > $$
-> 上式中有两项, 为了控制 $|x + 2|$，我们假设 $\delta \leq 1$。那么当 $|x - 2| < 1$ 时，有 $1 < x < 3$，所以 $|x + 2| < 5$（因为当 $x=3$ 时，$|x+2|=5$，但 $x<3$，所以实际上 $|x+2| < 5$，但为了安全，我们取上界 5）。
 > 
-> 此时 $|f(x) - 5| < 5 |x - 2|$。现在，我们希望 $5 |x - 2| < \varepsilon$，即 $|x - 2| < \frac{\varepsilon}{5}$。
-> 所以，我们取 $\delta = \min\left\{1, \frac{\varepsilon}{5}\right\}$。这样，当 $0 < |x - 2| < \delta$ 时：
-> - 由于 $\delta \leq 1$，有 $|x + 2| < 5$，所以 $|f(x) - 5| < 5 |x - 2|$.
-> - 由于 $\delta \leq \frac{\varepsilon}{5}$，有 $5 |x - 2| < 5 \cdot \frac{\varepsilon}{5} = \varepsilon$。
+> 取 $\displaystyle \delta = \frac{\varepsilon}{2.5}$, 可知当 $0< |x-2|<\delta$ 时,
+>
+>总有 $|f(x) - 5| < \varepsilon$. 因此 $\displaystyle \lim_{x \rightarrow 2} f(x) = 5$.
 > 
-> 因此，$|f(x) - 5| < \varepsilon$，证明完成。
 
 > [!warning]
 > 
@@ -586,17 +643,20 @@
 >  \left| \frac{1}{n} - 0 \right| = \frac{1}{n} < \varepsilon
 >  $$
 > 
->  解不等式 $\frac{1}{n} < \varepsilon$ 得 $n > \frac{1}{\varepsilon}$  
+>  解不等式 $\displaystyle \frac{1}{n} < \varepsilon$ 得 $\displaystyle n > \frac{1}{\varepsilon}$  
 > 
->  取 $N = \left\lfloor \frac{1}{\varepsilon} \right\rfloor + 1$（即不小于 $\frac{1}{\varepsilon}$ 的最小整数）  
+>  取 $\displaystyle N = \left\lfloor \frac{1}{\varepsilon} \right\rfloor + 1$（即不小于 $\displaystyle \frac{1}{\varepsilon}$ 的最小整数）  
 > 
->  则当 $n > N$ 时，必有 $\frac{1}{n} < \varepsilon$  
+>  则当 $n > N$ 时，必有 $\displaystyle \frac{1}{n} < \varepsilon$  
 > 
 >  故 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$.
+
+> [!note]
 >
 > **例2: 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{2n}$**
 > 
-> **解法1（直接法）**：  
+> **解法1（直接法）**：
+>
 > 由 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$ 可得：
 > 
 > $$
@@ -611,38 +671,48 @@
 > \left| \frac{1}{2n} - 0 \right| = \frac{1}{2n} < \varepsilon
 > $$
 > 
-> 解不等式得 $n > \frac{1}{2\varepsilon}$, 取 $N = \left\lfloor \frac{1}{2\varepsilon} \right\rfloor + 1$  ，则当 $n > N$ 时必满足 $\frac{1}{2n} < \varepsilon$  ，故极限为 $0$
+> 解不等式得 $\displaystyle n > \frac{1}{2\varepsilon}$, 取 $\displaystyle N = \left\lfloor \frac{1}{2\varepsilon} \right\rfloor + 1$  ，则当 $n > N$ 时必满足 $\displaystyle \frac{1}{2n} < \varepsilon$  ，故极限为 $0$.
+>
+
+> [!note]
 >
 > **例3: 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n^2}$**
 >
-> **解**：  
->
-> 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：
+> **解**：对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：
 > 
 > $$
 > \left| \frac{1}{n^2} - 0 \right| = \frac{1}{n^2} < \varepsilon
 > $$
 > 
-> 解不等式得 $n > \frac{1}{\sqrt{\varepsilon}}$, 取 $N = \left\lfloor \frac{1}{\sqrt{\varepsilon}} \right\rfloor + 1$, 则当 $n > N$ 时必满足 $\frac{1}{n^2} < \varepsilon$, 故极限为 $0$.
+> 解不等式得 $\displaystyle n > \frac{1}{\sqrt{\varepsilon}}$, 取 $\displaystyle N = \left\lfloor \frac{1}{\sqrt{\varepsilon}} \right\rfloor + 1$, 则当 $n > N$ 时必满足 $\displaystyle \frac{1}{n^2} < \varepsilon$, 故极限为 $0$.
+>
+
+> [!note]
 >
 > **例4: 计算 $\displaystyle \lim_{x\rightarrow 1}(2x-1)$**
 > 
 >**解法1（直接代入法）**：  
 > 
 > 由于 $f(x) = 2x - 1$ 在 $x=1$ 处连续，可直接代入：  
-> $\lim_{x\rightarrow 1}(2x-1) = 2(1) - 1 = 1
-> $
+> $$
+>\lim_{x\rightarrow 1}(2x-1) = 2(1) - 1 = 1
+> $$
 >
 > **解法2（$\varepsilon-\delta$ 定义证明）**：  
 > 
 > 对任意 $\varepsilon > 0$，需找到 $\delta > 0$ 使得当 $0 < |x-1| < \delta$ 时：  
-> $
-> |(2x-1) - 1| = 2|x-1| < \varepsilon$ 
+> $$
+> |(2x-1) - 1| = 2|x-1| < \varepsilon
+>$$ 
 > 
-> 取 $\delta = \frac{\varepsilon}{2}$，则当 $0 < |x-1| < \delta$ 时：  
-> $
+> 取 $\displaystyle \delta = \frac{\varepsilon}{2}$，则当 $0 < |x-1| < \delta$ 时：  
+> $$
 > 2|x-1| < 2 \cdot \frac{\varepsilon}{2} = \varepsilon
-> $ ，故极限为 $1$
+> $$
+>
+>故极限为 $1$.
+
+> [!note]
 >
 > **例5: 计算 $\displaystyle \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3}$**
 >
@@ -652,22 +722,25 @@
 > \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3} = \frac{7}{-3} = -\frac{7}{3}
 > $$
 >
+
+> [!note]
+>
 > **例6: 计算 $\displaystyle \lim_{x\rightarrow 3}\frac{x-3}{x^2-9}$**
 >
 > **解法**：识别不定式：直接代入得 $\frac{0}{0}$，需进一步处理, 因式分解分母：
-> $
+> $$
 > x^2-9 = (x-3)(x+3)
-> $
+> $$
 > 
 > 约去公因式：
-> $
+> $$
 > \frac{x-3}{x^2-9} = \frac{1}{x+3} \quad (x \neq 3)
-> $
+> $$
 > 
 > 计算简化后的极限：
-> $
+> $$
 > \lim_{x\rightarrow 3}\frac{1}{x+3} = \frac{1}{6}
-> $
+> $$
 
 ### 两个重要的极限
 
@@ -683,44 +756,44 @@
 > ==三明治定理==
 >
 > **定理陈述**：  
-> 设函数 $f(x), g(x), h(x)$ 在点 $x_0$ 的某去心邻域内满足：  
+> 设函数 $f(x), g(x), h(x)$ 在点 $x_0$ 的某去心邻域内满足：
 > 
-> 1. $g(x) \leq f(x) \leq h(x)$  
-> 2. $\displaystyle \lim_{x\to x_0} g(x) = \lim_{x\to x_0} h(x) = L$  
-> 则 $\displaystyle \lim_{x\to x_0} f(x) = L$。  
+> 1. $g(x) \leq f(x) \leq h(x)$
+> 2. $\displaystyle \lim_{x\to x_0} g(x) = \lim_{x\to x_0} h(x) = L$, 则 $\displaystyle \lim_{x\to x_0} f(x) = L$.
 >
 > **数列版本**：  
 > 若数列 $\{a_n\}, \{b_n\}, \{c_n\}$ 满足：  
 > 1. $b_n \leq a_n \leq c_n$（对充分大的 $n$）  
-> 2. $\displaystyle \lim_{n\to\infty} b_n = \lim_{n\to\infty} c_n = L$  
-> 则 $\displaystyle \lim_{n\to\infty} a_n = L$。  
+> 2. $\displaystyle \lim_{n\to\infty} b_n = \lim_{n\to\infty} c_n = L$, 则 $\displaystyle \lim_{n\to\infty} a_n = L$.
 >
 
 > [!warning]
 >
-> **证明** $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1$
+> **证明** $\displaystyle \lim_{x\rightarrow 0} \frac{\sin x}{x} = 1$
 > 
-> 考虑单位圆（半径 $ r = 1 $）中角度 $x \in \left(0, \frac{\pi}{2}\right)$:
+> 考虑单位圆（半径 \( r = 1 \)）中角度 $\displaystyle x \in \left(0, \frac{\pi}{2}\right)$:
 >     -  $\sin x$  为对边长度
 >     -  $x$  为圆弧长度（弧度制）
 >     -  $\tan x$  为切线长度
-> $\sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}$, 取倒数得：$ \cos x < \frac{\sin x}{x} < 1$
+> $\displaystyle \sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}$, 取倒数得：$\displaystyle \cos x < \frac{\sin x}{x} < 1$
 > 
 > 应用三明治定理:
->     $
->       \lim_{x \to 0} \cos x = 1 \quad \text{且} \quad \lim_{x \to 0} 1 = 1
->       $
->       故：
->       $
->       \lim_{x \to 0} \frac{\sin x}{x} = 1
->       $
+> $$
+> \lim_{x \to 0} \cos x = 1 \quad \text{且} \quad \lim_{x \to 0} 1 = 1
+> $$
+>
+> 故：
+>
+> $$
+> \lim_{x \to 0} \frac{\sin x}{x} = 1
+> $$
 
 > [!warning]
 > 
 > - $ x $ 必须使用弧度制
 > - 对于 $ x < 0 $ 的情况，利用奇函数性质：
 > $$
->  \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
+> \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
 > $$
 
 
@@ -730,7 +803,7 @@
 >  
 > 极限 $\displaystyle \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n}$ 与无理数 $\mathrm{e}$ (**欧拉数**_~Rd~_)有密切的联系. Jacob Bernoulli 于1683年在研究**复利**的时候考虑过这个数列的极限.
 > 
-> ![Jakob Bernoulli](../media/img/chpt1_Jakob_Bernoulli.jpg#400h)
+> ![Jakob Bernoulli](../media/img/Jakob_Bernoulli.jpg#400h)
 > 
 > **雅各布·伯努利与数e的发现**
 
@@ -747,7 +820,7 @@
 >
 
 > [!important]
-> **证明** $\displaystyle \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n} = \mathrm{e}$
+> **证明 $\displaystyle \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n} = \mathrm{e}$**
 >
 > 证明见教学视频或问DeepSeek.
 
@@ -792,51 +865,93 @@
 > 综合运用*`极限的定义`*, *`极限的四则运算`*和*`复合函数的极限 (换元法)`*, 以及*`三明治定理`*和*`单调有界数列有极限`*等结论, 我们现在可以计算很多数列和函数的极限.
 >
 >
-> **例1**
+> **例1: $\displaystyle \lim_{x\rightarrow 0}\frac{\tan x}{x}$ (P48: 例1)**
 > 
-> $\displaystyle \lim_{x\rightarrow 0}\frac{\tan(x)}{x}$ (P48: 例1)
-> 
-> 解：$$ \begin{aligned} \displaystyle &\lim_{x \rightarrow 0} \frac{\tan (x)}{x}= \lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \cdot \frac{1}{\cos (x)} \right) \\= &\left( \lim_{x \rightarrow 0} \frac{\sin (x)}{x} \right) \cdot \left( \lim_{x \rightarrow 0} \frac{1}{\cos (x)} \right) =1 \end{aligned} $$.
+> **解**：
+>$$
+\begin{aligned} \displaystyle &\lim_{x \rightarrow 0} \frac{\tan x}{x}= \lim_{x \rightarrow 0} \left( \frac{\sin x}{x} \cdot \frac{1}{\cos x} \right) \\
+>= &\left( \lim_{x \rightarrow 0} \frac{\sin x}{x} \right) \cdot \left( \lim_{x \rightarrow 0} \frac{1}{\cos x} \right)\\
+>=&1 \end{aligned} 
+>$$
 >
-> **例2**
-> 
-> $\displaystyle \lim_{x\rightarrow 0}\frac{1-\cos(x)}{x^2}$ (P48: 例2)
-> 
-> 解：
-> $$ \begin{aligned}\displaystyle &\lim_{x \rightarrow 0} \frac{1 - \cos (x)}{x^{2}} \\= &\lim_{x \rightarrow 0} \left( \frac{\sin^{2}(x)}{x^{2}} \cdot \frac{1}{1 + \cos (x)} \right)\\= &\lim_{x \rightarrow 0} \left( \frac{\sin (x)}{x} \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos (x)} \\= &\frac{1}{2}\end{aligned} 
->$$.
+
+> [!note]
 >
+> **例2: $\displaystyle \lim_{x\rightarrow 0}\frac{1-\cos x}{x^2}$ (P48: 例2)**
+> 
+> **解**：
+> $$
+>\begin{aligned}
+>&\lim_{x \rightarrow 0} \frac{1 - \cos x}{x^{2}} \\
+>= &\lim_{x \rightarrow 0} \left( \frac{\sin^{2}x}{x^{2}} \cdot \frac{1}{1 + \cos x} \right)\\
+>= &\lim_{x \rightarrow 0} \left( \frac{\sin x}{x} \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos x} \\
+>= &\frac{1}{2}
+>\end{aligned} 
+>$$
 >
-> **例3**
-> 
-> $\displaystyle \lim_{x\rightarrow 0}\frac{\arcsin(x)}{x}$ (P48: 例3)
-> 
-> 解：$t = \arcsin (x)$，则 $x = \sin t$，当 $x \to 0$ 时，有 $t \to 0$.  于是由复合函数的极限运算法则得：$\displaystyle \lim_{x \to 0} \frac{\arcsin (x)}{x} = \lim_{t \to 0} \frac{t}{\sin (t)} = 1$.
+
+> [!note]
 >
-> **例4**
+> **例3: $\displaystyle \lim_{x\rightarrow 0}\frac{\arcsin x}{x}$ (P48: 例3)**
 > 
-> $\displaystyle \lim_{x\rightarrow \infty}\left( 1-\frac{1}{x}\right)^{x}$ (P51: 例4)
-> 
-> 解：令 $t = -x$，则当 $x \to \infty$ 时，$t \to -\infty$.  
->于是 $$\begin{aligned}\displaystyle &\lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \left( 1 + \frac{1}{t} \right)^{-t} \\= &\lim_{t \to -\infty} \frac{1}{\left( 1 + \frac{1}{t} \right)^{t}} = \frac{1}{e} \end{aligned}$$.
+> **解**：$t = \arcsin x$，则 $x = \sin t$，当 $x \to 0$ 时，有 $t \to 0$.  于是由复合函数的极限运算法则得：
+>$$
+>\lim_{x \to 0} \frac{\arcsin x}{x} = \lim_{t \to 0} \frac{t}{\sin t} = 1
+>$$
 >
-> **例5**
-> 
-> $\displaystyle \lim_{x\rightarrow 0}\frac{\tan (2x)}{\sin (5x)}$ (P55: 例3)
-> 
-> 解：当 $ x \rightarrow 0 $ 时，$\tan (2)x \sim 2x$，$\sin (5x) \sim 5x$，所以  $\displaystyle \lim_{x \rightarrow 0} \frac{\tan (2x)}{\sin (5x)} = \lim_{x \rightarrow 0} \frac{2x}{5x} = \frac{2}{5}$.
+
+> [!note]
 >
-> **例6**
+> **例4: $\displaystyle \lim_{x\rightarrow \infty}\left( 1-\frac{1}{x}\right)^{x}$ (P51: 例4)**
 > 
-> $\displaystyle \lim_{n\rightarrow \infty}\frac{\sqrt{n^2 + a^2}}{n}$ (习题1-2: 5(3))
+> **解**：令 $t = -x$，则当 $x \to \infty$ 时，$t \to -\infty$.  
+>于是 
+>$$
+>\begin{aligned}
+>&\lim_{x \to \infty} \left( 1 - \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \left( 1 + \frac{1}{t} \right)^{-t} \\
+>= &\lim_{t \to -\infty} \frac{1}{\left( 1 + \frac{1}{t} \right)^{t}} = \frac{1}{e}
+>\end{aligned}
+>$$
+
+> [!note]
+>
+> **例5: $\displaystyle \lim_{x\rightarrow 0}\frac{\tan 2x}{\sin 5x}$ (P55: 例3)**
 > 
-> 解：约简分式为：$ \displaystyle \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}} $
-> 设两个基本函数：内层函数：$\displaystyle \ f(n) = 1 + \frac{a^{2}}{n^{2}}$ ，外层函数：$g(x) = \sqrt{x}$ 
-> 原极限可表示为复合函数：$\displaystyle \lim_{n \to \infty} \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\lim_{n \to \infty} \left(1 + \frac{a^{2}}{n^{2}}\right)}$
-> 利用基本极限性质：$\displaystyle\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = 0$
-因此：$\displaystyle\lim_{n \to \infty} f(n) = 1 + 0 = 1$
-> 因外函数 $ g(x) = \sqrt{x} $ 在 $ x = 1 $ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
-> 代入内部极限结果：$\displaystyle\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = g(1) = \sqrt{1} = 1$
+> **解**：当 $ x \rightarrow 0 $ 时，$\tan 2x \sim 2x$，$\sin 5x \sim 5x$，所以 
+>$$
+>\lim_{x \rightarrow 0} \frac{\tan 2x}{\sin 5x} = \lim_{x \rightarrow 0} \frac{2x}{5x} = \frac{2}{5}
+>$$
+>
+
+> [!note]
+>
+> **例6: $\displaystyle \lim_{n\rightarrow \infty}\frac{\sqrt{n^2 + a^2}}{n}$ (习题1-2: 5(3))**
+> 
+> **解**：约简分式为：
+>$$
+>\frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}}
+>$$
+>
+> 设两个基本函数, 内层函数：$\displaystyle \ f(n) = 1 + \frac{a^{2}}{n^{2}}$, 外层函数：$g(x) = \sqrt{x}$ 
+>
+> 原极限可表示为复合函数：
+>$$
+>\lim_{n \to \infty} \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\lim_{n \to \infty} \left(1 + \frac{a^{2}}{n^{2}}\right)}
+>$$
+>
+> 利用基本极限性质：
+>$$
+>\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = 0
+>$$
+>
+>因此：$\displaystyle\lim_{n \to \infty} f(n) = 1 + 0 = 1$
+>
+>因外层函数 $ g(x) = \sqrt{x} $ 在 $ x = 1 $ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
+>
+> 代入内部极限结果：
+>$$
+>\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = g(1) = \sqrt{1} = 1
+>$$
 > 
 
 ## 连续函数
@@ -864,19 +979,17 @@
 > 
 > ==连续函数==
 > 
->
->
 > **例1 $f(x) = |x|$**
 > 
 >  $f(x)$ 在 $(-\infty, +\infty)$ 上连续.
 > 
-> ![绝对值函数](../media/img/chpt1_continuous_function_example1.png#200h)
+> ![绝对值函数](../media/img/chap1_5.1.1.png#200h)
 > 
 > **例2: $\displaystyle f(x) = \frac{1}{|x|}$**
 > 
 >  $f(x)$ 在 $(-\infty,0)\bigcup (0, +\infty)$ 上连续, 但是在 0 点处不连续.
 > 
-> ![绝对值的倒数](../media/img/chpt1_continuous_function_example2.png#200h)
+> ![绝对值的倒数](../media/img/chap1_5.1.2.png#200h)
 > 
 
 > [!warning]
@@ -892,15 +1005,19 @@
 >
 >
 >
-> **例3 $\displaystyle f(x) = \frac{\sin(x)}{x}$**
+> **例3 $\displaystyle f(x) = \frac{\sin x}{x}$**
 > 
-> 这个函数在 $x=0$ 处不连续, 造成不连续的原因是 $f(0)$ 没有定义, 从而 $\displaystyle \lim_{x\rightarrow 0} f(x) = f(0)$ 无从说起. 幸运的是, $f(x)$ 在 $x=0$ 处的极限等于1, 只要令 $f(0) = 1$ 就可以让 $f(x)$ 在0点也连续了, 从而**改良**后的 $f(x)$ 对任意 $x \in (-\infty, \infty)$ 都连续.
+> 这个函数在 $x=0$ 处不连续, 造成不连续的原因是 $f(0)$ 没有定义, 从而 $\displaystyle \lim_{x\rightarrow 0} f(x) = f(0)$ 无从说起. 
 >
-> **例4: $f(x)=\displaystyle \sin\left(\frac{1}{x}\right)$**
+>幸运的是, $f(x)$ 在 $x=0$ 处的极限等于1, 只要令 $f(0) = 1$ 就可以让 $f(x)$ 在0点也连续了, 从而**改良**后的 $f(x)$ 对任意 $x \in (-\infty, \infty)$ 都连续.
+>
+> **例4: $f(x)=\displaystyle \sin\frac{1}{x}$**
 > 
-> $f(x)$ 在 $x=0$ 点处不连续. 造成不连续的原因跟*`例3`*一样也是 $f(0)$ 没有定义. 不幸的是,  $f(x)$ 在 $x=0$ 处无限震荡, 没有极限, 所以这个函数没法像*`例3`*一样简单的补上一个点就成为连续函数.
+> $f(x)$ 在 $x=0$ 点处不连续. 造成不连续的原因跟*`例3`*一样也是 $f(0)$ 没有定义. 
+>
+>不幸的是,  $f(x)$ 在 $x=0$ 处无限震荡, 没有极限, 所以这个函数没法像*`例3`*一样简单的补上一个点就成为连续函数.
 > 
-> ![震荡函数](../media/img/chpt1_continuous_function_example4.png#200h)
+> ![震荡函数](../media/img/chap1_5.1.3.png#200h)
 >
 
 > [!warning]
@@ -967,18 +1084,21 @@
 >
 > ==两个反例==
 >
-> **例1: $\displaystyle f(x) = \frac{1}{x}$ **
+> **例1: $\displaystyle f(x) = \frac{1}{x}$**
 > 
 > 在闭区间$[-1,1]$上, $f(x)$ 在 $x=0$ 处不连续, 因为 $f(0)$ 没有定义. 因此, $f(x)$ 在 $[-1,1]$ 上的连续性是不成立的. 违反维尔斯特拉斯极值定理，$f(x)$ 在闭区间$[-1,1]$上无界，当$x \to 0$ 时，$\displaystyle \lim_{x \to 0} |f(x)| \to +\infty$,不存在最大值和最小值.
 >
 > 
 > **例2: 符号函数**
 > 
-> $$\mathrm{sgn}(x) = \begin{cases}
+> $$
+>\mathrm{sgn}(x) = \begin{cases}
 > 1,  & \text{if $x>0$}, \\
 > 0, & \text{if $x=0$}, \\
 > -1, & \text{if $x<0$}.
-> \end{cases}$$
+> \end{cases}
+>$$
+>
 > 符号函数在闭区间$[-1, 1]$上不连续，因为在$x=0$处，符号函数的左右极限不相等。
 > 
 
@@ -993,5 +1113,7 @@
 >
 > **例1：证明方程 $x^{3} - 4x^{2} + 1 = 0$ 在区间 $(0,\,1)$ 内至少有一个根**
 > 
-> 证明：函数 $f ( x ) = x ^ { 3 } - 4 x ^ { 2 } + 1$ 在闭区间 $[0，1]$上连续，又$f ( 0 ) = 1 >0$，$f ( 1 ) = - 2< 0$. 根据介值定理，区间 $[0，1]$ 内存在 $c$ 满足 $f(c) = 0$, 此即方程 $x ^ { 3 } - 4 x ^ { 2 } + 1 = 0$ 的一个根． 
+> **证明**：函数 $f ( x ) = x ^ { 3 } - 4 x ^ { 2 } + 1$ 在闭区间 $[0，1]$上连续，又$f ( 0 ) = 1 >0$，$f ( 1 ) = - 2< 0$. 
+>
+>根据介值定理，区间 $[0，1]$ 内存在 $c$ 满足 $f(c) = 0$, 此即方程 $x ^ { 3 } - 4 x ^ { 2 } + 1 = 0$ 的一个根． 
 >

@@ -1,4 +1,4 @@
-# 积分的应用
+# 第六章 积分的应用
 
 ## 几何应用: 求体积与弧长
 
@@ -29,7 +29,7 @@
 > **例子**：计算曲线 $y = f(x)$ 在 $[a,b]$ 上与 $x$ 轴围成的面积
 > - 分割：将 $[a,b]$ 分成 $n$ 个小区间
 > - 近似：每个小区间 $[x, x+dx]$ 上的面积微元 $dA = f(x)dx$
-> - 求和取极限：$A = \int_a^b f(x)dx$
+> - 求和取极限：$A = \displaystyle\int_a^b f(x)dx$
 > 
 
 ### 体积的计算
@@ -43,17 +43,25 @@
 > V = \int_0^h A  dx = A \cdot h
 > $$
 > 
+
+
+>[!note]
+>
 > **例2** 计算底半径为 $R$，高为 $h$ 的圆锥体积
 > 
 > **解**：在高度 $x$ 处的截面是半径为 $r(x) = R \cdot \frac{x}{h}$ 的圆，面积 $A(x) = \pi r^2(x) = \pi R^2 \frac{x^2}{h^2}$
 > 
 > 体积：
-> $$
-> V = \int_0^h A(x)dx = \int_0^h \pi R^2 \frac{x^2}{h^2} dx = \frac{\pi R^2}{h^2} \cdot \frac{h^3}{3} = \frac{1}{3}\pi R^2 h
-> $$
-> 
+>$$
+>\begin{aligned}
+>V &= \int_0^h A(x)dx \\
+>  &= \int_0^h \pi R^2 \frac{x^2}{h^2} dx\\
+>  &= \frac{\pi R^2}{h^2} \cdot \frac{h^3}{3}\\
+>  &= \frac{1}{3}\pi R^2 h
+>\end{aligned}
+>$$
 
-> [!note]
+> [!important]
 > 
 > 曲线 $y = f(x)$ 绕 $x$ 轴旋转一周形成的旋转体体积：
 > $$
@@ -61,16 +69,23 @@
 > $$
 > 
 > **推导**：在 $x$ 处垂直于 $x$ 轴的截面是半径为 $f(x)$ 的圆盘，面积 $A(x) = \pi [f(x)]^2$
-> 
+ 
+>[!note]
+>
 > **例3** 计算 $y = \sqrt{x}$ 在 $[0,1]$ 上绕 $x$ 轴旋转形成的体积
 > 
 > **解**：
-> $$
-> V = \int_0^1 \pi (\sqrt{x})^2 dx = \pi \int_0^1 x  dx = \pi \cdot \frac{1}{2} = \frac{\pi}{2}
-> $$
+>$$
+>\begin{aligned}
+>V &= \int_0^1 \pi (\sqrt{x})^2 dx \\
+>  &= \pi \int_0^1 x  dx \\
+>  &= \pi \cdot \frac{1}{2} \\
+>  &= \frac{\pi}{2}
+>\end{aligned}
+>$$
 > 
 
-> [!note]
+> [!important]
 >  
 > 曲线 $y = f(x)$ 绕 $y$ 轴旋转一周形成的旋转体体积：
 > $$
@@ -79,11 +94,18 @@
 > 
 > **推导**：在 $x$ 处厚度为 $dx$ 的柱壳体积微元 $dV = 2\pi x \cdot f(x) \cdot dx$
 > 
+
+>[!note]
+>
 > **例4** 计算 $y = x$ 在 $[0,1]$ 上绕 $y$ 轴旋转形成的体积
 > 
 > **解**：
 > $$
-> V = \int_0^1 2\pi x \cdot x  dx = 2\pi \int_0^1 x^2 dx = 2\pi \cdot \frac{1}{3} = \frac{2\pi}{3}
+> \begin{aligned}
+> V &= \int_0^1 2\pi x \cdot x  dx \\
+>   &= 2\pi \int_0^1 x^2 dx \\
+>   &= 2\pi \cdot \frac{1}{3} = \frac{2\pi}{3}
+> \end{aligned}
 > $$
 >
 
@@ -103,17 +125,24 @@
 
 > [!note]
 >  
-> **例5** 计算 $y = x^{3/2}$ 从 $x=0$ 到 $x=1$ 的弧长
-> 
-> **解**：$f'(x) = \frac{3}{2}x^{1/2}$，所以
+>**例5** 计算 $y = x^{\frac{3}{2}}$ 从 $x=0$ 到 $x=1$ 的弧长
+>
+>**解**：$f'(x) = \frac{3}{2}x^{\frac{1}{2}}$，所以
+>
 > $$
-> L = \int_0^1 \sqrt{1 + \left(\frac{3}{2}x^{1/2}\right)^2} dx = \int_0^1 \sqrt{1 + \frac{9}{4}x} dx
+> \begin{aligned}
+> L &= \int_0^1 \sqrt{1 + \left(\frac{3}{2}x^{\frac{1}{2}}\right)^2} dx \\
+>   &= \int_0^1 \sqrt{1 + \frac{9}{4}x} dx
+> \end{aligned}
 > $$
-> 
-> 令 $u = 1 + \frac{9}{4}x$，则 $du = \frac{9}{4}dx$，当 $x=0$ 时 $u=1$，$x=1$ 时 $u=\frac{13}{4}$
-> 
+>令 $u = 1 + \frac{9}{4}x$，则 $du = \frac{9}{4}dx$，当 $x=0$ 时 $u=1$，$x=1$ 时 $u=\frac{13}{4}$
+>
 > $$
-> L = \frac{4}{9} \int_1^{13/4} \sqrt{u}  du = \frac{4}{9} \cdot \frac{2}{3} u^{3/2} \Big|_1^{13/4} = \frac{8}{27} \left[\left(\frac{13}{4}\right)^{3/2} - 1\right]
+> \begin{aligned}
+> L &= \frac{4}{9} \int_1^{\frac{13}{4}} \sqrt{u}  du \\
+>   &= \frac{4}{9} \cdot \frac{2}{3} u^{\frac{3}{2}} \Big|_1^{\frac{13}{4}} \\
+>   &= \frac{8}{27} \left[\left(\frac{13}{4}\right)^{\frac{3}{2}} - 1\right]
+> \end{aligned}
 > $$
 
 > [!important]
@@ -125,7 +154,7 @@
 > L = \int_\alpha^\beta \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}  dt
 > $$
 
-> [!ntoe]
+> [!note]
 >  
 > **例6** 计算半径为 $R$ 的圆的周长
 > 
@@ -134,7 +163,11 @@
 > $\frac{dx}{dt} = -R\sin t, \frac{dy}{dt} = R\cos t$
 > 
 > $$
-> L = \int_0^{2\pi} \sqrt{(-R\sin t)^2 + (R\cos t)^2}  dt = \int_0^{2\pi} R  dt = 2\pi R
+> \begin{aligned}
+> L &= \int_0^{2\pi} \sqrt{(-R\sin t)^2 + (R\cos t)^2}  dt \\
+>   &= \int_0^{2\pi} R  dt \\
+>   &= 2\pi R
+> \end{aligned}
 > $$
 > 
 
@@ -156,13 +189,19 @@
 > **解**：$\frac{dr}{d\theta} = -a\sin\theta$
 > 
 > $$
-> L = \int_0^{2\pi} \sqrt{[a(1+\cos\theta)]^2 + (-a\sin\theta)^2}  d\theta
-> = a\int_0^{2\pi} \sqrt{2 + 2\cos\theta}  d\theta
+> \begin{aligned}
+> L &= \int_0^{2\pi} \sqrt{[a(1+\cos\theta)]^2 + (-a\sin\theta)^2}  d\theta \\
+>   &= a\int_0^{2\pi} \sqrt{2 + 2\cos\theta}  d\theta
+> \end{aligned}
 > $$
-> 
-> 利用 $1 + \cos\theta = 2\cos^2(\theta/2)$，得
+>
+>利用 $1 + \cos\theta = 2\cos^2\left(\frac{\theta}{2}\right)$，得
 > $$
-> L = a\int_0^{2\pi} 2|\cos(\theta/2)| d\theta = 4a\int_0^{\pi} \cos(\theta/2) d\theta = 8a
+> \begin{aligned}
+> L &= a\int_0^{2\pi} 2\left|\cos\left(\frac{\theta}{2}\right)\right| d\theta \\
+>   &= 4a\int_0^{\pi} \cos\left(\frac{\theta}{2}\right) d\theta \\
+>   &= 8a
+> \end{aligned}
 > $$
 
 ## 物理中的应用: 功与能量
@@ -174,6 +213,8 @@
 > [!warning]
 > 
 > ==有限区域内的变力做功==
+
+>[!note]
 > 
 > **例1** 弹簧压缩做功
 > 
@@ -184,6 +225,9 @@
 > W = \int_0^L kx  dx = \frac{1}{2}kL^2
 > $$
 > 
+
+>[!note]
+>
 > **例2** 抽水做功
 > 
 > **解**：设圆柱形水箱半径 $R$，高 $H$，充满密度为 $\rho$ 的液体
@@ -202,7 +246,9 @@
 > [!warning]
 > 
 > ==无穷区域上的做功问题==
-> 
+
+>[!note] 
+>
 > **例3** 万有引力做功
 > 
 > **解**：质量为 $m$ 的物体从距地心 $r$ 处移动到无穷远处，克服地球引力做的功：
@@ -216,7 +262,12 @@
 > 
 > 通过极限定义：
 > $$
-> W = \lim_{b \to \infty} \int_r^b \frac{GMm}{x^2}  dx = \lim_{b \to \infty} GMm \left[ -\frac{1}{x} \right]_r^b = \lim_{b \to \infty} GMm \left( \frac{1}{r} - \frac{1}{b} \right) = \frac{GMm}{r}
+> \begin{aligned}
+> W &= \lim_{b \to \infty} \int_r^b \frac{GMm}{x^2}  dx \\
+>   &= \lim_{b \to \infty} GMm \left[ -\frac{1}{x} \right]_r^b \\
+>   &= \lim_{b \to \infty} GMm \left( \frac{1}{r} - \frac{1}{b} \right) \\
+>   &= \frac{GMm}{r}
+> \end{aligned}
 > $$
 > 
 > 这就是引力势能公式，它收敛到一个有限值。
@@ -227,6 +278,8 @@
 > ==无界函数的积分==
 > 
 > 当被积函数在积分区间内无界时，也需要通过极限来定义积分。
+
+>[!note]
 > 
 > **例4** 计算电场强度
 > 
@@ -241,7 +294,12 @@
 > 
 > 在 $x=0$ 处函数无界，我们通过极限定义：
 > $$
-> \int_0^1 \frac{1}{\sqrt{x}}  dx = \lim_{a \to 0^+} \int_a^1 \frac{1}{\sqrt{x}}  dx = \lim_{a \to 0^+} \left[ 2\sqrt{x} \right]_a^1 = \lim_{a \to 0^+} (2 - 2\sqrt{a}) = 2
+> \begin{aligned}
+> \int_0^1 \frac{1}{\sqrt{x}}  dx &= \lim_{a \to 0^+} \int_a^1 \frac{1}{\sqrt{x}}  dx \\
+>   &= \lim_{a \to 0^+} \left[ 2\sqrt{x} \right]_a^1 \\
+>   &= \lim_{a \to 0^+} (2 - 2\sqrt{a}) \\
+>   &= 2
+> \end{aligned}
 > $$
 > 
 > 这个积分收敛到有限值 2。
@@ -268,8 +326,11 @@
 > 
 > **性质**：
 > 1. 非负性：$f(x) \geq 0$ 对所有 $x$ 成立
-> 2. 归一性：$\int_{-\infty}^\infty f(x)  dx = 1$
+> 2. 归一性：$\displaystyle\int_{-\infty}^\infty f(x)  dx = 1$
 > 
+
+>[!note]
+>
 > **例1** 验证函数 $f(x) = \begin{cases} 
 > 2x & 0 \leq x \leq 1 \\
 > 0 & \text{其他}
@@ -279,12 +340,16 @@
 > 
 > 检查归一性：
 > $$
-> \int_{-\infty}^\infty f(x)  dx = \int_0^1 2x  dx = [x^2]_0^1 = 1
+> \begin{aligned}
+> \int_{-\infty}^\infty f(x)  dx &= \int_0^1 2x  dx \\
+>   &= \left[x^2\right]_0^1 \\
+>   &= 1
+> \end{aligned}
 > $$
 > 
 > 因此 $f(x)$ 是一个合法的概率密度函数。
 
-> [!note]
+> [!important]
 > 
 > ==均匀分布==
 > 
@@ -300,6 +365,9 @@
 > $$
 > 则称 $X$ 服从均匀分布，记作 $X \sim U(a,b)$。
 > 
+
+>[!note]
+>
 > **例2** 公共汽车到站时间问题
 > 
 > **解**：假设公共汽车每10分钟一班，乘客随机到达车站，求等待时间不超过3分钟的概率。
@@ -307,12 +375,12 @@
 > 等待时间 $X \sim U(0,10)$，概率密度函数 $f(x) = \frac{1}{10}$，$0 \leq x \leq 10$
 > 
 > $$
-> P(0 \leq X \leq 3) = \int_0^3 \frac{1}{10}  dx = \frac{3}{10} = 0.3
+> P(0 \leq X \leq 3) = \int_0^3 \frac{1}{10}  dx = \frac{3}{10}
 > $$
 > 
 >
 
-> [!note]
+> [!important]
 > 
 > ==指数分布==
 > 
@@ -327,7 +395,9 @@
 > \end{cases}
 > $$
 > 其中 $\lambda > 0$，则称 $X$ 服从参数为 $\lambda$ 的指数分布。
-> 
+
+>[!note]
+>
 > **例3** 电子元件寿命问题
 > 
 > **解**：某电子元件的寿命 $X$（单位：小时）服从参数 $\lambda = 0.001$ 的指数分布，求该元件能工作超过1000小时的概率。
@@ -338,11 +408,16 @@
 > 
 > 计算这个反常积分：
 > $$
-> \lim_{b \to \infty} \int_{1000}^b 0.001 e^{-0.001x}  dx = \lim_{b \to \infty} \left[ -e^{-0.001x} \right]_{1000}^b = e^{-1} \approx 0.3679
+> \begin{aligned}
+> \lim_{b \to \infty} \int_{1000}^b 0.001 e^{-0.001x}  dx 
+>   &= \lim_{b \to \infty} \left[ -e^{-0.001x} \right]_{1000}^b \\
+>   &= e^{-1} \\
+>   &\approx 0.3679
+> \end{aligned}
 > $$
 > 
 
-> [!note]
+> [!important]
 > 
 > ==正态分布==
 > 
@@ -366,7 +441,7 @@
 > $$
 > 
 > **概率计算**：
-> 对于 $X \sim N(\mu,\sigma^2)$，$P(a \leq X \leq b) = \int_a^b \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}  dx$
+> 对于 $X \sim N(\mu,\sigma^2)$，$P(a \leq X \leq b) = \displaystyle\int_a^b \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}  dx$
 > 
 > 这个积分没有初等函数形式的原函数，谜底留到第二册.
 
@@ -382,21 +457,24 @@
 > ==无穷区间上的反常积分==
 > 
 > **定义**：
-> 1. $\int_a^\infty f(x)  dx = \lim_{b \to \infty} \int_a^b f(x)  dx$
-> 2. $\int_{-\infty}^b f(x)  dx = \lim_{a \to -\infty} \int_a^b f(x)  dx$
-> 3. $\int_{-\infty}^\infty f(x)  dx = \int_{-\infty}^c f(x)  dx + \int_c^\infty f(x)  dx$（$c$ 为任意实数）
+> 1. $\displaystyle\int_a^\infty f(x)  dx = \lim_{b \to \infty} \int_a^b f(x)  dx$
+> 2. $\displaystyle\int_{-\infty}^b f(x)  dx = \lim_{a \to -\infty} \int_a^b f(x)  dx$
+> 3. $\displaystyle\int_{-\infty}^\infty f(x)  dx = \int_{-\infty}^c f(x)  dx + \int_c^\infty f(x)  dx$（$c$ 为任意实数）
 > 
 > **收敛判别**：
 > 如果极限存在且有限，则称反常积分收敛；否则称发散。
 
 > [!note]
 > 
-> **例5** 研究 $\int_1^\infty \frac{1}{x^p}  dx$ 的收敛性
+> **例5** 研究 $\displaystyle\int_1^\infty \frac{1}{x^p}  dx$ 的收敛性
 > 
 > **解**：
 > 当 $p \neq 1$ 时：
 > $$
-> \int_1^\infty \frac{1}{x^p}  dx = \lim_{b \to \infty} \left[ \frac{x^{1-p}}{1-p} \right]_1^b = \lim_{b \to \infty} \frac{b^{1-p} - 1}{1-p}
+> \begin{aligned}
+> \int_1^\infty \frac{1}{x^p}  dx &= \lim_{b \to \infty} \left[ \frac{x^{1-p}}{1-p} \right]_1^b \\
+>   &= \lim_{b \to \infty} \frac{b^{1-p} - 1}{1-p}
+> \end{aligned}
 > $$
 > 
 > - 当 $p > 1$ 时，$b^{1-p} \to 0$，积分收敛于 $\frac{1}{p-1}$
@@ -404,7 +482,11 @@
 > 
 > 当 $p = 1$ 时：
 > $$
-> \int_1^\infty \frac{1}{x}  dx = \lim_{b \to \infty} [\ln x]_1^b = \lim_{b \to \infty} \ln b = \infty
+> \begin{aligned}
+> \int_1^\infty \frac{1}{x}  dx &= \lim_{b \to \infty} [\ln x]_1^b \\
+>   &= \lim_{b \to \infty} \ln b \\
+>   &= \infty
+> \end{aligned}
 > $$
 > 发散。
 
@@ -432,12 +514,15 @@
 
 > [!note]
 > 
-> **例6** 研究 $\int_0^1 \frac{1}{x^p}  dx$ 的收敛性
+> **例6** 研究 $\displaystyle\int_0^1 \frac{1}{x^p}  dx$ 的收敛性
 > 
 > **解**：
 > 当 $p \neq 1$ 时：
 > $$
-> \int_0^1 \frac{1}{x^p}  dx = \lim_{a \to 0^+} \left[ \frac{x^{1-p}}{1-p} \right]_a^1 = \lim_{a \to 0^+} \frac{1 - a^{1-p}}{1-p}
+> \begin{aligned}
+> \int_0^1 \frac{1}{x^p}  dx &= \lim_{a \to 0^+} \left[ \frac{x^{1-p}}{1-p} \right]_a^1 \\
+>   &= \lim_{a \to 0^+} \frac{1 - a^{1-p}}{1-p}
+> \end{aligned}
 > $$
 > 
 > - 当 $p < 1$ 时，$a^{1-p} \to 0$，积分收敛于 $\frac{1}{1-p}$
@@ -445,6 +530,10 @@
 > 
 > 当 $p = 1$ 时：
 > $$
-> \int_0^1 \frac{1}{x}  dx = \lim_{a \to 0^+} [\ln x]_a^1 = \lim_{a \to 0^+} (-\ln a) = \infty
+> \begin{aligned}
+> \int_0^1 \frac{1}{x}  dx &= \lim_{a \to 0^+} [\ln x]_a^1 \\
+>   &= \lim_{a \to 0^+} (-\ln a) \\
+>   &= \infty
+> \end{aligned}
 > $$
 > 发散。
