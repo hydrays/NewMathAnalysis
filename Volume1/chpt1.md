@@ -498,32 +498,22 @@
 
 > [!note]
 > 
->**直觉: $\displaystyle \lim\limits_{x \to 1}(2x - 1) = 1$**.
+>**直觉: $f(x) = 5x + 1$ 在 $x_0 = 2$ 的极限为 $11$**.
 >
->**证**: 由于
+>**证明:** 由于
 >$$
->|f(x) - A| = |(2x - 1) - 1| = 2|x - 1|
->$$
->
->为了使 $\displaystyle |f(x) - A| < \varepsilon$，只要
->$$
->|x - 1| < \frac{\varepsilon}{2}
+>\begin{align*}
+>|f(x) - 11| &= |(5x + 1) - 11| \\
+> &= 5|x - 2| < \varepsilon
+>\end{align*}
 >$$
 >
->所以，$\forall \varepsilon > 0$，可取$\displaystyle \delta = \frac{\varepsilon}{2}$，则当 $x$ 适合不等式
->$$
->0 < |x - 1| < \delta
->$$
+>为了使 $5|x - 2| < \varepsilon$，只要 $\displaystyle |x - 2| < \frac{\varepsilon}{5}$. 
 >
->时，对应的函数值$f(x)$就满足不等式
->$$
->|f(x) - 1| = |(2x - 1) - 1| < \varepsilon
->$$
->
->从而
->$$
->\lim\limits_{x \to 1}(2x - 1) = 1
->$$
+> 取 $\displaystyle \delta = \frac{\varepsilon}{5}$，可知当 $0 < |x - 2| < \delta$ 时，总有 $\displaystyle |f(x) - 11| < \varepsilon$,
+> 从而 
+> $$\lim_{x \rightarrow 2} f(x) = 11.$$
+
 
 > [!note]
 > 
