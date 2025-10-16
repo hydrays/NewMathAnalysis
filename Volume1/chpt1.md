@@ -141,7 +141,7 @@
 >
 > ==逆映射==
 >
-> 对于一一映射 $f: A \rightarrow B $, 把映射的象和原象反过来, 得到一个把集合 $B$ 映射到集合 $A$ 的新的映射, 称为逆映射, 记作 $f^{-1}: B\rightarrow A$.
+> 对于一一映射 $f: A \rightarrow B$, 把映射的象和原象反过来, 得到一个把集合 $B$ 映射到集合 $A$ 的新的映射, 称为逆映射, 记作 $f^{-1}: B\rightarrow A$.
 
 > [!Note]
 > 
@@ -170,7 +170,7 @@
 > 
 > ==数列==
 > 
-> **数列**是一类特殊的函数, 它把自然数集 $\mathbb{N}$ 映射到实数集 $\mathbb{R}$ 中, 这个函数可以记作 $a(n)$, 不过更多的时候我们会把 $n$ 作为下标, 以 $a_n$ 表示数列得第 $n$ 项, 并以 $\{ a_n \} $ 表示整个数列.
+> **数列**是一类特殊的函数, 它把自然数集 $\mathbb{N}$ 映射到实数集 $\mathbb{R}$ 中, 这个函数可以记作 $a(n)$, 不过更多的时候我们会把 $n$ 作为下标, 以 $a_n$ 表示数列得第 $n$ 项, 并以 $\{ a_n \}$ 表示整个数列.
 > 
 > **等差数列**
 > 
@@ -231,7 +231,7 @@
 >
 > **反函数**是**逆映射**的一个特例, 对于函数 $f: x \rightarrow y$ (也要求 $f$ 是一一映射), 其反函数为 $f^{-1}: y \rightarrow x$. 例如
 > 
-> - $y = 3x + 1$ 的反函数为 $\displaystyle y = \frac{x - 1}{3} $
+> - $y = 3x + 1$ 的反函数为 $\displaystyle y = \frac{x - 1}{3}$
 > - $y = \mathrm{e}^x$ 的反函数为 $y = \mathrm{ln}x$. 
 >
 > 反函数本质上是把 $x$ 和 $y$ 的顺序对调了一下, 因此不难发现原函数与反函数的图像是关于直线 $y = x$ 对称的.
@@ -406,7 +406,7 @@
 >| \frac{1}{2^N} - 0 | = \frac{1}{2^N} < \varepsilon
 >$$
 >
->取 $\displaystyle N = \left[ \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1 $, 可知当 $n > N$ 时, 总有 $|a_n - 0| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 0$.
+>取 $\displaystyle N = \left[ \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1$, 可知当 $n > N$ 时, 总有 $|a_n - 0| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 0$.
 > 
 > ==一尺之捶，日取其半 (版本2)==
 > 
@@ -417,7 +417,7 @@
 >|1 - \frac{1}{2^N} - 1| = \frac{1}{2^N} < \varepsilon
 >$$
 >
-> 取 $\displaystyle N = \left[ \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1 $, 可知当 $n > N$ 时, 总有 $|b_n - 1| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} b_n = 1$.
+> 取 $\displaystyle N = \left[ \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1$, 可知当 $n > N$ 时, 总有 $|b_n - 1| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} b_n = 1$.
 >
 
 > [!Note]
@@ -808,8 +808,8 @@
 
 > [!warning]
 > 
-> - $ x $ 必须使用弧度制
-> - 对于 $ x < 0 $ 的情况，利用奇函数性质：
+> - $x$ 必须使用弧度制
+> - 对于 $x < 0$ 的情况，利用奇函数性质：
 > $$
 > \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
 > $$
@@ -964,7 +964,7 @@
 >
 >因此：$\displaystyle\lim_{n \to \infty} f(n) = 1 + 0 = 1$
 >
->因外层函数 $ g(x) = \sqrt{x} $ 在 $ x = 1 $ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
+>因外层函数 $g(x) = \sqrt{x}$ 在 $x = 1$ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
 >
 > 代入内部极限结果：
 >$$
