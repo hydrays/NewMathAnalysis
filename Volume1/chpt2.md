@@ -1092,7 +1092,11 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 >
 > 为了评判在给定的参数 $k$ 下模型(3)对数据的拟合程度, 我们引入**损失函数**
 >
-> SSE(k) = \sum_{i=1}^{N} (y_i - k x_i)^2
+> $$
+> L(k) = \sum_{i=1}^{N} (y_i - k x_i)^2
+> $$
+> 
+> 这是一个关于 $k$ 的函数, 
 
 > \frac{d}{dk} SSE(k) = -2 \sum_{i=1}^{N} x_i (y_i - k x_i)
 
