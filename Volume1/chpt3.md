@@ -502,8 +502,6 @@ k = \left.\frac{dy}{dx}\right|_{(3\sqrt{2},2)} = \frac{2 \times 3\sqrt{2}}{9 \ti
 > \frac{dy}{dx}=(\arctan x)' = \frac{1}{1 + x^2}
 > $$
 > 
->  用类似的方法可得反余切函数的导数公式 $\displaystyle (arccot x)' = -\frac{1}{1+x^2}$.
-
 
 > [!note]
 > 

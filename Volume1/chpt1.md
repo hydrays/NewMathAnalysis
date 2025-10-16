@@ -65,7 +65,7 @@
 > 
 > 下图展示了交集运算: 
 > 
-> ![交集](../media/img_new/chpt1_intersection.png)
+> ![交集](../media/img/chpt1_intersection.png)
 >
 > **并集**
 >
@@ -77,7 +77,7 @@
 > 
 > 下图展示了并集运算: 
 > 
-> ![并集](../media/img_new/chpt1_union.png)
+> ![并集](../media/img/chpt1_union.png)
 > 
 > **补集**
 > 
@@ -89,7 +89,7 @@
 > 
 > 下图展示了补集运算: 
 > 
-> ![补集](../media/img_new/chpt1_complement.png)
+> ![补集](../media/img/chpt1_complement.png)
 
 > [!caution]
 >
@@ -121,7 +121,7 @@
 >
 > 映射可以通过下面的图像来理解: 
 >
-> ![映射](../media/img_new/chpt1_Function_color_example.png#200h)
+> ![映射](../media/img/chpt1_Function_color_example.png#200h)
 > 
 > 图中箭头表示了集合 $A$ 中元素与集合 $B$ 中元素的对映关系. 
 > 
@@ -155,7 +155,7 @@
 > 
 > 从上面的例子可以感受到, 映射的作用在于把集合 $A$ 中的元素作为**输入信号**, 例如如不同的人、GPS坐标、光的波长等, 经过某种操作, 转换成我们关心的输出, 如名字、位置和颜色. 从这个意义上理解, 映射就是就是把输入 $x$ 转化成 $f(x)$ 的一个机器.
 > 
-> ![Function](../media/img_new/chpt1_function.png#200w)
+> ![Function](../media/img/chpt1_function.png#200w)
 
 ### 函数
 
@@ -236,7 +236,7 @@
 >
 > 反函数本质上是把 $x$ 和 $y$ 的顺序对调了一下, 因此不难发现原函数与反函数的图像是关于直线 $y = x$ 对称的.
 > 
-> ![反函数图形的对称性](../media/img_new/chpt1_inverse_function.png#400w)
+> ![反函数图形的对称性](../media/img/chpt1_inverse_function.png#400w)
 
 > [!important]
 > 
@@ -268,7 +268,7 @@
 > 
 > ==深度学习与复合函数==
 >
-> ![神经网络](../media/img_new/chpt1_network.png#400w) 
+> ![神经网络](../media/img/chpt1_network.png#400w) 
 >
 > 人工智能中的核心技术为**深度学习**, 深度学习的背后其实就是有很多层 (从几十到几千层都有) 的**神经网络** (Neuron Network). 神经网络的本质正是复合函数. 对于图中所示的神经网络, 从最左端的**输入信号**开始, 之后每一层都是上一层信号的复合, 因此神经网络就是一个复合了很多次的函数, 这个函数把输入 (比如一张图片) 映射到我们关心的结果 (比如图像是猫还是狗的概率). 
 >
@@ -463,7 +463,7 @@
 > 
 > 函数极限跟数列极限本质上都是极限, 都是**动中取静**, 只不过数列极限中动的是 $n$, 而函数极限中动的是自变量 $x$. 之前我们强调过**函数图像**的重要性, 函数的极限过程同样可以通过函数图像来理解. 下面这张图可以作为我们对函数极限的**直觉**, 图中展示了 $\displaystyle \lim_{x\rightarrow 2} f(x) = 4$, 请大家想想在这个极限过程中什么在**动**, 什么是**静**?
 >
->  ![函数极限](../media/img_new/chpt1_function_limit.png#400w)
+>  ![函数极限](../media/img/chpt1_function_limit.png#400w)
 >  
 
 > [!caution]
@@ -491,7 +491,7 @@
 > 
 > 上述定义可以通过下图来理解
 > 
-> ![函数极限](../media/img_new/chpt1_function_limit_def.png#400w)
+> ![函数极限](../media/img/chpt1_function_limit_def.png#400w)
 > 
 > 所以函数 $\{f(x)\}$ 在 $x\rightarrow x_0$ 时有极限就是, 当 $x$ 足够接近 $x_0$ 时, $f(x)$ 的值无限接近某个数 $A$. 注意跟数列极限进行对比. 跟数列极限的定义一样, 上面关于函数极限的定义提供了一个**可操作的流程**, 能够将我们关于函数极限的直观**具象化**. 
 >
@@ -785,34 +785,54 @@
 > 2. $\displaystyle \lim_{n\to\infty} b_n = \lim_{n\to\infty} c_n = L$, 则 $\displaystyle \lim_{n\to\infty} a_n = L$.
 >
 
-> [!warning]
+> [!important]
 >
-> **证明** $\displaystyle \lim_{x\rightarrow 0} \frac{\sin x}{x} = 1$
+> ==重要极限1==
 > 
-> 考虑单位圆（半径 \( r = 1 \)）中角度 $\displaystyle x \in \left(0, \frac{\pi}{2}\right)$:
->     -  $\sin x$  为对边长度
->     -  $x$  为圆弧长度（弧度制）
->     -  $\tan x$  为切线长度
-> $\displaystyle \sin x < x < \tan x \implies 1 < \frac{x}{\sin x} < \frac{1}{\cos x}$, 取倒数得：$\displaystyle \cos x < \frac{\sin x}{x} < 1$
-> 
-> 应用三明治定理:
 > $$
-> \lim_{x \to 0} \cos x = 1 \quad \text{且} \quad \lim_{x \to 0} 1 = 1
+> \boxed{\displaystyle \lim_{x\rightarrow 0} \frac{\sin x}{x} = 1}
+> $$
+> 
+> **证明**: 首先考虑 $x>0$ 的情形. 我们从几何出发, 把 $x$ 看作是单位圆上的一小段弧度, 注意到
+> 
+> -  $\sin x$ 为对边长度
+> -  $x$ 为圆弧长度（弧度制）
+> -  $\tan x$ 为切线长度
+> 
+> 通过几何上观察可知
+> 
+> $$
+> \sin x < x < \tan x 
+> $$
+> 
+> 同时除以 $\sin x$ 并取倒数得
+> 
+> $$
+> \cos x < \frac{\sin x}{x} < 1, \quad x>0
 > $$
 >
-> 故：
->
-> $$
-> \lim_{x \to 0} \frac{\sin x}{x} = 1
-> $$
-
-> [!warning]
+> 对于 $x < 0$ 的情况，利用奇函数性质：
 > 
-> - $x$ 必须使用弧度制
-> - 对于 $x < 0$ 的情况，利用奇函数性质：
 > $$
 > \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
 > $$
+>
+> 因此同样有
+>
+> $$
+> \cos x < \frac{\sin x}{x} < 1, \quad x < 0
+> $$
+> 注意到
+> $$
+> \lim_{x \to 0} \cos x = 1
+> $$
+>
+> 应用三明治定理, 得
+>
+> $$
+> \lim_{x \to 0} \frac{\sin x}{x} = 1.
+> $$
+>
 
 
 > [!tip]
@@ -821,7 +841,7 @@
 >  
 > 极限 $\displaystyle \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n}$ 与无理数 $\mathrm{e}$ (**欧拉数**_~Rd~_)有密切的联系. Jacob Bernoulli 于1683年在研究**复利**的时候考虑过这个数列的极限.
 > 
-> ![Jakob Bernoulli](../media/img_new/chpt1_Jakob_Bernoulli.jpg#400h)
+> ![Jakob Bernoulli](../media/img/chpt1_Jakob_Bernoulli.jpg#400h)
 > 
 > **雅各布·伯努利与数e的发现**
 
@@ -838,13 +858,20 @@
 >
 
 > [!important]
-> **证明 $\displaystyle \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n} = \mathrm{e}$**
+>
+> ==重要极限2==
+> 
+> $$
+> \boxed{\lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n} = \mathrm{e}}
+> $$
 >
 > 证明见教学视频或问DeepSeek.
 
 > [!warning]
 >
-> $\displaystyle \lim_{x\rightarrow 0} \left(1+x\right)^{\frac{1}{x}} = \mathrm{e}$
+> $$ 
+> \boxed{\lim_{x\rightarrow 0} \left(1+x\right)^{\frac{1}{x}} = \mathrm{e}}
+> $$
 
 > [!caution]
 >
@@ -935,7 +962,7 @@
 >
 > **例5: $\displaystyle \lim_{x\rightarrow 0}\frac{\tan 2x}{\sin 5x}$ (P55: 例3)**
 > 
-> **解**：当 $ x \rightarrow 0 $ 时，$\tan 2x \sim 2x$，$\sin 5x \sim 5x$，所以 
+> **解**：当 $x \rightarrow 0$ 时，$\tan 2x \sim 2x$，$\sin 5x \sim 5x$，所以 
 >$$
 >\lim_{x \rightarrow 0} \frac{\tan 2x}{\sin 5x} = \lim_{x \rightarrow 0} \frac{2x}{5x} = \frac{2}{5}
 >$$
@@ -1001,13 +1028,13 @@
 > 
 >  $f(x)$ 在 $(-\infty, +\infty)$ 上连续.
 > 
-> ![绝对值函数](../media/img_new/chpt1_continuous_function_example1.png#200h)
+> ![绝对值函数](../media/img/chpt1_continuous_function_example1.png#200h)
 > 
 > **例2: $\displaystyle f(x) = \frac{1}{|x|}$**
 > 
 >  $f(x)$ 在 $(-\infty,0)\bigcup (0, +\infty)$ 上连续, 但是在 0 点处不连续.
 > 
-> ![绝对值的倒数](../media/img_new/chpt1_continuous_function_example2.png#200h)
+> ![绝对值的倒数](../media/img/chpt1_continuous_function_example2.png#200h)
 > 
 
 > [!warning]
@@ -1035,7 +1062,7 @@
 >
 >不幸的是,  $f(x)$ 在 $x=0$ 处无限震荡, 没有极限, 所以这个函数没法像*`例3`*一样简单的补上一个点就成为连续函数.
 > 
-> ![震荡函数](../media/img_new/chpt1_continuous_function_example4.png#200h)
+> ![震荡函数](../media/img/chpt1_continuous_function_example4.png#200h)
 >
 
 > [!warning]
