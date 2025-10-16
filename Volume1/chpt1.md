@@ -65,7 +65,7 @@
 > 
 > 下图展示了交集运算: 
 > 
-> ![交集](../media/img/chpt1_intersection.png)
+> ![交集](../media/img/chpt1_intersection.png#200w)
 >
 > **并集**
 >
@@ -77,7 +77,7 @@
 > 
 > 下图展示了并集运算: 
 > 
-> ![并集](../media/img/chpt1_union.png)
+> ![并集](../media/img/chpt1_union.png#200w)
 > 
 > **补集**
 > 
@@ -89,7 +89,7 @@
 > 
 > 下图展示了补集运算: 
 > 
-> ![补集](../media/img/chpt1_complement.png)
+> ![补集](../media/img/chpt1_complement.png#200w)
 
 > [!caution]
 >
