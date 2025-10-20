@@ -3,6 +3,7 @@ practice/data/*
 practice/media/*
 practice/*
 *.pdf
+Volume1/chapter*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
