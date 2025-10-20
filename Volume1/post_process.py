@@ -37,9 +37,9 @@ def process_markdown_files():
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # 不处理标题编号
-        #processed_content = add_title_numbers(content, chapter_num)
-        processed_content = content
+        # 处理标题编号
+        processed_content = add_title_numbers(content, chapter_num)
+        #processed_content = content
         
         # 保存为新文件
         new_filename = f"chapter{chapter_num}.md"

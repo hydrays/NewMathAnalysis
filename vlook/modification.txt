@@ -27,4 +27,25 @@
     display: none !important;
   }
 
+/* 禁用标题伪元素编号 */
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+  content: '' !important;
+  display: none !important;
+}
+/* 隐藏可能的编号包裹元素 */
+h1 .v-hd-num, h2 .v-hd-num, h3 .v-hd-num,
+h4 .v-hd-num, h5 .v-hd-num, h6 .v-hd-num {
+  display: none !important;
+}
+/* 移除为编号预留的空白 */
+h1, h2, h3, h4, h5, h6 {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.typora-export :is(.md-toc-h1,.md-toc-h2,.md-toc-h3,.md-toc-h4,.md-toc-h5):before{content:""}
+
+
 2. plugin
+
+
