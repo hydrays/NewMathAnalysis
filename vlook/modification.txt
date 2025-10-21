@@ -45,7 +45,39 @@ h1, h2, h3, h4, h5, h6 {
 
 .typora-export :is(.md-toc-h1,.md-toc-h2,.md-toc-h3,.md-toc-h4,.md-toc-h5):before{content:""}
 
+/* 隐藏导航章节的编号 */
+.v-chapter-nav-current>span{content:"";width: 0 !important; height: 0 !important; font-size: 0 !important; line-height: 0 !important; opacity:.75}
+
+
+content>#write h1:not(:last-child)>span[md-inline=plain],
+.typora-export #write h1:not(:last-child)>span,
+#write>pre.md-meta-block:first-child+h6~h1:not(:last-child)>span,
+#write>h6:first-child~h1:not(:last-child)>span,
+content>#write h2>span[md-inline=plain],
+#write>pre.md-meta-block:first-child+h6 h2>span,
+content>#write h3>span[md-inline=plain],
+#write>pre.md-meta-block:first-child+h6 h3>span,
+content>#write h4>span[md-inline=plain],
+#write>pre.md-meta-block:first-child+h6 h4>span,
+content>#write h5>span[md-inline=plain],
+#write>pre.md-meta-block:first-child+h6 h5>span {
+    background: linear-gradient(135deg, var(--ac-t1) 30%, var(--ac-t2));
+    
+    /* 关键 1: 确保 Webkit 浏览器（手机端常用）能识别背景裁剪 */
+    -webkit-background-clip: text; /* 针对 Chrome, Safari, iOS 等 */
+    background-clip: text;         /* 标准写法 */
+
+    /* 关键 2: 确保 Webkit 浏览器能将文字颜色设为透明 */
+    -webkit-text-fill-color: transparent; /* 确保文字是透明的 */
+    
+    /* 您的原始代码中的 color: #0000; 实际上是 color: transparent 的简写 */
+    /* 为了最佳兼容性，同时保留您的写法和标准的透明写法 */
+    color: #0000;
+    
+}
 
 2. plugin
+
+initWF=()=>{return; 
 
 
