@@ -316,7 +316,7 @@
 >
 > ==极限存在的例子==
 >
-> **一尺之捶，日取其半 (版本1)**
+> **一尺之捶, 日取其半 (版本1)**
 > 
 > 站在棒子的角度, 这个过程可以用一个数列描述. $n$ 代表天数, $a_n$ 代表杠剩下的长度.
 >
@@ -333,7 +333,7 @@
 > 
 > 随着 $n$ 的增加 (**动**), $a_n$ 的值不断靠近0 (**静**), 直觉告诉我们当 $n$ 区域无穷大时 $a_n$ 的极限是0.
 >
-> **一尺之捶，日取其半 (版本2)**
+> **一尺之捶, 日取其半 (版本2)**
 > 
 > 站在砍棒人的角度, 这个过程也可以用一个数列描述. $n$ 代表天数, $b_n$ 代表到第 $n$ 天为止所取的棒子的总数.
 > 
@@ -397,7 +397,7 @@
 
 > [!Note]
 >
-> ==一尺之捶，日取其半 (版本1)==
+> ==一尺之捶, 日取其半 (版本1)==
 > 
 > **直觉**: $\displaystyle a_n  = \frac{1}{2^n}$ 的极限为0.
 > 
@@ -408,7 +408,7 @@
 >
 >取 $\displaystyle N = \left[ \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1$, 可知当 $n > N$ 时, 总有 $|a_n - 0| < \varepsilon$. 因此 $\displaystyle \lim_{n \rightarrow \infty} a_n = 0$.
 > 
-> ==一尺之捶，日取其半 (版本2)==
+> ==一尺之捶, 日取其半 (版本2)==
 > 
 > **直觉**: $\displaystyle b_n  = 1 - \frac{1}{2^n}$ 的极限为1.
 > 
@@ -508,9 +508,9 @@
 >\end{align*}
 >$$
 >
->为了使 $5|x - 2| < \varepsilon$，只要 $\displaystyle |x - 2| < \frac{\varepsilon}{5}$. 
+>为了使 $5|x - 2| < \varepsilon$, 只要 $\displaystyle |x - 2| < \frac{\varepsilon}{5}$. 
 >
-> 取 $\displaystyle \delta = \frac{\varepsilon}{5}$，可知当 $0 < |x - 2| < \delta$ 时，总有 $\displaystyle |f(x) - 11| < \varepsilon$,
+> 取 $\displaystyle \delta = \frac{\varepsilon}{5}$, 可知当 $0 < |x - 2| < \delta$ 时, 总有 $\displaystyle |f(x) - 11| < \varepsilon$,
 > 从而 
 > $$\lim_{x \rightarrow 2} f(x) = 11.$$
 
@@ -523,17 +523,17 @@
 >|f(x) - A| = |(2x - 1) - 1| = 2|x - 1|
 >$$
 >
->为了使 $\displaystyle |f(x) - A| < \varepsilon$，只要
+>为了使 $\displaystyle |f(x) - A| < \varepsilon$, 只要
 >$$
 >|x - 1| < \frac{\varepsilon}{2}
 >$$
 >
->所以，$\forall \varepsilon > 0$，可取$\displaystyle \delta = \frac{\varepsilon}{2}$，则当 $x$ 适合不等式
+>所以, $\forall \varepsilon > 0$, 可取$\displaystyle \delta = \frac{\varepsilon}{2}$, 则当 $x$ 适合不等式
 >$$
 >0 < |x - 1| < \delta
 >$$
 >
->时，对应的函数值$f(x)$就满足不等式
+>时, 对应的函数值$f(x)$就满足不等式
 >$$
 >|f(x) - 1| = |(2x - 1) - 1| < \varepsilon
 >$$
@@ -544,23 +544,38 @@
 >$$
 
 > [!note]
-> 
+>
 > **直觉: $\displaystyle f(x)  = x^2 + 1$ 在 $x_0=2$ 的极限为5**.
-> 
-> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $\delta$ 使得只要 $0 < |x-2|< \delta$, 总有 
+>
+> **证明**: 对于任意给定的 $\varepsilon > 0$, 要找到 $\delta$ 使得只要 $0 < |x-2|< \delta$, 总有
 > $$
 > \begin{align*}
-> \left|f(x) - 5\right| &= \left| x^2+1 - 5\right| \\
-> & = \left| x^2 - 4\right| \\
-> & = \left| x - 2\right| \left| x + 2\right|  \\
-> & < 2.5|x-2| < \varepsilon
+> \left|f(x) - 5\right| &= \left| x^2+1 - 5\right| \
+> & = \left| x^2 - 4\right| \
+> & = \left| x - 2\right| \left| x + 2\right|.
 > \end{align*}
 > $$
-> 
-> 取 $\displaystyle \delta = \frac{\varepsilon}{2.5}$, 可知当 $0< |x-2|<\delta$ 时,
 >
->总有 $|f(x) - 5| < \varepsilon$. 因此 $\displaystyle \lim_{x \rightarrow 2} f(x) = 5$.
-> 
+> 为了把 $\left|x+2\right|$ 用常数束缚住, 取 $\delta_0 = 1$. 当 $|x-2|<\delta_0$ 时, $1<x<3$, 因此
+> $$
+> |x+2|<5.
+> $$
+> 所以在 $|x-2|<1$ 的情况下有
+> $$
+> |f(x)-5| = |x-2||x+2| < 5|x-2|.
+> $$
+>
+> 现在给定任意 $\varepsilon>0$, 令
+> $$
+> \delta = \min\left\{1,\frac{\varepsilon}{5}\right\}.
+> $$
+> 若 $0<|x-2|<\delta$, 则同时有 $|x-2|<1$（从而 $|x+2|<5$）且 $|x-2|<\varepsilon/5$. 因此
+> $$
+> |f(x)-5| < 5|x-2| < 5\cdot\frac{\varepsilon}{5} = \varepsilon.
+> $$
+>
+> 因此对任意 $\varepsilon>0$ 存在上述 $\delta>0$ 使得 $0<|x-2|<\delta$ 蕴含 $|f(x)-5|<\varepsilon$, 于是
+> $$\displaystyle \lim_{x\to2} (x^2+1)=5.$$
 
 > [!warning]
 > 
@@ -655,7 +670,7 @@
 >
 > **例1: 证明 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$**
 > 
-> **证明**: 对任意给定的 $\varepsilon > 0$，我们需要找到正整数 $N$，使得当 $n > N$ 时:
+> **证明**: 对任意给定的 $\varepsilon > 0$, 我们需要找到正整数 $N$, 使得当 $n > N$ 时:
 > 
 >  $$
 >  \left| \frac{1}{n} - 0 \right| = \frac{1}{n} < \varepsilon
@@ -665,7 +680,7 @@
 > 
 >  取 $\displaystyle N = \left\lfloor \frac{1}{\varepsilon} \right\rfloor + 1$（即不小于 $\displaystyle \frac{1}{\varepsilon}$ 的最小整数）  
 > 
->  则当 $n > N$ 时，必有 $\displaystyle \frac{1}{n} < \varepsilon$  
+>  则当 $n > N$ 时, 必有 $\displaystyle \frac{1}{n} < \varepsilon$  
 > 
 >  故 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n}=0$.
 
@@ -683,20 +698,20 @@
 > 
 > **解法2（$\varepsilon-N$ 定义证明）**：  
 > 
-> 对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：
+> 对任意 $\varepsilon > 0$, 需存在 $N$ 使得当 $n > N$ 时：
 > 
 > $$
 > \left| \frac{1}{2n} - 0 \right| = \frac{1}{2n} < \varepsilon
 > $$
 > 
-> 解不等式得 $\displaystyle n > \frac{1}{2\varepsilon}$, 取 $\displaystyle N = \left\lfloor \frac{1}{2\varepsilon} \right\rfloor + 1$  ，则当 $n > N$ 时必满足 $\displaystyle \frac{1}{2n} < \varepsilon$  ，故极限为 $0$.
+> 解不等式得 $\displaystyle n > \frac{1}{2\varepsilon}$, 取 $\displaystyle N = \left\lfloor \frac{1}{2\varepsilon} \right\rfloor + 1$  , 则当 $n > N$ 时必满足 $\displaystyle \frac{1}{2n} < \varepsilon$  , 故极限为 $0$.
 >
 
 > [!note]
 >
 > **例3: 计算 $\displaystyle \lim_{n\rightarrow \infty}\frac{1}{n^2}$**
 >
-> **解**：对任意 $\varepsilon > 0$，需存在 $N$ 使得当 $n > N$ 时：
+> **解**：对任意 $\varepsilon > 0$, 需存在 $N$ 使得当 $n > N$ 时：
 > 
 > $$
 > \left| \frac{1}{n^2} - 0 \right| = \frac{1}{n^2} < \varepsilon
@@ -711,19 +726,19 @@
 > 
 >**解法1（直接代入法）**：  
 > 
-> 由于 $f(x) = 2x - 1$ 在 $x=1$ 处连续，可直接代入：  
+> 由于 $f(x) = 2x - 1$ 在 $x=1$ 处连续, 可直接代入：  
 > $$
 >\lim_{x\rightarrow 1}(2x-1) = 2(1) - 1 = 1
 > $$
 >
 > **解法2（$\varepsilon-\delta$ 定义证明）**：  
 > 
-> 对任意 $\varepsilon > 0$，需找到 $\delta > 0$ 使得当 $0 < |x-1| < \delta$ 时：  
+> 对任意 $\varepsilon > 0$, 需找到 $\delta > 0$ 使得当 $0 < |x-1| < \delta$ 时：  
 > $$
 > |(2x-1) - 1| = 2|x-1| < \varepsilon
 >$$ 
 > 
-> 取 $\displaystyle \delta = \frac{\varepsilon}{2}$，则当 $0 < |x-1| < \delta$ 时：  
+> 取 $\displaystyle \delta = \frac{\varepsilon}{2}$, 则当 $0 < |x-1| < \delta$ 时：  
 > $$
 > 2|x-1| < 2 \cdot \frac{\varepsilon}{2} = \varepsilon
 > $$
@@ -734,7 +749,7 @@
 >
 > **例5: 计算 $\displaystyle \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3}$**
 >
-> **解法**： 分子在 $x=2$ 处的值：$2^3 - 1 = 7$, 分母在 $x=2$ 处的值：$2^2 - 5(2) + 3 = -3$, 分母不为零，可直接代入：  
+> **解法**： 分子在 $x=2$ 处的值：$2^3 - 1 = 7$, 分母在 $x=2$ 处的值：$2^2 - 5(2) + 3 = -3$, 分母不为零, 可直接代入：  
 > 
 > $$
 > \lim_{x\rightarrow 2}\frac{x^3-1}{x^2-5x+3} = \frac{7}{-3} = -\frac{7}{3}
@@ -745,7 +760,7 @@
 >
 > **例6: 计算 $\displaystyle \lim_{x\rightarrow 3}\frac{x-3}{x^2-9}$**
 >
-> **解法**：识别不定式：直接代入得 $\frac{0}{0}$，需进一步处理, 因式分解分母：
+> **解法**：识别不定式：直接代入得 $\frac{0}{0}$, 需进一步处理, 因式分解分母：
 > $$
 > x^2-9 = (x-3)(x+3)
 > $$
@@ -811,7 +826,7 @@
 > \cos x < \frac{\sin x}{x} < 1, \quad x>0
 > $$
 >
-> 对于 $x < 0$ 的情况，利用奇函数性质：
+> 对于 $x < 0$ 的情况, 利用奇函数性质：
 > 
 > $$
 > \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
@@ -939,7 +954,7 @@
 >
 > **例3: $\displaystyle \lim_{x\rightarrow 0}\frac{\arcsin x}{x}$ (P48: 例3)**
 > 
-> **解**：$t = \arcsin x$，则 $x = \sin t$，当 $x \to 0$ 时，有 $t \to 0$.  于是由复合函数的极限运算法则得：
+> **解**：$t = \arcsin x$, 则 $x = \sin t$, 当 $x \to 0$ 时, 有 $t \to 0$.  于是由复合函数的极限运算法则得：
 >$$
 >\lim_{x \to 0} \frac{\arcsin x}{x} = \lim_{t \to 0} \frac{t}{\sin t} = 1
 >$$
@@ -949,7 +964,7 @@
 >
 > **例4: $\displaystyle \lim_{x\rightarrow \infty}\left( 1-\frac{1}{x}\right)^{x}$ (P51: 例4)**
 > 
-> **解**：令 $t = -x$，则当 $x \to \infty$ 时，$t \to -\infty$.  
+> **解**：令 $t = -x$, 则当 $x \to \infty$ 时, $t \to -\infty$.  
 >于是 
 >$$
 >\begin{aligned}
@@ -958,46 +973,18 @@
 >\end{aligned}
 >$$
 
-> [!note]
->
-> **例5: $\displaystyle \lim_{x\rightarrow 0}\frac{\tan 2x}{\sin 5x}$ (P55: 例3)**
-> 
-> **解**：当 $x \rightarrow 0$ 时，$\tan 2x \sim 2x$，$\sin 5x \sim 5x$，所以 
->$$
->\lim_{x \rightarrow 0} \frac{\tan 2x}{\sin 5x} = \lim_{x \rightarrow 0} \frac{2x}{5x} = \frac{2}{5}
->$$
->
 
 > [!note]
 >
-> **例6: $\displaystyle \lim_{n\rightarrow \infty}\frac{\sqrt{n^2 + a^2}}{n}$ (习题1-2: 5(3))**
+>**例5: $\displaystyle \lim_{x\rightarrow 0}\frac{\tan 2x}{\sin 5x}$**
+>
+>**解**：令 $u = 2x$, $v = 5x$. 当 $x \rightarrow 0$ 时, $u \rightarrow 0$ 且 $v \rightarrow 0$, 此时 $\displaystyle x = \frac{u}{2} = \frac{v}{5}$, 即 $\displaystyle v = \frac{5}{2}u$.
+>
+> 对上式第一个括号中的部分采用 $t = 2x$ 的换元, 可知其在 $x\to 0$ 时的极限为1; 同理, 对上式第二个括号中的部分采用 $t = 5x$ 的换元, 可知其在 $x\to 0$ 时的极限也为1. 故
 > 
-> **解**：约简分式为：
->$$
->\frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\frac{n^{2} + a^{2}}{n^{2}}} = \sqrt{1 + \frac{a^{2}}{n^{2}}}
->$$
->
-> 设两个基本函数, 内层函数：$\displaystyle \ f(n) = 1 + \frac{a^{2}}{n^{2}}$, 外层函数：$g(x) = \sqrt{x}$ 
->
-> 原极限可表示为复合函数：
->$$
->\lim_{n \to \infty} \frac{\sqrt{n^{2} + a^{2}}}{n} = \sqrt{\lim_{n \to \infty} \left(1 + \frac{a^{2}}{n^{2}}\right)}
->$$
->
-> 利用基本极限性质：
->$$
->\lim_{n \to \infty} \frac{a^2}{n^2} = a^2 \cdot \lim_{n \to \infty} \frac{1}{n} \cdot \lim_{n \to \infty} \frac{1}{n} = 0
->$$
->
->因此：$\displaystyle\lim_{n \to \infty} f(n) = 1 + 0 = 1$
->
->因外层函数 $g(x) = \sqrt{x}$ 在 $x = 1$ 处连续，满足：$\displaystyle\lim_{x \to L} g(x) = g(L)$
->
-> 代入内部极限结果：
->$$
->\lim_{n \to \infty} \sqrt{1 + \frac{a^2}{n^2}} = g(1) = \sqrt{1} = 1
->$$
-> 
+> $$
+> \lim_{x\rightarrow 0}\frac{\tan 2x}{\sin 5x} = \frac{2}{5}.
+> $$
 
 ## 连续函数
 
@@ -1131,7 +1118,7 @@
 >
 > **例1: $\displaystyle f(x) = \frac{1}{x}$**
 > 
-> 在闭区间$[-1,1]$上, $f(x)$ 在 $x=0$ 处不连续, 因为 $f(0)$ 没有定义. 因此, $f(x)$ 在 $[-1,1]$ 上的连续性是不成立的. 违反维尔斯特拉斯极值定理，$f(x)$ 在闭区间$[-1,1]$上无界，当$x \to 0$ 时，$\displaystyle \lim_{x \to 0} |f(x)| \to +\infty$,不存在最大值和最小值.
+> 在闭区间$[-1,1]$上, $f(x)$ 在 $x=0$ 处不连续, 因为 $f(0)$ 没有定义. 因此, $f(x)$ 在 $[-1,1]$ 上的连续性是不成立的. 违反维尔斯特拉斯极值定理, $f(x)$ 在闭区间$[-1,1]$上无界, 当$x \to 0$ 时, $\displaystyle \lim_{x \to 0} |f(x)| \to +\infty$,不存在最大值和最小值.
 >
 > 
 > **例2: 符号函数**
@@ -1144,7 +1131,7 @@
 > \end{cases}
 >$$
 >
-> 符号函数在闭区间$[-1, 1]$上不连续，因为在$x=0$处，符号函数的左右极限不相等。
+> 符号函数在闭区间$[-1, 1]$上不连续, 因为在$x=0$处, 符号函数的左右极限不相等. 
 > 
 
 > [!important]
@@ -1158,7 +1145,25 @@
 >
 > **例1：证明方程 $x^{3} - 4x^{2} + 1 = 0$ 在区间 $(0,\,1)$ 内至少有一个根**
 > 
-> **证明**：函数 $f ( x ) = x ^ { 3 } - 4 x ^ { 2 } + 1$ 在闭区间 $[0，1]$上连续，又$f ( 0 ) = 1 >0$，$f ( 1 ) = - 2< 0$. 
+> **证明**：函数 $f ( x ) = x ^ { 3 } - 4 x ^ { 2 } + 1$ 在闭区间 $[0, 1]$上连续, 又$f ( 0 ) = 1 >0$, $f ( 1 ) = - 2< 0$. 
 >
->根据介值定理，区间 $[0，1]$ 内存在 $c$ 满足 $f(c) = 0$, 此即方程 $x ^ { 3 } - 4 x ^ { 2 } + 1 = 0$ 的一个根． 
+>根据介值定理, 区间 $[0, 1]$ 内存在 $c$ 满足 $f(c) = 0$, 此即方程 $x ^ { 3 } - 4 x ^ { 2 } + 1 = 0$ 的一个根． 
 >
+
+> [!caution]
+>
+> 布尔查诺定理时一个**存在性定理**, 它只告诉我们一个东西有还是没有, 与之相对的是所谓的**构造性定理**, 后者会给出找出这个东西的具体办法. **存在性定理**和**构造性定理**都是数学的重要组成部分, 按照一般的理解, 前者在纯数学中的地位更高, 后者则一般更受工程师和程序员的青睐.
+>
+> 为了让大家体会存在性定理的奇妙之处, 下面我们用布尔查诺定理来证明一个看起来并不明显的命题(摘自库朗所著的《什么是数学》一书). 命题如下: 如果 $A$ 和 $B$ 是平面内的任意两个区域, 那么在平面内一定存在一条直线, 该直线同时平分 $A$ 和 $B$. (注：所谓一个"区域", 是指平面内一条简单闭曲线所包围的部分.)
+>
+> ![直线同时等分两个区域](../media/img/chpt1_equal_partition.png#400w)
+> 
+> **证明：** 
+> 
+> 先在平面上选择某一固定点 $P$, 并且从 $P$ 引出一条射线 $PR$ 当作度量角度的始边. 如果作与 $PR$ 的夹角为 $x$ 的任一射线 $PS$, 那么在平面上会有一条与 $PS$ 同方向且 **平分区域 $A$** 的有向直线. 
+> 
+> 因为, 如果我们作一条与 $PS$ 同方向的有向直线 $l_1$, 但它整个在 $A$ 的一侧, 然后平行地移动这条直线, 直到直线处在位置 $l_2$, 那么由区域 $A$ 在直线右侧（如果直线指北, 则东向是右侧）的面积减去 $A$ 在直线左侧的面积所定义的函数, 其值对 $l_1$ 是负的, 对 $l_2$ 是正的. 因为这个函数是连续的, 由布尔查诺定理, 必有某个中间位置 $l_x$, 使它为零, 也就是 $l_x$ 平分了 $A$. 因此, 对于 $x$ 由 $x = 0^\circ$ 到 $x = 360^\circ$ 的每个值 $x$, **平分 $A$ 的直线 $l_x$ 都是唯一确定的**. 
+>
+> 现在把函数 $y = f(x)$ 定义为 $B$ 在直线 $l_x$ 右侧面积减去 $B$ 在 $l_x$ 左侧的面积. 假设直线 $l_0$ 与 $PR$ 同方向且平分了 $A$, 并且 $B$ 在 $l_0$ 右侧的面积大于左侧, 则对 $x = 0^\circ$, $y$ 是正的. 如果 $x$ 增加到 $180^\circ$, 那么直线 $l_{180}$ 和 $RP$ 平行, 它虽然和 $l_0$ 一样地分割 $A$, 但与 $l_0$ 方向相反, 右和左互换, 因此 $y$ 在 $x = 180^\circ$ 时和在 $x = 0^\circ$ 时的数值相同, 但符号相反, 所以是负的. **当 $l_x$ 旋转时, $y$ 是 $x$ 的连续函数, 那么在 $0^\circ$ 和 $180^\circ$ 之间, 存在 $x$ 的某个值 $\alpha$, 使 $y$ 等于零**. 
+> 
+> 因此方向线 $l_\alpha$ 同时平分 $A$ 和 $B$, 证明完毕. 
