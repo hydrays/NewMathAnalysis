@@ -59,7 +59,7 @@
 >
 > 这样，切线的斜率和导数都通过极限的方式被严格定义。
 
->  ![导数的几何意义](../media/img/chpt2_derivative.png)
+>  ![导数的几何意义](../media/img/chpt2_derivative.png#400w)
 >  
 
 > [!extension]
@@ -335,7 +335,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 >
 > 左右极限不相等，故极限不存在, 因此，函数 $f(x) = |x|$ 在 $x=0$ 处不可导.
 > 
-> ![连续但不可导示例](../media/img/chpt2_derivative_ex3.svg#200w)
+> ![连续但不可导示例](../media/img/chpt2_derivative_ex3.svg#400w)
 
 > 
 >  ==连续但不可导的反例2==
@@ -366,7 +366,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 >
 > 上述两种方法都涉及到极限, 但是取极限的对象不同, 方法一中是对 $\Delta x$ 取极限, 而方法二中是对 $x$ 取极限, 尽管都趋于无穷大(而且指数项都是 $-\frac{2}{3}$), 但两者的意义是不一样的, 请注意体会.
 >
-> ![连续但不可导示例](../media/img/chpt2_derivative_ex4.svg#200w)
+> ![连续但不可导示例](../media/img/chpt2_derivative_ex4.svg#400w)
 
 ### 单侧导数
 
@@ -641,7 +641,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 >
 > **自由落体运动** 
 >
-> ![自由落体](../media/img/chpt2_freefall.png#200w)
+> ![自由落体](../media/img/chpt2_freefall.png#400w)
 >
 > 从静止开始的自由落体物体, 其位移随时间的函数为
 >  
@@ -807,7 +807,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > - 点 $A$ 坐标为 $(0, h_1)$, 点 $B$ 坐标为 $(l, h_2)$, 其中 $h_1 > 0, h_2 > 0$.
 > - 设饮水点为 $P(x, 0)$，其中 $x \in [0, l]$.
 > 
-> ![问题1](../media/img/chpt2_horse_drinking_problem.png)
+> ![问题1](../media/img/chpt2_horse_drinking_problem.png#400w)
 > 
 > **解法一**
 > 
@@ -840,7 +840,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 >
 > 这个方法利用了镜面反射原理, 基于直线最短得到了快速直观的解法. 
 > 
-> ![镜面反射原理](../media/img/chpt2_horse_drinking_problem_2.png)
+> ![镜面反射原理](../media/img/chpt2_horse_drinking_problem_2.png#400w)
 > 
 > 
 > **例2：饮马路径问题 (不同速度)**
@@ -876,13 +876,13 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > \end{align}
 > $$
 > 
-> ![问题2](../media/img/chpt2_specular_reflection.png)
+> ![问题2](../media/img/chpt2_specular_reflection.png#400w)
 >
 > 这是个很有意思的结果, 事实上, 上述变速度的路径问题与光的折射路径问题是等价的: 考虑一束光线从空气中的点 $A$ 出发, 经过水面折射后到达水中的点 $B$ . 已知光在空气中和水中的传播速度分别为 $v_1$ 和 $v_2$, 根据**斯涅耳定律（Snell's Law）**, 光线的入射角和出射角恰好满足公式(2)! 它精确地描述了光线在两种介质交界面上发生折射时的行为. 
 >
 > 可见, 运用微积分中通过导数来求极值的方法, 我们实际上再次发现了**光路最短原理（费马原理，Fermat's Principle）**, 它是几何光学中最基本、最重要的原理之一, 它指出光在两点之间传播时, 所走的路径是光程最短的路径, 而非距离最短的路径. 这个例子很好地说明了如何利用微积分来证明光学中的基本定律, 体现了数学工具在物理学中的强大应用.
 > 
-> ![光路最短](../media/img/chpt2_light_shortest_problem.png)
+> ![光路最短](../media/img/chpt2_light_shortest_problem.png#400w)
 
 
 ### 凸性
@@ -1021,7 +1021,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > g''(x) = 4 + e^x > 0
 > $$
 >
->![凸函数的非负加权](../media/img/chpt2_convex_ex1.svg#200w)
+>![凸函数的非负加权](../media/img/chpt2_convex_ex1.svg#400w)
 
 
 > [!note]
@@ -1033,7 +1033,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > $$
 > 也是凸函数。
 > 
-> ![凸函数的逐点最大值](../media/img/chpt2_convex_ex2.svg#200w)
+> ![凸函数的逐点最大值](../media/img/chpt2_convex_ex2.svg#400w)
 > 
 
 > [!note]
@@ -1046,7 +1046,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > k''(x) = 8 > 0
 > $$
 > 
-> ![凸函数的仿射变换](../media/img/chpt2_convex_ex3.svg#200w)
+> ![凸函数的仿射变换](../media/img/chpt2_convex_ex3.svg#400w)
 
 
 > [!caution]
@@ -1119,7 +1119,7 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 >
 >损失函数 $L(k)$ 就表示收音机的杂音强度, 我们通过旋钮的微调和耳朵的感受就能够大致估计导数 $L'(k)$, 而导数值能够为我们提供了修正 $k$ 的方向信息: $L'(k) > 0$ 表示噪声 $L(k)$ 随着 $k$ 增大而增大, 所以应该减小 $k$ 来减小噪声 $L(k)$; 反过来, $L'(k) <0$ 表示噪声 $L(k)$ 随着 $k$ 增大而减小, 所以应该增大 $k$ 来减小噪声 $L(k)$, 最终如果找到 $L'(k) = 0$ 的点就找到了噪声最小也就是最清晰的频道.
 >
->![收音机](../media/img/chpt2_gd_1.png)
+>![收音机](../media/img/chpt2_gd_1.png#400w)
 >
 > 我们把上述调节收音机的过程写成算法, 就得到了梯度下降法: 
 > 梯度下降法算法步骤：
@@ -1150,11 +1150,11 @@ f'(x) &= \lim_{\Delta x \to 0} \frac{\frac{\ln(x + \Delta x)}{\ln u} - \frac{\ln
 > - 如果 $\eta$ 太大 → 你猛地把旋钮转过头，直接跨过谷底，来回震荡，甚至跑到更高的山上  
 > - 如果 $\eta$ 太小 → 你像用牙签拨旋钮，一次几乎没动，走到谷底需要很久  
 >
->![学习率](../media/img/chpt2_gd_2.png)
+>![学习率](../media/img/chpt2_gd_2.png#800w)
 >
 > 在上面的数据点拟合的例子中, 运用梯度下降法求解上述问题得到的 $k$ 的拟合值如下图. 由于随机误差的存在, 在算法看来对数据拟合得最好的 $k = 2.69$, 与我们生成数据时所采用的 $k=2.5$ 略有偏差, 在统计意义上这是完全合理的, 而且随着样本点个数 $N$ 的增大, 随机误差的整体效果会逐渐减弱, 算法得到的 $k$ 也会越来越接近真实值.
 > 
->![梯度下降法结果](../media/img/chpt2_gd_fit.png)
+>![梯度下降法结果](../media/img/chpt2_gd_fit.png#400w)
 
 > [!caution]
 > 
