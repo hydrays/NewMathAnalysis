@@ -28,12 +28,12 @@
 > ==邻域==
 > 
 > 设 $P_0(x, y)$ 是 $\mathbb{R}^2$ 中的一点, 给定 $\delta > 0$,  $\mathbb{R}^2$ 中所有与点 $P_0$ 距离小于 $\delta$ 的点构成一个集合, 称为点 $P_0$ 的 **$\delta$-邻域**, 记作 $U(P_0, \delta)$, 即
->  $$
+> $$
 >   U(P_0, \delta) = \{ (x, y)| \sqrt{(x-x_0)^2+ (y-y_0)^2} < \delta\}.
 > $$
 > 
 > $P_0$ 与其自己的距离为0, 所以根据上述定义, $P_0\in U(P_0, \delta)$. 但有时候我们希望排除掉 $P_0$ 这一点, 在集合 $U(P_0, \delta)$ 中把 $P_0$ 去掉, 由此得到的集合称为 $P_0$ 的 **$\delta$-去心邻域**, 记作 $\overset{\circ}{U}(P_0, \delta)$, 即
->  $$
+> $$
 >  \overset{\circ}{U}(P_0, \delta) = \{ (x, y)| 0 < \sqrt{(x-x_0)^2+ (y-y_0)^2} < \delta\}.
 > $$
 >
@@ -111,9 +111,9 @@
 > ==二元函数的定义==
 > 
 >设 $D$ 是 $\mathbb{R}^2$ 中的非空子集,称映射 $f: D \to \mathbb{R}$ 为定义在 $D$ 上的**二元函数**,记为 
->$$
+> $$
 >z = f(x, y), \quad (x, y) \in D
->$$
+> $$
 >
 >其中 $D$ 称为函数的**定义域** ,$x$ 和 $y$ 称为**自变量**.
 
@@ -123,7 +123,7 @@
 > 
 > 设 $f(x,y)$ 的定义在 $D$ 上的二元函数,$P_0(x_0, y_0)$ 是 $D$ 的聚点,如果存在常数 $A$,对于任意给定的正数 $\varepsilon$,总存在正数 $\delta$,使得当 $(x,y) \in U(P_0, \delta)$ 时,有 $ |f(x, y) - A| < \varepsilon $,则称 $A$ 为函数 $f(x,y)$ 当 $(x,y)$ 趋于 $(x_0, y_0)$ 时的极限,记作 
 > $$
-> \displaystyle\lim_{(x,y) \to (x_0, y_0)} f(x,y) = A.
+> \lim_{(x,y) \to (x_0, y_0)} f(x,y) = A.
 > $$
 >
 
@@ -133,14 +133,30 @@
 
 >[!note]
 >
-> **例1: 设 $f(x,y) = (x^2 + y^2)  \displaystyle\sin \frac{1}{x^2 + y^2}$,求证：$ \displaystyle\lim_{(x,y) \to (0,0)} f(x,y) = 0.$**
+> **例1: 设**
+> $$
+> f(x,y) = (x^2 + y^2)\sin \frac{1}{x^2 + y^2}
+> $$
+> **求证**
+> $$
+> \lim_{(x,y) \to (0,0)} f(x,y) = 0.
+> $$
 >  
 > **证:**  这里函数 $f(x,y)$ 的定义域为 $D = \mathbb{R}^2 \backslash \{(0,0)\}$,点 $O(0,0)$ 为 $D$ 的聚点,
->  因为$|f(x,y) - 0| = \displaystyle\left| (x^2 + y^2) \sin \displaystyle\frac{1}{x^2 + y^2} - 0 \right| \leq x^2 + y^2,$
+>  因为
+> $$
+>  |f(x,y) - 0| = \left| (x^2 + y^2) \sin \frac{1}{x^2 + y^2} \right| \leq x^2 + y^2,
+> $$
 >  可见,$\forall \varepsilon > 0$,取 $\delta = \sqrt{\varepsilon}$,则当$ 0 < \sqrt{(x-0)^2 + (y-0)^2} < \delta,$ 
 >  即 $P(x,y) \in D \cap U(0,\delta)$ 时,总有 $|f(x,y) - 0| < \varepsilon$ 成立,所以 $  \displaystyle\lim_{(x,y) \to (0,0)} f(x,y) = 0. $
 >
-> **例2: 考察函数在 $(0, 0)$ 处的极限, $$ f(x,y) = \begin{cases} \displaystyle\frac{xy}{x^2 + y^2}, & x^2 + y^2 \neq 0, \\0, & x^2 + y^2 = 0.\end{cases} $$.**
+> **例2: 考察函数在 $(0, 0)$ 处的极限**
+> $$
+> f(x,y) = \begin{cases}
+> \frac{xy}{x^2 + y^2}, & x^2 + y^2 \neq 0, \\
+> 0, & x^2 + y^2 = 0.
+> \end{cases}
+> $$
 >  
 > **解:** 首先, 我们看当点 $P(x,y)$ 沿 $x$ 轴趋于点 $(0,0)$ 时有,
 > $$
@@ -157,11 +173,20 @@
 >  $k$ 不同极限也不同, 由此可以断言函数在$(0, 0)$ 处的极限不存在.
 > 
 >
-> **例3: 求 $  \displaystyle\lim_{(x,y) \to (0,2)} \displaystyle\frac{\sin(xy)}{x} $.**
+> **例3: 求**
+> $$
+> \lim_{(x,y) \to (0,2)} \frac{\sin(xy)}{x}.
+> $$
 > 
 > **解:** 函数 $ \displaystyle\frac{\sin(xy)}{x} $ 的定义域为 $D = \{(x,y) | x \neq 0, y \in \mathbb{R}\}$,$P_0(0,2)$ 为 $D$ 的聚点,
 > $$
-> \displaystyle\lim_{(x,y) \to (0,2)} \displaystyle\frac{\sin(xy)}{x} =  \displaystyle\lim_{(x,y) \to (0,2)} \left[ \displaystyle\frac{\sin(xy)}{xy} \cdot y \right] =  \displaystyle\lim_{xy \to 0} \displaystyle\frac{\sin(xy)}{xy} \cdot \lim_{y \to 2} y = 1 \cdot 2=2
+> \begin{align*}
+> \lim_{(x,y) \to (0,2)} \frac{\sin(xy)}{x}
+> &= \lim_{(x,y) \to (0,2)} \left[ \frac{\sin(xy)}{xy} \cdot y \right] \\
+> &= \left(\lim_{xy \to 0} \frac{\sin(xy)}{xy}\right)\left(\lim_{y \to 2} y\right) \\
+> &= 1 \cdot 2 \\
+> &= 2
+> \end{align*}
 > $$
 
 ### 多元函数的连续性
@@ -201,52 +226,68 @@
 > ==偏导数==
 > 设函数 $z=f(x,y)$ 在点 $(x_0,y_0)$ 的某一邻域内有定义,固定 $y=y_0$ 让 $x$ 在 $x_0$ 附近变化, 若极限  
 > $$
-> \displaystyle\lim_{\Delta x \to 0} \displaystyle\frac{f(x_0 + \Delta x, y_0) - f(x_0, y_0)}{\Delta x} \tag{2-1} 
+> \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x, y_0) - f(x_0, y_0)}{\Delta x} \tag{2-1} 
 > $$
 > 存在, 则称此极限为函数 $z=f(x,y)$ 在点 $(x_0,y_0)$ 处对 $x$ 的**偏导数**,记作：  
 > $$
-> \left. \displaystyle\frac{\partial z}{\partial x} \right|_{x=x_0}, \quad \left. \displaystyle\frac{\partial f}{\partial x} \right|_{x=x_0}, \quad z_x \bigg|_{x=x_0} \text{ 或 } f_x(x_0, y_0)
+> \left. \frac{\partial z}{\partial x} \right|_{x=x_0}, \quad \left. \frac{\partial f}{\partial x} \right|_{x=x_0}, \quad z_x \bigg|_{x=x_0} \text{ 或 } f_x(x_0, y_0)
 > $$
 > 
 > 类似地, 函数 $z=f(x,y)$ 对 $y$ 的偏导数为：  
 > $$
-> \displaystyle\lim_{\Delta y \to 0} \displaystyle\frac{f(x_0, y_0 + \Delta y) - f(x_0, y_0)}{\Delta y} 
+> \lim_{\Delta y \to 0} \frac{f(x_0, y_0 + \Delta y) - f(x_0, y_0)}{\Delta y} 
 > $$
 > 记作：  
 > $$
-> \displaystyle\left. \displaystyle\frac{\partial z}{\partial y} \right|_{y=y_0}, \quad \left. \displaystyle\frac{\partial f}{\partial y} \right|_{y=y_0}, \quad z_y \bigg|_{y=y_0} \text{ 或 } f_y(x_0, y_0)
+> \left. \frac{\partial z}{\partial y} \right|_{y=y_0}, \quad \left. \frac{\partial f}{\partial y} \right|_{y=y_0}, \quad z_y \bigg|_{y=y_0} \text{ 或 } f_y(x_0, y_0)
 > $$
 > 
 
 > [!warning]
 > ==偏导函数== 
 > 若 $z=f(x,y)$ 在区域 $D$ 内每一点 $(x,y)$ 处对 $x$ 的偏导数存在, 则由此构成的函数称为**偏导函数**,记作：  
->$$
->\displaystyle\frac{\partial z}{\partial x}, \quad \displaystyle\frac{\partial f}{\partial x}, \quad z_x \text{ 或 } f_x(x, y)
->$$
+> $$
+>\frac{\partial z}{\partial x}, \quad \frac{\partial f}{\partial x}, \quad z_x \text{ 或 } f_x(x, y)
+> $$
 > 对 $y$ 的偏导函数记为：  
 > $$
-> \displaystyle\frac{\partial z}{\partial y}, \quad \displaystyle\frac{\partial f}{\partial y}, \quad z_y \text{ 或 } f_y(x, y)
+> \frac{\partial z}{\partial y}, \quad \frac{\partial f}{\partial y}, \quad z_y \text{ 或 } f_y(x, y)
 > $$
 
 >[!note]
 >
-> **例1:求分段函 $
-> z = f(x, y) = 
-> \displaystyle\begin{cases} 
-> \displaystyle\frac{xy}{x^2 + y^2}, & x^2 + y^2 \neq 0 \\
-> 0, & x^2 + y^2 = 0 
-> \end{cases}$ 在点 (0,0) 处的偏导数.**
+> **例1:求分段函数在点 $(0,0)$ 处的偏导数**
+> $$
+> z = f(x, y) =
+> \begin{cases}
+> \frac{xy}{x^2 + y^2}, & x^2 + y^2 \neq 0 \\
+> 0, & x^2 + y^2 = 0
+> \end{cases}
+> $$
 > 
 > **解:**
 > 
 >  - 计算 $f_x(0, 0)$  
 >  
->  $f_x(0, 0) =  \displaystyle\lim_{\Delta x \to 0} \displaystyle\frac{f(0+\Delta x, 0) - f(0, 0)}{\Delta x} =  \displaystyle\lim_{\Delta x \to 0} \displaystyle\frac{0 - 0}{\Delta x} = 0$
+> $$
+>  \begin{align*}
+>  f_x(0, 0)
+>  &= \lim_{\Delta x \to 0}\frac{f(0+\Delta x, 0) - f(0, 0)}{\Delta x} \\
+>  &= \lim_{\Delta x \to 0}\frac{0 - 0}{\Delta x} \\
+>  &= 0
+>  \end{align*}
+> $$
 >  
 >  - 计算 $f_y(0, 0)$  
 > 
->  $f_y(0, 0) =  \displaystyle\lim_{\Delta y \to 0} \displaystyle\frac{f(0, 0+\Delta y) - f(0, 0)}{\Delta y} =  \displaystyle\lim_{\Delta y \to 0} \displaystyle\frac{0 - 0}{\Delta y} = 0$
+> $$
+>  \begin{align*}
+>  f_y(0, 0)
+>  &= \lim_{\Delta y \to 0}\frac{f(0, 0+\Delta y) - f(0, 0)}{\Delta y} \\
+>  &= \lim_{\Delta y \to 0}\frac{0 - 0}{\Delta y} \\
+>  &= 0
+>  \end{align*}
+> $$
 
 
 >[!important]
@@ -261,72 +302,148 @@
 > ==二阶偏导数的四种形式==
 >
 >1. 对 $x$ 的二阶偏导：
->$$ \displaystyle\displaystyle\frac{\partial}{\partial x} \left( \displaystyle\frac{\partial z}{\partial x} \right) = \displaystyle\frac{\partial^2 z}{\partial x^2} = f_{xx}(x, y) $$
+> $$
+>\frac{\partial}{\partial x} \left( \frac{\partial z}{\partial x} \right) = \frac{\partial^2 z}{\partial x^2} = f_{xx}(x, y)
+> $$
 >
 >2. 先对 $x$ 后对 $y$ 的混合偏导：
->$$ \displaystyle\frac{\partial}{\partial y} \left( \displaystyle\frac{\partial z}{\partial x} \right) = \displaystyle\frac{\partial^2 z}{\partial x \partial y} = f_{xy}(x, y) $$
+> $$
+>\frac{\partial}{\partial y} \left( \frac{\partial z}{\partial x} \right) = \frac{\partial^2 z}{\partial x \partial y} = f_{xy}(x, y)
+> $$
 >
 >3. 先对 $y$ 后对 $x$ 的混合偏导：
->$$ \displaystyle\frac{\partial}{\partial x} \left( \displaystyle\frac{\partial z}{\partial y} \right) = \displaystyle\frac{\partial^2 z}{\partial y \partial x} = f_{yx}(x, y) $$
+> $$
+>\frac{\partial}{\partial x} \left( \frac{\partial z}{\partial y} \right) = \frac{\partial^2 z}{\partial y \partial x} = f_{yx}(x, y)
+> $$
 >
 >4. 对 $y$ 的二阶偏导：
->$$ \displaystyle\frac{\partial}{\partial y} \left( \displaystyle\frac{\partial z}{\partial y} \right) = \displaystyle\frac{\partial^2 z}{\partial y^2} = f_{yy}(x, y) $$
+> $$
+>\frac{\partial}{\partial y} \left( \frac{\partial z}{\partial y} \right) = \frac{\partial^2 z}{\partial y^2} = f_{yy}(x, y)
+> $$
 
 >[!note]
 >
-> **例：设函数 $z = x^3 y^2 - 3xy^3 - xy + 1$,求下列高阶偏导数：
-> $$ \displaystyle\frac{\partial^2 z}{\partial x^2},\ \displaystyle\frac{\partial^2 z}{\partial y \partial x},\ \displaystyle\frac{\partial^2 z}{\partial x \partial y},\ \displaystyle\frac{\partial^2 z}{\partial y^2} \ \text{及}\ \displaystyle\frac{\partial^3 z}{\partial x^3} .$$**
+> **例：设函数 $z = x^3 y^2 - 3xy^3 - xy + 1$, 求下列高阶偏导数：**
+> $$
+> \frac{\partial^2 z}{\partial x^2},\ 
+> \frac{\partial^2 z}{\partial y \partial x},\ 
+> \frac{\partial^2 z}{\partial x \partial y},\ 
+> \frac{\partial^2 z}{\partial y^2}
+> \ \text{及}\ 
+> \frac{\partial^3 z}{\partial x^3}.
+> $$
 > 
 > **解:**  
 > 先求一阶偏导数:
-> $ \displaystyle\frac{\partial z}{\partial x} = 3x^2 y^2 - 3y^3 - y $
-> $ \displaystyle\frac{\partial z}{\partial y} = 2x^3 y - 9xy^2 - x $
+> $$
+> \frac{\partial z}{\partial x} = 3x^2 y^2 - 3y^3 - y
+> $$
+> $$
+> \frac{\partial z}{\partial y} = 2x^3 y - 9xy^2 - x
+> $$
 > 然后求二阶偏导数：
-> $ \displaystyle\frac{\partial^2 z}{\partial x^2} = \displaystyle\frac{\partial}{\partial x}(3x^2 y^2 - 3y^3 - y) = 6xy^2 $
-> $ \displaystyle\frac{\partial^2 z}{\partial y \partial x} = \displaystyle\frac{\partial}{\partial y}(3x^2 y^2 - 3y^3 - y) = 6x^2 y - 9y^2 - 1 $
-> $ \displaystyle\frac{\partial^2 z}{\partial x \partial y} = \displaystyle\frac{\partial}{\partial x}(2x^3 y - 9xy^2 - x) = 6x^2 y - 9y^2 - 1 $
-> $ \displaystyle\frac{\partial^2 z}{\partial y^2} = \displaystyle\frac{\partial}{\partial y}(2x^3 y - 9xy^2 - x) = 2x^3 - 18xy $
+> $$
+> \frac{\partial^2 z}{\partial x^2} = \frac{\partial}{\partial x}(3x^2 y^2 - 3y^3 - y) = 6xy^2
+> $$
+> $$
+> \frac{\partial^2 z}{\partial y \partial x} = \frac{\partial}{\partial y}(3x^2 y^2 - 3y^3 - y) = 6x^2 y - 9y^2 - 1
+> $$
+> $$
+> \frac{\partial^2 z}{\partial x \partial y} = \frac{\partial}{\partial x}(2x^3 y - 9xy^2 - x) = 6x^2 y - 9y^2 - 1
+> $$
+> $$
+> \frac{\partial^2 z}{\partial y^2} = \frac{\partial}{\partial y}(2x^3 y - 9xy^2 - x) = 2x^3 - 18xy
+> $$
 > 最后求三阶偏导数
-> $ \displaystyle\frac{\partial^3 z}{\partial x^3} = \displaystyle\frac{\partial}{\partial x}(6xy^2) = 6y^2 $
+> $$
+> \frac{\partial^3 z}{\partial x^3} = \frac{\partial}{\partial x}(6xy^2) = 6y^2
+> $$
 
 >[!important]
 >
 >==二阶混合偏导数定理==
 >
-> 如果函数 $z = f(x, y)$ 的二阶混合偏导数  $ \displaystyle\frac{\partial^2 z}{\partial y \partial x} \quad \text{和} \quad \displaystyle\frac{\partial^2 z}{\partial x \partial y} $  在区域 $D$ 内连续,那么在该区域内必有： 
+> 如果函数 $z = f(x, y)$ 的二阶混合偏导数
 > $$
-> \displaystyle\frac{\partial^2 z}{\partial y \partial x} = \displaystyle\frac{\partial^2 z}{\partial x \partial y}
+> \frac{\partial^2 z}{\partial y \partial x}
+> \quad \text{和} \quad
+> \frac{\partial^2 z}{\partial x \partial y}
+> $$
+> 在区域 $D$ 内连续,那么在该区域内必有： 
+> $$
+> \frac{\partial^2 z}{\partial y \partial x} = \frac{\partial^2 z}{\partial x \partial y}
 > $$
 > 
 > 即：**二阶混合偏导数在连续条件下与求导次序无关**,  
 
 > [!note]
 >
-> **例1:验证函数 $z = \ln \sqrt{x^2 + y^2}$ 满足拉普拉斯方程 $$ \displaystyle\frac{\partial^2 z}{\partial x^2} + \displaystyle\frac{\partial^2 z}{\partial y^2} = 0 .$$**
+> **例1:验证函数 $z = \ln \sqrt{x^2 + y^2}$ 满足拉普拉斯方程**
+> $$
+> \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2} = 0.
+> $$
 > 
 > **证明:**   
 > 首先将函数化简为：
-> $$ z = \displaystyle\frac{1}{2} \ln(x^2 + y^2) $$  
-> $$ \displaystyle\frac{\partial z}{\partial x} = \displaystyle\frac{x}{x^2 + y^2} $$
-> $$ \displaystyle\frac{\partial z}{\partial y} = \displaystyle\frac{y}{x^2 + y^2} $$
-> $$ \displaystyle\frac{\partial^2 z}{\partial x^2} = \displaystyle\frac{y^2 - x^2}{(x^2 + y^2)^2} $$
-> $$ \displaystyle\frac{\partial^2 z}{\partial y^2} = \displaystyle\frac{x^2 - y^2}{(x^2 + y^2)^2} $$
+> $$
+> z = \frac{1}{2} \ln(x^2 + y^2)
+> $$
+> $$
+> \frac{\partial z}{\partial x} = \frac{x}{x^2 + y^2}
+> $$
+> $$
+> \frac{\partial z}{\partial y} = \frac{y}{x^2 + y^2}
+> $$
+> $$
+> \frac{\partial^2 z}{\partial x^2} = \frac{y^2 - x^2}{(x^2 + y^2)^2}
+> $$
+> $$
+> \frac{\partial^2 z}{\partial y^2} = \frac{x^2 - y^2}{(x^2 + y^2)^2}
+> $$
 > 验证方程 
 > 将二阶偏导数相加：
-> $$ \displaystyle\frac{\partial^2 z}{\partial x^2} + \displaystyle\frac{\partial^2 z}{\partial y^2} = \displaystyle\frac{y^2 - x^2 + x^2 - y^2}{(x^2 + y^2)^2} = 0 $$
+> $$
+> \begin{align*}
+> \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2}
+> &= \frac{y^2 - x^2 + x^2 - y^2}{(x^2 + y^2)^2} \\
+> &= 0
+> \end{align*}
+> $$
 >
 >
-> **例2:证明函数 $u = \dfrac{1}{r}$ 满足拉普拉斯方程$$ \displaystyle\frac{\partial^2 u}{\partial x^2} + \displaystyle\frac{\partial^2 u}{\partial y^2} + \displaystyle\frac{\partial^2 u}{\partial z^2} = 0 $$,其中 $r = \sqrt{x^2 + y^2 + z^2}$.**
+> **例2:证明函数 $u = \dfrac{1}{r}$ 满足拉普拉斯方程**
+> $$
+> \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = 0
+> $$
+> 其中 $r = \sqrt{x^2 + y^2 + z^2}$.
 > 
 > **证明:**
->  $$ \displaystyle\frac{\partial u}{\partial x} = -\displaystyle\frac{1}{r^2} \cdot \displaystyle\frac{\partial r}{\partial x} = -\displaystyle\frac{x}{r^3} $$
->  $$ \displaystyle\frac{\partial^2 u}{\partial x^2} = -\displaystyle\frac{1}{r^3} + \displaystyle\frac{3x^2}{r^5} $$
+> $$
+>  \begin{align*}
+>  \frac{\partial u}{\partial x}
+>  &= -\frac{1}{r^2}\cdot\frac{\partial r}{\partial x} \\
+>  &= -\frac{x}{r^3}
+>  \end{align*}
+> $$
+> $$
+>  \frac{\partial^2 u}{\partial x^2} = -\frac{1}{r^3} + \frac{3x^2}{r^5}
+> $$
 >   由对称性可得：
->   $$ \displaystyle\frac{\partial^2 u}{\partial y^2} = -\displaystyle\frac{1}{r^3} + \displaystyle\frac{3y^2}{r^5}, \quad \displaystyle\frac{\partial^2 u}{\partial z^2} = -\displaystyle\frac{1}{r^3} + \displaystyle\frac{3z^2}{r^5} $$
+> $$
+>   \begin{align*}
+>   \frac{\partial^2 u}{\partial y^2} &= -\frac{1}{r^3} + \frac{3y^2}{r^5}, \\
+>   \frac{\partial^2 u}{\partial z^2} &= -\frac{1}{r^3} + \frac{3z^2}{r^5}
+>   \end{align*}
+> $$
 > 验证方程  
->   $$ \begin{aligned}
->   \displaystyle\frac{\partial^2 u}{\partial x^2} + \displaystyle\frac{\partial^2 u}{\partial y^2} + \displaystyle\frac{\partial^2 u}{\partial z^2} 
->   &= -\displaystyle\frac{3}{r^3} + \displaystyle\frac{3(x^2 + y^2 + z^2)}{r^5} \\&= -\displaystyle\frac{3}{r^3} + \displaystyle\frac{3r^2}{r^5} \\ &= 0 \end{aligned} $$
+> $$
+>   \begin{align*}
+>   \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}
+>   &= -\frac{3}{r^3} + \frac{3(x^2 + y^2 + z^2)}{r^5} \\
+>   &= -\frac{3}{r^3} + \frac{3r^2}{r^5} \\
+>   &= 0
+>   \end{align*}
+> $$
 
 ## 全微分
 
@@ -346,7 +463,7 @@
 > ==全微分公式==
 > 
 > $$
-> dz = \displaystyle\frac{\partial z}{\partial x}dx + \displaystyle\frac{\partial z}{\partial y}dy 
+> dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy 
 > $$
 > 
 
@@ -362,10 +479,22 @@
 > **例1:$ z(x,y) = x + y $.**
 > 
 > **解:**
-> 变量变化：$x \to x + \Delta x, \quad y \to y + \Delta y$
-> 函数增量计算： $z(x + \Delta x, y + \Delta y) = (x + \Delta x) + (y + \Delta y)$
-> 增量分解： $\Delta z = z(x + \Delta x, y + \Delta y) - z(x, y) = \Delta x + \Delta y$
-> 偏导数表示：  $\displaystyle\frac{\partial z}{\partial x} = 1, \quad \displaystyle\frac{\partial z}{\partial y} = 1$
+> 变量变化：
+> $$
+> x \to x + \Delta x, \quad y \to y + \Delta y
+> $$
+> 函数增量计算：
+> $$
+> z(x + \Delta x, y + \Delta y) = (x + \Delta x) + (y + \Delta y)
+> $$
+> 增量分解：
+> $$
+> \Delta z = z(x + \Delta x, y + \Delta y) - z(x, y) = \Delta x + \Delta y
+> $$
+> 偏导数表示：
+> $$
+> \frac{\partial z}{\partial x} = 1, \quad \frac{\partial z}{\partial y} = 1
+> $$
 > 全微分公式：  $dz = dx + dy$
 > 
 >
@@ -373,56 +502,90 @@
 > 
 > **解:** 
 > 考虑自变量的微小变化：
-> $
+> 
+> $$
 > \begin{cases}
 > x \rightarrow x + dx \\ 
 > y \rightarrow y + dy
 > \end{cases}
-> $
-> 函数增量计算： $\begin{aligned}
+> $$
+> 
+> 函数增量计算： 
+> 
+> $$
+> \begin{aligned}
 > z(x+dx,y+dy) &= (x+dx)^2 + 2(y+dy)^3 \\
 > &= x^2 + 2xdx + dx^2 + 2(y^3 + 3y^2dy + 3ydy^2 + dy^3) \\
 > &= x^2 + 2y^3 + 2xdx + 6y^2dy + \underbrace{dx^2 + 6ydy^2 + 2dy^3}_{\text{高阶无穷小项}}
-> \end{aligned} $
+> \end{aligned} 
+> $$
+> 
 > 线性主部提取： 保留一阶增量项
-> $
+> 
+> $$
 > \Delta z \approx 2xdx + 6y^2dy
-> $
+> $$
+> 
 > 偏导数计算：
-> $
-> \displaystyle\frac{\partial z}{\partial x} = 2x \quad \text{和} \quad \displaystyle\frac{\partial z}{\partial y} = 6y^2
-> $
-> 全微分公式：$
-> dz = \displaystyle\frac{\partial z}{\partial x}dx + \displaystyle\frac{\partial z}{\partial y}dy = 2xdx + 6y^2dy$
+> 
+> $$
+> \frac{\partial z}{\partial x} = 2x \quad \text{和} \quad \frac{\partial z}{\partial y} = 6y^2
+> $$
+> 
+> 全微分公式：
+> 
+> $$
+> dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy = 2xdx + 6y^2dy
+> $$
 >
 >
-> **例3:$ S = \displaystyle\frac{1}{2} \left( L - 2x + L - 2x + 2x \cos \theta \right) x \sin \theta $.**
+> **例3:**
+> $$
+> S = \frac{1}{2} \left( L - 2x + L - 2x + 2x \cos \theta \right) x \sin \theta.
+> $$
 > 
 > **解:**
-> 化简：$ S(x, \theta) = L x \sin \theta - 2x^2 \sin \theta + x^2 \sin \theta \cos \theta $
-> 变量代换过程：$ x \to x + \Delta x, \quad \theta \to \theta + \Delta \theta $
+> 化简：
+> $$
+> S(x, \theta) = L x \sin \theta - 2x^2 \sin \theta + x^2 \sin \theta \cos \theta
+> $$
+> 变量代换过程：
+> $$
+> x \to x + \Delta x, \quad \theta \to \theta + \Delta \theta
+> $$
 > 函数增量展开：
-> $ 
+> $$
 > \begin{aligned}
 > S(x+\Delta x, \theta+\Delta \theta) &= L (x+\Delta x) \sin(\theta+\Delta \theta) \\
 > &\quad -2(x+\Delta x)^2 \sin(\theta+\Delta \theta) \\
 > &\quad + (x+\Delta x)^2 \sin(\theta+\Delta \theta)\cos(\theta+\Delta \theta)
 > \end{aligned}
-> $
+> $$
 > 线性近似处理（保留一阶项）：
-> $
+> $$
 > \begin{aligned}
 > \Delta S &\approx (L \sin \theta - 4x \sin \theta + 2x \sin \theta \cos \theta)\Delta x \\
 > &\quad + (L x \cos \theta - 2x^2 \cos \theta - x^2 \sin^2 \theta + x^2 \cos^2 \theta)\Delta \theta
-> \end{aligned}$
+> \end{aligned}
+> $$
+> 
 > 偏导数提取：
-> $
+> 
+> $$
 > \begin{cases}
-> \displaystyle\frac{\partial S}{\partial x} = L \sin \theta - 4x \sin \theta + x \sin \theta \cos \theta \\
-> \displaystyle\frac{\partial S}{\partial \theta} = L x \cos \theta - 2x^2 \cos \theta + x^2 (\cos^2 \theta - \sin^2 \theta)
-> \end{cases}$
-> 全微分公式：$dS = \displaystyle\frac{\partial S}{\partial x}dx + \displaystyle\frac{\partial S}{\partial \theta}d\theta$
-> 最终结果：$dS = \sin\theta (L - 4x + 2x \cos\theta)dx + [x \cos\theta (L - 2x) + x^2 \cos 2\theta]d\theta$
+> \frac{\partial S}{\partial x} = L \sin \theta - 4x \sin \theta + x \sin \theta \cos \theta \\
+> \frac{\partial S}{\partial \theta} = L x \cos \theta - 2x^2 \cos \theta + x^2 (\cos^2 \theta - \sin^2 \theta)
+> \end{cases}
+> $$
+>
+> 全微分公式：
+> $$
+> dS = \frac{\partial S}{\partial x}dx + \frac{\partial S}{\partial \theta}d\theta
+> $$
+> 最终结果：
+> $$
+> dS = \sin\theta (L - 4x + 2x \cos\theta)dx + [x \cos\theta (L - 2x) + x^2 \cos 2\theta]d\theta
+> $$
 
 ### 链式法则
 
@@ -459,16 +622,38 @@
 > 
 > **解:**
 > 注意这里 $z$ 不仅通过 $u, v$ 依赖于 $t$，还直接依赖于 $t$。根据链式法则：
-> $\begin{aligned} \frac{dz}{dt} &= \frac{\partial z}{\partial u}\frac{du}{dt} + \frac{\partial z}{\partial v}\frac{dv}{dt} + \frac{\partial z}{\partial t} \\ &= v \cdot e^t + u \cdot (-\sin t) + \cos t \\ &= e^t \cos t - e^t \sin t + \cos t \\ &= e^t(\cos t - \sin t) + \cos t. \end{aligned}$
+> $$
+> \begin{align*}
+> \frac{dz}{dt}
+> &= \frac{\partial z}{\partial u}\frac{du}{dt} + \frac{\partial z}{\partial v}\frac{dv}{dt} + \frac{\partial z}{\partial t} \\
+> &= v \cdot e^t + u \cdot (-\sin t) + \cos t \\
+> &= e^t \cos t - e^t \sin t + \cos t \\
+> &= e^t(\cos t - \sin t) + \cos t
+> \end{align*}
+> $$
 >
 > **同济教材 P78 例2: 设 $u = e^{x^2+y^2+z^2}$，而 $z = x^2 \sin y$，求 $\displaystyle\frac{\partial u}{\partial x}$ 与 $\displaystyle\frac{\partial u}{\partial y}$.**
 > 
 > **解:**
 > 这里的 $z$ 是中间变量，将其视为 $z(x,y)$。应用链式法则：
-> $\begin{aligned} \frac{\partial u}{\partial x} &= \frac{\partial f}{\partial x} + \frac{\partial f}{\partial z}\frac{\partial z}{\partial x} \\ &= 2x e^{x^2+y^2+z^2} + 2z e^{x^2+y^2+z^2} \cdot (2x \sin y) \\ &= 2x(1 + 2z \sin y)e^{x^2+y^2+z^2}. \end{aligned}$
+> $$
+> \begin{align*}
+> \frac{\partial u}{\partial x}
+> &= \frac{\partial f}{\partial x} + \frac{\partial f}{\partial z}\frac{\partial z}{\partial x} \\
+> &= 2x e^{x^2+y^2+z^2} + 2z e^{x^2+y^2+z^2} \cdot (2x \sin y) \\
+> &= 2x(1 + 2z \sin y)e^{x^2+y^2+z^2}
+> \end{align*}
+> $$
 >
 > 同理求对 $y$ 的偏导：
-> $\begin{aligned} \frac{\partial u}{\partial y} &= \frac{\partial f}{\partial y} + \frac{\partial f}{\partial z}\frac{\partial z}{\partial y} \\ &= 2y e^{x^2+y^2+z^2} + 2z e^{x^2+y^2+z^2} \cdot (x^2 \cos y) \\ &= 2(y + x^2 z \cos y)e^{x^2+y^2+z^2}. \end{aligned}$
+> $$
+> \begin{align*}
+> \frac{\partial u}{\partial y}
+> &= \frac{\partial f}{\partial y} + \frac{\partial f}{\partial z}\frac{\partial z}{\partial y} \\
+> &= 2y e^{x^2+y^2+z^2} + 2z e^{x^2+y^2+z^2} \cdot (x^2 \cos y) \\
+> &= 2(y + x^2 z \cos y)e^{x^2+y^2+z^2}
+> \end{align*}
+> $$
 
 ### 全微分形式不变性
 
@@ -490,7 +675,13 @@
 > $dv = d(x+y) = dx + dy$
 > 
 > 将 $du, dv$ 直接代入 $dz$ 并合并同类项（像初中代数一样合并 $dx$ 和 $dy$）：
-> $\begin{aligned} dz &= e^u \sin v (y \, dx + x \, dy) + e^u \cos v (dx + dy) \\ &= [y e^u \sin v + e^u \cos v] dx + [x e^u \sin v + e^u \cos v] dy \end{aligned}$
+> $$
+> \begin{align*}
+> dz
+> &= e^u \sin v (y \, dx + x \, dy) + e^u \cos v (dx + dy) \\
+> &= [y e^u \sin v + e^u \cos v] dx + [x e^u \sin v + e^u \cos v] dy
+> \end{align*}
+> $$
 > 
 > 比较等式两端 $dx$ 和 $dy$ 的系数，直接就能读出偏导数：
 > $\frac{\partial z}{\partial x} = e^{xy}[y \sin(x+y) + \cos(x+y)]$
@@ -538,10 +729,25 @@
 > 设 $F(x,y) = x^2 + y^2 - 1$。
 > 容易算得 $F_x = 2x, \quad F_y = 2y$。
 > 根据一元隐函数求导公式，得一阶导数：
-> $$ \frac{dy}{dx} = -\frac{F_x}{F_y} = -\frac{2x}{2y} = -\frac{x}{y} $$
+> $$
+> \begin{align*}
+> \frac{dy}{dx}
+> &= -\frac{F_x}{F_y} \\
+> &= -\frac{2x}{2y} \\
+> &= -\frac{x}{y}
+> \end{align*}
+> $$
 >
 > 进一步求二阶导数（对一阶导数关于 $x$ 再求一次导，注意 $y$ 是 $x$ 的函数）：
-> $\begin{aligned} \frac{d^2y}{dx^2} &= \frac{d}{dx}\left(-\frac{x}{y}\right) = -\frac{1 \cdot y - x \cdot \frac{dy}{dx}}{y^2} \\ &= -\frac{y - x(-\frac{x}{y})}{y^2} = -\frac{y^2 + x^2}{y^3} \end{aligned}$
+> $$
+> \begin{align*}
+> \frac{d^2y}{dx^2}
+> &= \frac{d}{dx}\left(-\frac{x}{y}\right) \\
+> &= -\frac{1 \cdot y - x \cdot \frac{dy}{dx}}{y^2} \\
+> &= -\frac{y - x\left(-\frac{x}{y}\right)}{y^2} \\
+> &= -\frac{y^2 + x^2}{y^3}
+> \end{align*}
+> $$
 > 因为原方程 $x^2+y^2=1$，所以代入后得到最简结果：$\frac{d^2y}{dx^2} = -\frac{1}{y^3}$。
 >
 >
@@ -551,10 +757,25 @@
 > 设 $F(x,y,z) = x^2 + y^2 + z^2 - 4z$。
 > 分别求偏导数：$F_x = 2x$，$F_z = 2z - 4$。
 > 当 $F_z \neq 0$（即 $z \neq 2$）时，利用公式得：
-> $$ \frac{\partial z}{\partial x} = -\frac{F_x}{F_z} = -\frac{2x}{2z - 4} = \frac{x}{2 - z} $$
+> $$
+> \begin{align*}
+> \frac{\partial z}{\partial x}
+> &= -\frac{F_x}{F_z} \\
+> &= -\frac{2x}{2z - 4} \\
+> &= \frac{x}{2 - z}
+> \end{align*}
+> $$
 >
 > 再对 $x$ 求一次偏导数得到二阶导（注意把 $y$ 看作常量，而 $z$ 是 $x$ 的函数）：
-> $\begin{aligned} \frac{\partial^2 z}{\partial x^2} &= \frac{\partial}{\partial x}\left(\frac{x}{2-z}\right) \\ &= \frac{1 \cdot (2-z) - x \cdot (- \frac{\partial z}{\partial x})}{(2-z)^2} \\ &= \frac{(2-z) + x(\frac{x}{2-z})}{(2-z)^2} = \frac{(2-z)^2 + x^2}{(2-z)^3} \end{aligned}$
+> $$
+> \begin{align*}
+> \frac{\partial^2 z}{\partial x^2}
+> &= \frac{\partial}{\partial x}\left(\frac{x}{2-z}\right) \\
+> &= \frac{1 \cdot (2-z) - x \cdot \left(- \frac{\partial z}{\partial x}\right)}{(2-z)^2} \\
+> &= \frac{(2-z) + x\left(\frac{x}{2-z}\right)}{(2-z)^2} \\
+> &= \frac{(2-z)^2 + x^2}{(2-z)^3}
+> \end{align*}
+> $$
 
 ## 梯度与方向导数
 
@@ -564,7 +785,9 @@
 >
 >==梯度的定义==
 >设二元函数$f(x,y) $ 在区域$D$ 内具有一阶连续偏导数,则对于任意点 $ P_0(x_0,y_0) \in D $,其梯度定义为：
->$$\text{grad}\, f(x_0,y_0) = \nabla f(x_0,y_0) = f_x(x_0,y_0)\,\mathbf{i} + f_y(x_0,y_0)\,\mathbf{j}$$
+> $$
+> \text{grad}\, f(x_0,y_0) = \nabla f(x_0,y_0) = f_x(x_0,y_0)\,\mathbf{i} + f_y(x_0,y_0)\,\mathbf{j}
+> $$
 >其中微分算子$  \nabla = \dfrac{\partial}{\partial x}\mathbf{i} + \dfrac{\partial}{\partial y}\mathbf{j} ,$
 
 > [!warning]
@@ -576,40 +799,67 @@
 > **例3:求 $\mathrm{grad}\ \dfrac{1}{x^2 + y^2}$.**
 > 
 > **解:**这里 $f(x, y) = \dfrac{1}{x^2 + y^2}$,因为 
-> $$\displaystyle\frac{\partial f}{\partial x} = -\displaystyle\frac{2x}{(x^2 + y^2)^2}, \quad  \displaystyle\frac{\partial f}{\partial y} = -\displaystyle\frac{2y}{(x^2 + y^2)^2}, $$
+> $$
+> \begin{align*}
+> \frac{\partial f}{\partial x} &= -\frac{2x}{(x^2 + y^2)^2}, \\
+> \frac{\partial f}{\partial y} &= -\frac{2y}{(x^2 + y^2)^2}
+> \end{align*}
+> $$
 > 所以  
-> $$\mathrm{grad}\ \dfrac{1}{x^2 + y^2} = -\displaystyle\frac{2x}{(x^2 + y^2)^2} \mathbf{i} - \displaystyle\frac{2y}{(x^2 + y^2)^2} \mathbf{j}.$$
+> $$
+> \mathrm{grad}\ \dfrac{1}{x^2 + y^2} = -\frac{2x}{(x^2 + y^2)^2} \mathbf{i} - \frac{2y}{(x^2 + y^2)^2} \mathbf{j}.
+> $$
 > 
 >
 >
 >
 > **例5:设 $f(x, y, z) = x^3 - x y^2 - z^2,\ P_0(1,1,0)$,问 $f(x,y,z)$ 在 $P_0$ 处沿什么方向变化最快,  在这个方向的变化率是多少?**
 > 
-> **解:** $\nabla f = \dfrac{\partial f}{\partial x}\mathbf{i} + \dfrac{\partial f}{\partial y}\mathbf{j} + \dfrac{\partial f}{\partial z}\mathbf{k} = (3x^2 - y^2)\mathbf{i} - 2xy\mathbf{j} - 2z\mathbf{k},\ 
->  \nabla f(1,1,0) = 2\mathbf{i} - 2\mathbf{j} - \mathbf{k}$.  
->  $f(x,y,z)$ 在 $P_0$ 处沿 $\nabla f(1,1,0)$ 的方向增加最快,沿 $-\nabla f(1,1,0)$ 的方向减少最快,在这两个方向的变化率分别是  
->  $$|\nabla f(1,1,0)| = \sqrt{2^2 + (-2)^2 + 1^2} = 3, \quad -|\nabla f(1,1,0)| = -3.$$
+> **解:** 
+> $$
+> \begin{align*}
+> \nabla f &= \dfrac{\partial f}{\partial x}\mathbf{i} + \dfrac{\partial f}{\partial y}\mathbf{j} + \dfrac{\partial f}{\partial z}\mathbf{k} \\
+> & = (3x^2 - y^2)\mathbf{i} - 2xy\mathbf{j} - 2z\mathbf{k},\\
+>  \nabla f(1,1,0) & = 2\mathbf{i} - 2\mathbf{j} - \mathbf{k}
+> \end{align*}
+> $$
+> $f(x,y,z)$ 在 $P_0$ 处沿 $\nabla f(1,1,0)$ 的方向增加最快,沿 $-\nabla f(1,1,0)$ 的方向减少最快,在这两个方向的变化率分别是  
+> $$
+> |\nabla f(1,1,0)| = \sqrt{2^2 + (-2)^2 + 1^2} = 3, \quad -|\nabla f(1,1,0)| = -3.
+> $$
 >
 >
 > **例6:求曲面 $x^2 + y^2 + z = 9$ 在点 $P_0(1,2,4)$ 的切平面和法线方程.**
 > 
 > **解:** 设 $f(x, y, z) = x^2 + y^2 + z$,由梯度与等值面的关系可知,梯度  
-> $$\nabla f \Big|_{P_0} = (2x\mathbf{i} + 2y\mathbf{j} + \mathbf{k})\Big|_{(1,2,4)} = 2\mathbf{i} + 4\mathbf{j} + \mathbf{k}
-> $$的方向是等值面 $f(x,y,z)=9$ 在点 $P_0$ 的法线方向,因此切平面方程是  $$
-> 2(x - 1) + 4(y - 2) + (z - 4) = 0,$$
+> $$
+> \nabla f \Big|_{P_0} = (2x\mathbf{i} + 2y\mathbf{j} + \mathbf{k})\Big|_{(1,2,4)} = 2\mathbf{i} + 4\mathbf{j} + \mathbf{k}
+> $$
+> 的方向是等值面 $f(x,y,z)=9$ 在点 $P_0$ 的法线方向,因此切平面方程是
+> $$
+> 2(x - 1) + 4(y - 2) + (z - 4) = 0,
+> $$
 > 即  
-> $$2x + 4y + z = 14,$$
+> $$
+> 2x + 4y + z = 14,
+> $$
 > 曲面在 $P_0$ 处的法线方程是  
-> $$x = 1 + 2t,\ y = 2 + 4t,\ z = 4 + t \quad (t\ \text{为任意常数}).$$
+> $$
+> x = 1 + 2t,\ y = 2 + 4t,\ z = 4 + t \quad (t\ \text{为任意常数}).
+> $$
 
 > [!important]
 >
 > ==三元函数的梯度定义与性质==
 >设三元函数 \( f(x,y,z) \) 在空间区域 \( G \) 内具有一阶连续偏导数,则对于点 $ P_0(x_0,y_ 0,z_0)$ $in G$ \),其梯度为：
 >
-> $$\text{grad}\, f(x_0,y_0,z_0) = \nabla f(x_0,y_0,z_0) = f_x\,\mathbf{i} + f_y\,\mathbf{j} + f_z\,\mathbf{k}$$
+> $$
+> \text{grad}\, f(x_0,y_0,z_0) = \nabla f(x_0,y_0,z_0) = f_x\,\mathbf{i} + f_y\,\mathbf{j} + f_z\,\mathbf{k}
+> $$
 > 其中三维Nabla算子：
-> $$ \nabla = \dfrac{\partial}{\partial x}\mathbf{i} + \dfrac{\partial}{\partial y}\mathbf{j} + \dfrac{\partial}{\partial z}\mathbf{k} $$
+> $$
+> \nabla = \dfrac{\partial}{\partial x}\mathbf{i} + \dfrac{\partial}{\partial y}\mathbf{j} + \dfrac{\partial}{\partial z}\mathbf{k}
+> $$
 >
 
 >[!note]
@@ -625,9 +875,9 @@
 >
 >==方向导数的定义==
 >设函数 $f(x,y,z)$ 在点 $P_0(x_0,y_0,z_0)$ 的某邻域内有定义,$\mathbf{l}$ 为从 $P_0$ 出发的给定方向向量,$P(x,y,z)$ 为 $\mathbf{l}$ 上邻近 $P_0$ 的点,若极限  
->$$
-> \displaystyle\lim_{\rho \to 0^+} \frac{f(P) - f(P_0)}{\rho} = \left. \frac{\partial f}{\partial l} \right|_{P_0}
->$$
+> $$
+> \lim_{\rho \to 0^+} \frac{f(P) - f(P_0)}{\rho} = \left. \frac{\partial f}{\partial l} \right|_{P_0}
+> $$
 >存在,则称此极限为 $f$ 在 $P_0$ 点沿方向 $\mathbf{l}$ 的**方向导数**,其中 $\rho = |PP_0|$.
 
 >[!warning]
@@ -643,30 +893,59 @@
 > **例1:有一宽为24 cm的长方形铁板,把它两边折起来做成一断面为等腰梯形的水槽,问怎样折法才能使断面的面积最大？**
 > 
 > **解:** 设折起来的边长为$x$ cm,倾角为$\alpha$(如图),则梯形断面的下底长为$(24 - 2x)$ cm,上底长为$(24 - 2x + 2x \cos \alpha)$ cm,高为$(x \sin \alpha)$ cm,所以断面面积
->  $$A = \displaystyle\frac{1}{2} [ (24 - 2x + 2x \cos \alpha) + (24 - 2x) ] \cdot x \sin \alpha$$
+> $$
+>  A = \frac{1}{2} [ (24 - 2x + 2x \cos \alpha) + (24 - 2x) ] \cdot x \sin \alpha
+> $$
 >  即
->  $$A = (24x \sin \alpha - 2x^2 \sin \alpha + x^2 \sin \alpha \cos \alpha) \quad (0 < x < 12, 0 < \alpha \leq \displaystyle\frac{\pi}{2})$$
->  可见断面面积$A = A(x, \alpha)$,这就是目标函数,下面求使该函数取得最大值的点$(x, \alpha)$,令$
+> $$
+> A = (24x \sin \alpha - 2x^2 \sin \alpha + x^2 \sin \alpha \cos \alpha) \quad (0 < x < 12, 0 < \alpha \leq \frac{\pi}{2})
+> $$
+>  可见断面面积$A = A(x, \alpha)$,这就是目标函数,下面求使该函数取得最大值的点$(x, \alpha)$,令
+> $$
 >  \begin{cases}
 >  A_x = 24 \sin \alpha - 4x \sin \alpha + 2x \sin \alpha \cos \alpha = 0 \\
 >  A_\alpha = 24x \cos \alpha - 2x^2 \cos \alpha + x^2 (\cos^2 \alpha - \sin^2 \alpha) = 0
 >  \end{cases}
->  $
->  由于$\sin \alpha \neq 0$,$x \neq 0$,上述方程组可化为$
+> $$
+>  由于$\sin \alpha \neq 0$,$x \neq 0$,上述方程组可化为
+> $$
 >  \begin{cases}
 >  12 - 2x + x \cos \alpha = 0 \\
 >  24 \cos \alpha - 2x \cos \alpha + x (\cos^2 \alpha - \sin^2 \alpha) = 0
 >  \end{cases}
->  $
->  解这方程组,得$\alpha = \displaystyle\frac{\pi}{3} = 60^\circ, \quad x = 8$
->  根据题意可知断面面积的最大值一定存在,并且在$D = \{(x, \alpha) | 0 < x < 12, 0 < \alpha \leq \displaystyle\frac{\pi}{2}\}$内取得,通过计算得知$\alpha = \displaystyle\frac{\pi}{2}$时的函数值比$\alpha = 60^\circ, x = 8$时的函数值小,又函数在D内只有一个驻点,因此可以断定,当$x = 8$, $\alpha = 60^\circ$时,就能使断面的面积最大.
+> $$
+>  解这方程组,得
+> $$
+> \alpha = \frac{\pi}{3} = 60^\circ, \quad x = 8
+> $$
+>  根据题意可知断面面积的最大值一定存在,并且在
+> $$
+> D = \{(x, \alpha) | 0 < x < 12, 0 < \alpha \leq \frac{\pi}{2}\}
+> $$
+> 内取得,通过计算得知
+> $$
+> \alpha = \frac{\pi}{2}
+> $$
+> 时的函数值比$\alpha = 60^\circ, x = 8$时的函数值小,又函数在D内只有一个驻点,因此可以断定,当$x = 8$, $\alpha = 60^\circ$时,就能使断面的面积最大.
 > 
 >
 > **例2:某厂要用铁板做成一个体积为2 m³的有盖长方体水箱,问当长、宽和高各取怎样的尺寸时,才能使用料最省?**
 > 
-> **解:**  设水箱的长为 $x$ m, 宽为 $y$ m, 则其高应为 $\displaystyle\frac{2}{xy}$ m. 此水箱所用材料的面积为 $A = 2 \left( xy + y \cdot \displaystyle\frac{2}{xy} + x \cdot \displaystyle\frac{2}{xy} \right)$, 即$A = 2 \left( xy + \displaystyle\frac{2}{x} + \displaystyle\frac{2}{y} \right) \quad (x > 0, y > 0).$
+> **解:**  设水箱的长为 $x$ m, 宽为 $y$ m, 则其高应为
+> $$
+> \frac{2}{xy} \text{ m}.
+> $$
+> 此水箱所用材料的面积为
+> $$
+> A = 2 \left( xy + y \cdot \frac{2}{xy} + x \cdot \frac{2}{xy} \right)
+> = 2 \left( xy + \frac{2}{x} + \frac{2}{y} \right)
+> \quad (x > 0, y > 0).
+> $$
 >  可见材料面积 $A = A(x, y)$ 是 $x$ 和 $y$ 的二元函数, 这就是目标函数, 下面求使该函数取得最小值的点 $(x, y)$,
->  令$A_x = 2 \left( y - \displaystyle\frac{2}{x^2} \right) = 0, \quad A_y = 2 \left( x - \displaystyle\frac{2}{y^2} \right) = 0.$
+>  令
+> $$
+>  A_x = 2 \left( y - \frac{2}{x^2} \right) = 0, \quad A_y = 2 \left( x - \frac{2}{y^2} \right) = 0.
+> $$
 >  解这方程组, 得$x = \sqrt[3]{2}, \quad y = \sqrt[3]{2}.$
 >  根据题意可以知道, 水箱所用材料面积的最小值一定存在, 并在开区域 $D = \{(x, y) | x > 0, y > 0\}$ 内取得,又函数在 $D$ 内只有唯一的驻点 $(\sqrt[3]{2}, \sqrt[3]{2})$, 因此可断定当 $x = \sqrt[3]{2}, y = \sqrt[3]{2}$ 时, $A$ 取得最小值,就是说, 当水箱的长为 $\sqrt[3]{2}$ m, 宽为 $\sqrt[3]{2}$ m, 高为 $\displaystyle\frac{2}{\sqrt[3]{2} \cdot \sqrt[3]{2}} = \sqrt[3]{2}$ m 时, 水箱所用的材料最省.
 >  从这个例子还可看出, 在体积一定的长方体中, 以立方体的表面积为最小,
@@ -702,9 +981,13 @@
 > **拉格朗日乘数法 (Lagrange Multipliers)** 是用于求**带有约束条件的极值问题**的一种重要方法. 假设要求函数 $f(x, y)$ 在约束条件 $g(x, y) = 0$ 下的极值, 
 > **方法**  
 > 1. 构造拉格朗日函数  
-> $$ L(x, y, \lambda) = f(x, y) + \lambda g(x, y) $$
+> $$
+> L(x, y, \lambda) = f(x, y) + \lambda g(x, y)
+> $$
 > 2. 求偏导并列方程组  
-> $$\displaystyle\frac{\partial L}{\partial x} = 0,\quad \displaystyle\frac{\partial L}{\partial y} = 0,\quad \displaystyle\frac{\partial L}{\partial \lambda} = 0 $$
+> $$
+> \frac{\partial L}{\partial x} = 0,\quad \frac{\partial L}{\partial y} = 0,\quad \frac{\partial L}{\partial \lambda} = 0
+> $$
 > 3. 解这个方程组,得到可疑点（驻点）；
 > 4. 将这些点代入 $f(x, y)$,比较函数值,判断极值.
 
@@ -716,7 +999,9 @@
 > 1. **等高线与相切**：我们在平面上画出固定的约束曲线 $g(x,y) = c$，然后再画出目标函数 $f(x,y)$ 的**等高线 (Level curves)**。当我们改变 $f$ 的值时，等高线会一圈圈扩大或缩小。当 $f$ 的等高线刚好**触碰（相切）**到约束曲线的那一瞬间，我们就找到了这条线上的最小值或最大值！
 > 2. **梯度的平行**：在切点处，两条曲线完全相切，这意味着它们的法线是同一条。我们之前学过，**函数的梯度向量（Gradient）总是垂直于它的等高线**。既然在极值点两曲线相切，那么 $f$ 的梯度 $\nabla f$ 必须与 $g$ 的梯度 $\nabla g$ 平行！
 > 3. **方程的诞生**：数学上，我们用一个比例常数 $\lambda$ （拉格朗日乘子）来表示两个向量的平行关系：
-> $$ \nabla f = \lambda \nabla g $$
+> $$
+> \nabla f = \lambda \nabla g
+> $$
 > 将其拆解为分量形式，也就是 $f_x = \lambda g_x$ 和 $f_y = \lambda g_y$。这正是拉格朗日函数 $L_x = 0$ 和 $L_y = 0$ 移项后所表达的核心本质！
 > 
 > ![拉格朗日乘数法几何直观](../media/img/Lagrange_multipliers_geometry.png#200pt)
@@ -729,29 +1014,52 @@
 > [!note]
 > ==经典例题==
 > 
-> **例:求函数$ u = xyz $ 在附加条件 $\displaystyle\frac{1}{x} + \displaystyle\frac{1}{y} + \displaystyle\frac{1}{z} = \displaystyle\frac{1}{a} \ (x,y,z,a > 0$)下的极值.**
+> **例:求函数**
+> $$
+> u = xyz
+> $$
+> **在附加条件**
+> $$
+> \frac{1}{x} + \frac{1}{y} + \frac{1}{z} = \frac{1}{a} \quad (x,y,z,a > 0)
+> $$
+> **下的极值.**
 > 
 > **解:** 构造拉格朗日函数：
-> $$ L(x,y,z) = xyz + \lambda \left( \displaystyle\frac{1}{x} + \displaystyle\frac{1}{y} + \displaystyle\frac{1}{z} - \displaystyle\frac{1}{a} \right) $$
+> $$
+> L(x,y,z) = xyz + \lambda \left( \frac{1}{x} + \frac{1}{y} + \frac{1}{z} - \frac{1}{a} \right)
+> $$
 > 
 > 求偏导并令其为零：
-> $$ \begin{cases}
-> L_x = yz - \displaystyle\frac{\lambda}{x^2} = 0 \\
-> L_y = xz - \displaystyle\frac{\lambda}{y^2} = 0 \\
-> L_z = xy - \displaystyle\frac{\lambda}{z^2} = 0
-> \end{cases}$$
+> $$
+> \begin{cases}
+> L_x = yz - \frac{\lambda}{x^2} = 0 \\
+> L_y = xz - \frac{\lambda}{y^2} = 0 \\
+> L_z = xy - \frac{\lambda}{z^2} = 0
+> \end{cases}
+> $$
 > 
 > 将各方程分别乘以对应的变量 $x, y, z$ 后相加，代入原条件得：
-> $$ 3xyz = \lambda \left( \frac{1}{x} + \frac{1}{y} + \frac{1}{z} \right) \implies 3xyz = \frac{\lambda}{a} $$
+> $$
+> \begin{align*}
+> 3xyz &= \lambda \left( \frac{1}{x} + \frac{1}{y} + \frac{1}{z} \right) \\
+> &\implies 3xyz = \frac{\lambda}{a}
+> \end{align*}
+> $$
 > 即：
-> $$ xyz = \displaystyle\frac{\lambda}{3a} $$
+> $$
+> xyz = \frac{\lambda}{3a}
+> $$
 > 
 > 将 $\lambda = 3axyz$ 回代入原偏导方程（因为 $x,y,z>0$，除以 $xyz$ 不为零），解得唯一驻点：
-> $$ x = y = z = 3a $$
+> $$
+> x = y = z = 3a
+> $$
 > 
 > **结论**  
 > 因为问题在给定区域内只有一个驻点，结合问题的实际意义（或者通过比较边界极限），可知函数在点 $(3a,3a,3a)$ 处取得极小值：
-> $$ u_{\text{极小}} = (3a)(3a)(3a) = 27a^3 $$
+> $$
+> u_{\text{极小}} = (3a)(3a)(3a) = 27a^3
+> $$
 
 ### 人工智能中的优化问题
 
@@ -766,7 +1074,9 @@
 > 现在，我们要求计算机（AI模型）在**不知道真实规律是正弦函数**的前提下，仅凭这 $N$ 个带噪声的散点，去“猜”并画出一条能够最好地穿过这些点的曲线。
 >
 > 最自然的想法是，我们用一个 **$M$ 阶多项式** 去拟合它：
-> $$ y(x, \mathbf{w}) = w_0 + w_1 x + w_2 x^2 + \cdots + w_M x^M = \sum_{j=0}^M w_j x^j $$
+> $$
+> y(x, \mathbf{w}) = w_0 + w_1 x + w_2 x^2 + \cdots + w_M x^M = \sum_{j=0}^M w_j x^j
+> $$
 > 这里的 $x$ 是输入，$w_0, w_1, \dots, w_M$ 是多项式的系数（在人工智能中通常称为**权重参数**）。
 > 
 > **问题来了**：对于给定的数据点，我们到底该怎么确定这组参数 $\mathbf{w}$，才能让这条多项式曲线“最完美”地贴合数据呢？这就需要引入一种衡量误差的数学标准，也就是接下来要讲的**最小二乘法**。
@@ -780,7 +1090,9 @@
 > 在工程与科学计算中，当我们面对一组实验数据时，我们要找的并不是能**完美穿过**每一个点的曲线（那往往会导致严重的“过拟合”），而是寻找一条使得**整体误差最小**的曲线。
 >
 > 什么样的误差定义最好？最通用且拥有极好数学性质的方法是：测量每一个真实数据点 $t_i$ 与模型预测值 $y(x_i, \mathbf{w})$ 之间的偏差（Deviation），并将这些**偏差的平方和**作为总误差：
-> $$ E(\mathbf{w}) = \frac{1}{2} \sum_{i=1}^N \left( y(x_i, \mathbf{w}) - t_i \right)^2 $$
+> $$
+> E(\mathbf{w}) = \frac{1}{2} \sum_{i=1}^N \left( y(x_i, \mathbf{w}) - t_i \right)^2
+> $$
 > （注：前面乘上 $\frac{1}{2}$ 是为了后续求导时刚好能和平方项的 $2$ 抵消，方便计算，不影响极值点的位置。）
 >
 > 这就是大名鼎鼎的**最小二乘法 (Method of Least Squares)**。通过寻找使得误差函数 $E(\mathbf{w})$ 达到**极小值**的权重参数 $\mathbf{w}^*$，我们就找到了“最佳拟合”曲线！
@@ -792,14 +1104,25 @@
 > 结合我们在前几节学过的**多元函数极值**知识，最小二乘法本质上就是一个**无约束的多元函数求极小值问题**！
 > 
 > 为了直观，我们退回最简单的线性拟合（即用直线 $f(x) = ax + b$ 来拟合数据）。此时，误差函数 $D$ 是关于参数 $a$ 和 $b$ 的二元函数：
-> $$ D(a, b) = \sum_{i=1}^N \left( y_i - (ax_i + b) \right)^2 $$
+> $$
+> D(a, b) = \sum_{i=1}^N \left( y_i - (ax_i + b) \right)^2
+> $$
 > 
 > 如何求它的极小值点？我们只需要让它对 $a$ 和对 $b$ 的**偏导数分别等于 0** 即可找到临界点（驻点）：
-> $$ \frac{\partial D}{\partial a} = -2 \sum_{i=1}^N x_i (y_i - ax_i - b) = 0 $$
-> $$ \frac{\partial D}{\partial b} = -2 \sum_{i=1}^N (y_i - ax_i - b) = 0 $$
+> $$
+> \frac{\partial D}{\partial a} = -2 \sum_{i=1}^N x_i (y_i - ax_i - b) = 0
+> $$
+> $$
+> \frac{\partial D}{\partial b} = -2 \sum_{i=1}^N (y_i - ax_i - b) = 0
+> $$
 > 
 > 将上述方程组展开并合并同类项，你会发现它完全变成了一个关于 $a$ 和 $b$ 的**二元一次线性方程组**：
-> $$ \begin{cases} \left(\sum x_i^2\right) a + \left(\sum x_i\right) b = \sum x_i y_i \\ \left(\sum x_i\right) a + n b = \sum y_i \end{cases} $$
+> $$
+> \begin{cases}
+> \left(\sum x_i^2\right) a + \left(\sum x_i\right) b = \sum x_i y_i \\
+> \left(\sum x_i\right) a + n b = \sum y_i
+> \end{cases}
+> $$
 > 只要数据点给定了，$\sum x_i$, $\sum y_i$, $\sum x_i^2$ 这些求和项就全是确定的常数数字。利用矩阵或消元法瞬间就能解出最佳的 $a$ 和 $b$！即使扩展到前面的 $M$ 阶多项式，原理也是完全相同的（偏导数等于0，解线性方程组）。这正是最小二乘法如此被广泛使用且高效的数学底层逻辑。
 
 #### 正则化与带约束极值问题
@@ -815,11 +1138,15 @@
 > **1. 从约束极值到拉格朗日函数**
 > 假设我们的原本目标是最小化损失函数 $f(w_1, w_2)$。现在加上一个参数大小的限制，比如要求权重向量的长度不能超过某个常数：$g(w_1, w_2) = w_1^2 + w_2^2 \le C$（这在几何上被限制在一个圆盘内）。
 > 根据本节学过的**拉格朗日乘数法**，为了求解这个处于边界上的约束极值问题，我们需要构造拉格朗日函数：
-> $$ L(w_1, w_2, \lambda) = f(w_1, w_2) + \lambda (w_1^2 + w_2^2 - C) $$
+> $$
+> L(w_1, w_2, \lambda) = f(w_1, w_2) + \lambda (w_1^2 + w_2^2 - C)
+> $$
 >
 > **2. 机器学习中的 L2 正则化 (权重衰减)**
 > 在对权重 $w$ 求偏导时，常数 $C$ 并不会产生影响。因此，在实际的深度学习代码（如 PyTorch 或 TensorFlow）中，优化目标常常被直接写为以下形式：
-> $$ \text{Loss}_{\text{total}} = \underbrace{\text{Loss}_{\text{data}}(w)}_{\text{原目标函数 } f} + \underbrace{\lambda (w_1^2 + w_2^2)}_{\text{拉格朗日约束项 } \lambda g} $$
+> $$
+> \text{Loss}_{\text{total}} = \underbrace{\text{Loss}_{\text{data}}(w)}_{\text{原目标函数 } f} + \underbrace{\lambda (w_1^2 + w_2^2)}_{\text{拉格朗日约束项 } \lambda g}
+> $$
 > 这就是机器学习中赫赫有名的 **L2 正则化 (L2 Regularization)**，在神经网络中也常被称为**权重衰减 (Weight Decay)**！
 > 这里的 $\lambda$ 正是我们刚才在微积分中引入的**拉格朗日乘子**。在 AI 中，它被称为**惩罚系数**（或正则化系数）。它就像是一个调节器：$\lambda$ 越大，表示我们对模型复杂度的惩罚越重，强迫权重向零收缩。
 > 
@@ -857,8 +1184,14 @@
 > 当变量数量增多时，写出一大堆偏导数是非常繁琐的。在机器学习中，我们通常将自变量写成向量 $\mathbf{x}$，并将泰勒展开改写为极其优雅的**矩阵形式**。
 > 设 $\mathbf{x} = (x, y)^T$，增量 $\Delta \mathbf{x} = \mathbf{x} - \mathbf{x}_0 = (h, k)^T$。
 > 
-> 1. **一阶导数向量**被称为**梯度 (Gradient)**：$\nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right)^T$
-> 2. **二阶导数矩阵**被称为**海森矩阵 (Hessian Matrix)**：$\mathbf{H} = \begin{pmatrix} f_{xx} & f_{xy} \\ f_{yx} & f_{yy} \end{pmatrix}$
+> 1. **一阶导数向量**被称为**梯度 (Gradient)**：
+> $$
+>    \nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right)^T
+> $$
+> 2. **二阶导数矩阵**被称为**海森矩阵 (Hessian Matrix)**：
+> $$
+>    \mathbf{H} = \begin{pmatrix} f_{xx} & f_{xy} \\ f_{yx} & f_{yy} \end{pmatrix}
+> $$
 > 
 > 于是，多元函数的二阶泰勒展开可以紧凑地写为：
 > $$

@@ -36,16 +36,22 @@
 > ==几个经典的常数项级数==
 > 
 > **1. 几何级数 (等比级数)**
-> $\displaystyle S_n = \sum_{i=1}^{n} a q^{i-1} \quad (a \neq 0)$
+> $$
+> S_n = \sum_{i=1}^{n} a q^{i-1} \quad (a \neq 0)
+> $$
 > * 当 $|q| < 1$ 时，级数收敛，和为 $\displaystyle\frac{a}{1-q}$；
 > * 当 $|q| \ge 1$ 时，级数发散。
 > 
 > **2. 调和级数 (发散的经典例子)**
-> $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \cdots$
+> $$
+> \sum_{n=1}^{\infty} \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \cdots
+> $$
 > 虽然通项 $\frac{1}{n} \to 0$，但该级数是 **发散** 的。
 > 
 > **3. 裂项相消级数**
-> $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n(n+1)}$
+> $$
+> \sum_{n=1}^{\infty} \frac{1}{n(n+1)}
+> $$
 > 计算其部分和：
 > $$
 > \begin{aligned} 
@@ -92,41 +98,73 @@
 
 > [!note]
 > **例：判断级数 $\sum \frac{1}{\sqrt{n(n+1)}}$ 的收敛性**
-> **解**：由于 $\frac{1}{\sqrt{n(n+1)}} > \frac{1}{\sqrt{(n+1)(n+1)}} = \frac{1}{n+1}$，而 $\sum \frac{1}{n+1}$（相当于调和级数）是发散的，根据比较审敛法，原级数 **发散**。
+> **解**：由于
+> $$
+> \frac{1}{\sqrt{n(n+1)}} > \frac{1}{\sqrt{(n+1)(n+1)}} = \frac{1}{n+1}
+> $$
+> 而 $\sum \frac{1}{n+1}$（相当于调和级数）是发散的，根据比较审敛法，原级数 **发散**。
 
 > [!important]
 > ==定理3：极限比较审敛法==
 > 
-> 设 $\sum u_n$ 与 $\sum v_n$ 为正项级数，若 $\displaystyle \lim_{n \rightarrow \infty} \frac{u_n}{v_n} = l \ (0 < l < \infty)$，则这两个级数 **同收敛或同发散**。
+> 设 $\sum u_n$ 与 $\sum v_n$ 为正项级数，若
+> $$
+> \lim_{n \rightarrow \infty} \frac{u_n}{v_n} = l \quad (0 < l < \infty)
+> $$
+> 则这两个级数 **同收敛或同发散**。
 
 > [!note]
 > **例：判断 $\displaystyle \sum_{n=1}^{\infty} \sin \frac{1}{n}$ 的收敛性**
-> **解**：取发散的调和级数 $v_n = \frac{1}{n}$。因为 $\displaystyle \lim_{n \to \infty} \frac{\sin \frac{1}{n}}{\frac{1}{n}} = 1 > 0$，而 $\sum \frac{1}{n}$ 发散，故 $\sum \sin \frac{1}{n}$ **发散**。
+> **解**：取发散的调和级数 $v_n = \frac{1}{n}$。因为
+> $$
+> \lim_{n \to \infty} \frac{\sin \frac{1}{n}}{\frac{1}{n}} = 1 > 0
+> $$
+> 而 $\sum \frac{1}{n}$ 发散，故 $\sum \sin \frac{1}{n}$ **发散**。
 
 > [!important]
 > ==定理4：比值审敛法 (达朗贝尔判别法)——非常重要！==
 > 
-> 设 $\sum u_n$ 为正项级数，若 $\displaystyle \lim_{n \rightarrow \infty} \frac{u_{n+1}}{u_n} = \rho$，则：
+> 设 $\sum u_n$ 为正项级数，若
+> $$
+> \lim_{n \rightarrow \infty} \frac{u_{n+1}}{u_n} = \rho
+> $$
+> 则：
 > * 当 $\rho < 1$ 时，级数 **收敛**；
 > * 当 $\rho > 1$ 或 $\rho = \infty$ 时，级数 **发散**；
 > * 当 $\rho = 1$ 时，方法失效（不确定，需用其他方法）。
 
 > [!note]
 > **例：判断 $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n!}$ 的收敛性**
-> **解**：$\displaystyle \lim_{n \rightarrow \infty} \frac{u_{n+1}}{u_n} = \lim_{n \rightarrow \infty} \frac{n!}{(n+1)!} = \lim_{n \rightarrow \infty} \frac{1}{n+1} = 0 < 1$，故级数 **收敛**。
+> **解**：
+> $$
+> \begin{align*}
+> \lim_{n \rightarrow \infty} \frac{u_{n+1}}{u_n}
+> &= \lim_{n \rightarrow \infty} \frac{n!}{(n+1)!} \\
+> &= \lim_{n \rightarrow \infty} \frac{1}{n+1} \\
+> &= 0 < 1
+> \end{align*}
+> $$
+> 故级数 **收敛**。
 
 ### 交错级数与任意项级数
 
 > [!important]
 > ==定理5：莱布尼茨定理 (交错级数审敛法)==
 > 
-> 对于交错级数 $\displaystyle \sum_{n=1}^{\infty}(-1)^{n-1} u_n \ (u_n > 0)$，若满足：
+> 对于交错级数
+> $$
+> \sum_{n=1}^{\infty}(-1)^{n-1} u_n \quad (u_n > 0)
+> $$
+> 若满足：
 > 1. $u_n \geqslant u_{n+1}$ （各项的绝对值单调递减）
 > 2. $\displaystyle \lim_{n \rightarrow \infty} u_n = 0$
 > 则该交错级数 **收敛**。
 
 > [!note]
-> **例：交错调和级数** $\displaystyle 1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots+(-1)^{n-1} \frac{1}{n}+\cdots$
+> **例：交错调和级数**
+> $$
+> 1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots+(-1)^{n-1} \frac{1}{n}+\cdots
+> $$
 > **解**：由于 $u_n=\frac{1}{n}$ 满足单调递减且趋于0，故该级数 **收敛**。
 
 > [!important]
@@ -143,7 +181,9 @@
 
 > [!important]
 > ==幂级数的形式==
-> $$ \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n + \cdots $$
+> $$
+> \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n + \cdots
+> $$
 > 其中，常数 $a_0, a_1, \cdots$ 称为幂级数的系数。
 
 > [!important]
@@ -158,13 +198,27 @@
 > 由阿贝尔定理可知，幂级数的收敛域必然是一个以原点为中心的区间 $(-R, R)$。这个正数 $R$ 就称为 **收敛半径**。在 $x=R$ 或 $x=-R$ 的端点处，收敛性需要单独判定。
 > 
 > **收敛半径的求法：**
-> 若 $\displaystyle \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = \rho$，则收敛半径 $R = \frac{1}{\rho}$。（若 $\rho=0$ 则 $R=\infty$；若 $\rho=\infty$ 则 $R=0$）。
+> 若
+> $$
+> \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = \rho
+> $$
+> 则收敛半径 $R = \frac{1}{\rho}$。（若 $\rho=0$ 则 $R=\infty$；若 $\rho=\infty$ 则 $R=0$）。
 
 > [!note]
-> **例：求幂级数 $\displaystyle \sum_{n=1}^\infty \frac{(x-1)^n}{2^n \cdot n}$ 的收敛域**
+> **例：求下列幂级数的收敛域**
+> $$
+> \sum_{n=1}^\infty \frac{(x-1)^n}{2^n \cdot n}
+> $$
 > 
 > **解**：令 $t = x - 1$，考察 $\sum \frac{t^n}{2^n n}$。
-> $$ \rho = \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right| = \lim_{n\to\infty} \frac{2^n n }{2^{n+1}(n+1)} = \frac{1}{2} $$
+> $$
+> \begin{align*}
+> \rho
+> &= \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right| \\
+> &= \lim_{n\to\infty} \frac{2^n n }{2^{n+1}(n+1)} \\
+> &= \frac{1}{2}
+> \end{align*}
+> $$
 > 故收敛半径 $R_t = 2$。收敛区间为 $|t| < 2$，即 $-1 < x < 3$。
 > 检查端点：
 > * 当 $x = -1$ 时，级数变为 $\sum \frac{(-1)^n}{n}$，由莱布尼茨定理知其 **收敛**；
@@ -175,11 +229,26 @@
 > ==常见函数的麦克劳林(幂级数)展开==
 > 
 > 这些公式在数值计算和计算机算法中极其基础：
-> 1. **指数函数**：$\displaystyle e^x = \sum_{n=0}^{\infty}\frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \cdots \quad (x \in \mathbb{R})$
-> 2. **正弦函数**：$\displaystyle \sin x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!} \quad (x \in \mathbb{R})$
-> 3. **余弦函数**：$\displaystyle \cos x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} \quad (x \in \mathbb{R})$
-> 4. **几何级数**：$\displaystyle \frac{1}{1-x} = \sum_{n=0}^\infty x^n \quad (-1 < x < 1)$
-> 5. **对数函数**：$\displaystyle \ln(1+x) = \sum_{n=1}^\infty (-1)^{n-1}\frac{x^n}{n} \quad (-1 < x \leq 1)$
+> 1. **指数函数**
+>    $$
+>    e^x = \sum_{n=0}^{\infty}\frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \cdots \quad (x \in \mathbb{R})
+>    $$
+> 2. **正弦函数**
+>    $$
+>    \sin x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!} \quad (x \in \mathbb{R})
+>    $$
+> 3. **余弦函数**
+>    $$
+>    \cos x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} \quad (x \in \mathbb{R})
+>    $$
+> 4. **几何级数**
+>    $$
+>    \frac{1}{1-x} = \sum_{n=0}^\infty x^n \quad (-1 < x < 1)
+>    $$
+> 5. **对数函数**
+>    $$
+>    \ln(1+x) = \sum_{n=1}^\infty (-1)^{n-1}\frac{x^n}{n} \quad (-1 < x \leq 1)
+>    $$
 
 ## 傅里叶级数与傅里叶变换
 > [!tip]
@@ -194,7 +263,9 @@
 > ==傅里叶级数 (Fourier Series)==
 > 
 > 设 $f(x)$ 是以 $2\pi$ 为周期的周期函数，它可以被展开为如下的 **三角级数**：
-> $$ f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos(nx) + b_n \sin(nx) \right) $$
+> $$
+> f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos(nx) + b_n \sin(nx) \right)
+> $$
 > 其中，常数项和三角函数的系数（称为**傅里叶系数**）通过积分计算得出：
 > * $a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx$ （代表信号的直流/平均分量）
 > * $a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(nx) dx$
@@ -216,7 +287,9 @@
 > > *推论：当 $x=\pi$ 时，得到 $e^{i\pi} + 1 = 0$，这个等式将数学中最重要的五个常数 $0, 1, i, \pi, e$ 融为一体。*
 > 
 > 利用欧拉公式，我们可以反向表示正弦和余弦：
-> $$ \cos(nx) = \frac{e^{inx} + e^{-inx}}{2}, \quad \sin(nx) = \frac{e^{inx} - e^{-inx}}{2i} $$
+> $$
+> \cos(nx) = \frac{e^{inx} + e^{-inx}}{2}, \quad \sin(nx) = \frac{e^{inx} - e^{-inx}}{2i}
+> $$
 > 
 > 将这两个式子代入传统的傅里叶级数中，经过简单的代数合并整理，原本分为三项（常数项、$a_n$项、$b_n$项）的冗长公式，可以被压缩成一个极其优雅的复数形式！
 

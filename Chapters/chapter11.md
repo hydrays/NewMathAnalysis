@@ -89,8 +89,22 @@ vlook-doc-lib:
 
 > [!note]
 > 
-> **例1:已知$f(x,y)=1-x^2-y^2,D=\{(x,y)|0\leq x\leq 1,0\leq y\leq 1\}$,计算$\displaystyle \iint_D f(x,y) \mathrm{d}A$.**
+> **例1**:已知 
 > 
+> $$
+> f(x,y)=1-x^2-y^2,
+> $$
+> 
+> $$
+> D=\{(x,y)|0\leq x\leq 1,0\leq y\leq 1\},
+> $$
+> 
+> 计算
+> 
+> $$
+> \iint_D f(x,y) \mathrm{d}A.
+> $$
+>  
 > **解：**上式可展开为
 > $$
 > \begin{aligned}
@@ -118,8 +132,17 @@ vlook-doc-lib:
 \end{aligned}
 > $$
 >
->
-> **例2：已知$f(x,y)=1-x^2-y^2,D=\{(x,y)|x^2+y^2\leq 1,x> 0,y > 0 \} $,计算$\displaystyle \iint_D f(x,y) \mathrm{d}A$.**
+>**例2**：已知
+> $$
+> f(x,y)=1-x^2-y^2,
+> $$
+> $$
+> D=\{(x,y)|x^2+y^2\leq 1,x> 0,y > 0 \},
+> $$
+> 计算
+> $$
+> \iint_D f(x,y) \mathrm{d}A.
+> $$
 > 
 > **解：**由图
 > [图略，待补充]
@@ -136,8 +159,15 @@ vlook-doc-lib:
 > &= \frac{2}{3}(1-x^2)^{\frac{3}{2}}
 > \end{aligned}
 > $$
-> Outer:$\displaystyle \int_0^1\frac{2}{3}(1-x^2)^{\frac{3}{2}}\mathrm{d}x$
-> 令$x=\sin\theta,\mathrm{d}x=\cos\theta\mathrm{d}\theta$
+> Outer:
+> $$
+> \int_0^1\frac{2}{3}(1-x^2)^{\frac{3}{2}}\mathrm{d}x
+> $$
+> 令
+> $$
+> x=\sin\theta,\mathrm{d}x=\cos\theta\mathrm{d}\theta
+> $$
+> 
 > $$
 > \begin{aligned}
 > \int_0^1\frac{2}{3}(1-x^2)^{\frac{3}{2}}\mathrm{d}x &= \int_0^{\frac{\pi}{2}}\frac{2}{3}\cos^4\theta\mathrm{d}\theta \\
@@ -182,7 +212,11 @@ vlook-doc-lib:
 > \end{aligned}
 > $$
 >
-> **例2：计算$\displaystyle \iint_{D} y\sqrt{1+x^2 - y^2} \mathrm{d}\sigma$,其中$ D $ 由直线 $ y = x $、$ x = -1 $ 及 $ y = 1 $ 围成的闭区域.**
+> **例2：计算**
+> $$
+> \iint_{D} y\sqrt{1+x^2 - y^2} \mathrm{d}\sigma
+> $$
+> 其中 $ D $ 由直线 $ y = x $、$ x = -1 $ 及 $ y = 1 $ 围成的闭区域.
 > 
 > **解法一：**由图
 > [图略，待补充]
@@ -205,7 +239,14 @@ vlook-doc-lib:
 > 
 > ==极坐标下的积分==
 > 
-> **例：已知$f(x,y)=1-x^2-y^2,D= \{(x,y)|x^2+y^2\leq 1,x\geq 0,y\geq 0 \} $,计算$\displaystyle \iint_D f(x,y) \mathrm{d}A$.**
+> **例：已知**
+> $$
+> f(x,y)=1-x^2-y^2,\quad D= \{(x,y)\mid x^2+y^2\leq 1,\ x\geq 0,\ y\geq 0 \}
+> $$
+> **计算**
+> $$
+> \iint_D f(x,y) \mathrm{d}A.
+> $$
 > 
 > **解:**由图
 > [图略，待补充]
@@ -253,11 +294,15 @@ $$
 > $$
 > [图略，待补充]
 > $$
-\mathrm{d}u\mathrm{d}v = J= \frac{\partial (u,v)}{\partial (x,y)}=
-\begin{vmatrix}
-\frac{\partial u}{\partial x}\mathrm{d}x & \frac{\partial u}{\partial y}\mathrm{d}y\\
-\frac{\partial v}{\partial x}\mathrm{d}x & \frac{\partial v}{\partial y}\mathrm{d}y
-\end{vmatrix}=\left|\frac{\partial u}{\partial x}\frac{\partial v}{\partial y}-\frac{\partial u}{\partial y}\frac{\partial v}{\partial x}\right|\mathrm{d}x\mathrm{d}y
+> \begin{align*}
+> \mathrm{d}u\mathrm{d}v
+> &= J = \frac{\partial (u,v)}{\partial (x,y)} \\
+> &= \begin{vmatrix}
+> \frac{\partial u}{\partial x}\mathrm{d}x & \frac{\partial u}{\partial y}\mathrm{d}y\\
+> \frac{\partial v}{\partial x}\mathrm{d}x & \frac{\partial v}{\partial y}\mathrm{d}y
+> \end{vmatrix} \\
+> &= \left|\frac{\partial u}{\partial x}\frac{\partial v}{\partial y}-\frac{\partial u}{\partial y}\frac{\partial v}{\partial x}\right|\mathrm{d}x\mathrm{d}y
+> \end{align*}
 > $$
 
 
@@ -279,7 +324,14 @@ $$
 > \left| \frac{\partial (x,y)}{\partial (u,v)} \right| = \left| \frac{\partial (u,v)}{\partial (x,y)} \right|^{-1}
 > $$
 > **经典示例：极坐标变换**  
-> 对极坐标变换 $ \begin{cases} x = \rho \cos\theta \\ y = \rho \sin\theta \end{cases} $，其雅可比矩阵为：
+> 对极坐标变换
+> $$
+> \begin{cases}
+> x = \rho \cos\theta \\
+> y = \rho \sin\theta
+> \end{cases}
+> $$
+> 其雅可比矩阵为：
 > $$
 > J(\rho ,\theta)=\frac{\partial (x,y)}{\partial (\rho ,\theta)}=
 > \begin{vmatrix}
@@ -318,13 +370,23 @@ $$
 
 >[!note]
 >
-> **例:计算$\displaystyle  \int_{-\infty}^{+\infty}e^{-x^2}\mathrm{d}x$.**
+> **例:计算**
+> $$
+> \int_{-\infty}^{+\infty}e^{-x^2}\mathrm{d}x.
+> $$
 > 
 >  **解:**
->  令$\displaystyle  I=\int_{-\infty}^{+\infty}e^{-x^2}\mathrm{d}x$
+>  令
+>  $$
+>  I=\int_{-\infty}^{+\infty}e^{-x^2}\mathrm{d}x
+>  $$
 >  则
 >  $$
-I^2=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-(x^2+y^2)}\mathrm{d}x\mathrm{d}y=\int_{-\infty}^{+\infty}e^{-y^2}\mathrm{d}y\int_{-\infty}^{+\infty}e^{-x^2}\mathrm{d}x
+> \begin{align*}
+> I^2
+> &= \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-(x^2+y^2)}\mathrm{d}x\mathrm{d}y \\
+> &= \int_{-\infty}^{+\infty}e^{-y^2}\mathrm{d}y\int_{-\infty}^{+\infty}e^{-x^2}\mathrm{d}x
+> \end{align*}
 >  $$
 >  令$x=r\cos\theta,y=r\sin\theta$，则
 >  $$
@@ -365,7 +427,10 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 
 >[!note]
 >
-> **例1:如图所示，求$\displaystyle I=\iint_Dr^2(\rho,\theta)\rho \mathrm{d}\rho \mathrm{d}\theta$.**
+> **例1:如图所示，求**
+> $$
+> I=\iint_Dr^2(\rho,\theta)\rho \mathrm{d}\rho \mathrm{d}\theta.
+> $$
 > 
 > [图略，待补充]
 > **解:**
@@ -379,7 +444,10 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 > \end{aligned}
 >  $$
 > 
-> **例2:如图所示，求$\displaystyle  I=\iint_Dr^2(\rho,\theta)\rho \mathrm{d}\rho \mathrm{d}\theta$.**
+> **例2:如图所示，求**
+> $$
+> I=\iint_Dr^2(\rho,\theta)\rho \mathrm{d}\rho \mathrm{d}\theta.
+> $$
 > 
 > [图略，待补充]
 > **解法一：**
@@ -458,7 +526,17 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 > \end{aligned}
 > $$
 > 
-> 关键消去项：根据质心坐标的定义 $ \displaystyle  x_c = \frac{1}{M}\iint_D \mu x \mathrm{d}x\mathrm{d}y $，交叉项中的积分 $ \displaystyle \iint_D \mu(x - x_c)\mathrm{d}x\mathrm{d}y $ 和 $\displaystyle  \iint_D \mu(y - y_c)\mathrm{d}x\mathrm{d}y $ 必然为零。最终得到简洁形式：
+> 关键消去项：根据质心坐标的定义
+> $$
+> x_c = \frac{1}{M}\iint_D \mu x \mathrm{d}x\mathrm{d}y
+> $$
+> 交叉项中的积分
+> $$
+> \iint_D \mu(x - x_c)\mathrm{d}x\mathrm{d}y
+> \quad \text{和} \quad
+> \iint_D \mu(y - y_c)\mathrm{d}x\mathrm{d}y
+> $$
+> 必然为零。最终得到简洁形式：
 > $$
 > I(x_0, y_0) = I_c + M r^2
 > $$
@@ -502,15 +580,28 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 > $$
 > 令$y=a\sin\theta,\mathrm{d}y=a\cos\theta\mathrm{d}\theta$,则
 > $$
-原式=4\int_0^{\frac{\pi}{2}}b\cos\theta a \cos\theta\mathrm{d}\theta=4ab\int_0^{\frac{\pi}{2}}\frac{1+\cos2\theta}{2}\mathrm{d}\theta=\pi ab
+> \begin{align*}
+> \text{原式}
+> &= 4\int_0^{\frac{\pi}{2}}b\cos\theta \, a\cos\theta\mathrm{d}\theta \\
+> &= 4ab\int_0^{\frac{\pi}{2}}\frac{1+\cos2\theta}{2}\mathrm{d}\theta \\
+> &= \pi ab
+> \end{align*}
 > $$
 > **解法二**:
-> 令$x=au,y=bv,-1\leq u \leq 1,-1\leq v \leq 1,u^2+v^2=1$，则
+> 令 $x=au$, $y=bv$, $-1\leq u \leq 1$, $-1\leq v \leq 1$, $u^2+v^2=1$，则
 > $$
-\mathrm{d}x=a\mathrm{d}u \\ \mathrm{d}y=b\mathrm{d}v \\ \mathrm{d}x\mathrm{d}y=a\mathrm{d}u  \cdot b\mathrm{d}v
+> \begin{aligned}
+> \mathrm{d}x &= a\mathrm{d}u \\
+> \mathrm{d}y &= b\mathrm{d}v \\
+> \mathrm{d}x\mathrm{d}y &= a\mathrm{d}u \cdot b\mathrm{d}v
+> \end{aligned}
 > $$
 > $$
-\iint_D\mathrm{d}x\mathrm{d}y= \iint_Dab\mathrm{d}u\mathrm{d}v=\pi ab
+> \begin{align*}
+> \iint_D\mathrm{d}x\mathrm{d}y
+> &= \iint_Dab\mathrm{d}u\mathrm{d}v \\
+> &= \pi ab
+> \end{align*}
 > $$
 
 
@@ -554,7 +645,11 @@ J=
 
 >[!note]
 >
-> **例1:计算$\displaystyle  \iiint_{\Omega}x\mathrm{d}x\mathrm{d}y\mathrm{d}z$,其中 $\Omega$ 由平面 $x + 2y + z = 1$ 与三个坐标平面 ($x=0$, $y=0$, $z=0$) 围成.**
+> **例1:计算**
+> $$
+> \iiint_{\Omega}x\mathrm{d}x\mathrm{d}y\mathrm{d}z
+> $$
+> 其中 $\Omega$ 由平面 $x + 2y + z = 1$ 与三个坐标平面 ($x=0$, $y=0$, $z=0$) 围成.
 > 
 > [图略，待补充]
 >  **解法一:**
@@ -580,7 +675,11 @@ J=
 \end{aligned} 
 >  $$
 > 
-> **例2:利用柱面坐标计算三重积分 $\displaystyle  \iiint_{\Omega} z \mathrm{d}x\mathrm{d}y\mathrm{d}z$,其中$\Omega$ 是由曲面 $z = x^2 + y^2$ 与平面 $z = 4$ 围成的闭区域.**
+> **例2:利用柱面坐标计算三重积分**
+> $$
+> \iiint_{\Omega} z \mathrm{d}x\mathrm{d}y\mathrm{d}z
+> $$
+> 其中$\Omega$ 是由曲面 $z = x^2 + y^2$ 与平面 $z = 4$ 围成的闭区域.
 > 
 > [图略，待补充]
 >  **解:**令

@@ -24,13 +24,13 @@ def planet_motion(state, t):
 
 # 设置初始条件 (以地球为例)
 # 距离单位：米，速度单位：米/秒
-x0 = 1.496e11    # 地球到太阳的平均距离
-vz0 = 29.78e3    # 地球公转速度
+x0 = 1.596e11    # 地球到太阳的平均距离
+vz0 = 20.78e3    # 地球公转速度
 
 initial_state = [x0, 0, 0, 0, vz0, 0]  # 初始在x轴上，速度沿y方向
 
 # 设置时间点 (一年的时间)
-t = np.linspace(0, 365*24*3600, 1000)  # 一年的秒数
+t = np.linspace(0, 5*365*24*3600, 1000)  # 一年的秒数
 
 # 求解微分方程
 solution = odeint(planet_motion, initial_state, t)
@@ -86,4 +86,5 @@ anim = animation.FuncAnimation(fig, animate, init_func=init,
                              blit=True)
 
 plt.title('Planet Motion Around the Sun')
+anim.save('planet_motion.mp4', writer='ffmpeg', fps=30)
 plt.show()

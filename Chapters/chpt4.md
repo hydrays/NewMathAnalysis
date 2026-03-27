@@ -243,7 +243,14 @@
 > 
 > **解**: $\sin x$ 的一个原函数是 $-\cos x$
 > 根据微积分基本定理: 
-> $$\begin{aligned}\int_0^\pi \sin x\,dx &= [-\cos x]_0^\pi \\&= -\cos\pi - (-\cos 0) \\&= 1 + 1 = 2\end{aligned}$$
+> $$
+> \begin{aligned}
+> \int_0^\pi \sin x\,dx
+> &= [-\cos x]_0^\pi \\
+> &= -\cos\pi - (-\cos 0) \\
+> &= 1 + 1 = 2
+> \end{aligned}
+> $$
 > 
 
 > [!note]
@@ -360,12 +367,14 @@
 > 
 > **解**:  令 $u = x^2+1$，则 $du = 2x\,dx$，$x\,dx = \displaystyle\frac{du}{2}$
 > 
-> $$\begin{aligned}
+> $$
+> \begin{aligned}
 > \text{原积分} &= \int \sqrt{u}\cdot \left(\frac{du}{2}\right) \\
 > &= \frac{1}{2}\int u^{\frac{1}{2}}\,du \\
 > &= \frac{1}{2}\cdot\frac{2}{3}u^{\frac{3}{2}} + C \\
 > &= \frac{1}{3}(x^2+1)^{\frac{3}{2}} + C
-> \end{aligned}$$
+> \end{aligned}
+> $$
 
 > [!important]
 > 
@@ -396,11 +405,13 @@
 > 
 > **解**: 令 $u = \ln x, dv = dx$，则 $du = \displaystyle\frac{1}{x}\,dx, v = x$
 > 
-> $$\begin{aligned}
+> $$
+> \begin{aligned}
 > 原积分 &= x\ln x - \int x\cdot\frac{1}{x}\,dx \\
 > &= x\ln x - \int dx \\
 > &= x\ln x - x + C
-> \end{aligned}$$
+> \end{aligned}
+> $$
 > 
 
 ### 定积分的运算
@@ -439,7 +450,19 @@
 > 
 > **解**: 令 $u = 1+\sqrt{x}$，则 $du = \displaystyle\frac{1}{2\sqrt{x}}\,dx$，$dx = 2(u-1)\,du$
 > 当 $x = 1$ 时，$u = 2$；当 $x = 4$ 时，$u = 3$
-> $$\displaystyle\begin{aligned}原积分 &= \int_2^3 \frac{u-1}{u} \cdot 2(u-1)\,du \\&= 2\int_2^3 \frac{(u-1)^2}{u}\,du \\&= 2\int_2^3 (u - 2 + \frac{1}{u})\,du \\&= 2\left[\frac{u^2}{2} - 2u + \ln|u|\right]_2^3 \\&= [u^2 - 4u + 2\ln|u|]_2^3 \\&= (9-12+2\ln 3) - (4-8+2\ln 2) \\&= 1 + 2\ln(\frac{3}{2})\end{aligned}$$
+> $$
+> \displaystyle
+> \begin{aligned}
+> \text{原积分}
+> &= \int_2^3 \frac{u-1}{u} \cdot 2(u-1)\,du \\
+> &= 2\int_2^3 \frac{(u-1)^2}{u}\,du \\
+> &= 2\int_2^3 \left(u - 2 + \frac{1}{u}\right)\,du \\
+> &= 2\left[\frac{u^2}{2} - 2u + \ln|u|\right]_2^3 \\
+> &= [u^2 - 4u + 2\ln|u|]_2^3 \\
+> &= (9-12+2\ln 3) - (4-8+2\ln 2) \\
+> &= 1 + 2\ln\left(\frac{3}{2}\right)
+> \end{aligned}
+> $$
 
 
 > [!important]
@@ -457,8 +480,15 @@
 > **例1: 计算 $\displaystyle\int_0^1 x e^x\,dx$**
 > 
 > **解**: 令 $u = x, dv = e^x\,dx$，则 $du = dx, v = e^x$。
-> $$\begin{aligned}原积分&= [x e^x]_0^1 - \int_0^1 e^x\,dx \\&= (1\cdot e - 0) - [e^x]_0^1 \\&= e - (e - 1)
-= 1\end{aligned}$$
+> $$
+> \begin{aligned}
+> \text{原积分}
+> &= [x e^x]_0^1 - \int_0^1 e^x\,dx \\
+> &= (1\cdot e - 0) - [e^x]_0^1 \\
+> &= e - (e - 1) \\
+> &= 1
+> \end{aligned}
+> $$
 > 
 
 > [!note]
@@ -466,11 +496,16 @@
 > **例2: 计算 $\displaystyle\int_1^e \ln x\,dx$**
 > 
 > **解**: 令 $u = \ln x, dv = dx$，则 $du =\displaystyle\frac{1}{x},dx, v = x$
-> $$\begin{aligned}原积分 &= [x\ln x]_1^e - \int_1^e x\cdot(\frac{1}{x})\,dx 
->\\&= (e\cdot 1 - 1\cdot 0) - \int_1^e dx \\&
->= e - [x]_1^e 
->=e - (e - 1) \\&
->= 1\end{aligned}$$
+> $$
+> \begin{aligned}
+> \text{原积分}
+> &= [x\ln x]_1^e - \int_1^e x\cdot\left(\frac{1}{x}\right)\,dx \\
+> &= (e\cdot 1 - 1\cdot 0) - \int_1^e dx \\
+> &= e - [x]_1^e \\
+> &= e - (e - 1) \\
+> &= 1
+> \end{aligned}
+> $$
 > 
 
 > [!important]

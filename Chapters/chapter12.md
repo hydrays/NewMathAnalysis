@@ -65,9 +65,15 @@ vlook-doc-lib:
 >  - 三维标量场: $f(x, y, z)$.
 > 
 >  向量场可以用一个**多元向量值函数** $\mathbf{F}(\mathbf{x}), \mathbf{x} \in \mathbb{R}^n$ 表示, 我们经常也把 $\mathbf{F}$ 写成如下的**分量形式**.
->  - 二维向量场: $\mathbf{F}(x, y) = P(x, y)\hat{\mathbf{i}} + Q(x, y)\hat{\mathbf{j}}$;
->  - 三维向量场: $\mathbf{F}(x, y, z) = P(x, y, z)\hat{\mathbf{i}} + Q(x, y, z)\hat{\mathbf{j}} + R(x, y, z)\hat{\mathbf{k}}$.
->  其中 $P, Q, R$ 为普通的多元函数, 表示向量在 $x, y, z$-轴上的分量.
+>  - 二维向量场:
+>    $$
+>    \mathbf{F}(x, y) = P(x, y)\hat{\mathbf{i}} + Q(x, y)\hat{\mathbf{j}}
+>    $$
+>  - 三维向量场:
+>    $$
+>    \mathbf{F}(x, y, z) = P(x, y, z)\hat{\mathbf{i}} + Q(x, y, z)\hat{\mathbf{j}} + R(x, y, z)\hat{\mathbf{k}}
+>    $$
+>     其中 $P, Q, R$ 为普通的多元函数, 表示向量在 $x, y, z$-轴上的分量.
 
 
 > [!note]
@@ -79,7 +85,7 @@ vlook-doc-lib:
 >  
 >  $$ \mathbf{F}(x, y) = 2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}$$
 > 
->  ![向量](media/img/fig2-4-1.png#200pt)
+>  ![向量](../media/img/fig2-4-1.png#200pt)
 >
 >  ==例2==
 >  
@@ -91,7 +97,7 @@ vlook-doc-lib:
 >  
 >  $$ \mathbf{F}(x, y) = x\hat{\mathbf{i}} + y\hat{\mathbf{j}}$$
 >  
->  ![向量](media/img/fig2-4-2.png#200pt)
+>  ![向量](../media/img/fig2-4-2.png#200pt)
 >  
 > 
 >  ==例4==
@@ -185,7 +191,11 @@ x = a \cos t、y = a \sin t、z = kt$
 > W &= \int_{L} \vec{F} \cdot \mathrm{d}\vec{r} = \sum_{i=1} \vec{F}_i \cdot \Delta \vec{r}_i 
 > \end{aligned}
 > $$
-> 其中，$\mathrm{d}\vec{r}=(\mathrm{d}x,\mathrm{d}y)^T,\Delta\vec{r}=(\Delta x,\Delta y)^T$,从而
+> 其中
+> $$
+> \mathrm{d}\vec{r}=(\mathrm{d}x,\mathrm{d}y)^T,\quad \Delta\vec{r}=(\Delta x,\Delta y)^T
+> $$
+> 从而
 > $$
 > \begin{aligned}
 > W&= \sum_{i} \left( P \Delta x_i + Q \Delta y_i \right) \\
@@ -346,7 +356,13 @@ y=\frac{\sqrt{2}}{2}a-\frac{\sqrt{2}}{2}t
 &=-\frac{a^2}{2}\\
 \end{aligned}
 >$$
-> 综上，$$I=0+\frac{a^2}{2}-\frac{a^2}{2}=0$$
+> 综上，
+> $$
+> \begin{align*}
+> I &= 0+\frac{a^2}{2}-\frac{a^2}{2} \\
+> &= 0
+> \end{align*}
+> $$
 
 
 #### 12.2.2.2 两类曲线积分之间的关系
@@ -525,7 +541,13 @@ W=f(终)-f(起)
 > - $\vec{F}$是保守场，$\oint_L\vec{F} \cdot \mathrm{d}\vec{r}=0$（对所有封闭曲线$L$）
 > 证明：
 > 图
-> $$\int_{C_1}\vec{F} \cdot \mathrm{d}\vec{r}+\int_{C_2}\vec{F} \cdot \mathrm{d}\vec{r}=\int_{C_1}\vec{F} \cdot \mathrm{d}\vec{r}-\int_{-C_2}\vec{F} \cdot \mathrm{d}\vec{r}=0$$
+> $$
+> \begin{align*}
+> \int_{C_1}\vec{F} \cdot \mathrm{d}\vec{r}+\int_{C_2}\vec{F} \cdot \mathrm{d}\vec{r}
+> &= \int_{C_1}\vec{F} \cdot \mathrm{d}\vec{r}-\int_{-C_2}\vec{F} \cdot \mathrm{d}\vec{r} \\
+> &= 0
+> \end{align*}
+> $$
 
 > [!TIP]
 > **判定向量场 $\vec{F} = (P(x,y), Q(x,y))$ 是否为梯度场**
@@ -543,7 +565,11 @@ P = \frac{\partial f}{\partial x}, \quad Q = \frac{\partial f}{\partial y}.
 >$$
 >将 $\vec{F}$的分量代入，可得：
 >$$
-\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right) = \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right) \implies \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}.
+> \begin{align*}
+> \frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)
+> &= \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right) \\
+> &\implies \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+> \end{align*}
 >$$
 > 因此，**判定$\vec{F}$是梯度场的条件**为：
 >$$
@@ -894,7 +920,15 @@ Flux=\iint_S\vec{F}\cdot \vec{n}\mathrm{d}s=\lim_{\Delta s \to 0}\sum_i\vec{F}(x
 &=\iint_S\vec{F_1}\cdot \vec{n}\mathrm{d}S+\iint_S\vec{F_2}\cdot \vec{n}\mathrm{d}S+\iint_S\vec{F_3}\cdot \vec{n}\mathrm{d}S
 \end{aligned}
 >  $$
->  以$\vec{F_1}=(0,0,R(x,y,z))^T$为例，$\vec{v_1}=(\Delta x,0,\frac{\partial z}{\partial x}\Delta x),\vec{v_2}=(0,\Delta y,\frac{\partial z}{\partial y}\Delta y)$
+>  以
+>  $$
+>  \vec{F_1}=(0,0,R(x,y,z))^T
+>  $$
+>  为例，
+>  $$
+>  \vec{v_1}=(\Delta x,0,\frac{\partial z}{\partial x}\Delta x),\quad
+>  \vec{v_2}=(0,\Delta y,\frac{\partial z}{\partial y}\Delta y)
+>  $$
 >  则
 >  $$
 \begin{aligned}
@@ -1008,7 +1042,11 @@ P = (y - z)x,\quad Q = 0,\quad R = x - y,
 >  $$
 \iiint_{\Omega} u \Delta v \mathrm{d}x \mathrm{d}y \mathrm{d}z = \oiint_{\Sigma} u \frac{\partial v}{\partial n} \mathrm{d}S - \iiint_{\Omega} \left( \frac{\partial u}{\partial x} \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial v}{\partial y} + \frac{\partial u}{\partial z} \frac{\partial v}{\partial z} \right) \mathrm{d}x \mathrm{d}y \mathrm{d}z,
 > $$
-> 其中 $\Sigma$ 是闭区域 $\Omega$ 的整个边界曲面，$\frac{\partial v}{\partial n}$ 为函数 $v(x,y,z)$ 沿 $\Sigma$ 的外法线方向的方向导数，符号 $\Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$ 称为拉普拉斯 (Laplace) 算子。这个公式叫做格林第二公式。
+> 其中 $\Sigma$ 是闭区域 $\Omega$ 的整个边界曲面，$\frac{\partial v}{\partial n}$ 为函数 $v(x,y,z)$ 沿 $\Sigma$ 的外法线方向的方向导数，符号
+> $$
+> \Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+> $$
+> 称为拉普拉斯 (Laplace) 算子。这个公式叫做格林第二公式。
 >  **证明**
 >  因为方向导数
 >  $$
@@ -1076,22 +1114,39 @@ P = (y - z)x,\quad Q = 0,\quad R = x - y,
 > $$
 >  **解**
 > $$
-\int_C\vec{F}\cdot \mathrm{d}\vec{r}=\int_{C_1}\vec{F}\cdot \mathrm{d}\vec{r}+\int_{C_2}\vec{F}\cdot \mathrm{d}\vec{r}+\int_{C_3}\vec{F}\cdot \mathrm{d}\vec{r}
+> \begin{align*}
+> \int_C\vec{F}\cdot \mathrm{d}\vec{r}
+> &= \int_{C_1}\vec{F}\cdot \mathrm{d}\vec{r}
+> +\int_{C_2}\vec{F}\cdot \mathrm{d}\vec{r}
+> +\int_{C_3}\vec{F}\cdot \mathrm{d}\vec{r}
+> \end{align*}
 > $$
 >  其中，
 > $$
-\int_{C_1}\vec{F}\cdot \mathrm{d}\vec{r}=0,\int_{C_2}\vec{F}\cdot \mathrm{d}\vec{r}=0,\int_{C_3}\vec{F}\cdot \mathrm{d}\vec{r}=\int_0^1 1 \mathrm{d}z=1
+> \begin{aligned}
+> \int_{C_1}\vec{F}\cdot \mathrm{d}\vec{r} &= 0,\\
+> \int_{C_2}\vec{F}\cdot \mathrm{d}\vec{r} &= 0,\\
+> \int_{C_3}\vec{F}\cdot \mathrm{d}\vec{r} &= \int_0^1 1 \mathrm{d}z = 1
+> \end{aligned}
 > $$
 >
 >
 > - **曲线积分基本定理**
 > 如果$f(x,y,z)$满足
 > $$
-\mathrm{d}f=P\mathrm{d}x+Q\mathrm{d}y+R\mathrm{d}z=\frac{\partial f}{\partial x}\mathrm{d}x+\frac{\partial f}{\partial y}\mathrm{d}y+\frac{\partial f}{\partial z}\mathrm{d}z
+> \begin{align*}
+> \mathrm{d}f
+> &= P\mathrm{d}x+Q\mathrm{d}y+R\mathrm{d}z \\
+> &= \frac{\partial f}{\partial x}\mathrm{d}x+\frac{\partial f}{\partial y}\mathrm{d}y+\frac{\partial f}{\partial z}\mathrm{d}z
+> \end{align*}
 >$$
 > 则
 > $$
-\int_CP\mathrm{d}x+Q\mathrm{d}y+R\mathrm{d}z=\int_C\mathrm{d}f=f(B)-f(A)
+> \begin{align*}
+> \int_CP\mathrm{d}x+Q\mathrm{d}y+R\mathrm{d}z
+> &= \int_C\mathrm{d}f \\
+> &= f(B)-f(A)
+> \end{align*}
 >$$
 > 保守场的条件为：
 > $$
@@ -1104,7 +1159,10 @@ P = (y - z)x,\quad Q = 0,\quad R = x - y,
 >$f(x,y,z)$的梯度是$\vec{F}=\nabla f$
 >
 >
-> - **定义(3D)：$curl\vec{F}=(R_y-Q_z)\hat{i}+(P_z-R_x)\hat{j}+(Q_x-P_y)\hat{k}$**
+> - **定义(3D)：**
+>   $$
+>   curl\vec{F}=(R_y-Q_z)\hat{i}+(P_z-R_x)\hat{j}+(Q_x-P_y)\hat{k}
+>   $$
 > $$
 \nabla \times \vec{F}=
 \begin{vmatrix}

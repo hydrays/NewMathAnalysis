@@ -53,7 +53,13 @@ vlook-doc-lib:
 > 
 > 想象一下，如果房间的墙壁一直保持恒定的温度分布，经过足够长的时间后，房间内的温度分布会趋于一个稳定状态（稳态）。
 > 既然是稳态，意味着温度不再随时间变化，即 $\displaystyle \frac{\partial u}{\partial t} = 0$。此时，热传导方程就退化为了一个纯空间的偏微分方程：
-> $$ \Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = 0 $$
+> $$
+> \begin{align*}
+> \Delta u
+> &= \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \\
+> &= 0
+> \end{align*}
+> $$
 > 这个极其优美的方程就是著名的**拉普拉斯方程 (Laplace's Equation)**。满足拉普拉斯方程的函数被称为**调和函数 (Harmonic functions)**。
 > 
 > **实例：** 
@@ -94,9 +100,16 @@ vlook-doc-lib:
 > $$
 > 可得
 > $$
-> \frac{\partial r}{\partial x} = \frac{x}{\sqrt{x^2+y^2}} = \frac{x}{r} = \cos\theta,
-> \qquad
-> \frac{\partial r}{\partial y} = \frac{y}{\sqrt{x^2+y^2}} = \frac{y}{r} = \sin\theta.
+> \begin{align*}
+> \frac{\partial r}{\partial x}
+> &= \frac{x}{\sqrt{x^2+y^2}} \\
+> &= \frac{x}{r} \\
+> &= \cos\theta, \\
+> \frac{\partial r}{\partial y}
+> &= \frac{y}{\sqrt{x^2+y^2}} \\
+> &= \frac{y}{r} \\
+> &= \sin\theta.
+> \end{align*}
 > $$
 > 对 $\theta = \arctan(y/x)$ 使用链式法则：
 > $$
@@ -267,7 +280,13 @@ vlook-doc-lib:
 > 我们大胆地猜测，解 $u(r, \theta)$ 可以拆分为一个只与 $r$ 有关的函数和一个只与 $\theta$ 有关的函数的乘积：
 > $$ u(r, \theta) = R(r)\Theta(\theta) $$
 > 代入方程并分离变量，可以将原偏微分方程撕裂成两个普通的常微分方程（ODE）：
-> $$ \frac{r^2 R''(r) + r R'(r)}{R(r)} = -\frac{\Theta''(\theta)}{\Theta(\theta)} = \lambda $$
+> $$
+> \begin{align*}
+> \frac{r^2 R''(r) + r R'(r)}{R(r)}
+> &= -\frac{\Theta''(\theta)}{\Theta(\theta)} \\
+> &= \lambda
+> \end{align*}
+> $$
 > 因为等式左边只依赖 $r$，右边只依赖 $\theta$，它们必须等于同一个常数 $\lambda$。
 > 解关于 $\Theta$ 的方程 $\Theta'' + \lambda \Theta = 0$，考虑到圆盘的角度必须是 $2\pi$ 周期的，我们自然而然地得到了**第十三章**学过的正弦和余弦函数！最终的解 $u(r, \theta)$ 恰好就是无穷多个分离解的叠加，即构成了**傅里叶级数**。
 

@@ -145,7 +145,12 @@ vlook-doc-lib:
 >  
 > - 设 $\mathbf{a} = (a_1, a_2)$，$\mathbf{b} = (b_1, b_2)$，则  
 > $$
-> \mathbf{a} + \mathbf{b} = (a_1 + b_1, a_2 + b_2) = (b_1 + a_1, b_2 + a_2) = \mathbf{b} + \mathbf{a}.  
+> \begin{align*}
+> \mathbf{a} + \mathbf{b}
+> &= (a_1 + b_1, a_2 + b_2) \\
+> &= (b_1 + a_1, b_2 + a_2) \\
+> &= \mathbf{b} + \mathbf{a}.
+> \end{align*}
 > $$
 >
 > **形: 平行四边形法则**：
@@ -217,7 +222,12 @@ vlook-doc-lib:
 >  
 > - 设 $\mathbf{v} = (v_1, v_2, v_3)$，则  
 > $$
-> (\alpha \beta) \mathbf{v} = (\alpha \beta v_1, \alpha \beta v_2, \alpha \beta v_3) = \alpha (\beta v_1, \beta v_2, \beta v_3) = \alpha (\beta \mathbf{v}).  
+> \begin{align*}
+> (\alpha \beta) \mathbf{v}
+> &= (\alpha \beta v_1, \alpha \beta v_2, \alpha \beta v_3) \\
+> &= \alpha (\beta v_1, \beta v_2, \beta v_3) \\
+> &= \alpha (\beta \mathbf{v}).
+> \end{align*}
 > $$
 >
 > **形: 缩放**：  
@@ -232,7 +242,12 @@ vlook-doc-lib:
 > **数: 坐标表示**：  
 > - 设 $\mathbf{u} = (u_1, u_2)$，$\mathbf{v} = (v_1, v_2)$，则  
 > $$
-> \alpha (\mathbf{u} + \mathbf{v}) = \alpha (u_1 + v_1, u_2 + v_2) = (\alpha u_1 + \alpha v_1, \alpha u_2 + \alpha v_2) = \alpha \mathbf{u} + \alpha \mathbf{v}.  
+> \begin{align*}
+> \alpha (\mathbf{u} + \mathbf{v})
+> &= \alpha (u_1 + v_1, u_2 + v_2) \\
+> &= (\alpha u_1 + \alpha v_1, \alpha u_2 + \alpha v_2) \\
+> &= \alpha \mathbf{u} + \alpha \mathbf{v}.
+> \end{align*}
 > $$
 >  
 > **形: 缩放**：  
@@ -319,7 +334,11 @@ vlook-doc-lib:
 > 
 > 对于三维空间中的向量 $\mathbf{u} = (u_x, u_y, u_z)^T$ 与向量 $\mathbf{v} = (v_x, v_y, v_z)^T$，它们的叉乘通过一个三阶行列式（符号记法）来定义与计算：
 > $$
-> \mathbf{u} \times \mathbf{v} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ u_x & u_y & u_z \\ v_x & v_y & v_z \end{vmatrix} = (u_y v_z - u_z v_y)\mathbf{i} - (u_x v_z - u_z v_x)\mathbf{j} + (u_x v_y - u_y v_x)\mathbf{k}
+> \begin{align*}
+> \mathbf{u} \times \mathbf{v}
+> &= \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ u_x & u_y & u_z \\ v_x & v_y & v_z \end{vmatrix} \\
+> &= (u_y v_z - u_z v_y)\mathbf{i} - (u_x v_z - u_z v_x)\mathbf{j} + (u_x v_y - u_y v_x)\mathbf{k}
+> \end{align*}
 > $$
 > 其中 $\mathbf{i}, \mathbf{j}, \mathbf{k}$ 分别为沿 $x, y, z$ 轴的单位向量。
 >
@@ -396,7 +415,12 @@ vlook-doc-lib:
 >
 > 假设在二维平面中，有一条直线的法向量为 $\mathbf{n} = (3, 4)^T$（此时它还不是单位向量，其模长为 $5$）。我们将其归一化得到单位法向量 $\hat{\mathbf{n}} = (\frac{3}{5}, \frac{4}{5})^T$。
 > 如果这条直线到原点的有向距离为 $b = 2$，那么这条直线上的任意一点 $\mathbf{v} = (x, y)^T$ 必须满足：
-> $$ \mathbf{v} \cdot \hat{\mathbf{n}} = 2 \implies \frac{3}{5}x + \frac{4}{5}y = 2 $$
+> $$
+> \begin{align*}
+> \mathbf{v} \cdot \hat{\mathbf{n}} &= 2 \\
+> \implies \frac{3}{5}x + \frac{4}{5}y &= 2
+> \end{align*}
+> $$
 > 化简后即可得到我们熟悉的一般直线方程形式：$3x + 4y - 10 = 0$。
 
 > [!tip]
@@ -509,7 +533,15 @@ vlook-doc-lib:
 > **解析：** 
 > 1. 先在直线上找一点。令 $x=1$，代入原方程组得到 $\begin{cases} y+z=-2 \\ -y+3z=-6 \end{cases}$，解得 $y=0, z=-2$。所以直线上有一点 $(1, 0, -2)$。
 > 2. 再找直线的方向向量 $\mathbf{s}$。因为直线在两个平面上，所以它的方向向量必定同时垂直于这两个平面的法向量 $\mathbf{n}_1=(1,1,1)$ 和 $\mathbf{n}_2=(2,-1,3)$。
-> 取 $\mathbf{s} = \mathbf{n}_1 \times \mathbf{n}_2 = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 1 & 1 \\ 2 & -1 & 3 \end{vmatrix} = 4\mathbf{i} - \mathbf{j} - 3\mathbf{k}$。
+> 取叉乘：
+> $$
+> \begin{align*}
+> \mathbf{s}
+> &= \mathbf{n}_1 \times \mathbf{n}_2 \\
+> &= \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 1 & 1 \\ 2 & -1 & 3 \end{vmatrix} \\
+> &= 4\mathbf{i} - \mathbf{j} - 3\mathbf{k}
+> \end{align*}
+> $$
 > 3. 从而得到对称式方程：$\frac{x-1}{4} = \frac{y}{-1} = \frac{z+2}{-3}$。
 > 4. 令其等于 $t$，得到参数方程：$x=1+4t, y=-t, z=-2-3t$。
 > 
@@ -519,7 +551,15 @@ vlook-doc-lib:
 > 两直线的夹角就是它们方向向量的夹角（通常取锐角或直角）。
 > 从方程读出方向向量：$\mathbf{s}_1=(1, -4, 1)$, $\mathbf{s}_2=(2, -2, -1)$。
 > 利用内积公式求夹角的余弦：
-> $$ \cos \varphi = \frac{|\mathbf{s}_1 \cdot \mathbf{s}_2|}{|\mathbf{s}_1||\mathbf{s}_2|} = \frac{|1\times2 + (-4)\times(-2) + 1\times(-1)|}{\sqrt{1^2+(-4)^2+1^2}\sqrt{2^2+(-2)^2+(-1)^2}} = \frac{9}{\sqrt{18}\sqrt{9}} = \frac{1}{\sqrt{2}} $$
+> $$
+> \begin{align*}
+> \cos \varphi
+> &= \frac{|\mathbf{s}_1 \cdot \mathbf{s}_2|}{|\mathbf{s}_1||\mathbf{s}_2|} \\
+> &= \frac{|1\times2 + (-4)\times(-2) + 1\times(-1)|}{\sqrt{1^2+(-4)^2+1^2}\sqrt{2^2+(-2)^2+(-1)^2}} \\
+> &= \frac{9}{\sqrt{18}\sqrt{9}} \\
+> &= \frac{1}{\sqrt{2}}
+> \end{align*}
+> $$
 > 所以夹角 $\varphi = \frac{\pi}{4}$。
 > 
 > **例3：求直线方程（已知法面）**
@@ -533,7 +573,16 @@ vlook-doc-lib:
 > **题目：** 求与两平面 $x-4z=3$ 和 $2x-y-5z=1$ 的交线平行且过点 $(-3,2,5)$ 的直线方程。
 > **解析：**
 > 要求的直线与两平面的交线平行，这意味着它的方向向量 $\mathbf{s}$ 必须同时垂直于这两个平面的法向量 $\mathbf{n}_1=(1,0,-4)$ 和 $\mathbf{n}_2=(2,-1,-5)$。
-> 取叉乘 $\mathbf{s} = \mathbf{n}_1 \times \mathbf{n}_2 = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 0 & -4 \\ 2 & -1 & -5 \end{vmatrix} = -4\mathbf{i}-3\mathbf{j}-\mathbf{k}$，即 $\mathbf{s} = (-4,-3,-1)$，为方便可取 $(4,3,1)$。
+> 取叉乘：
+> $$
+> \begin{align*}
+> \mathbf{s}
+> &= \mathbf{n}_1 \times \mathbf{n}_2 \\
+> &= \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 0 & -4 \\ 2 & -1 & -5 \end{vmatrix} \\
+> &= -4\mathbf{i}-3\mathbf{j}-\mathbf{k}
+> \end{align*}
+> $$
+> 即 $\mathbf{s} = (-4,-3,-1)$，为方便可取 $(4,3,1)$。
 > 结合点 $(-3,2,5)$，得到直线方程 $\frac{x+3}{4} = \frac{y-2}{3} = \frac{z-5}{1}$。
 > 
 > **例5：直线与平面的交点**
@@ -552,7 +601,13 @@ vlook-doc-lib:
 > 2. 设所求直线与已知直线的交点为 $M(-1+3t, 1+2t, -t)$。
 > 3. 已知点为 $P(2,1,3)$，则方向向量 $\overrightarrow{PM} = (3t-3, 2t, -t-3)$。
 > 4. 因为两直线垂直，所以 $\overrightarrow{PM}$ 必须与已知直线的方向向量 $\mathbf{s}=(3,2,-1)$ 正交，即内积为0：
-> $3(3t-3) + 2(2t) - (-t-3) = 0 \implies 14t - 6 = 0 \implies t = \frac{3}{7}$。
+> $$
+> \begin{align*}
+> 3(3t-3) + 2(2t) - (-t-3) &= 0 \\
+> 14t - 6 &= 0 \\
+> t &= \frac{3}{7}
+> \end{align*}
+> $$
 > 5. 将 $t=\frac{3}{7}$ 代回 $\overrightarrow{PM}$，得到 $\overrightarrow{PM} = (-\frac{12}{7}, \frac{6}{7}, -\frac{24}{7})$。提取公因数，可以取一个更简单的平行向量作为方向向量：$(2, -1, 4)$。
 > 6. 结合已知点 $P(2,1,3)$，得到最终方程：$\frac{x-2}{2} = \frac{y-1}{-1} = \frac{z-3}{4}$。
 
@@ -675,17 +730,39 @@ vlook-doc-lib:
 > 
 > **二维空间中直线的参数方程**
 > 假设直线过定点 $(x_0, y_0)$，方向向量为 $(m, n)$，利用参数 $t$，其方程为：
-> $$ \begin{cases} x = x_0 + mt \\ y = y_0 + nt \end{cases} $$
+> $$
+> \begin{cases}
+> x = x_0 + mt \\
+> y = y_0 + nt
+> \end{cases}
+> $$
 > 
 > **二维空间中圆的参数方程**
 > 假设圆心在原点 $(0,0)$，半径为 $r$，利用极角 $\theta$（或时间 $t$）作为参数：
-> $$ \begin{cases} x = r \cos t \\ y = r \sin t \end{cases} $$ 
+> $$
+> \begin{cases}
+> x = r \cos t \\
+> y = r \sin t
+> \end{cases}
+> $$
 >
 > **三维空间中的螺旋线**
 > 如果空间一点 $M$ 在圆柱面 $x^2+y^2=a^2$ 上以角速度 $\omega$ 绕 $z$ 轴旋转，同时又以线速度 $v$ 沿平行于 $z$ 轴的正方向上升，这动点的轨迹就叫**螺旋线**。其参数方程为：
-> $$ \begin{cases} x = a \cos \omega t \\ y = a \sin \omega t \\ z = v t \end{cases} $$
+> $$
+> \begin{cases}
+> x = a \cos \omega t \\
+> y = a \sin \omega t \\
+> z = v t
+> \end{cases}
+> $$
 > 也可以用旋转角 $\theta = \omega t$ 作为参数，令 $b = v/\omega$，螺旋线参数方程可写为更简明的形式：
-> $$ \begin{cases} x = a \cos \theta \\ y = a \sin \theta \\ z = b \theta \end{cases} $$
+> $$
+> \begin{cases}
+> x = a \cos \theta \\
+> y = a \sin \theta \\
+> z = b \theta
+> \end{cases}
+> $$
 
 > [!important]
 > 
@@ -729,7 +806,12 @@ vlook-doc-lib:
 > **解析**：先求包含交线 $C$ 而母线平行于 $z$ 轴的柱面方程。将两方程相减以消去 $z$，得到 $y+z=1$，即 $z=1-y$。再将 $z=1-y$ 代入第一个方程中，得到要求的柱面方程：
 > $$ x^2+2y^2-2y=0 $$
 > 这就是交线关于 $xOy$ 面的投影柱面方程。因此两球面的交线 $C$ 在 $xOy$ 面上的投影的方程是：
-> $$ \begin{cases} x^2+2y^2-2y=0, \\ z=0. \end{cases} $$
+> $$
+> \begin{cases}
+> x^2+2y^2-2y=0, \\
+> z=0.
+> \end{cases}
+> $$
 > 
 > **同济教材 例5**
 > **题目**：设一个立体由上半球面 $z = \sqrt{4-x^2-y^2}$ 和锥面 $z = \sqrt{3(x^2+y^2)}$ 所围成，求它在 $xOy$ 面上的投影。
