@@ -41,6 +41,12 @@ vlook-doc-lib:
 > 
 > 这是一个关于 $x, \theta$ 的二元函数, 如何求它的最大值呢?  我们可以带着这个问题开始本章的学习.
 
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+</script>
+<div id="grad3d" style="width:100%;max-width:780px;height:450px;position:relative;margin:1.5em auto;background:#0B6E4F;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(6,18,10,0.28);"></div>
+<script type="module" src="threejs/chapter10-scene.js?v=20260330i"></script>
+
 ## 10.1 多元函数的连续性
 > [!tip]
 > 

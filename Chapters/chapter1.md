@@ -333,7 +333,7 @@ vlook-doc-lib:
 
 > [!important]
 > 
-> 极限是一个**动中取静**_~Rd~_的过程. 
+> 极限是一个[动中取静]{.key}的过程.
 > 
 > - 什么在动?
 > 	数列 $\{ A_n \}$ 中的指标 $n$ 在**动**. 
@@ -641,7 +641,7 @@ vlook-doc-lib:
 > 
 > ==对无穷大的描述==
 > 
-> 我们有时候会说一个数列或函数**趋于无穷大**, 也会写 $\displaystyle \lim_{n\rightarrow \infty} a_n = \infty$ 或 $\displaystyle \lim_{x\rightarrow x_0} f(x) = \infty$, 请注意, 这只是一种**习惯**上的说法, 并**不是**_~Rd~_真正意义上的 (有限的) 极限. 尽管如此, 我们可以借用类似 $\varepsilon-N$ 语言的做法来从数学上定义什么叫**趋于无穷大**, 例如:
+> 我们有时候会说一个数列或函数**趋于无穷大**, 也会写 $\displaystyle \lim_{n\rightarrow \infty} a_n = \infty$ 或 $\displaystyle \lim_{x\rightarrow x_0} f(x) = \infty$, 请注意, 这只是一种**习惯**上的说法, 并[不是]{.hl}真正意义上的 (有限的) 极限. 尽管如此, 我们可以借用类似 $\varepsilon-N$ 语言的做法来从数学上定义什么叫**趋于无穷大**, 例如:
 > 
 > 
 > **数列趋于无穷大**
