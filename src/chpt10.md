@@ -16,6 +16,7 @@
 <div id="grad3d" style="width:100%;max-width:780px;height:450px;position:relative;margin:1.5em auto;background:#0B6E4F;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(6,18,10,0.28);"></div>
 <script type="module" src="threejs/chapter10-scene.js?v=20260330i"></script>
 
+
 ## 多元函数的连续性
 > [!tip]
 > 
