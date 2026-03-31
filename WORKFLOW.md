@@ -7,60 +7,43 @@ NewMathAnalysis/
 ├── src/                  ← raw chapter sources (edit here)
 │   ├── chpt0.md – chpt14.md
 │   ├── mid_exam.md
-│   ├── head.yaml         ← YAML frontmatter injected into every chapter
-│   └── post_process.py   ← step 1: adds numbering, writes to Chapters/
-├── Chapters/             ← processed intermediate (do not edit directly)
-│   └── chapter0.md – chapter14.md
+│   └── head.yaml         ← YAML frontmatter injected into every chapter
 ├── build/                ← build pipeline
-│   ├── build.py          ← step 2: Pandoc → HTML, writes to docs/
+│   ├── build.py          ← single step: src/ → docs/ (Pandoc)
 │   ├── template.html     ← HTML page template
 │   ├── vlook.lua         ← Pandoc Lua filter (callouts, image sizing)
 │   └── assets/
 │       ├── app.css       ← layout + Thinking theme styling
 │       └── app.js        ← sidebar, TOC, chapter nav
-├── docs/                 ← HTML output (served by http.server)
+├── docs/                 ← HTML output (generated, not tracked in git)
 │   ├── index.html
 │   └── chapter0.html – chapter14.html
+├── threejs/              ← Three.js interactive figure scripts
+│   └── chapter10-scene.js
 ├── media/
 │   └── img/              ← images referenced in chapters
 ├── code/                 ← Python teaching examples
 └── Support1/             ← Jupyter notebook supplements
 ```
 
-## Two-Step Build
-
-### Step 1 — Post-process source
-
-Run from the repo root:
-
-```bash
-# All chapters
-python src/post_process.py
-
-# One chapter
-python src/post_process.py chpt1.md
-```
-
-This reads `src/chptN.md`, injects `head.yaml` frontmatter, adds hierarchical
-section numbering (`1.1`, `1.1.1`, …), and writes `Chapters/chapterN.md`.
-
-### Step 2 — Build HTML
+## Build
 
 ```bash
 # All chapters
 python build/build.py
 
 # One chapter
-python build/build.py Chapters/chapter1.md
+python build/build.py src/chpt1.md
 ```
 
-This runs Pandoc with the custom template and Lua filter, copies assets to
-`docs/assets/`, and writes the final HTML to `docs/`.
+`build.py` reads `src/chptN.md`, injects `head.yaml` frontmatter, adds
+hierarchical section numbering (`1.1`, `1.1.1`, …), runs Pandoc, and writes
+the final HTML to `docs/`.
+
+`Chapters/` and `docs/` are generated output — do not edit them directly,
+and they are not tracked in git.
 
 ## Serving Locally
-
-The server is started from `NewMathAnalysis/` so that `../media/img/` paths
-resolve correctly:
 
 ```bash
 cd /home/hydra/Code/books/NewMathAnalysis
@@ -120,9 +103,9 @@ Manim (x, y, z)  →  Three.js (x, z, -y)
 i.e. x stays right, math-z (up) becomes Three.js y, math-y (into screen)
 becomes Three.js −z.
 
-### Chapter 10 gradient figure  (`Chapters/chapter10.md`)
+### Chapter 10 gradient figure  (`src/chpt10.md`)
 
-Located right after the opening tip callout, before §10.1.
+Located right after the opening tip callout, before §多元函数的连续性.
 
 **Surface:** `z = −0.3x² − 0.4y² + 1.6x + 2.8y − 2.7`
 - `f(1,1) = 1`,  `∂f/∂x|(1,1) = 1`,  `∂f/∂y|(1,1) = 2`
@@ -146,8 +129,8 @@ manim -pql code/gradient_surface.py GradientVisualization
 ### Adding a new figure
 
 1. Write a self-contained `<div id="...">` + `<script type="module">` block.
-2. Insert it into the `.md` file with blank lines above and below.
-3. Rebuild: `python build/build.py Chapters/chapterN.md`
+2. Insert it into the relevant `src/chptN.md` file with blank lines above and below.
+3. Rebuild: `python build/build.py src/chptN.md`
 
 ## Exporting to GitHub Pages
 
