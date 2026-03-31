@@ -24,7 +24,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+# build/  ← our build pipeline dir, not a Python artifact
 develop-eggs/
 dist/
 downloads/
