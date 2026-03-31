@@ -270,6 +270,7 @@ def build_chapter(md_path: Path):
             "pandoc", str(tmp_path),
             "--output", str(out_path),
             "--template", str(TEMPLATE),
+            "--standalone",
             "--katex",
             "--toc",
             "--toc-depth=4",
