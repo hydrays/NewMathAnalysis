@@ -103,15 +103,11 @@ def add_numbering(content: str, chapter_num: str) -> str:
 def preprocess(content: str) -> str:
     """
     Handle syntax Pandoc doesn't natively understand:
-      ==text==       → <mark>text</mark>
       _~Tag~_        → stripped (tag removed, text kept bare)
       [toc]          → removed (Pandoc --toc handles this)
     """
     # Remove [toc] / [TOC] directives (Pandoc generates TOC separately)
     content = re.sub(r"^\s*\[toc\]\s*$", "", content, flags=re.IGNORECASE | re.MULTILINE)
-
-    # ==highlight== (avoid matching inside code blocks / fences)
-    content = _replace_outside_code(content, r"==([^=\n]+)==", lambda m: f"<mark>{m.group(1)}</mark>")
 
     # _~Tag~_ — strip entirely (no output)
     content = re.sub(r"_~[^~\n]+~_", "", content)
@@ -275,7 +271,7 @@ def build_chapter(md_path: Path):
             "--toc",
             "--toc-depth=4",
             "--lua-filter", str(LUA_FILTER),
-            "--from", "markdown+raw_html+smart+tex_math_dollars",
+            "--from", "markdown-mark+raw_html+smart+tex_math_dollars",
             "--variable", f"doc_lib_json={json.dumps(doc_lib)}",
             "--variable", f"chp_autonum={chp_autonum}",
             "--highlight-style", "pygments",
