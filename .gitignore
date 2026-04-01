@@ -17,6 +17,7 @@ __pycache__/
 *.gz
 *.mp4
 *.html
+!build/template.html
 *.pth
 
 # C extensions

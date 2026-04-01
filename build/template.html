@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$if(title)$$title$$endif$</title>
+  $for(author-meta)$<meta name="author" content="$author-meta$">$endfor$
+  $if(description)$<meta name="description" content="$description$">$endif$
+  $for(keywords)$<meta name="keywords" content="$keywords$">$endfor$
+  $if(og-description)$<meta property="og:description" content="$og-description$">$endif$
+  $if(og-image)$<meta property="og:image" content="$og-image$">$endif$
+  <link rel="stylesheet" href="assets/vlook-thinking.css">
+  <link rel="stylesheet" href="assets/app.css">
+  $if(math)$$math$$endif$
+</head>
+<body>
+  <div id="sidebar">
+    <div id="doc-nav">
+      <div class="nav-section-title">Chapters</div>
+      <ul id="doc-nav-list"></ul>
+    </div>
+    <div class="nav-divider"></div>
+    <div id="toc-nav">
+      <div class="nav-section-title">Contents</div>
+      $toc$
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <div id="main">
+    <div id="topbar">
+      <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
+      <span id="topbar-title">$if(title)$$title$$endif$</span>
+      <button id="pdf-btn" onclick="window.print()" title="Print / Save as PDF">&#128438;</button>
+    </div>
+    <div id="content">
+      $body$
+    </div>
+  </div>
+
+  <script>
+    window.docLib = $doc_lib_json$;
+    window.chpAutonum = "$chp_autonum$";
+  </script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
