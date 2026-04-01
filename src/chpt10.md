@@ -361,6 +361,13 @@
 <script type="module" src="threejs/chapter10-scene.js?v=20260330i"></script>
 <div id="grad3d_local" style="width:100%;max-width:780px;height:430px;position:relative;margin:1.0em auto 1.5em auto;background:#0B6E4F;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(6,18,10,0.28);"></div>
 <script type="module" src="threejs/chapter10-local-scene.js?v=20260331c"></script>
+<div id="grad2d" style="width:100%;max-width:780px;height:440px;position:relative;margin:1.5em auto;background:#0d1a2e;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(6,18,10,0.28);"></div>
+<script type="module" src="threejs/chapter10-gradient2d.js?v=20260331a"></script>
+<div style="display:flex;gap:8px;width:100%;max-width:960px;margin:1.5em auto;">
+<div id="cplx-2d" style="flex:1;height:440px;position:relative;background:#0d1a2e;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.4);"></div>
+<div id="cplx-3d" style="flex:1.4;height:440px;position:relative;background:#0b1020;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.4);"></div>
+</div>
+<script type="module" src="threejs/chapter10-complex.js?v=20260331a"></script>
 
 >[!note]
 >
