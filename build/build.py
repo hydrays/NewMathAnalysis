@@ -286,6 +286,123 @@ def build_chapter(md_path: Path):
     finally:
         tmp_path.unlink(missing_ok=True)
 
+# ── Index page builder ───────────────────────────────────────────────────────
+
+def build_index():
+    """Generate docs/index.html from src/index.md."""
+    src = SRC_DIR / "index.md"
+    if not src.exists():
+        print("  Skipping index: src/index.md not found")
+        return
+
+    lines = src.read_text(encoding="utf-8").splitlines()
+
+    title = ""
+    intro_link = None          # chapter 0 link before first ##
+    sections = []              # list of (section_label, [(num, title, url), ...])
+    current_section = None
+    before_sections = True
+
+    link_re = re.compile(r"^\[(\d+)\.\s+(.+?)\]\((.+?)\)$")
+
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith("# "):
+            title = line[2:].strip()
+        elif line.startswith("## "):
+            before_sections = False
+            current_section = (line[3:].strip(), [])
+            sections.append(current_section)
+        else:
+            m = link_re.match(line)
+            if m:
+                num, chap_title, url = m.group(1), m.group(2), m.group(3)
+                entry = (num, chap_title, url)
+                if before_sections:
+                    intro_link = entry
+                elif current_section is not None:
+                    current_section[1].append(entry)
+
+    def card(num, chap_title, url, extra_class=""):
+        cls = f"chapter-link{' ' + extra_class if extra_class else ''}"
+        return (
+            f'        <a href="{url}" class="{cls}">\n'
+            f'            <div class="chapter-card">\n'
+            f'                <div class="chapter-number">{num}</div>\n'
+            f'                <div class="chapter-info"><h3>{chap_title}</h3></div>\n'
+            f'            </div>\n'
+            f'        </a>\n'
+        )
+
+    body_parts = []
+    if intro_link:
+        body_parts.append(card(*intro_link, extra_class="intro-link"))
+    for label, entries in sections:
+        body_parts.append(
+            f'        <div class="section-divider" aria-hidden="true">'
+            f'<span>{label}</span></div>\n'
+        )
+        for entry in entries:
+            body_parts.append(card(*entry))
+
+    html = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <style>
+        * {{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }}
+        body {{ background-color: #f5f7fa; color: #333; line-height: 1.4; padding: 15px; max-width: 1400px; margin: 0 auto; }}
+        .container {{ background-color: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 30px; }}
+        .image-container {{ width: 100%; height: 300px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }}
+        .custom-image {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
+        .image-overlay {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; justify-content: center; align-items: center; color: white; font-size: 32px; font-weight: 600; text-align: center; padding: 20px; }}
+        .main-content {{ --content-rail-width: 80%; column-count: 2; column-gap: 20px; margin-top: 20px; }}
+        .intro-link {{ display: block; }}
+        .section-divider {{ display: flex; align-items: center; gap: 10px; width: var(--content-rail-width); margin: 0 auto 8px; break-inside: avoid; }}
+        .section-divider::before, .section-divider::after {{ content: ""; flex: 1; height: 1px; background: #d7dee7; }}
+        .section-divider span {{ color: #94a3b8; font-size: 13px; letter-spacing: 0.08em; white-space: nowrap; }}
+        .chapter-card {{ background: white; border-radius: 12px; padding: 10px 14px; box-shadow: 0 3px 12px rgba(15,23,42,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; border: 1px solid #dbe4ee; min-height: 68px; display: flex; align-items: center; gap: 10px; height: 100%; }}
+        .chapter-card:hover {{ transform: translateY(-4px); box-shadow: 0 10px 24px rgba(15,23,42,0.1); border-color: #aac7e6; }}
+        .chapter-number {{ width: 40px; height: 40px; background: #2f7fbf; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 16px; }}
+        .chapter-info {{ flex: 1 1 auto; }}
+        .chapter-info h3 {{ font-size: 17px; margin: 0; color: #2c3e50; line-height: 1.2; }}
+        .chapter-link {{ text-decoration: none; color: inherit; display: block; width: var(--content-rail-width); margin-bottom: 8px; margin-left: auto; margin-right: auto; break-inside: avoid; }}
+        footer {{ text-align: center; padding: 20px; color: #7f8c8d; font-size: 14px; margin-top: 30px; }}
+        @media (max-width: 768px) {{ .main-content {{ column-count: 1; --content-rail-width: 100%; }} .image-overlay {{ font-size: 28px; }} }}
+        @media (max-width: 480px) {{ body {{ padding: 10px; }} .chapter-card {{ padding: 10px 12px; min-height: 66px; }} .chapter-number {{ width: 36px; height: 36px; font-size: 14px; }} .image-container {{ height: 200px; }} .image-overlay {{ font-size: 24px; }} }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="../media/img/cover.jpg" alt="{title}" class="custom-image">
+            <div class="image-overlay"><h2 style="margin-top: 2em;">{title}</h2></div>
+        </div>
+    </div>
+    <div class="main-content">
+{"".join(body_parts)}    </div>
+    <footer><p>首都师范大学交叉科学研究院 &copy; 2025</p></footer>
+    <script>
+        document.querySelector('.custom-image').addEventListener('error', function() {{
+            this.style.display = 'none';
+            var c = document.querySelector('.image-container');
+            c.style.background = 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)';
+        }});
+    </script>
+</body>
+</html>
+"""
+
+    DOCS_DIR.mkdir(parents=True, exist_ok=True)
+    out = DOCS_DIR / "index.html"
+    out.write_text(html, encoding="utf-8")
+    print(f"  → {out.relative_to(ROOT)}")
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def find_chapters() -> list:
@@ -302,11 +419,17 @@ def main():
     print("Syncing assets ...")
     sync_assets()
 
+    print("Building index ...")
+    build_index()
+
     targets = []
     if len(sys.argv) > 1:
         targets = [Path(a) for a in sys.argv[1:]]
     else:
         targets = find_chapters()
+
+    # index.md is handled by build_index(); skip it from Pandoc targets
+    targets = [t for t in targets if t.name != "index.md"]
 
     if not targets:
         print("No .md files found.")
