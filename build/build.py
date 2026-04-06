@@ -31,6 +31,8 @@ ASSETS_SRC = BUILD_DIR / "assets"
 ASSETS_DST = DOCS_DIR / "assets"
 THREEJS_SRC = ROOT / "media" / "threejs"
 THREEJS_DST = DOCS_DIR / "threejs"
+PLOTLY_SRC = ROOT / "media" / "plotly"
+PLOTLY_DST = DOCS_DIR / "plotly"
 TEMPLATE   = BUILD_DIR / "template.html"
 LUA_FILTER = BUILD_DIR / "vlook.lua"
 
@@ -61,7 +63,7 @@ def copy_tree_if_changed(src_dir: Path, dst_dir: Path):
             copy_if_changed(src, dst_dir / src.relative_to(src_dir))
 
 def sync_assets():
-    """Copy assets, theme CSS, and external Three.js modules into docs/."""
+    """Copy assets, theme CSS, and external media helpers into docs/."""
     ASSETS_DST.mkdir(parents=True, exist_ok=True)
     for src in ASSETS_SRC.iterdir():
         copy_if_changed(src, ASSETS_DST / src.name)
@@ -70,6 +72,7 @@ def sync_assets():
     else:
         print(f"  Warning: {VLOOK_CSS_SRC} not found — skipping theme CSS")
     copy_tree_if_changed(THREEJS_SRC, THREEJS_DST)
+    copy_tree_if_changed(PLOTLY_SRC, PLOTLY_DST)
 
 # ── Source pre-processing (formerly post_process.py) ─────────────────────────
 

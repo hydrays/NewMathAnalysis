@@ -707,6 +707,22 @@
 > 2. **当 $\Delta = AC - B^2 < 0$ 时，没有极值**。该点是一个 **鞍点**（Saddle Point）。
 > 3. **当 $\Delta = AC - B^2 = 0$ 时，无法判断**（退化情形）。该点可能有极值，也可能没有极值，需要借助其他方法或更高阶的导数来另作讨论。
 
+> [!note]
+> ==交互演示：二次型与特征值==
+>
+> 下列交互图展示驻点附近的二次型模型
+> $f(x,y)\approx \frac12(\lambda_1u^2+\lambda_2v^2)$，其中 $(u,v)$ 是旋转后的特征方向坐标。
+> 调节 `lambda1`、`lambda2` 可以观察局部曲面的极小值、极大值与鞍点；调节 `theta` 可以看到这两个特征方向在原坐标系中的旋转位置。图中两条彩色曲线对应变换后的两个特征方向。
+
+<div style="margin: 1rem 0 1.5rem;">
+  <iframe
+    src="plotly/critical_points_plotly.html"
+    title="Critical point classification demo"
+    loading="lazy"
+    style="width: 100%; height: 800px; border: 1px solid #d7dde5; border-radius: 12px; background: #ffffff;">
+  </iframe>
+</div>
+
 ### 条件极值
 
 > [!important]
