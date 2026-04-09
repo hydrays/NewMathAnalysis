@@ -707,6 +707,111 @@
 > 2. **当 $\Delta = AC - B^2 < 0$ 时，没有极值**。该点是一个 **鞍点**（Saddle Point）。
 > 3. **当 $\Delta = AC - B^2 = 0$ 时，无法判断**（退化情形）。该点可能有极值，也可能没有极值，需要借助其他方法或更高阶的导数来另作讨论。
 
+<!-- ── 临界点分类交互图 ──────────────────────────────────────────────────── -->
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<div style="width:100%;max-width:960px;margin:1.5em auto;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:10px;padding:14px 18px 10px;"><div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;margin-bottom:6px;"><div style="display:flex;align-items:center;gap:10px;"><span style="color:#d5dbe7;font-size:13px;font-family:sans-serif;white-space:nowrap;">λ₁ = <span id="critpt-l1-val" style="display:inline-block;width:38px;text-align:right;">1.0</span></span><input type="range" id="critpt-l1" min="-3" max="3" step="0.1" value="1" style="width:160px;accent-color:#5599ee;"></div><div style="display:flex;align-items:center;gap:10px;"><span style="color:#d5dbe7;font-size:13px;font-family:sans-serif;white-space:nowrap;">λ₂ = <span id="critpt-l2-val" style="display:inline-block;width:38px;text-align:right;">1.0</span></span><input type="range" id="critpt-l2" min="-3" max="3" step="0.1" value="1" style="width:160px;accent-color:#5599ee;"></div><div id="critpt-type-badge" style="padding:4px 16px;border-radius:20px;font-size:13px;font-family:sans-serif;font-weight:600;background:#1a3a1a;color:#66ee88;border:1px solid #3a6a3a;white-space:nowrap;">极小值点 (Local Min)</div></div><div style="font-size:11px;color:#7a8aa0;text-align:center;font-family:sans-serif;margin-bottom:10px;">f(x, y) = ½(λ₁x² + λ₂y²) — 拖动滑块改变 Hessian 特征值，观察曲面形状变化</div><div style="display:flex;gap:12px;"><div style="flex:1;min-width:0;"><div style="text-align:center;font-size:11px;color:#8899bb;font-family:sans-serif;margin-bottom:4px;">Three.js</div><div id="critpt-3d" style="width:100%;height:380px;position:relative;background:#0d1120;border-radius:8px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.5);"></div></div><div style="flex:1;min-width:0;"><div style="text-align:center;font-size:11px;color:#8899bb;font-family:sans-serif;margin-bottom:4px;">Plotly</div><div id="critpt-plotly" style="width:100%;height:380px;background:#0d1120;border-radius:8px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.5);"></div></div></div></div>
+<script type="module" src="threejs/chapter10-critpt.js?v=20260406a"></script>
+<script>
+(function () {
+const N = 40, R = 2.3;
+const xs = Array.from({length: N + 1}, (_, i) => -R + 2 * R * i / N);
+const ys = Array.from({length: N + 1}, (_, j) => -R + 2 * R * j / N);
+function makeSurface(l1, l2) {
+  return [{x: xs, y: ys, z: ys.map(y => xs.map(x => 0.5 * (l1*x*x + l2*y*y))), type: 'surface',
+    colorscale: [[0,'#2166ac'],[0.25,'#74add1'],[0.5,'#f7f7f7'],[0.75,'#f46d43'],[1,'#d73027']],
+    showscale: false, opacity: 0.85}];
+}
+const plotlyLayout = {
+  margin: {l:0, r:0, t:0, b:0}, paper_bgcolor: '#0d1120',
+  scene: {bgcolor: '#0d1120',
+    xaxis: {title:'x', color:'#8899bb', gridcolor:'#1e2a44', zerolinecolor:'#3a4a6a', titlefont:{size:11}},
+    yaxis: {title:'y', color:'#8899bb', gridcolor:'#1e2a44', zerolinecolor:'#3a4a6a', titlefont:{size:11}},
+    zaxis: {title:'z', color:'#8899bb', gridcolor:'#1e2a44', zerolinecolor:'#3a4a6a', titlefont:{size:11}},
+    camera: {eye: {x:1.55, y:1.55, z:1.15}}, aspectratio: {x:1, y:1, z:0.85}},
+  font: {color:'#8899bb', size:10}
+};
+let plotlyReady = false;
+function initPlotly(l1, l2) {
+  if (typeof Plotly === 'undefined') return;
+  Plotly.newPlot('critpt-plotly', makeSurface(l1, l2), plotlyLayout, {responsive:true, displayModeBar:false});
+  plotlyReady = true;
+}
+function updatePlotly(l1, l2) {
+  if (typeof Plotly === 'undefined') return;
+  if (!plotlyReady) { initPlotly(l1, l2); return; }
+  Plotly.react('critpt-plotly', makeSurface(l1, l2), plotlyLayout);
+}
+function updateBadge(l1, l2) {
+  const badge = document.getElementById('critpt-type-badge');
+  if (!badge) return;
+  const eps = 0.001;
+  let text, bg, color, border;
+  if (l1 > eps && l2 > eps)           { text='极小值点 (Local Min)'; bg='#0f2a18'; color='#55dd88'; border='#2a6a44'; }
+  else if (l1 < -eps && l2 < -eps)    { text='极大值点 (Local Max)'; bg='#2a0f0f'; color='#ee5555'; border='#6a2a2a'; }
+  else if (l1 * l2 < -eps * eps)      { text='鞍点 (Saddle Point)';  bg='#1a1a0a'; color='#ddcc44'; border='#5a5a1a'; }
+  else                                  { text='退化情形 (Δ = 0)';    bg='#151520'; color='#9999cc'; border='#333355'; }
+  badge.textContent = text;
+  Object.assign(badge.style, {background:bg, color, borderColor:border});
+}
+function dispatch() {
+  const l1 = parseFloat(document.getElementById('critpt-l1').value);
+  const l2 = parseFloat(document.getElementById('critpt-l2').value);
+  document.getElementById('critpt-l1-val').textContent = l1.toFixed(1);
+  document.getElementById('critpt-l2-val').textContent = l2.toFixed(1);
+  updateBadge(l1, l2);
+  updatePlotly(l1, l2);
+  window.dispatchEvent(new CustomEvent('critpt-update', {detail: {l1, l2}}));
+}
+document.getElementById('critpt-l1').addEventListener('input', dispatch);
+document.getElementById('critpt-l2').addEventListener('input', dispatch);
+if (typeof Plotly !== 'undefined') {
+  initPlotly(1, 1);
+} else {
+  const s = document.querySelector('script[src*="plotly"]');
+  if (s) s.addEventListener('load', () => initPlotly(1, 1));
+}
+updateBadge(1, 1);
+})();
+</script>
+<!-- ── end 临界点分类交互图 ──────────────────────────────────────────────── -->
+
+<!-- ── Hessian特征方向可视化（旋转版）────────────────────────────────────── -->
+> [!tip]
+> **海森矩阵总是对称的**（$f_{xy}=f_{yx}$），因此由**谱定理**，其特征向量**必然互相垂直**——这是无法绕开的。
+> 但当 $B = f_{xy} \neq 0$ 时，这两个特征方向会相对坐标轴**旋转**，形成非对角的 Hessian。
+> 下图中 $\theta$ 滑块正是控制这一旋转角，橙色/蓝色抛物线分别对应沿 $\mathbf{e}_1$、$\mathbf{e}_2$ 方向的曲率（即 $\lambda_1$、$\lambda_2$），原点处的直角符号说明两特征向量始终垂直。
+
+<div id="critpt2-wrap" style="width:100%;max-width:800px;margin:1.2em auto;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:10px;padding:14px 18px 10px;"><div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center;margin-bottom:6px;"><div style="display:flex;align-items:center;gap:8px;"><span style="color:#ff9966;font-size:13px;font-family:sans-serif;white-space:nowrap;">λ₁ = <span id="critpt2-l1-val" style="display:inline-block;width:38px;text-align:right;">2.0</span></span><input type="range" id="critpt2-l1" min="-3" max="3" step="0.1" value="2" style="width:130px;accent-color:#ff7744;"></div><div style="display:flex;align-items:center;gap:8px;"><span style="color:#66ccff;font-size:13px;font-family:sans-serif;white-space:nowrap;">λ₂ = <span id="critpt2-l2-val" style="display:inline-block;width:38px;text-align:right;">-1.0</span></span><input type="range" id="critpt2-l2" min="-3" max="3" step="0.1" value="-1" style="width:130px;accent-color:#44aaff;"></div><div style="display:flex;align-items:center;gap:8px;"><span style="color:#d5dbe7;font-size:13px;font-family:sans-serif;white-space:nowrap;">θ = <span id="critpt2-theta-val" style="display:inline-block;width:34px;text-align:right;">35</span>°</span><input type="range" id="critpt2-theta" min="0" max="90" step="1" value="35" style="width:130px;accent-color:#aaccee;"></div><div id="critpt2-type-badge" style="padding:4px 14px;border-radius:20px;font-size:12px;font-family:sans-serif;font-weight:600;background:#1a1a0a;color:#ddcc44;border:1px solid #5a5a1a;white-space:nowrap;">鞍点 (Saddle)</div></div><div style="font-size:11px;color:#7a8aa0;text-align:center;font-family:sans-serif;margin-bottom:8px;">f = ½(λ₁(x cosθ + y sinθ)² + λ₂(−x sinθ + y cosθ)²) &nbsp;·&nbsp; 特征向量始终互相垂直</div><div style="text-align:center;font-size:11px;color:#8899bb;font-family:sans-serif;margin-bottom:4px;">Three.js</div><div id="critpt2-3d" style="width:100%;height:460px;position:relative;background:#0a0e1a;border-radius:8px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.6);"></div></div>
+<script type="module" src="threejs/chapter10-critpt2.js?v=20260406a"></script>
+<script>
+(function(){
+function updateBadge2(l1,l2){
+  const b=document.getElementById('critpt2-type-badge'); if(!b)return;
+  const eps=0.001; let text,bg,color,border;
+  if(l1>eps&&l2>eps)         {text='极小值点 (Local Min)';bg='#0f2a18';color='#55dd88';border='#2a6a44';}
+  else if(l1<-eps&&l2<-eps)  {text='极大值点 (Local Max)';bg='#2a0f0f';color='#ee5555';border='#6a2a2a';}
+  else if(l1*l2<-eps*eps)    {text='鞍点 (Saddle Point)'; bg='#1a1a0a';color='#ddcc44';border='#5a5a1a';}
+  else                        {text='退化情形 (Δ = 0)';   bg='#151520';color='#9999cc';border='#333355';}
+  b.textContent=text; Object.assign(b.style,{background:bg,color,borderColor:border});
+}
+function dispatch2(){
+  const l1=parseFloat(document.getElementById('critpt2-l1').value);
+  const l2=parseFloat(document.getElementById('critpt2-l2').value);
+  const th=parseFloat(document.getElementById('critpt2-theta').value);
+  document.getElementById('critpt2-l1-val').textContent=l1.toFixed(1);
+  document.getElementById('critpt2-l2-val').textContent=l2.toFixed(1);
+  document.getElementById('critpt2-theta-val').textContent=th.toFixed(0);
+  updateBadge2(l1,l2);
+  window.dispatchEvent(new CustomEvent('critpt2-update',{detail:{l1,l2,theta:th*Math.PI/180}}));
+}
+document.getElementById('critpt2-l1').addEventListener('input',dispatch2);
+document.getElementById('critpt2-l2').addEventListener('input',dispatch2);
+document.getElementById('critpt2-theta').addEventListener('input',dispatch2);
+updateBadge2(2,-1);
+})();
+</script>
+<!-- ── end Hessian特征方向可视化 ──────────────────────────────────────────── -->
+
 ### 条件极值
 
 > [!important]
@@ -733,6 +838,11 @@
 > 
 > ![拉格朗日乘数法几何直观](../media/img/Lagrange_multipliers_geometry.png#200pt)
 > *(图注：在极值点处，蓝色的 $f$ 等高线与黄色的约束曲线相切，此时两者的梯度向量 $\nabla f$ 与 $\nabla g$ 必然平行。)*
+
+<!-- ── 拉格朗日乘数法：梯度平行交互可视化 ────────────────────────────────── -->
+<div id="lagrange-wrap" style="width:100%;max-width:960px;margin:1.5em auto;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:10px;padding:14px 18px 10px;"><div style="font-size:12px;color:#7a8aa0;text-align:center;font-family:sans-serif;margin-bottom:10px;">移动鼠标，观察 <span style="color:#00ccff;font-weight:600">∇f</span>（青色）与 <span style="color:#ff9933;font-weight:600">∇g</span>（橙色）的方向：<b style="color:#ccd8ee">仅在极值点处两梯度平行（或反向）</b></div><div style="display:flex;gap:16px;"><div style="flex:1;min-width:0;"><div style="text-align:center;font-size:11px;color:#aabbff;font-family:sans-serif;font-weight:600;margin-bottom:4px;">例1：f = x²+y²，约束 g：xy = 4</div><div id="lagrange-ex1" style="width:100%;height:400px;position:relative;background:#080c18;border-radius:8px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.6);"></div><div id="lagrange-info-1" style="margin-top:6px;text-align:center;font-size:12px;font-family:monospace;color:#7a8aa0;min-height:20px;padding:3px 8px;background:rgba(0,0,0,0.25);border-radius:5px;">将鼠标移入图形区域</div></div><div style="flex:1;min-width:0;"><div style="text-align:center;font-size:11px;color:#aabbff;font-family:sans-serif;font-weight:600;margin-bottom:4px;">例2：f = xy，约束 g：x²+y² = 4</div><div id="lagrange-ex2" style="width:100%;height:400px;position:relative;background:#080c18;border-radius:8px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.6);"></div><div id="lagrange-info-2" style="margin-top:6px;text-align:center;font-size:12px;font-family:monospace;color:#7a8aa0;min-height:20px;padding:3px 8px;background:rgba(0,0,0,0.25);border-radius:5px;">将鼠标移入图形区域</div></div></div></div>
+<script type="module" src="threejs/chapter10-lagrange.js?v=20260408b"></script>
+<!-- ── end 拉格朗日乘数法：梯度平行交互可视化 ──────────────────────────────── -->
 
 > [!warning]
 > 
