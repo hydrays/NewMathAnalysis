@@ -10,60 +10,56 @@ local CALLOUT_LABELS = {
   extension = "扩展",
 }
 
--- [!TYPE] callout blocks ─────────────────────────────────────────────────────
+-- [!TYPE] and [!TYPE: custom title] callout blocks ─────────────────────────
 function BlockQuote(el)
   if #el.content == 0 then return nil end
   local first = el.content[1]
   if first.t ~= "Para" or #first.content == 0 then return nil end
 
-  local marker = first.content[1]
-  if marker.t ~= "Str" then return nil end
+  local first_text = pandoc.utils.stringify(first)
 
-  local ctype = marker.text:match("^%[!(%a+)%]$")
-  if not ctype then return nil end
+  -- Pattern 1: [!type: custom title] — type sets color/icon, only title shown
+  local ctype, custom_title = first_text:match("^%[!(%a+):%s*(.-)%s*%]%s*$")
+
+  -- Pattern 2: [!type] alone or [!type] inline-text (legacy)
+  if not ctype then
+    local marker = first.content[1]
+    if marker.t ~= "Str" then return nil end
+    ctype = marker.text:match("^%[!(%a+)%]$")
+    if not ctype then return nil end
+  end
+
   ctype = ctype:lower()
-
   local label = CALLOUT_LABELS[ctype] or (ctype:sub(1,1):upper() .. ctype:sub(2))
 
-  -- Collect body blocks and optional inline title:
-  --   Case A: [!type] alone in first Para → no title, body is el.content[2..]
-  --   Case B: [!type] text...             → inline text becomes title, body is el.content[2..]
   local body_blocks = {}
-  local title_inlines = nil
+  for j = 2, #el.content do table.insert(body_blocks, el.content[j]) end
 
-  if #first.content == 1 then
-    -- Case A: no title
-    for j = 2, #el.content do
-      table.insert(body_blocks, el.content[j])
-    end
-  else
-    -- Case B: collect inlines after marker (skip leading SoftBreak/Space) as title
+  local label_text
+  if custom_title then
+    -- [!type: custom title] — show only the custom title
+    label_text = custom_title
+  elseif #first.content > 1 then
+    -- [!type] inline text — show "Label: inline text"
     local i = 2
     if first.content[i] and
        (first.content[i].t == "SoftBreak" or first.content[i].t == "Space") then
       i = i + 1
     end
-    if i <= #first.content then
-      title_inlines = {}
-      while i <= #first.content do
-        table.insert(title_inlines, first.content[i])
-        i = i + 1
-      end
+    local title_inlines = {}
+    while i <= #first.content do
+      table.insert(title_inlines, first.content[i])
+      i = i + 1
     end
-    for j = 2, #el.content do
-      table.insert(body_blocks, el.content[j])
+    if #title_inlines > 0 then
+      label_text = label .. ": " .. pandoc.utils.stringify(pandoc.Span(title_inlines))
+    else
+      label_text = label
     end
+  else
+    label_text = label
   end
 
-  -- Build header: "重要" or "重要: 符合函数"
-  local label_text = label
-  if title_inlines then
-    -- Render title inlines to plain text
-    local title_str = pandoc.utils.stringify(pandoc.Span(title_inlines))
-    label_text = label .. ": " .. title_str
-  end
-
-  -- Build: outer div.callout > div.callout-header + div.callout-body
   local header_html = string.format(
     '<div class="callout-header callout-header-%s">'
     .. '<span class="callout-icon"></span>'
@@ -71,9 +67,7 @@ function BlockQuote(el)
     ctype, label_text)
 
   local inner = { pandoc.RawBlock("html", header_html) }
-  for _, b in ipairs(body_blocks) do
-    table.insert(inner, b)
-  end
+  for _, b in ipairs(body_blocks) do table.insert(inner, b) end
 
   return pandoc.Div(inner, pandoc.Attr("", {"callout", "callout-" .. ctype}, {}))
 end

@@ -11,9 +11,7 @@
 
 ### 二重积分的概念
 
-> [!tip]
->
-> ==回顾: 单变量积分==
+> [!tip: 回顾: 单变量积分]
 > 我们要计算曲线 $ y = f(x) $在区间 $\left[ a, b\right]$下的面积，可以通过以下步骤实现：
 > 将区间 $\left [a, b \right]$等分为 $ N $个子区间，每个子区间的宽度为 $\displaystyle  \Delta x = \frac{b-a}{N} $。通过分割得到 $ N $个窄矩形（小柱体），每个矩形的左端点或右端点记为 $ x_i $（例如 $ x_i = a + i\Delta x $）.每个窄矩形的面积可近似为底边长度 $ \Delta x $乘以高度 $ f(x_i) $，即第 $ i $个矩形的面积为 $ \Delta x \cdot f(x_i) $.将所有窄矩形的面积相加，得到总面积 $ S_N $的近似值：
 > $$
@@ -29,9 +27,7 @@
 > $$
 
 
-> [!important]
-> 
-> ==多变量积分==
+> [!important: 多变量积分]
 > 
 > [图略，待补充]
 > 如图所示，对于定义在平面区域 $D$ 上的函数 $z = f(x,y)$，若要计算其对应的体积或物理量（如质量、电荷量等），其思想是单变量积分在二维空间的自然推广.首先将积分区域 $D$ 分割为 $N$ 个面积微元 $\Delta A$，每个微元可近似视为一个小矩形区域，并选取其代表点 $(x_i, y_i)$（例如取中心点或顶点坐标）.每个微元的体积可近似为底面积 $\Delta A$ 乘以高度 $f(x_i, y_i)$，即 $\Delta A \cdot f(x_i, y_i)$.将所有微元的贡献叠加，得到近似总体积：
@@ -48,7 +44,7 @@
 > $$
 > 其中 $D$ 是积分区域，$f(x,y)$ 为被积函数，$\mathrm{d}A$ 为面积元（直角坐标系中通常写作 $\mathrm{d}x\mathrm{d}y$）.
 > 
-> ==如何计算？==
+> **如何计算？**
 > [图略，待补充]
 > $$
 > \displaystyle M=\sum_{i=1}^N \rho (x_i,y_i)\mathrm{d}A_i=\iint_D \rho(x,y)\mathrm{d}A
@@ -170,9 +166,7 @@
 > \iint_{D} y\sqrt{1+x^2 - y^2} \mathrm{d}\sigma=\int_{-1}^1 y\left[\int_{-1}^y\sqrt{1+x^2 - y^2} \mathrm{d}x\right]\mathrm{d}y
 > $$
 
-> [!note]
-> 
-> ==极坐标下的积分==
+> [!note: 极坐标下的积分]
 > 
 > **例：已知$f(x,y)=1-x^2-y^2,D= \{(x,y)|x^2+y^2\leq 1,x\geq 0,y\geq 0 \} $,计算$\displaystyle \iint_D f(x,y) \mathrm{d}A$.**
 > 
@@ -194,9 +188,7 @@ $$
 
 ## 多变量积分的换元法
 
-> [!important]
-> 
-> ==变量替换与雅可比行列式==
+> [!important: 变量替换与雅可比行列式]
 > 
 > 考虑坐标变换 $ \begin{cases} u = u(x,y) \\ v = v(x,y) \end{cases} $，其全微分形式可表示为：
 > $$
@@ -231,9 +223,7 @@ $$
 
 
 
-> [!important]
->
-> ==雅可比行列式与坐标变换的深层关系==
+> [!important: 雅可比行列式与坐标变换的深层关系]
 >
 > 在坐标变换 $ (x,y) \leftrightarrow (u,v) $ 中，雅可比行列式不仅描述面积元的缩放比例，更揭示了双向变换的对称性。由基本关系：
 > $$
@@ -311,9 +301,7 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 
 ## 重积分的应用
 
-> [!important]
->
-> ==质量==
+> [!important: 质量]
 >
 > 对于分布在平面区域 $ D $上的物体（如薄片），若其密度函数为 $ \rho(x,y) $，则总质量可通过二重积分计算：
 > $$
@@ -321,7 +309,7 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 > $$
 > 其中 $ \mathrm{d}\sigma $表示面积元（即直角坐标系中的 $ \mathrm{d}x\mathrm{d}y $）.当密度均匀时（$ \rho $为常数），总质量退化为密度与面积的乘积 $ M = \rho \cdot A $，其中 $\displaystyle  A = \iint_D \mathrm{d}\sigma $为区域 $ D $的面积.
 >
-> ==质心==
+> **质心**
 >
 > 质心是物体质量分布的加权平均位置.对于离散质点系，质心坐标 $ (\bar{x}, \bar{y}) $定义为：
 > $$
@@ -365,9 +353,7 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 > $$
 
 
-> [!warning]
-> 
-> ==转动惯量与质心的关系(不要求)==
+> [!warning: 转动惯量与质心的关系(不要求)]
 > 
 > 对于平面区域 $ D $上的质量分布，若密度函数为 $ \mu(x,y) $，则系统对某点 $ (x_0, y_0) $的转动惯量为：
 > $$
@@ -403,9 +389,7 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 > $$
 
 
-> [!warning]
-> 
-> ==平行轴定理==
+> [!warning: 平行轴定理]
 > 
 > 平行轴定理揭示了物体绕不同轴转动惯量之间的关系：**绕任意轴的转动惯量等于绕质心轴的转动惯量加上总质量与该轴到质心距离平方的乘积**。其数学推导可通过二重积分展开：
 > 
@@ -453,8 +437,7 @@ I^2 &=\int_0^{2\pi}\int_0^{+\infty}e^{-r^2}r\mathrm{d}r\mathrm{d}\theta \\
 > \end{aligned}
 >  $$
 
-> [!note]
-> ==换元法==
+> [!note: 换元法]
 > $$
 (x,y) \to (u,v)
 > $$

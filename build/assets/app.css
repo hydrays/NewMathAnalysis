@@ -264,10 +264,10 @@ ul.chapter-toc > li > ul > li > ul > li > a {
   align-items: center;
   gap: 8px;
   padding: 7px 14px;
-  font-size: 0.82em;
+  font-size: 0.95em;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", "Source Han Sans CN", sans-serif;
+  letter-spacing: 0.06em;
 }
 
 .callout-icon::before {
