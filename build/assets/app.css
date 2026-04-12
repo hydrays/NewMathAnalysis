@@ -38,6 +38,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--v-fm-h, "阿里妈妈东方大楷", "DongFangDaKai", "霞鹜文楷", Georgia, serif);
 }
 
+strong, b {
+  font-weight: 700;
+}
+
 code, pre {
   font-family: var(--v-fm-code, "Go Mono", GoMono, Consolas, monospace);
 }
@@ -125,13 +129,24 @@ ul.chapter-toc {
   padding: 0;
   border-left: 2px solid var(--v-bd, #e0e0e0);
   margin-left: 20px;
+  display: none;                        /* whole TOC hidden until chapter clicked */
 }
+.nav-chapter-current.open ul.chapter-toc          { display: block; }
 
 ul.chapter-toc ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
+/* The top-level sections list is always visible once the chapter is open */
+.nav-chapter-current.open ul.chapter-toc > li > ul { display: block; }
+
+/* Deeper nested lists (subsections, sub-subsections) start hidden */
+ul.chapter-toc > li > ul > li > ul               { display: none; }
+ul.chapter-toc > li > ul > li.open > ul          { display: block; }
+ul.chapter-toc > li > ul > li > ul > li > ul     { display: none; }
+ul.chapter-toc > li > ul > li > ul > li.open > ul { display: block; }
 
 ul.chapter-toc li a {
   display: block;
@@ -150,6 +165,17 @@ ul.chapter-toc li a {
 ul.chapter-toc > li > a {
   display: none !important;
 }
+
+/* Expand/collapse arrow on chapter nav entry */
+.nav-chapter-current > a::before {
+  content: "▶ ";
+  font-size: 0.6em;
+  opacity: 0.5;
+}
+.nav-chapter-current.open > a::before {
+  content: "▼ ";
+}
+
 
 ul.chapter-toc li a:hover {
   color: var(--v-ac, #298bcc);
@@ -275,12 +301,16 @@ ul.chapter-toc > li > ul > li > ul > li > a {
 }
 
 .callout-body {
-  padding: 10px 16px 10px;
+  padding: 10px 14px 14px;
   font-size: 0.95em;
 }
 
 .callout-body > *:first-child { margin-top: 0; }
 .callout-body > *:last-child  { margin-bottom: 0; }
+
+.callout-body > p:first-of-type {
+  text-indent: 2em;
+}
 
 /* Per-type colors */
 .callout-note    { background: #eff6ff; border-color: #bfdbfe; }

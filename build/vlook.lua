@@ -66,9 +66,8 @@ function BlockQuote(el)
     .. '<span class="callout-label">%s</span></div>',
     ctype, label_text)
 
-  local inner = { pandoc.RawBlock("html", header_html) }
-  for _, b in ipairs(body_blocks) do table.insert(inner, b) end
-
+  local body_div = pandoc.Div(body_blocks, pandoc.Attr("", {"callout-body"}, {}))
+  local inner = { pandoc.RawBlock("html", header_html), body_div }
   return pandoc.Div(inner, pandoc.Attr("", {"callout", "callout-" .. ctype}, {}))
 end
 

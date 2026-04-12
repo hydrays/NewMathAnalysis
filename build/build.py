@@ -81,13 +81,23 @@ def load_head_yaml() -> str:
         return HEAD_YAML.read_text(encoding="utf-8").rstrip() + "\n\n"
     return ""
 
+_CN_NUMS = ["零","一","二","三","四","五","六","七","八","九",
+            "十","十一","十二","十三","十四","十五","十六","十七","十八","十九","二十"]
+
+def _to_cn(n: int) -> str:
+    return _CN_NUMS[n] if 0 <= n < len(_CN_NUMS) else str(n)
+
+_STRIP_CHAP = re.compile(r"^第[零一二三四五六七八九十百千]+章[\s:：]*")
+
 def add_numbering(content: str, chapter_num: str) -> str:
     sec = sub = subsub = 0
+    cn = _to_cn(int(chapter_num))
     out = []
     for line in content.split("\n"):
         if line.startswith("# "):
             sec = sub = subsub = 0
-            out.append(f"# 第{chapter_num}章 {line[2:].strip()}")
+            title = _STRIP_CHAP.sub("", line[2:].strip())
+            out.append(f"# 第{cn}章: {title}")
         elif line.startswith("## "):
             sec += 1; sub = subsub = 0
             out.append(f"## {chapter_num}.{sec} {line[3:].strip()}")

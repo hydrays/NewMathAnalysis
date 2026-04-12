@@ -46,6 +46,12 @@
           if (divider) divider.style.display = "none";
         }
 
+        // Toggle chapter TOC on click (already on this page — no navigation needed)
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          li.classList.toggle("open");
+        });
+
         // Scroll into view after render
         setTimeout(function () {
           a.scrollIntoView({ block: "nearest" });
@@ -143,6 +149,37 @@
     });
   }
 
+  // ── TOC accordion ────────────────────────────────────────────
+  // Adds expand/collapse behaviour to section and subsection entries.
+
+  function initTocAccordion() {
+    var chapterToc = document.querySelector("ul.chapter-toc");
+    if (!chapterToc) return;
+
+    chapterToc.querySelectorAll("li").forEach(function (li) {
+      // Find direct child <ul>
+      var childUl = null;
+      for (var i = 0; i < li.children.length; i++) {
+        if (li.children[i].tagName === "UL") { childUl = li.children[i]; break; }
+      }
+      if (!childUl) return;
+
+      li.classList.add("has-children");
+
+      // Find direct child <a>
+      var link = null;
+      for (var i = 0; i < li.children.length; i++) {
+        if (li.children[i].tagName === "A") { link = li.children[i]; break; }
+      }
+      if (!link) return;
+
+      link.addEventListener("click", function (e) {
+        e.preventDefault();           // toggle only; navigate via active highlight
+        li.classList.toggle("open");
+      });
+    });
+  }
+
   // ── Video panel ──────────────────────────────────────────────
 
   var VIDEO_KEY = "video-panel-open";
@@ -202,6 +239,7 @@
   function init() {
     buildDocNav();
     applyAutonum();
+    initTocAccordion();
     initTocHighlight();
     buildFigureCaptions();
     initVideo();
