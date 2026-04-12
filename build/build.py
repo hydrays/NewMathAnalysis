@@ -239,12 +239,24 @@ def build_chapter(md_path: Path):
     meta, body = split_frontmatter(content)
     body = preprocess(body)
 
+    # Merge per-chapter sidecar YAML (e.g. src/chpt1.yaml) — overrides head.yaml values
+    sidecar = md_path.with_suffix(".yaml")
+    if sidecar.exists():
+        try:
+            import yaml as _yaml_sc
+            sc = _yaml_sc.safe_load(sidecar.read_text(encoding="utf-8")) or {}
+            meta.update(sc)
+        except Exception as e:
+            print(f"  Warning: sidecar YAML parse error ({sidecar.name}): {e}")
+
     doc_lib = parse_doc_lib(meta.get("vlook-doc-lib", []))
     chp_autonum = ""
     # Gather vlook-chp-autonum (may appear as a string)
     raw_autonum = meta.get("vlook-chp-autonum", "")
     if isinstance(raw_autonum, str):
         chp_autonum = raw_autonum.strip()
+
+    video_url = str(meta.get("video_url", "")).strip()
 
     # Determine output filename
     stem = md_path.stem
@@ -277,6 +289,7 @@ def build_chapter(md_path: Path):
             "--from", "markdown-mark+raw_html+smart+tex_math_dollars",
             "--variable", f"doc_lib_json={json.dumps(doc_lib)}",
             "--variable", f"chp_autonum={chp_autonum}",
+            "--variable", f"video_url={video_url}",
             "--highlight-style", "pygments",
         ]
         result = subprocess.run(cmd, capture_output=True, text=True)

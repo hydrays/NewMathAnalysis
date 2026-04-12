@@ -6,6 +6,8 @@
   "use strict";
 
   // ── Chapter navigation ───────────────────────────────────────
+  // Builds the chapter list and inlines the current chapter's TOC
+  // as a collapsible sub-list right after its entry.
 
   function buildDocNav() {
     var list = document.getElementById("doc-nav-list");
@@ -15,24 +17,42 @@
 
     window.docLib.forEach(function (item) {
       var li = document.createElement("li");
+      li.className = "nav-chapter";
       var a = document.createElement("a");
 
-      // item is {title, url}
       a.href = item.url;
       a.textContent = item.title;
       a.title = item.title;
 
-      // Strip query string for comparison
       var itemFile = item.url.split("?")[0].split("/").pop();
-      if (itemFile === currentFile) {
+      var isCurrent = (itemFile === currentFile);
+
+      if (isCurrent) {
         a.className = "current";
-        // Scroll this item into view in the sidebar after render
+        li.classList.add("nav-chapter-current");
+
+        // Move the page TOC into this list item as an inline sub-list
+        var tocNav = document.getElementById("toc-nav");
+        if (tocNav) {
+          var tocUl = tocNav.querySelector("ul");
+          if (tocUl) {
+            tocUl.className = "chapter-toc";
+            li.appendChild(tocUl);
+          }
+          // Hide the now-empty toc-nav panel
+          tocNav.style.display = "none";
+          // Also hide the divider above it
+          var divider = document.querySelector(".nav-divider");
+          if (divider) divider.style.display = "none";
+        }
+
+        // Scroll into view after render
         setTimeout(function () {
           a.scrollIntoView({ block: "nearest" });
         }, 0);
       }
 
-      li.appendChild(a);
+      li.insertBefore(a, li.firstChild);
       list.appendChild(li);
     });
   }
@@ -40,13 +60,10 @@
   // ── Auto chapter numbering ───────────────────────────────────
 
   function applyAutonum() {
-    // chpAutonum is e.g. "h1=off" or empty/undefined
     if (!window.chpAutonum || window.chpAutonum === "") return;
 
-    // Parse: we support "off" to disable entirely, or default = h2+ numbered
     if (window.chpAutonum.indexOf("off") !== -1 &&
         window.chpAutonum.indexOf("h1") !== -1) {
-      // h1=off means don't number h1 but DO number h2+
       document.body.classList.add("chp-autonum");
     }
   }
@@ -67,14 +84,15 @@
     overlay.classList.remove("visible");
   }
 
-  // Expose for inline onclick handlers in template
   window.toggleSidebar = toggleSidebar;
   window.closeSidebar  = closeSidebar;
 
   // ── TOC active section highlighting ─────────────────────────
+  // After buildDocNav() runs, the TOC links are inside #doc-nav-list.
+  // Select only anchor links (href="#...") to avoid matching chapter links.
 
   function initTocHighlight() {
-    var tocLinks = document.querySelectorAll("#toc-nav a");
+    var tocLinks = document.querySelectorAll("#doc-nav-list a[href^='#']");
     if (!tocLinks.length) return;
 
     var headings = Array.from(
@@ -106,8 +124,6 @@
   }
 
   // ── Image captions ───────────────────────────────────────────
-  // Pandoc puts alt text as <img alt="...">. Wrap images in <figure>
-  // and show alt text as <figcaption> when alt is non-empty and not a URL.
 
   function buildFigureCaptions() {
     var imgs = document.querySelectorAll("#content img");
@@ -127,6 +143,60 @@
     });
   }
 
+  // ── Video panel ──────────────────────────────────────────────
+
+  var VIDEO_KEY = "video-panel-open";
+
+  function initVideo() {
+    var url = (window.videoUrl || "").trim();
+    if (!url) return;
+
+    var panel     = document.getElementById("video-panel");
+    var frame     = document.getElementById("video-frame");
+    var closeBtn  = document.getElementById("video-close-btn");
+    var mainEl    = document.getElementById("main");
+    if (!panel || !frame) return;
+
+    frame.src = url;
+    panel.style.display = "none";
+
+    var activeOwner = null;
+
+    function openAfter(owner) {
+      owner.insertAdjacentElement("afterend", panel);
+      panel.style.display = "block";
+      frame.style.height = Math.round(panel.offsetWidth * 9 / 16) + "px";
+      activeOwner = owner;
+      var top = panel.getBoundingClientRect().top + mainEl.scrollTop - 56;
+      mainEl.scrollTo({ top: top, behavior: "smooth" });
+    }
+
+    function closePanel() {
+      panel.style.display = "none";
+      activeOwner = null;
+    }
+
+    if (closeBtn) closeBtn.onclick = closePanel;
+
+    var closeBottom = document.getElementById("video-close-bottom");
+    if (closeBottom) closeBottom.onclick = closePanel;
+
+    // Insert a ▶ button after every .callout-tip
+    document.querySelectorAll(".callout.callout-tip").forEach(function (tip) {
+      var trigger = document.createElement("button");
+      trigger.className = "video-inline-btn";
+      trigger.innerHTML = "&#9654; 观看视频";
+      trigger.onclick = function () {
+        if (activeOwner === trigger) {
+          closePanel(); // same button → hide
+        } else {
+          openAfter(trigger); // different/new → show here
+        }
+      };
+      tip.insertAdjacentElement("afterend", trigger);
+    });
+  }
+
   // ── Init ─────────────────────────────────────────────────────
 
   function init() {
@@ -134,6 +204,7 @@
     applyAutonum();
     initTocHighlight();
     buildFigureCaptions();
+    initVideo();
   }
 
   if (document.readyState === "loading") {
