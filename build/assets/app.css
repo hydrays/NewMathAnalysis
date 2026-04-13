@@ -502,3 +502,111 @@ body.chp-autonum h4::before {
     padding: 24px 20px 60px;
   }
 }
+
+/* ── Exercise blocks ─────────────────────────────────────────── */
+
+.exercise-block {
+  border: 1px solid var(--v-bd, #e0e0e0);
+  border-left: 4px solid var(--v-ac, #298bcc);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  background: var(--v-bg, #fff);
+}
+
+.ex-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ex-label {
+  font-weight: 700;
+  font-size: 0.95em;
+  color: var(--v-ac, #298bcc);
+}
+
+.ex-dot {
+  font-size: 0.75em;
+  line-height: 1;
+}
+
+.ex-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.ex-tag {
+  font-size: 0.7em;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: var(--v-hover-bg, rgba(28,30,31,0.07));
+  color: var(--v-tt-2, #7d868a);
+  letter-spacing: 0.02em;
+}
+
+.ex-problem {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.ex-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.ex-solution-toggle,
+.ex-reveal-btn {
+  padding: 4px 12px;
+  border: 1px solid var(--v-bd, #e0e0e0);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--v-tt, #1c1e1f);
+  font-size: 0.875em;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ex-solution-toggle:hover,
+.ex-reveal-btn:hover {
+  background: var(--v-hover-bg, rgba(28,30,31,0.07));
+  border-color: var(--v-ac, #298bcc);
+}
+
+.ex-video-btn {
+  padding: 4px 12px;
+  border: 1px solid var(--v-bd, #e0e0e0);
+  border-radius: 4px;
+  color: var(--v-tt, #1c1e1f);
+  font-size: 0.875em;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ex-video-btn:hover {
+  background: var(--v-hover-bg, rgba(28,30,31,0.07));
+  border-color: var(--v-ac, #298bcc);
+}
+
+.ex-solution-panel {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--v-bd, #e0e0e0);
+  border-radius: 4px;
+  background: var(--v-nav-bg, #f8f8f8);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ex-collapsible {
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid var(--v-ac-bg, #ddedf8);
+  background: var(--v-bg, #fff);
+  border-radius: 0 4px 4px 0;
+  line-height: 1.7;
+}
