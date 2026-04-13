@@ -9,7 +9,9 @@ Public API:
 """
 
 import re
+import sys
 import json
+import html
 from pathlib import Path
 
 try:
@@ -24,14 +26,19 @@ def _split_frontmatter(text: str):
     """Return (meta_dict, body_str)."""
     if not text.startswith("---"):
         return {}, text
-    end = text.find("\n---", 3)
+    end = text.find("\n---\n", 3)
     if end == -1:
-        return {}, text
+        # Try \n--- at end of string
+        if text.find("\n---", 3) == len(text) - 4:
+            end = len(text) - 4
+        else:
+            return {}, text
     yaml_str = text[3:end]
-    body = text[end + 4:]
+    body = text[end + 5:]  # skip \n---\n (5 chars)
     if yaml is None:
         raise ImportError("PyYAML is required: pip install pyyaml")
-    meta = yaml.safe_load(yaml_str) or {}
+    result = yaml.safe_load(yaml_str)
+    meta = result if isinstance(result, dict) else {}
     return meta, body
 
 
@@ -113,8 +120,7 @@ _SOLUTION_LABELS = [
 
 
 def _tag_pill(tag: str) -> str:
-    safe = tag.replace('"', "&quot;")
-    return f'<span class="ex-tag">{safe}</span>'
+    return f'<span class="ex-tag">{html.escape(tag)}</span>'
 
 
 def _solution_panel(sol: dict, idx: int, ex_id: str) -> str:
@@ -190,9 +196,12 @@ _EX_DIV_RE = re.compile(
 
 def _load_exercise(ex_id: str, exercises_dir: Path) -> dict:
     """Find and parse the exercise file for ex_id."""
-    for md_file in exercises_dir.rglob(f"{ex_id}.md"):
-        return parse_exercise_file(md_file.read_text(encoding="utf-8"))
-    raise FileNotFoundError(f"Exercise '{ex_id}' not found in {exercises_dir}")
+    matches = sorted(exercises_dir.rglob(f"{ex_id}.md"))
+    if len(matches) > 1:
+        raise ValueError(f"Exercise id '{ex_id}' is ambiguous: {matches}")
+    if not matches:
+        raise FileNotFoundError(f"Exercise '{ex_id}' not found in {exercises_dir}")
+    return parse_exercise_file(matches[0].read_text(encoding="utf-8"))
 
 
 def inject_exercises(content: str, exercises_dir: Path) -> str:
@@ -207,7 +216,7 @@ def inject_exercises(content: str, exercises_dir: Path) -> str:
             html = render_exercise_html(ex)
             return f"\n{html}\n"
         except FileNotFoundError as e:
-            print(f"  Warning: {e}")
+            print(f"  Warning: {e}", file=sys.stderr)
             return f'<!-- exercise not found: {ex_id} -->\n'
 
     return _EX_DIV_RE.sub(replace, content)
@@ -232,7 +241,7 @@ def build_exercise_index(exercises_dir: Path, out_path: Path) -> None:
                 "tags":       ex["tags"],
                 "difficulty": ex["difficulty"],
                 "video":      ex["video"],
-                "source":     str(md_file),
+                "source":     str(md_file.relative_to(exercises_dir)),
             })
         except Exception as e:
             print(f"  Warning: could not index {md_file.name}: {e}")
