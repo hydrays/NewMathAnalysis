@@ -370,4 +370,34 @@
   } else {
     init();
   }
+
+  // ── Exercise show/hide ───────────────────────────────────────
+  // Handles .ex-solution-toggle and .ex-reveal-btn buttons.
+  // Uses event delegation on document so it works after SPA navigation.
+
+  function handleExerciseClick(e) {
+    var btn = e.target.closest(".ex-solution-toggle, .ex-reveal-btn");
+    if (!btn) return;
+    var targetId = btn.getAttribute("data-target");
+    if (!targetId) return;
+    var panel = document.getElementById(targetId);
+    if (!panel) return;
+    var hidden = panel.hasAttribute("hidden");
+    if (hidden) {
+      panel.removeAttribute("hidden");
+      // Rotate arrow on solution toggles
+      if (btn.classList.contains("ex-solution-toggle")) {
+        btn.textContent = btn.textContent.replace("▼", "▲");
+      }
+      // Re-render any math inside newly revealed content
+      if (typeof renderMath === "function") renderMath(panel);
+    } else {
+      panel.setAttribute("hidden", "");
+      if (btn.classList.contains("ex-solution-toggle")) {
+        btn.textContent = btn.textContent.replace("▲", "▼");
+      }
+    }
+  }
+
+  document.addEventListener("click", handleExerciseClick);
 })();
