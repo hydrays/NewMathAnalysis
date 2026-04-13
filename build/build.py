@@ -21,6 +21,7 @@ import hashlib
 import subprocess
 import tempfile
 from pathlib import Path
+from exercise import inject_exercises, build_exercise_index
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 
@@ -43,6 +44,8 @@ VLOOK_CSS_DST = ASSETS_DST / "vlook-thinking.css"
 # Chapter source directory
 SRC_DIR  = ROOT / "src"
 HEAD_YAML = SRC_DIR / "head.yaml"
+EXERCISES_DIR = SRC_DIR / "exercises"
+EXERCISES_OUT  = DOCS_DIR / "exercises"
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -248,6 +251,7 @@ def build_chapter(md_path: Path):
     content = raw
     meta, body = split_frontmatter(content)
     body = preprocess(body)
+    body = inject_exercises(body, EXERCISES_DIR)
 
     # Merge per-chapter sidecar YAML (e.g. src/chpt1.yaml) — overrides head.yaml values
     sidecar = md_path.with_suffix(".yaml")
@@ -469,6 +473,9 @@ def main():
         except Exception as e:
             print(f"  FAILED {md.name}: {e}")
             errors += 1
+
+    print("\nBuilding exercise index ...")
+    build_exercise_index(EXERCISES_DIR, EXERCISES_OUT)
 
     print(f"\nDone. {len(targets) - errors}/{len(targets)} succeeded.")
     if errors:
