@@ -473,3 +473,30 @@ $$\int_C\mathbf{F}\cdot\mathrm{d}\mathbf{r} = \int_C P\,\mathrm{d}x+Q\,\mathrm{d
 :::
 
 ## 12.7 统一视角：广义牛顿-莱布尼茨公式
+
+本章的四个核心定理并非彼此独立的结论——它们是同一件事在不同维度的面貌。
+
+> [!important: 四个定理的统一形式]
+>
+> | 定理 | 区域 $\Omega$ | 边界 $\partial\Omega$ | 公式 |
+> |:---|:---|:---|:---|
+> | 牛顿-莱布尼茨 | 区间 $[a,b]$ | 端点 $\{a,b\}$ | $\displaystyle\int_a^b f'(x)\,\mathrm{d}x = f(b)-f(a)$ |
+> | 格林公式 | 平面区域 $D$ | 有向曲线 $\partial D$ | $\displaystyle\iint_D\operatorname{curl}\mathbf{F}\,\mathrm{d}A = \oint_{\partial D}\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ |
+> | 斯托克斯公式 | 曲面 $S$ | 有向曲线 $\partial S$ | $\displaystyle\iint_S(\nabla\times\mathbf{F})\cdot\mathbf{n}\,\mathrm{d}S = \oint_{\partial S}\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ |
+> | 高斯公式 | 空间区域 $V$ | 封闭曲面 $\partial V$ | $\displaystyle\iiint_V\nabla\cdot\mathbf{F}\,\mathrm{d}V = \oiint_{\partial V}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S$ |
+
+**规律**：对区域上某种"导数"的积分，等于对其边界上"原函数"的积分。
+
+> [!note: 微分形式语言]
+>
+> 在**微分形式**（differential forms）的语言中，上述四个公式统一为一个公式：
+>
+> $$\int_\Omega \mathrm{d}\omega = \int_{\partial\Omega}\omega,$$
+>
+> 其中 $\omega$ 是微分形式，$\mathrm{d}$ 是外微分算子。这一公式称为**广义斯托克斯定理**，是实变函数论和微分几何的核心结果。感兴趣的读者可在后续课程中深入探索。
+
+回顾本章的旅程：我们从**场**出发，建立了沿曲线积分和穿越曲面积分的概念，发现了将区域与边界联系起来的三大定理。每一个定理的背后，都是牛顿和莱布尼茨三百年前的那个洞见——**积分与微分互为逆运算**——在更广阔的空间中回响。
+
+格林公式告诉我们，平面区域内所有点的旋转强度可以"抵消"为边界上的一圈环量。高斯公式告诉我们，封闭区域内所有的源与汇，最终体现为穿越边界曲面的净通量。斯托克斯公式告诉我们，曲面上所有点的旋转，都在曲面边界的循环中留下完整的印记。
+
+这不仅仅是计算技巧——这是微积分统一性最深刻的一句话。
