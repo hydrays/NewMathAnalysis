@@ -361,6 +361,63 @@ $$\iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S} = \iint_{D_{xy}}\bigl(-P\,g_x - Q\,
 
 ### 12.6.1 高斯公式
 
+> [!tip: 引入问题：源与通量的关系]
+>
+> 设空间区域 $V$ 内有流体流动，速度场为 $\mathbf{F}$。若 $V$ 内某处是流体的**源**（即流体在那里被持续"产生"），这些新产生的流体必然向外流出并最终穿越边界曲面 $\partial V$。那么，$V$ 内总的产生率与穿越边界的总通量之间有何定量关系？
+
+> [!important: 定义：散度]
+>
+> 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 有连续偏导数，称
+>
+> $$\operatorname{div}\mathbf{F} = \nabla\cdot\mathbf{F} = \frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}$$
+>
+> 为 $\mathbf{F}$ 的**散度**。$\operatorname{div}\mathbf{F}>0$ 表示该点是源，$<0$ 表示是汇，$=0$ 表示不可压缩（流体既不产生也不消失）。
+
+> [!important: 高斯公式（散度定理）]
+>
+> 设 $V$ 为空间中由分片光滑封闭曲面 $\Sigma=\partial V$ 围成的有界区域，$\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 在 $V$ 上有一阶连续偏导数，$\mathbf{n}$ 为 $\Sigma$ 的外法向量，则
+>
+> $$\oiint_{\Sigma}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S = \iiint_V\nabla\cdot\mathbf{F}\,\mathrm{d}V.$$
+
+> [!extension: 证明思路]
+>
+> 分别证明（以 $R$ 分量为例）：
+>
+> $$\oiint_\Sigma R\,\mathrm{d}x\,\mathrm{d}y = \iiint_V \frac{\partial R}{\partial z}\,\mathrm{d}V.$$
+>
+> 设 $V$ 为"竖直简单"区域：投影到 $xy$ 平面得 $D_{xy}$，$z$ 介于底面 $z=z_1(x,y)$ 和顶面 $z=z_2(x,y)$ 之间。在顶面（朝外即朝上）$\mathrm{d}x\,\mathrm{d}y>0$；在底面（朝外即朝下）$\mathrm{d}x\,\mathrm{d}y<0$；在侧面 $\mathrm{d}x\,\mathrm{d}y=0$。故
+>
+> $$\oiint_\Sigma R\,\mathrm{d}x\,\mathrm{d}y = \iint_{D_{xy}}\bigl[R(x,y,z_2)-R(x,y,z_1)\bigr]\,\mathrm{d}x\,\mathrm{d}y.$$
+>
+> 另一方面，由单变量 FTC：
+>
+> $$\iiint_V R_z\,\mathrm{d}V = \iint_{D_{xy}}\int_{z_1}^{z_2}R_z\,\mathrm{d}z\,\mathrm{d}x\,\mathrm{d}y = \iint_{D_{xy}}\bigl[R(x,y,z_2)-R(x,y,z_1)\bigr]\,\mathrm{d}x\,\mathrm{d}y.$$
+>
+> 两式相等。$P$ 和 $Q$ 分量类似处理，三式相加即得高斯公式。$\blacksquare$
+
+> [!note: 与格林公式的类比]
+>
+> 高斯公式是格林公式通量形式的三维版本：
+>
+> | 维度 | 公式 |
+> |:---|:---|
+> | 二维（格林通量形式）| $\oint_{\partial D}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s = \iint_D\nabla\cdot\mathbf{F}\,\mathrm{d}A$ |
+> | 三维（高斯）| $\oiint_{\partial V}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S = \iiint_V\nabla\cdot\mathbf{F}\,\mathrm{d}V$ |
+>
+> 两者都说：**区域边界上的总通量 $=$ 区域内部散度的积分**。
+
+::: {.exercise id="chpt12-ex-015"}
+:::
+
+::: {.exercise id="chpt12-ex-016"}
+:::
+
+::: {.exercise id="chpt12-ex-017"}
+:::
+
+::: {.exercise id="chpt12-ex-018"}
+:::
+
 ### 12.6.2 斯托克斯公式
 
 ## 12.7 统一视角：广义牛顿-莱布尼茨公式
