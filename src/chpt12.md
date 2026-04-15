@@ -312,6 +312,51 @@ $$\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y = \int_{t_1}^{t_2}\bigl[P(x(t),y(t))\,x'(
 
 ## 12.5 曲面积分
 
+至此，二维的积分理论已经完整：沿曲线积分（第一类、第二类）以及将区域内部与边界联系起来的格林公式。现在将同样的思路推广到三维空间：**曲面**取代曲线，**通量**取代做功。
+
+> [!tip: 引入问题：流体穿过曲面的通量]
+>
+> 流体以速度场 $\mathbf{F}(x,y,z)=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 流动，空间中有一有向曲面 $S$。单位时间内穿过 $S$ 的流体体积（**通量**）是多少？
+>
+> 将 $S$ 分成 $N$ 个小面片，第 $i$ 片的面积为 $\Delta S_i$，外法向单位向量为 $\mathbf{n}_i$。穿过该小片的流量约为 $\mathbf{F}(x_i,y_i,z_i)\cdot\mathbf{n}_i\,\Delta S_i$。令各小片面积最大值 $\to 0$，取极限即得通量。
+
+> [!important: 定义：曲面积分（通量型）]
+>
+> 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 在有向曲面 $S$ 上连续，$\mathbf{n}$ 为 $S$ 的单位法向量，则 $\mathbf{F}$ 穿过 $S$ 的**通量**定义为
+>
+> $$\iint_S\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S = \iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S}.$$
+
+**计算方法**：设 $S$ 由 $z=g(x,y)$，$(x,y)\in D_{xy}$ 给出，取朝上法向量。曲面上的切向量为
+
+$$\mathbf{v}_1=(1,\,0,\,g_x), \quad \mathbf{v}_2=(0,\,1,\,g_y),$$
+
+法向量微元为
+
+$$\mathbf{n}\,\mathrm{d}S = \mathbf{v}_1\times\mathbf{v}_2\,\mathrm{d}x\,\mathrm{d}y = (-g_x,\,-g_y,\,1)\,\mathrm{d}x\,\mathrm{d}y.$$
+
+（朝下法向量取反号。）于是
+
+$$\iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S} = \iint_{D_{xy}}\bigl(-P\,g_x - Q\,g_y + R\bigr)\,\mathrm{d}x\,\mathrm{d}y.$$
+
+> [!note: 方向的选取]
+>
+> 曲面积分与曲面的**定向**有关，改变法向量方向则积分变号。对**封闭曲面**（如球面），通常约定外法向量为正方向；对**开曲面**，需事先指定法向量朝哪一侧。
+
+> [!note: 例题]
+>
+> 计算 $\mathbf{F}=z\hat{\mathbf{k}}$ 穿过上半球面 $S:\,x^2+y^2+z^2=a^2,\,z\geq 0$（取朝上法向量）的通量。
+>
+> **解**：$z=g(x,y)=\sqrt{a^2-x^2-y^2}$，$P=Q=0,\,R=z$，$g_x=-x/z,\,g_y=-y/z$，故
+>
+> $$\iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S} = \iint_{x^2+y^2\leq a^2} z\,\mathrm{d}x\,\mathrm{d}y = \iint_{x^2+y^2\leq a^2}\sqrt{a^2-x^2-y^2}\,\mathrm{d}x\,\mathrm{d}y.$$
+>
+> 用极坐标 $x=r\cos\theta,\,y=r\sin\theta$：
+>
+> $$= \int_0^{2\pi}\int_0^a\sqrt{a^2-r^2}\cdot r\,\mathrm{d}r\,\mathrm{d}\theta = 2\pi\cdot\frac{a^3}{3} = \frac{2\pi a^3}{3}.$$
+
+::: {.exercise id="chpt12-ex-014"}
+:::
+
 ## 12.6 高斯公式与斯托克斯公式
 
 ### 12.6.1 高斯公式
