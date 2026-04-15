@@ -254,6 +254,62 @@ $$\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y = \int_{t_1}^{t_2}\bigl[P(x(t),y(t))\,x'(
 
 ### 12.4.2 保守场与曲线积分基本定理
 
+> [!tip: 引入问题：做功何时与路径无关？]
+>
+> 对于同一起点 $A$、终点 $B$，力场 $\mathbf{F}$ 沿不同路径所做的功是否相同？引力场是**保守的**——无论绕多远，做功只取决于位移；摩擦力是**非保守的**——路径越长，克服摩擦做的负功越大。决定这一区别的关键是什么？
+
+> [!important: 定义：保守场与势函数]
+>
+> 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}$ 在区域 $D$ 上连续。若存在可微函数 $f(x,y)$，使得
+>
+> $$\mathbf{F} = \nabla f = \frac{\partial f}{\partial x}\hat{\mathbf{i}}+\frac{\partial f}{\partial y}\hat{\mathbf{j}},$$
+>
+> 则称 $\mathbf{F}$ 为 $D$ 上的**保守场**（conservative field，亦称**梯度场**），$f$ 称为 $\mathbf{F}$ 的**势函数**（potential function）。
+
+> [!important: 曲线积分基本定理]
+>
+> 若 $\mathbf{F}=\nabla f$ 在包含有向曲线 $L$ 的区域上连续可微，$L$ 从点 $A$ 到点 $B$，则
+>
+> $$\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} = f(B) - f(A).$$
+>
+> **证明**：设 $L$：$\mathbf{r}(t)=(x(t),y(t))$，$t\in[t_0,t_1]$，$\mathbf{r}(t_0)=A$，$\mathbf{r}(t_1)=B$，则
+>
+> $$\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} = \int_{t_0}^{t_1}\!\!\left(\frac{\partial f}{\partial x}x'(t)+\frac{\partial f}{\partial y}y'(t)\right)\mathrm{d}t = \int_{t_0}^{t_1}\frac{\mathrm{d}}{\mathrm{d}t}f(x(t),y(t))\,\mathrm{d}t = f(B)-f(A). \quad\blacksquare$$
+
+这是一元微积分基本定理 $\int_a^b f'(x)\,\mathrm{d}x=f(b)-f(a)$ 的直接推广：**"对梯度的曲线积分只取决于边界"**。
+
+> [!important: 保守场的等价条件]
+>
+> 在**单连通区域** $D$（无"洞"的区域）上，以下四个条件等价：
+>
+> 1. $\mathbf{F}$ 是保守场（存在势函数 $f$）；
+> 2. 曲线积分与路径无关：对 $D$ 中任意 $A,B$，积分值与连接 $A,B$ 的路径无关；
+> 3. 对 $D$ 内任意封闭曲线 $C$，$\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}=0$；
+> 4. $\operatorname{curl}\mathbf{F} = \dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y} = 0$。
+>
+> **条件 4 的必要性**：若 $f$ 存在，则 $P=f_x,\,Q=f_y$，由混合偏导连续性得 $P_y=f_{xy}=f_{yx}=Q_x$，即 $\operatorname{curl}\mathbf{F}=0$。
+>
+> **注**：条件 4 的充分性依赖单连通性。在非单连通区域（如去掉原点的平面 $\mathbb{R}^2\setminus\{(0,0)\}$）中，$\operatorname{curl}\mathbf{F}=0$ 不能保证 $\mathbf{F}$ 是保守场（经典反例：$\mathbf{F}=\dfrac{(-y,\,x)}{x^2+y^2}$）。
+
+**求势函数的方法**：已知 $\mathbf{F}=(P,Q)$ 满足 $\operatorname{curl}\mathbf{F}=0$，求 $f(x,y)$。
+
+对 $x$ 积分：$f(x,y)=\displaystyle\int P(x,y)\,\mathrm{d}x + g(y)$，其中 $g(y)$ 为待定函数。再由 $f_y=Q$ 确定 $g'(y)$，积分得 $g(y)$。
+
+> [!note: 例题]
+>
+> 验证 $\mathbf{F}=(2xy+1,\,x^2-1)$ 是保守场，并求满足 $f(0,0)=0$ 的势函数 $f$。
+>
+> **解**：$P_y=2x=Q_x$，故 $\operatorname{curl}\mathbf{F}=0$，$\mathbf{F}$ 是保守场。
+>
+> 对 $x$ 积分：$f=\int(2xy+1)\,\mathrm{d}x+g(y)=x^2y+x+g(y)$。
+>
+> 由 $f_y=x^2+g'(y)=x^2-1$，得 $g'(y)=-1$，故 $g(y)=-y+c$。
+>
+> 代入 $f(0,0)=0$：$c=0$，从而 $f(x,y)=x^2y+x-y$。
+
+::: {.exercise id="chpt12-ex-009"}
+:::
+
 ## 12.5 曲面积分
 
 ## 12.6 高斯公式与斯托克斯公式
