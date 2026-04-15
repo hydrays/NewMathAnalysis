@@ -65,19 +65,25 @@ $$
 >
 > 将 $L$ 分成 $N$ 小段，第 $i$ 段的弧长为 $\Delta s_i$，取该段上任一点 $(x_i, y_i)$，则该段质量约为 $\rho(x_i, y_i)\,\Delta s_i$。对所有小段求和并令 $N\to\infty$，即得细线总质量：
 >
-> $$M = \lim_{N\to\infty}\sum_{i=1}^{N}\rho(x_i,y_i)\,\Delta s_i.$$
+> $$M = \lim_{\lambda\to 0}\sum_{i=1}^{N}\rho(x_i,y_i)\,\Delta s_i,$$
+>
+> 其中 $\lambda = \max_i \Delta s_i$ 为最大小段弧长。
 
 这个极限就是**第一类曲线积分**（或**弧长曲线积分**）的定义。
 
 > [!important: 定义：第一类曲线积分]
 >
-> 设 $f(x,y)$ 在曲线 $L$ 上连续，将 $L$ 划分为 $N$ 段弧，第 $i$ 段弧长为 $\Delta s_i$，取该段上任一点 $(x_i,y_i)$。若极限
+> 设 $f(x,y)$ 在曲线 $L$ 上连续。将 $L$ 划分为 $N$ 段弧，第 $i$ 段弧长为 $\Delta s_i$，在该段上取任一点 $(x_i,y_i)$，令 $\lambda = \max_i \Delta s_i$。若极限
 >
-> $$\int_L f(x,y)\,\mathrm{d}s \;=\; \lim_{N\to\infty}\sum_{i=1}^{N}f(x_i,y_i)\,\Delta s_i$$
+> $$\lim_{\lambda\to 0}\sum_{i=1}^{N}f(x_i,y_i)\,\Delta s_i$$
 >
-> 存在且与划分方式及取点无关，则称此极限为 $f$ 沿 $L$ 的**第一类曲线积分**，$\mathrm{d}s$ 称为**弧长微元**。
+> 存在且与划分方式及取点无关，则称该极限为 $f$ 沿 $L$ 的**第一类曲线积分**，记作
+>
+> $$\int_L f(x,y)\,\mathrm{d}s = \lim_{\lambda\to 0}\sum_{i=1}^{N}f(x_i,y_i)\,\Delta s_i,$$
+>
+> $\mathrm{d}s$ 称为**弧长微元**。
 
-**计算方法（参数化化简）**：若 $L$ 由参数方程 $x=x(t),\,y=y(t),\,t\in[t_0,t_1]$ 给出，$x'(t),y'(t)$ 在 $[t_0,t_1]$ 上连续且 $x'^2+y'^2\neq 0$，则弧长微元为
+**计算方法（参数化化简）**：若 $L$ 由参数方程 $x=x(t),\,y=y(t),\,t\in[t_0,t_1]$ 给出，$t_0 < t_1$，$x'(t),y'(t)$ 在 $[t_0,t_1]$ 上连续，且对所有 $t\in[t_0,t_1]$ 均有 $[x'(t)]^2+[y'(t)]^2\neq 0$，则弧长微元为
 
 $$\mathrm{d}s = \sqrt{[x'(t)]^2+[y'(t)]^2}\,\mathrm{d}t,$$
 
@@ -85,14 +91,22 @@ $$\mathrm{d}s = \sqrt{[x'(t)]^2+[y'(t)]^2}\,\mathrm{d}t,$$
 
 $$\int_L f(x,y)\,\mathrm{d}s = \int_{t_0}^{t_1}f\bigl(x(t),y(t)\bigr)\sqrt{[x'(t)]^2+[y'(t)]^2}\,\mathrm{d}t.$$
 
-> [!note]
+> [!note: 推广到空间曲线]
+>
+> 对空间曲线 $L$：$x=x(t),\,y=y(t),\,z=z(t),\,t\in[t_0,t_1]$，弧长微元为
+>
+> $$\mathrm{d}s = \sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2}\,\mathrm{d}t,$$
+>
+> 积分公式形式相同：$\displaystyle\int_L f(x,y,z)\,\mathrm{d}s = \int_{t_0}^{t_1}f(x(t),y(t),z(t))\sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2}\,\mathrm{d}t$。
+
+> [!note: 基本性质]
 >
 > 第一类曲线积分有两个重要性质：
 >
 > 1. **与方向无关**：将 $L$ 反向，$\mathrm{d}s$ 始终为正，积分值不变。
 > 2. **对路径可加**：$\int_{L_1+L_2}f\,\mathrm{d}s = \int_{L_1}f\,\mathrm{d}s + \int_{L_2}f\,\mathrm{d}s$。
 
-> [!tip: 例题]
+> [!note: 例题]
 >
 > 计算 $\displaystyle\int_L(x^2+y^2)\,\mathrm{d}s$，其中 $L$ 为圆 $x=\cos t,\,y=\sin t,\,t\in[0,2\pi]$。
 >
