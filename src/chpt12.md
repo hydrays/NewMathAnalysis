@@ -13,7 +13,7 @@
 > 设 $D \subset \mathbb{R}^n$ 为一区域。
 >
 > - **标量场（scalar field）**：$D$ 上的实值函数 $f: D \to \mathbb{R}$，每个点对应一个数。例：温度场、密度场、电势场。
-> - **向量场（vector field）**：$D$ 上的向量值函数 $\mathbf{F}: D \to \mathbb{R}^n$，每个点对应一个向量。例：引力场、流速场、电场。
+> - **向量场（vector field）**：$D$ 上的向量值函数 $\mathbf{F}: D \to \mathbb{R}^n$，每个点对应一个向量。例：引力场、流速场、电（力）场。
 
 向量场的**分量形式**：
 
@@ -27,7 +27,7 @@ $$
 
 其中 $P, Q, R$ 是普通的多元函数，分别表示向量在 $x, y, z$ 方向的分量。
 
-> [!important: 几个二维向量场的例子]
+> [!note: 几个二维向量场的例子]
 >
 > ==例 1==　$\mathbf{F}(x,y) = 2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}$　— 均匀场，每处方向和大小相同。
 >
