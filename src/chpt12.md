@@ -190,6 +190,68 @@ $$\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y = \int_{t_1}^{t_2}\bigl[P(x(t),y(t))\,x'(
 
 ### 12.4.1 格林公式
 
+> [!tip: 引入问题：边界环量与内部旋转]
+>
+> 流体在平面区域 $D$ 内流动，速度场为 $\mathbf{F}=(P,Q)$。沿 $D$ 的边界 $C$（逆时针方向）一圈的环量 $\displaystyle\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 是否能用 $D$ 内部每一点的"局部旋转"信息来计算？
+
+为刻画向量场在一点的旋转倾向，引入**旋度**：
+
+> [!important: 定义：二维旋度]
+>
+> 设 $\mathbf{F}=(P,Q)$ 在区域 $D$ 上有连续偏导数，称
+>
+> $$\operatorname{curl}\mathbf{F} = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$$
+>
+> 为 $\mathbf{F}$ 的**旋度**（二维）。$\operatorname{curl}\mathbf{F}>0$ 表示该点邻域内流体逆时针旋转，$<0$ 表示顺时针旋转，$=0$ 表示无旋。
+
+格林公式将区域内所有点的旋度"积累"起来，得到边界上的环量：
+
+> [!important: 格林公式]
+>
+> 设 $D$ 为平面上由分段光滑曲线围成的有界闭区域，$P(x,y)$ 和 $Q(x,y)$ 在 $D$ 上有一阶连续偏导数，$C = \partial D^+$ 表示 $D$ 的正向（逆时针）边界，则
+>
+> $$\oint_{C} P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}A.$$
+
+> [!extension: 证明]
+>
+> 只需分别证明：
+>
+> $$\oint_C P\,\mathrm{d}x = -\iint_D P_y\,\mathrm{d}A, \qquad \oint_C Q\,\mathrm{d}y = \iint_D Q_x\,\mathrm{d}A. \tag{$*$}$$
+>
+> 两式对称，只证第一式。
+>
+> **第一步：竖直简单区域。** 设 $D$：$a\leq x\leq b$，$f_1(x)\leq y\leq f_2(x)$，正向边界由底弧 $C_1$（$y=f_1$，从左到右）、顶弧 $C_3$（$y=f_2$，从右到左）及两侧竖直边（若有）组成。在竖直边上 $\mathrm{d}x=0$，故其贡献为零。
+>
+> $$\oint_C P\,\mathrm{d}x = \int_a^b P(x,f_1(x))\,\mathrm{d}x - \int_a^b P(x,f_2(x))\,\mathrm{d}x = -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.$$
+>
+> 另一方面，由单变量 FTC 对 $y$ 积分：
+>
+> $$-\iint_D P_y\,\mathrm{d}A = -\int_a^b\int_{f_1(x)}^{f_2(x)}\frac{\partial P}{\partial y}\,\mathrm{d}y\,\mathrm{d}x = -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.$$
+>
+> 两式相等，第一式对竖直简单区域得证。
+>
+> **第二步：一般区域。** 将 $D$ 用一条竖直线段分成两个竖直简单子区域 $D_1, D_2$，对每个子区域应用第一步。内部公共边界的贡献方向相反而相消：$\int_\ell P\,\mathrm{d}x + \int_{-\ell} P\,\mathrm{d}x = 0$。两部分相加即得 $D$ 上的结论。对 $(*)$ 的第二式类似处理，两式相加即得格林公式。$\blacksquare$
+
+> [!note: 应用：用边界曲线计算面积]
+>
+> 取 $P=-y,\,Q=x$，则 $Q_x-P_y=1+1=2$，格林公式给出
+>
+> $$A = \iint_D\mathrm{d}A = \frac{1}{2}\oint_C x\,\mathrm{d}y - y\,\mathrm{d}x.$$
+>
+> 这是仅用边界曲线参数方程就能计算区域面积的公式。
+
+::: {.exercise id="chpt12-ex-010"}
+:::
+
+::: {.exercise id="chpt12-ex-011"}
+:::
+
+::: {.exercise id="chpt12-ex-012"}
+:::
+
+::: {.exercise id="chpt12-ex-013"}
+:::
+
 ### 12.4.2 保守场与曲线积分基本定理
 
 ## 12.5 曲面积分
