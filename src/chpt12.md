@@ -420,4 +420,56 @@ $$\iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S} = \iint_{D_{xy}}\bigl(-P\,g_x - Q\,
 
 ### 12.6.2 斯托克斯公式
 
+三维空间中的曲线积分是二维情形的自然推广：
+
+$$\int_C\mathbf{F}\cdot\mathrm{d}\mathbf{r} = \int_C P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z,$$
+
+其中 $\mathrm{d}\mathbf{r}=(\mathrm{d}x,\mathrm{d}y,\mathrm{d}z)$，计算方法与二维相同（参数化代入）。
+
+> [!tip: 引入问题：三维中的环量与旋转]
+>
+> 三维向量场 $\mathbf{F}$ 沿封闭曲线 $C$ 的环量 $\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 与 $C$ 所围曲面 $S$ 上的"旋转强度"有何关系？这是格林公式在三维的推广：格林公式中的平面区域推广为任意曲面。
+
+> [!important: 定义：三维旋度]
+>
+> 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 有连续偏导数，定义 $\mathbf{F}$ 的**旋度**（三维）为
+>
+> $$\operatorname{curl}\mathbf{F} = \nabla\times\mathbf{F} = \begin{vmatrix}\hat{\mathbf{i}}&\hat{\mathbf{j}}&\hat{\mathbf{k}}\\\partial_x&\partial_y&\partial_z\\P&Q&R\end{vmatrix} = (R_y-Q_z)\hat{\mathbf{i}}+(P_z-R_x)\hat{\mathbf{j}}+(Q_x-P_y)\hat{\mathbf{k}}.$$
+
+> [!note: 二维旋度是三维旋度的分量]
+>
+> 对平面向量场 $\mathbf{F}=(P,Q,0)$，三维旋度为 $(0,\,0,\,Q_x-P_y)$，其 $\hat{\mathbf{k}}$-分量恰是二维旋度 $Q_x-P_y$。三维旋度是二维旋度的自然推广。
+
+> [!important: 斯托克斯公式]
+>
+> 设 $S$ 为分片光滑的有向曲面，其边界 $\partial S$ 为分段光滑的有向封闭曲线（方向由右手法则与 $S$ 的法向量相符），$\mathbf{F}$ 在含 $S$ 的区域上有连续偏导数，则
+>
+> $$\oint_{\partial S}\mathbf{F}\cdot\mathrm{d}\mathbf{r} = \iint_S(\nabla\times\mathbf{F})\cdot\mathbf{n}\,\mathrm{d}S.$$
+
+> [!extension: 证明思路]
+>
+> 将 $S$ 用参数方程 $\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v))$，$(u,v)\in R$ 参数化。用链式法则将 $\oint_{\partial S} P\,\mathrm{d}x$ 转化为参数域 $R$ 的边界上的积分 $\oint_{\partial R}(\cdots)\,\mathrm{d}u+(\cdots)\,\mathrm{d}v$，再对 $R$ 应用格林公式展开，所得表达式恰与右端 $\iint_S (R_y-Q_z,P_z-R_x,Q_x-P_y)\cdot\mathbf{n}\,\mathrm{d}S$ 中的对应项相等。对 $P,Q,R$ 三项逐一处理后相加，即得斯托克斯公式。$\blacksquare$
+
+> [!important: 三维保守场的判定]
+>
+> 在单连通空间区域 $D$ 上，以下条件等价：
+>
+> 1. $\mathbf{F}=\nabla f$（存在势函数）；
+> 2. $\operatorname{curl}\mathbf{F}=\mathbf{0}$，即 $R_y=Q_z,\;P_z=R_x,\;Q_x=P_y$；
+> 3. 对 $D$ 内任意封闭曲线 $C$，$\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}=0$。
+>
+> 势函数的求法与二维相同：依次对 $x,y,z$ 积分，逐步确定待定函数。
+
+::: {.exercise id="chpt12-ex-021"}
+:::
+
+::: {.exercise id="chpt12-ex-022"}
+:::
+
+::: {.exercise id="chpt12-ex-019"}
+:::
+
+::: {.exercise id="chpt12-ex-020"}
+:::
+
 ## 12.7 统一视角：广义牛顿-莱布尼茨公式
