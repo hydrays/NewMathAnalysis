@@ -122,6 +122,70 @@ $$\int_L f(x,y)\,\mathrm{d}s = \int_{t_0}^{t_1}f\bigl(x(t),y(t)\bigr)\sqrt{[x'(t
 
 ## 12.3 第二类曲线积分
 
+> [!tip: 引入问题：力沿路径做的功]
+>
+> 质点在向量场 $\mathbf{F}(x,y) = P(x,y)\hat{\mathbf{i}}+Q(x,y)\hat{\mathbf{j}}$ 的作用下沿有向曲线 $L$ 运动。如何计算场对质点所做的总功？
+>
+> 将路径分为 $N$ 小段，第 $i$ 段的位移向量为 $\Delta\mathbf{r}_i = (\Delta x_i, \Delta y_i)^T$，该段上的力约为 $\mathbf{F}(x_i,y_i)$。做功约为 $\mathbf{F}(x_i,y_i)\cdot\Delta\mathbf{r}_i = P_i\Delta x_i + Q_i\Delta y_i$。令 $\lambda = \max_i|\Delta\mathbf{r}_i|$ 并取极限：
+>
+> $$W = \lim_{\lambda\to 0}\sum_{i=1}^{N}\bigl(P(x_i,y_i)\Delta x_i + Q(x_i,y_i)\Delta y_i\bigr).$$
+
+> [!important: 定义：第二类曲线积分]
+>
+> 设向量场 $\mathbf{F}(x,y)=P(x,y)\hat{\mathbf{i}}+Q(x,y)\hat{\mathbf{j}}$ 在有向曲线 $L$ 上连续。若上述极限存在且与划分及取点无关，则称该极限为 $\mathbf{F}$ 沿 $L$ 的**第二类曲线积分**（或**向量场曲线积分**），记作
+>
+> $$\int_L \mathbf{F}\cdot\mathrm{d}\mathbf{r} = \int_L P(x,y)\,\mathrm{d}x + Q(x,y)\,\mathrm{d}y,$$
+>
+> 其中 $\mathrm{d}\mathbf{r} = \mathrm{d}x\,\hat{\mathbf{i}}+\mathrm{d}y\,\hat{\mathbf{j}}$ 为**有向弧元**。
+
+> [!important: 方向性]
+>
+> 第二类曲线积分与曲线的**方向**有关：若 $-L$ 表示 $L$ 的反向，则
+>
+> $$\int_{-L}\mathbf{F}\cdot\mathrm{d}\mathbf{r} = -\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r}.$$
+>
+> 物理直觉：逆着力的方向运动，场做负功。这与第一类积分不同（第一类积分的弧长 $\mathrm{d}s > 0$ 与方向无关）。
+
+**计算方法（参数化化简）**：若 $L$：$x=x(t),\,y=y(t)$，$t$ 从 $t_1$ 到 $t_2$（$t_1$ 对应起点，$t_2$ 对应终点），则 $\mathrm{d}x=x'(t)\,\mathrm{d}t,\,\mathrm{d}y=y'(t)\,\mathrm{d}t$，故
+
+$$\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y = \int_{t_1}^{t_2}\bigl[P(x(t),y(t))\,x'(t)+Q(x(t),y(t))\,y'(t)\bigr]\mathrm{d}t.$$
+
+注意：$t_1$ 到 $t_2$ 的积分方向与曲线的定向一致；若反向，则交换 $t_1, t_2$，积分变号。
+
+> [!note: 两类曲线积分的联系]
+>
+> 设 $\boldsymbol{\tau}$ 为 $L$ 的单位切向量（与定向一致），则 $\mathrm{d}\mathbf{r} = \boldsymbol{\tau}\,\mathrm{d}s$，从而
+>
+> $$\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} = \int_L\mathbf{F}\cdot\boldsymbol{\tau}\,\mathrm{d}s.$$
+>
+> 即第二类曲线积分是以 $\mathbf{F}\cdot\boldsymbol{\tau}$（场沿切向的分量）为被积函数的第一类积分。两类积分本质上是同一件事：前者强调向量的分量，后者强调弧长方向。
+
+> [!note: 例题]
+>
+> 计算 $\displaystyle\int_L y\,\mathrm{d}x - x\,\mathrm{d}y$，其中 $L$ 为从 $(1,0)$ 到 $(-1,0)$ 的上半圆 $x=\cos t,\,y=\sin t,\,t\in[0,\pi]$。
+>
+> **解**：$\mathrm{d}x=-\sin t\,\mathrm{d}t,\,\mathrm{d}y=\cos t\,\mathrm{d}t$，代入：
+>
+> $$\int_L y\,\mathrm{d}x-x\,\mathrm{d}y = \int_0^{\pi}\bigl(\sin t\cdot(-\sin t)-\cos t\cdot\cos t\bigr)\mathrm{d}t = \int_0^{\pi}(-1)\,\mathrm{d}t = -\pi.$$
+
+::: {.exercise id="chpt12-ex-003"}
+:::
+
+::: {.exercise id="chpt12-ex-004"}
+:::
+
+::: {.exercise id="chpt12-ex-005"}
+:::
+
+::: {.exercise id="chpt12-ex-006"}
+:::
+
+::: {.exercise id="chpt12-ex-007"}
+:::
+
+::: {.exercise id="chpt12-ex-008"}
+:::
+
 ## 12.4 格林公式与保守场
 
 ### 12.4.1 格林公式
