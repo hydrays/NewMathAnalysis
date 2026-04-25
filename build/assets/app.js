@@ -10,13 +10,14 @@
 
   function renderMath(root) {
     root = root || document;
-    var mathElements = root.getElementsByClassName("math");
+    // querySelectorAll returns a static list — safe to iterate while KaTeX mutates spans
+    var mathElements = root.querySelectorAll("span.math");
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var el = mathElements[i];
-      if (el.tagName !== "SPAN") continue;
       var texText = el.firstChild;
-      if (!texText) continue;
+      // nodeType 3 = Text node; skip spans already rendered by KaTeX
+      if (!texText || texText.nodeType !== 3) continue;
       try {
         katex.render(texText.data, el, {
           displayMode: el.classList.contains("display"),
@@ -114,6 +115,15 @@
           setTimeout(function () { a.scrollIntoView({ block: "nearest" }); }, 0);
         });
 
+        // Re-execute scripts from new content (innerHTML does not run scripts)
+        Array.from(newContent.querySelectorAll("script")).forEach(function (s) {
+          if ((s.getAttribute("type") || "") === "importmap") return;
+          var el = document.createElement("script");
+          Array.from(s.attributes).forEach(function (a) { el.setAttribute(a.name, a.value); });
+          if (!s.getAttribute("src")) el.textContent = s.textContent;
+          document.body.appendChild(el);
+        });
+
         // Disconnect previous scroll observer before creating a new one
         if (tocHighlightObserver) {
           tocHighlightObserver.disconnect();
@@ -134,10 +144,13 @@
       });
   }
 
-  // Handle browser back / forward
+  // Handle browser back / forward.
+  // Only act on history entries we created via pushState({ url: ... }).
+  // Hash-link navigations have e.state === null — ignore them to prevent
+  // TOC section clicks from re-navigating and collapsing the accordion.
   window.addEventListener("popstate", function (e) {
-    var url = (e.state && e.state.url) || location.href;
-    navigate(url);
+    if (!e.state || !e.state.url) return;
+    navigate(e.state.url);
   });
 
   // ── Chapter navigation ───────────────────────────────────────
@@ -177,21 +190,21 @@
           if (divider) divider.style.display = "none";
         }
 
-        // Toggle chapter TOC on click
-        a.addEventListener("click", function (e) {
+        // Toggle chapter TOC on click — use onclick so navigate() can replace it
+        a.onclick = function (e) {
           e.preventDefault();
           li.classList.toggle("open");
-        });
+        };
 
         setTimeout(function () {
           a.scrollIntoView({ block: "nearest" });
         }, 0);
       } else {
-        // SPA navigation for other chapters
-        a.addEventListener("click", function (e) {
+        // SPA navigation for other chapters — use onclick so it can be replaced after nav
+        a.onclick = function (e) {
           e.preventDefault();
           navigate(item.url);
-        });
+        };
       }
 
       li.insertBefore(a, li.firstChild);
@@ -283,75 +296,104 @@
   function initTocAccordion() {
     var chapterToc = document.querySelector("ul.chapter-toc");
     if (!chapterToc) return;
+    var mainEl = document.getElementById("main");
 
     chapterToc.querySelectorAll("li").forEach(function (li) {
+      var link = null;
       var childUl = null;
       for (var i = 0; i < li.children.length; i++) {
-        if (li.children[i].tagName === "UL") { childUl = li.children[i]; break; }
-      }
-      if (!childUl) return;
-
-      li.classList.add("has-children");
-
-      var link = null;
-      for (var i = 0; i < li.children.length; i++) {
-        if (li.children[i].tagName === "A") { link = li.children[i]; break; }
+        if (li.children[i].tagName === "A")  link   = li.children[i];
+        if (li.children[i].tagName === "UL") childUl = li.children[i];
       }
       if (!link) return;
 
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        li.classList.toggle("open");
-      });
+      if (childUl) {
+        // Section with sub-items: toggle open/close
+        li.classList.add("has-children");
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          li.classList.toggle("open");
+        });
+      } else {
+        // Leaf section: scroll #main to the target heading
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          var id = (link.getAttribute("href") || "").replace(/^#/, "");
+          if (!id) return;
+          var target = document.getElementById(id);
+          if (!target || !mainEl) return;
+          var offset = target.getBoundingClientRect().top + mainEl.scrollTop - 56;
+          mainEl.scrollTo({ top: offset, behavior: "smooth" });
+        });
+      }
     });
   }
 
   // ── Video panel ──────────────────────────────────────────────
 
-  function initVideo() {
-    var url = (window.videoUrl || "").trim();
-    if (!url) return;
+  var activeVideoOwner = null;
 
-    var panel    = document.getElementById("video-panel");
-    var frame    = document.getElementById("video-frame");
-    var closeBtn = document.getElementById("video-close-btn");
-    var mainEl   = document.getElementById("main");
+  function closeVideoPanel() {
+    var panel = document.getElementById("video-panel");
+    if (panel) panel.style.display = "none";
+    if (activeVideoOwner) activeVideoOwner.classList.remove("is-active");
+    activeVideoOwner = null;
+  }
+
+  function openVideoPanelFor(btn) {
+    var panel = document.getElementById("video-panel");
+    var frame = document.getElementById("video-frame");
+    var mainEl = document.getElementById("main");
     if (!panel || !frame) return;
 
+    var url = btn.getAttribute("data-video-url") || "";
+    if (!url) return;
+
+    var callout = btn.closest(".callout");
+    var header = callout ? callout.querySelector(".callout-header") : null;
+    if (!header) return;
+
+    header.insertAdjacentElement("afterend", panel);
     frame.src = url;
-    panel.style.display = "none";
+    panel.style.display = "block";
+    frame.style.height = Math.round(panel.offsetWidth * 9 / 16) + "px";
 
-    var activeOwner = null;
+    if (activeVideoOwner && activeVideoOwner !== btn) {
+      activeVideoOwner.classList.remove("is-active");
+    }
+    activeVideoOwner = btn;
+    btn.classList.add("is-active");
 
-    function openAfter(owner) {
-      owner.insertAdjacentElement("afterend", panel);
-      panel.style.display = "block";
-      frame.style.height = Math.round(panel.offsetWidth * 9 / 16) + "px";
-      activeOwner = owner;
-      var top = panel.getBoundingClientRect().top + mainEl.scrollTop - 56;
+    if (mainEl) {
+      var top = header.getBoundingClientRect().top + mainEl.scrollTop - 56;
       mainEl.scrollTo({ top: top, behavior: "smooth" });
     }
-
-    function closePanel() {
-      panel.style.display = "none";
-      activeOwner = null;
-    }
-
-    if (closeBtn) closeBtn.onclick = closePanel;
-    var closeBottom = document.getElementById("video-close-bottom");
-    if (closeBottom) closeBottom.onclick = closePanel;
-
-    document.querySelectorAll(".callout.callout-tip").forEach(function (tip) {
-      var trigger = document.createElement("button");
-      trigger.className = "video-inline-btn";
-      trigger.innerHTML = "&#9654; 观看视频";
-      trigger.onclick = function () {
-        if (activeOwner === trigger) { closePanel(); }
-        else { openAfter(trigger); }
-      };
-      tip.insertAdjacentElement("afterend", trigger);
-    });
   }
+
+  function initVideo() {
+    // Reset panel on page load / after SPA swap — previous owner is gone.
+    var panel = document.getElementById("video-panel");
+    var frame = document.getElementById("video-frame");
+    if (panel) panel.style.display = "none";
+    if (frame) frame.src = "";
+    activeVideoOwner = null;
+
+    var closeBtn = document.getElementById("video-close-btn");
+    if (closeBtn) closeBtn.onclick = closeVideoPanel;
+    var closeBottom = document.getElementById("video-close-bottom");
+    if (closeBottom) closeBottom.onclick = closeVideoPanel;
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".callout-video-btn");
+    if (!btn) return;
+    e.preventDefault();
+    if (activeVideoOwner === btn) {
+      closeVideoPanel();
+    } else {
+      openVideoPanelFor(btn);
+    }
+  });
 
   // ── Init ─────────────────────────────────────────────────────
 
@@ -362,7 +404,7 @@
     tocHighlightObserver = initTocHighlight();
     buildFigureCaptions();
     initVideo();
-    // Math already rendered by inline <script> in template on first load
+    renderMath(document);
   }
 
   if (document.readyState === "loading") {
@@ -371,33 +413,66 @@
     init();
   }
 
-  // ── Exercise show/hide ───────────────────────────────────────
-  // Handles .ex-solution-toggle and .ex-reveal-btn buttons.
-  // Uses event delegation on document so it works after SPA navigation.
+  // ── Exercise interactions ────────────────────────────────────
+  // .ex-action-btn  — reveals content in the exercise's shared frame
+  // .ex-sol-toggle  — toggles the extra buttons for solution 2+
 
-  function handleExerciseClick(e) {
-    var btn = e.target.closest(".ex-solution-toggle, .ex-reveal-btn");
-    if (!btn) return;
-    var targetId = btn.getAttribute("data-target");
-    if (!targetId) return;
-    var panel = document.getElementById(targetId);
-    if (!panel) return;
-    var hidden = panel.hasAttribute("hidden");
-    if (hidden) {
-      panel.removeAttribute("hidden");
-      // Rotate arrow on solution toggles
-      if (btn.classList.contains("ex-solution-toggle")) {
-        btn.textContent = btn.textContent.replace("▼", "▲");
+  document.addEventListener("click", function (e) {
+    // Action buttons (提示 / 答案): show content in the shared frame
+    var actionBtn = e.target.closest(".ex-action-btn");
+    if (actionBtn) {
+      var frameId  = actionBtn.getAttribute("data-frame");
+      var panelId  = actionBtn.getAttribute("data-panel");
+      if (!frameId || !panelId) return;
+      var frame = document.getElementById(frameId);
+      if (!frame) return;
+
+      var target = document.getElementById(panelId);
+      if (!target) return;
+
+      // Capture toggle state before we change anything
+      var isSameBtn = !frame.hasAttribute("hidden") && actionBtn.classList.contains("active");
+
+      // Hide all panels in this frame
+      var allPanels = frame.querySelectorAll(".ex-panel");
+      allPanels.forEach(function (p) { p.setAttribute("hidden", ""); });
+
+      // Deactivate all action buttons in the same exercise block
+      var block = frame.closest(".exercise-block");
+      if (block) {
+        block.querySelectorAll(".ex-action-btn").forEach(function (b) {
+          b.classList.remove("active");
+        });
       }
-      // Re-render any math inside newly revealed content
-      if (typeof renderMath === "function") renderMath(panel);
-    } else {
-      panel.setAttribute("hidden", "");
-      if (btn.classList.contains("ex-solution-toggle")) {
-        btn.textContent = btn.textContent.replace("▲", "▼");
+
+      // Toggle: same button clicked again → collapse
+      if (isSameBtn) {
+        frame.setAttribute("hidden", "");
+        return;
+      }
+
+      // Show the target panel and frame
+      target.removeAttribute("hidden");
+      frame.removeAttribute("hidden");
+      actionBtn.classList.add("active");
+      renderMath(target);
+      return;
+    }
+
+    // Solution toggles (解法二 ▼): show/hide extra buttons inline
+    var solToggle = e.target.closest(".ex-sol-toggle");
+    if (solToggle) {
+      var extraId = solToggle.getAttribute("data-target");
+      if (!extraId) return;
+      var extra = document.getElementById(extraId);
+      if (!extra) return;
+      if (extra.hasAttribute("hidden")) {
+        extra.removeAttribute("hidden");
+        solToggle.textContent = solToggle.textContent.replace("▼", "▲");
+      } else {
+        extra.setAttribute("hidden", "");
+        solToggle.textContent = solToggle.textContent.replace("▲", "▼");
       }
     }
-  }
-
-  document.addEventListener("click", handleExerciseClick);
+  });
 })();

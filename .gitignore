@@ -210,3 +210,7 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Android Studio / Gradle build artifacts (the source for the Android wrapper
+# lives under android/ but build outputs and IDE state should not be tracked).
+android/

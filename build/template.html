@@ -10,10 +10,24 @@
   $if(og-description)$<meta property="og:description" content="$og-description$">$endif$
   $if(og-image)$<meta property="og:image" content="$og-image$">$endif$
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/vlook-thinking.css">
+  <link rel="stylesheet" href="assets/chapter.css">
   <link rel="stylesheet" href="assets/app.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script type="importmap">
+  {"imports":{"three":"./assets/three.module.js","three/addons/":"./assets/three-addons/"}}
+  </script>
+  <!-- Preload three.js and the addons our scenes use, so they parse in
+       parallel with the page and the lazy-imported scene modules don't
+       have to wait for the 1.3 MB core to arrive. -->
+  <link rel="modulepreload" href="assets/three.module.js">
+  <link rel="modulepreload" href="assets/three-addons/controls/OrbitControls.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/Line2.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineGeometry.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineMaterial.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineSegments2.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineSegmentsGeometry.js">
+  <link rel="modulepreload" href="assets/three-addons/renderers/CSS2DRenderer.js">
 </head>
 <body>
   <div id="sidebar">
@@ -48,8 +62,8 @@
   <script>
     window.docLib = $doc_lib_json$;
     window.chpAutonum = "$chp_autonum$";
-    window.videoUrl = "$if(video_url)$$video_url$$endif$";
   </script>
   <script src="assets/app.js"></script>
+  <script src="assets/three-lazy.js"></script>
 </body>
 </html>

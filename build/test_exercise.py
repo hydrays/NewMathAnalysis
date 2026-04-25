@@ -51,8 +51,12 @@ def test_render_contains_key_elements():
     assert 'data-difficulty="medium"' in html
     assert "极限" in html
     assert "epsilon-delta" in html
-    assert "显示提示" in html
-    assert "显示答案" in html
+    assert "ex-hint-btn" in html
+    assert "ex-ans-btn" in html
+    assert "提示" in html
+    assert "答案" in html
+    # single solution: no 解法一 label
+    assert "解法一" not in html
     # no video button when video is None
     assert "视频" not in html
 
@@ -78,5 +82,8 @@ $\\lim(3x-1) = 3 \\cdot 2 - 1 = 5$.
     ex = parse_exercise_file(sample2)
     assert len(ex["solutions"]) == 2
     html = render_exercise_html(ex)
+    # multiple solutions: 解法一 label appears
     assert "解法一" in html
+    # solution 2: toggle button present
     assert "解法二" in html
+    assert 'class="ex-sol-toggle"' in html

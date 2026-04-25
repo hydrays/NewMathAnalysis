@@ -34,12 +34,10 @@ THREEJS_SRC = ROOT / "media" / "threejs"
 THREEJS_DST = DOCS_DIR / "threejs"
 PLOTLY_SRC = ROOT / "media" / "plotly"
 PLOTLY_DST = DOCS_DIR / "plotly"
+MEDIA_SRC  = ROOT / "media"
+MEDIA_DST  = DOCS_DIR / "media"
 TEMPLATE   = BUILD_DIR / "template.html"
-LUA_FILTER = BUILD_DIR / "vlook.lua"
-
-# Source CSS from the VLOOK repo (sibling of NewMathAnalysis/)
-VLOOK_CSS_SRC = ROOT.parent / "VLOOK" / "released" / "themes" / "vlook-thinking.css"
-VLOOK_CSS_DST = ASSETS_DST / "vlook-thinking.css"
+LUA_FILTER = BUILD_DIR / "filters.lua"
 
 # Chapter source directory
 SRC_DIR  = ROOT / "src"
@@ -66,14 +64,10 @@ def copy_tree_if_changed(src_dir: Path, dst_dir: Path):
             copy_if_changed(src, dst_dir / src.relative_to(src_dir))
 
 def sync_assets():
-    """Copy assets, theme CSS, and external media helpers into docs/."""
+    """Copy build/assets/** and media/ into docs/, plus threejs/plotly aliases."""
     ASSETS_DST.mkdir(parents=True, exist_ok=True)
-    for src in ASSETS_SRC.iterdir():
-        copy_if_changed(src, ASSETS_DST / src.name)
-    if VLOOK_CSS_SRC.exists():
-        copy_if_changed(VLOOK_CSS_SRC, VLOOK_CSS_DST)
-    else:
-        print(f"  Warning: {VLOOK_CSS_SRC} not found — skipping theme CSS")
+    copy_tree_if_changed(ASSETS_SRC, ASSETS_DST)
+    copy_tree_if_changed(MEDIA_SRC, MEDIA_DST)
     copy_tree_if_changed(THREEJS_SRC, THREEJS_DST)
     copy_tree_if_changed(PLOTLY_SRC, PLOTLY_DST)
 
@@ -127,6 +121,17 @@ def preprocess(content: str) -> str:
 
     # _~Tag~_ — strip entirely (no output)
     content = re.sub(r"_~[^~\n]+~_", "", content)
+
+    # Normalize media paths: src/ lives one level above docs/, so legacy
+    # ../media/ refs broke on GitHub Pages. docs/media/ is now a real copy.
+    content = content.replace("../media/", "media/")
+
+    # Defer Three.js scene modules — three-lazy.js imports them on visibility.
+    content = re.sub(
+        r'<script\s+type="module"\s+src="(threejs/[^"]+)"\s*>\s*</script>',
+        r'<script data-lazy-module="\1"></script>',
+        content,
+    )
 
     return content
 
@@ -270,8 +275,6 @@ def build_chapter(md_path: Path):
     if isinstance(raw_autonum, str):
         chp_autonum = raw_autonum.strip()
 
-    video_url = str(meta.get("video_url", "")).strip()
-
     # Determine output filename
     stem = md_path.stem
     # Normalize chpt* → chapter* names
@@ -303,7 +306,6 @@ def build_chapter(md_path: Path):
             "--from", "markdown-mark+raw_html+smart+tex_math_dollars",
             "--variable", f"doc_lib_json={json.dumps(doc_lib)}",
             "--variable", f"chp_autonum={chp_autonum}",
-            "--variable", f"video_url={video_url}",
             "--highlight-style", "pygments",
         ]
         result = subprocess.run(cmd, capture_output=True, text=True)

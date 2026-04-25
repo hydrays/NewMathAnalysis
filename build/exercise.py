@@ -100,6 +100,7 @@ def parse_exercise_file(text: str) -> dict:
         "tags":       meta.get("tags") or [],
         "difficulty": str(meta.get("difficulty", "medium")),
         "video":      meta.get("video") or None,
+        "title":      str(meta.get("title", "")).strip() if meta.get("title") else "",
         "problem":    sections["problem"],
         "solutions":  sections["solutions"],
     }
@@ -123,65 +124,65 @@ def _tag_pill(tag: str) -> str:
     return f'<span class="ex-tag">{html.escape(tag)}</span>'
 
 
-def _solution_panel(sol: dict, idx: int, ex_id: str) -> str:
-    label = _SOLUTION_LABELS[idx] if idx < len(_SOLUTION_LABELS) else f"解法{idx+1}"
-    panel_id  = f"{ex_id}-sol-{idx}"
-    hint_id   = f"{ex_id}-hint-{idx}"
-    answer_id = f"{ex_id}-ans-{idx}"
-
-    hint_block = ""
+def _sol_buttons(ex_id: str, frame_id: str, sol: dict, idx: int) -> tuple:
+    """Return (buttons_html, panels_html) for one solution."""
+    buttons = ""
+    panels = ""
     if sol["hint"]:
-        hint_block = (
-            f'<button class="ex-reveal-btn" data-target="{hint_id}">显示提示</button>\n'
-            f'<div class="ex-collapsible" id="{hint_id}" hidden>{sol["hint"]}</div>\n'
-        )
-
-    answer_block = (
-        f'<button class="ex-reveal-btn" data-target="{answer_id}">显示答案</button>\n'
-        f'<div class="ex-collapsible" id="{answer_id}" hidden>{sol["answer"]}</div>\n'
-    )
-
-    return (
-        f'<button class="ex-solution-toggle" data-target="{panel_id}">{label} ▼</button>\n'
-        f'<div class="ex-solution-panel" id="{panel_id}" hidden>\n'
-        f'{hint_block}'
-        f'{answer_block}'
-        f'</div>\n'
-    )
+        hint_id = f"{ex_id}-hint-{idx}"
+        buttons += f'<button class="ex-action-btn ex-hint-btn" data-frame="{frame_id}" data-panel="{hint_id}">提示</button> '
+        panels  += f'<div class="ex-panel ex-hint-panel" id="{hint_id}" hidden>\n\n{sol["hint"]}\n\n</div>\n'
+    ans_id = f"{ex_id}-ans-{idx}"
+    buttons += f'<button class="ex-action-btn ex-ans-btn" data-frame="{frame_id}" data-panel="{ans_id}">答案</button>'
+    panels  += f'<div class="ex-panel ex-ans-panel" id="{ans_id}" hidden>\n\n{sol["answer"]}\n\n</div>\n'
+    return buttons, panels
 
 
-def render_exercise_html(ex: dict) -> str:
+def render_exercise_html(ex: dict, number: int = 0) -> str:
     ex_id = ex["id"]
     diff_class, diff_dot = _DIFFICULTY_DOT.get(
         ex["difficulty"], ("difficulty-medium", "🟡")
     )
-
+    frame_id  = f"{ex_id}-frame"
     tags_html = "".join(_tag_pill(t) for t in ex["tags"])
+    is_multi  = len(ex["solutions"]) > 1
+    base      = f"例{number}" if number else "练习"
+    title     = ex.get("title", "")
+    ex_label  = f"{base}: {title}" if title else base
+
+    controls = ""
+    panels   = ""
+
+    # All solutions rendered identically: label (when multi) + hint/answer buttons
+    for i, sol in enumerate(ex["solutions"]):
+        btns, pnls = _sol_buttons(ex_id, frame_id, sol, i)
+        if is_multi:
+            sol_label = _SOLUTION_LABELS[i] if i < len(_SOLUTION_LABELS) else f"解法{i+1}"
+            label_html = f'<span class="ex-sol-label">{sol_label}</span>\n'
+        else:
+            label_html = ""
+        controls += f'<div class="ex-sol-row">{label_html}<span class="ex-sol-btns">{btns}</span></div>\n'
+        panels   += pnls
 
     video_btn = ""
     if ex.get("video"):
         video_btn = (
-            f'<a class="ex-video-btn" href="{ex["video"]}" '
+            f'<a class="ex-video-btn" href="{html.escape(ex["video"])}" '
             f'target="_blank" rel="noopener">📹 视频</a>\n'
         )
 
-    solutions_html = "".join(
-        _solution_panel(sol, i, ex_id)
-        for i, sol in enumerate(ex["solutions"])
-    )
-
     return (
         f'<div class="exercise-block" id="{ex_id}" data-difficulty="{ex["difficulty"]}">\n'
-        f'  <div class="ex-header">\n'
-        f'    <span class="ex-label">练习</span>\n'
-        f'    <span class="ex-dot {diff_class}">{diff_dot}</span>\n'
-        f'    <span class="ex-tags">{tags_html}</span>\n'
-        f'  </div>\n'
-        f'  <div class="ex-problem">{ex["problem"]}</div>\n'
-        f'  <div class="ex-controls">\n'
-        f'{solutions_html}'
-        f'{video_btn}'
-        f'  </div>\n'
+        f'<div class="ex-banner">'
+        f'<span class="ex-dot {diff_class}">{diff_dot}</span>'
+        f'<span class="ex-label">{html.escape(ex_label)}</span>'
+        f'<span class="ex-tags">{tags_html}</span>'
+        f'</div>\n'
+        f'<div class="ex-body">\n'
+        f'<div class="ex-problem-box">\n\n{ex["problem"]}\n\n</div>\n'
+        f'<div class="ex-controls">\n{controls}{video_btn}</div>\n'
+        f'<div class="ex-frame" id="{frame_id}" hidden>\n{panels}</div>\n'
+        f'</div>\n'
         f'</div>\n'
     )
 
@@ -208,13 +209,17 @@ def inject_exercises(content: str, exercises_dir: Path) -> str:
     """
     Replace all ::: {.exercise id="..."} ::: blocks in content with
     raw HTML exercise blocks. Missing exercises emit a warning comment.
+    Exercises are numbered sequentially within the chapter (1-based).
     """
+    counter = [0]
+
     def replace(m):
         ex_id = m.group(1)
+        counter[0] += 1
         try:
             ex = _load_exercise(ex_id, exercises_dir)
-            html = render_exercise_html(ex)
-            return f"\n{html}\n"
+            out = render_exercise_html(ex, number=counter[0])
+            return f"\n{out}\n"
         except FileNotFoundError as e:
             print(f"  Warning: {e}", file=sys.stderr)
             return f'<!-- exercise not found: {ex_id} -->\n'

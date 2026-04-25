@@ -1,25 +1,27 @@
 ---
 id: chpt1-ex-002
 chapter: 1
-tags: [极限, 夹逼定理]
+tags: [数列极限, 极限]
 difficulty: easy
 video:
 ---
 
 ## Problem
 
-求极限 $\displaystyle\lim_{n\to\infty}\frac{\sin n}{n}$.
+判断数列 $a_n = n = \{1, 2, 3, 4, \cdots\}$ 是否收敛，并说明理由。
 
 ## Solution 1
 
 ### Hint
-$|\sin n| \leq 1$ 对所有整数 $n$ 成立. 用夹逼定理.
+
+观察数列各项是否有界，无界数列必然发散。
 
 ### Answer
-因为 $|\sin n| \leq 1$, 所以
 
-$$-\frac{1}{n} \leq \frac{\sin n}{n} \leq \frac{1}{n}.$$
+数列 $a_n = n$ 不收敛（发散至正无穷）。
 
-由于 $\displaystyle\lim_{n\to\infty}\frac{1}{n} = 0$, 由夹逼定理得
+数列不断增长，无法趋近于任何有限的固定值，因此"静"不下来。
 
-$$\lim_{n\to\infty}\frac{\sin n}{n} = 0. \quad\blacksquare$$
+严格地说，若极限为 $A$，则对 $\varepsilon = 1$，存在 $N$ 使得当 $n > N$ 时 $|n - A| < 1$，即 $A - 1 < n < A + 1$。但 $n$ 可以任意大，当 $n > A + 1$ 时不等式不成立，矛盾。故数列发散。
+
+更简洁地，有界数列才可能收敛，而 $\{n\}$ 无界，因此发散。

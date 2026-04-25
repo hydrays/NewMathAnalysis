@@ -1,0 +1,151 @@
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage[
+  top=2.15cm,
+  bottom=2.15cm,
+  left=2.2cm,
+  right=2.2cm
+]{geometry}
+
+\setmainfont{Arial}
+\setsansfont{Arial}
+\setCJKmainfont{Microsoft YaHei}
+\setCJKsansfont{Microsoft YaHei}
+\newCJKfontfamily\cnhei{SimHei}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\linespread{1.16}
+\setlist[enumerate]{label=\arabic*.,leftmargin=2em,itemsep=0.2em,topsep=0.2em}
+\setlength{\abovedisplayskip}{0.55em}
+\setlength{\belowdisplayskip}{0.55em}
+
+\newcommand{\examtitle}[1]{%
+  {\cnhei\fontsize{20}{24}\selectfont #1}\par
+  \vspace{0.35em}
+  {\color{gray!25}\hrule height 0.5pt}
+  \vspace{0.6em}
+}
+
+\newcommand{\studentline}{%
+  姓名：\underline{\makebox[3.0cm]{}}\quad
+  学号：\underline{\makebox[3.2cm]{}}\par
+  \vspace{0.7em}
+  {\color{gray!25}\hrule height 0.5pt}
+  \vspace{1.0em}
+}
+
+\newcommand{\gradetable}{%
+  {\cnhei 评分表(每题10分, 共100分)}\par\vspace{0.45em}
+  {\renewcommand{\arraystretch}{1.75}
+  \setlength{\tabcolsep}{4pt}
+  \arrayrulecolor{gray!45}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}|c|*{10}{c|}c|}
+    \hline
+    \rule{0pt}{2.0em}{\cnhei 题号} & {\cnhei 1} & {\cnhei 2} & {\cnhei 3} & {\cnhei 4} & {\cnhei 5} & {\cnhei 6} & {\cnhei 7} & {\cnhei 8} & {\cnhei 9} & {\cnhei 10} & {\cnhei 总分} \\
+    \hline
+    \rule{0pt}{2.0em}{\cnhei 得分} & & & & & & & & & & & \\
+    \hline
+  \end{tabular*}
+  \arrayrulecolor{black}}\par
+  \vspace{1.0em}
+  {\color{gray!25}\hrule height 0.5pt}
+  \vspace{0.8em}
+}
+
+\newcommand{\sectiontitle}[1]{%
+  \vspace{0.9em}
+  {\cnhei #1}\par
+  \vspace{0.55em}
+}
+
+\newcommand{\question}[1]{\par\noindent{\cnhei #1.}\quad}
+\newcommand{\answerspace}[1]{\par\vspace*{#1}}
+
+\begin{document}
+
+\examtitle{《新工科数学分析》期中测试卷II}
+
+{\small 考试时间：80 分钟\quad 满分：100 分}\par
+\vspace{0.7em}
+
+\studentline
+\gradetable
+
+
+\question{1}设 \(z=e^{xy}+x^2y^3,\ x=r\cos\theta,\ y=r\sin\theta\)。求
+\(\dfrac{\partial z}{\partial r},\ \dfrac{\partial z}{\partial \theta}\)。
+\answerspace{4.2cm}
+
+
+
+
+\question{2}设方程 \(x^2+y^2+z^2+xy-xz+2yz-4=0\) 确定隐函数
+\(z=z(x,y)\)，求
+\(\dfrac{\partial z}{\partial x},\ \dfrac{\partial z}{\partial y}\)。
+\answerspace{4.1cm}
+
+\question{3}设方程组
+\[
+\begin{cases}
+xu+yv-u^2=1,\\
+x^2+y^2+u+v=3
+\end{cases}
+\]
+求
+\(\dfrac{\partial u}{\partial y},\ \dfrac{\partial v}{\partial y}\)。
+\answerspace{2.3cm}
+
+\newpage
+
+\question{4}求函数 \(f(x,y)=x^3+y^3-3xy\) 的极值。
+\answerspace{4cm}
+
+\question{5}求抛物面 \(z=x^2+y^2\) 上到点 \((1,2,0)\) 距离最近的点。
+\answerspace{4cm}
+
+
+\question{6}用拉格朗日乘子法求函数
+\(f(x,y,z)=x^2+y^2+z^2\) 在条件 \(x+y+z=6\) 下的最小值。
+\answerspace{4cm}
+
+
+\question{7}计算二重积分 \(\displaystyle \iint_D xy\,dA\)，其中
+\(D=\{(x,y)\mid x\ge0,\ y\ge0,\ x+y\le2\}\)。
+\answerspace{4cm}
+
+
+\question{8}计算三重积分 \(\displaystyle \iiint_\Omega (x+y+z)\,dV\)，其中
+\(\Omega=\{(x,y,z)\mid 0\le x\le1,\ 0\le y\le2,\ 0\le z\le3\}\)。
+\answerspace{4cm}
+
+\newpage
+
+\question{9}设二维稳态温度场 \(u(x,y)=e^x\cos y\)。
+\begin{enumerate}
+\item 计算 \(u_x,\ u_y,\ u_{xx},\ u_{yy}\)。
+\item 验证 \(u\) 是否满足 Laplace 方程 \(u_{xx}+u_{yy}=0\)。
+\item 计算点 \((0,\pi/3)\) 处的梯度 \(\nabla u\)。
+\item 求该点处温度增长最快的方向及最大变化率。
+\end{enumerate}
+\answerspace{6.6cm}
+
+\question{10}设函数 \(u(x,y,t)=e^{-2t}\sin x\sin y\)。
+\begin{enumerate}
+\item 求 \(u_t,\ u_{xx},\ u_{yy}\)。
+\item 验证 \(u\) 是否满足二维热传导方程 \(u_t=u_{xx}+u_{yy}\)。
+\item 求时刻 \(t=0\) 时温度场在点
+\(\left(\dfrac{\pi}{4},\dfrac{\pi}{3}\right)\) 处沿方向
+\(\mathbf l=\left(\dfrac35,\dfrac45\right)\) 的方向导数。
+\end{enumerate}
+\answerspace{6.6cm}
+
+\end{document}

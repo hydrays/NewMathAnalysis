@@ -1,35 +1,29 @@
 ---
 id: chpt1-ex-001
 chapter: 1
-tags: [极限, epsilon-delta]
-difficulty: medium
+tags: [数列极限, 极限]
+difficulty: easy
 video:
 ---
 
 ## Problem
 
-用 $\varepsilon$-$\delta$ 定义证明 $\displaystyle \lim_{x \to 2}(3x-1) = 5$.
+判断数列 $a_n = (-1)^{n+1} = \{1, -1, 1, -1, \cdots\}$ 是否收敛，并说明理由。
 
 ## Solution 1
 
 ### Hint
-从 $|f(x) - L| < \varepsilon$ 反推出 $\delta$ 的取法.
+
+观察数列各项的取值规律，判断其能否趋近于某个固定值（"静"下来）。
 
 ### Answer
-设 $\varepsilon > 0$. 注意到 $|(3x-1)-5| = |3x-6| = 3|x-2|$.
 
-取 $\delta = \varepsilon/3$, 则当 $0 < |x-2| < \delta$ 时,
+数列 $a_n = (-1)^{n+1}$ 不收敛（发散）。
 
-$$|(3x-1)-5| = 3|x-2| < 3\delta = \varepsilon.$$
+数列在 $1$ 和 $-1$ 之间不断交替振荡，无法趋近于任何固定的数。
 
-由极限定义, $\displaystyle\lim_{x\to 2}(3x-1)=5$. $\blacksquare$
+严格地说，假设极限为 $A$，则对 $\varepsilon = \dfrac{1}{2}$，存在 $N$ 使得当 $n > N$ 时 $|a_n - A| < \dfrac{1}{2}$。但奇数项 $a_{2k-1} = 1$ 与偶数项 $a_{2k} = -1$ 均出现在任意 $N$ 之后，于是
 
-## Solution 2
+$$2 = |1 - (-1)| \leq |1 - A| + |A - (-1)| < \frac{1}{2} + \frac{1}{2} = 1,$$
 
-### Hint
-直接利用极限的线性性质.
-
-### Answer
-由极限的线性性质:
-
-$$\lim_{x\to 2}(3x-1) = 3\lim_{x\to 2}x - \lim_{x\to 2}1 = 3\cdot 2 - 1 = 5. \quad\blacksquare$$
+矛盾。故数列发散。

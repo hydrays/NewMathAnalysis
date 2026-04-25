@@ -32,14 +32,24 @@ function BlockQuote(el)
   ctype = ctype:lower()
   local label = CALLOUT_LABELS[ctype] or (ctype:sub(1,1):upper() .. ctype:sub(2))
 
+  -- Optional " | video: URL" suffix on the title of Pattern 1 callouts.
+  local video_url = nil
+  if custom_title then
+    local title_part, url_part = custom_title:match("^(.-)%s*|%s*video:%s*(.-)%s*$")
+    if url_part and url_part ~= "" then
+      custom_title = title_part
+      video_url = url_part
+    end
+  end
+
   local body_blocks = {}
   for j = 2, #el.content do table.insert(body_blocks, el.content[j]) end
 
   local label_text
-  if custom_title then
+  if custom_title and custom_title ~= "" then
     -- [!type: custom title] — show only the custom title
     label_text = custom_title
-  elseif #first.content > 1 then
+  elseif #first.content > 1 and not custom_title then
     -- [!type] inline text — show "Label: inline text"
     local i = 2
     if first.content[i] and
@@ -60,11 +70,19 @@ function BlockQuote(el)
     label_text = label
   end
 
+  local button_html = ""
+  if video_url then
+    local escaped = video_url:gsub("&", "&amp;"):gsub('"', "&quot;")
+    button_html =
+      '<button class="callout-video-btn" type="button" data-video-url="'
+      .. escaped .. '">&#9654; 观看视频</button>'
+  end
+
   local header_html = string.format(
     '<div class="callout-header callout-header-%s">'
     .. '<span class="callout-icon"></span>'
-    .. '<span class="callout-label">%s</span></div>',
-    ctype, label_text)
+    .. '<span class="callout-label">%s</span>%s</div>',
+    ctype, label_text, button_html)
 
   local body_div = pandoc.Div(body_blocks, pandoc.Attr("", {"callout-body"}, {}))
   local inner = { pandoc.RawBlock("html", header_html), body_div }
