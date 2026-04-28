@@ -89,6 +89,42 @@ function BlockQuote(el)
   return pandoc.Div(inner, pandoc.Attr("", {"callout", "callout-" .. ctype}, {}))
 end
 
+-- ::: {.fold label="..."} ⟨body⟩ ::: ───────────────────────────────────────
+-- Wrap a fenced div with class "fold" into a toggle button + hidden body.
+-- The author writes this inside a callout to defer "the work" (proof,
+-- derivation, alternate solution) behind a click.
+function Div(el)
+  if not el.classes:includes("fold") then return nil end
+
+  local raw = el.attributes["label"] or ""
+  local label = raw ~= "" and raw or "展开"
+  local safe = label
+    :gsub("&", "&amp;")
+    :gsub("<", "&lt;")
+    :gsub(">", "&gt;")
+    :gsub('"', "&quot;")
+
+  local btn_html = string.format(
+    '<button class="callout-fold-btn" type="button" '
+    .. 'aria-expanded="false">&#9654; %s</button>',
+    safe)
+
+  local body_open  = '<div class="callout-fold-body" hidden>'
+
+  local out = {
+    pandoc.RawBlock("html",
+      '<div class="callout-fold" data-label="' .. safe .. '">'),
+    pandoc.RawBlock("html", btn_html),
+    pandoc.RawBlock("html", body_open),
+  }
+  for _, child in ipairs(el.content) do
+    table.insert(out, child)
+  end
+  table.insert(out, pandoc.RawBlock("html", '</div></div>'))
+
+  return out
+end
+
 -- Image dimension attributes: #200w, #400h, #300pt ──────────────────────────
 function Image(el)
   local src = el.src

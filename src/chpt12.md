@@ -1,61 +1,65 @@
 # 曲线积分和曲面积分
 
-> [!tip]
+> [!tip: 章引言]
 >
 > 本章综合运用多元函数微积分, 解决物理中的核心问题: 力沿路径做的功, 流体穿过曲面的通量, 以及将它们联系起来的三大积分定理 (格林, 高斯, 斯托克斯). 每一个定理都是微积分基本定理在更高维度的推广.
 
 ## 场与向量场
 
-自然界中许多物理量随空间位置变化: 温度在房间各处不同, 风速在每个地点有大小和方向, 引力场在不同位置指向不同的方向. 数学上, 我们用**场**来描述这类"空间中每个点都对应一个量"的结构.
+> [!tip: 动机 — 空间中处处变化的物理量]
+>
+> 自然界中许多物理量随空间位置变化: 温度在房间各处不同, 风速在每个地点有大小和方向, 引力场在不同位置指向不同的方向. 数学上, 我们用**场**来描述这类"空间中每个点都对应一个量"的结构.
 
-> [!important: 定义: 标量场与向量场]
+> [!important: 定义 — 标量场与向量场]
 >
 > 设 $D \subset \mathbb{R}^n$ 为一区域.
 >
 > - **标量场 (scalar field)**: $D$ 上的实值函数 $f: D \to \mathbb{R}$, 每个点对应一个数. 例: 温度场, 密度场, 电势场.
 > - **向量场 (vector field)**: $D$ 上的向量值函数 $\mathbf{F}: D \to \mathbb{R}^n$, 每个点对应一个向量. 例: 引力场, 流速场, 电 (力) 场.
-
-向量场的**分量形式**:
-
-$$
-\mathbf{F}(x,y) = P(x,y)\,\hat{\mathbf{i}} + Q(x,y)\,\hat{\mathbf{j}} \qquad \text{（二维）}
-$$
-
-$$
-\mathbf{F}(x,y,z) = P(x,y,z)\,\hat{\mathbf{i}} + Q(x,y,z)\,\hat{\mathbf{j}} + R(x,y,z)\,\hat{\mathbf{k}} \qquad \text{（三维）}
-$$
-
-其中 $P, Q, R$ 是普通的多元函数, 分别表示向量在 $x, y, z$ 方向的分量.
+>
+> 向量场的**分量形式**:
+>
+> $$
+> \mathbf{F}(x,y) = P(x,y)\,\hat{\mathbf{i}} + Q(x,y)\,\hat{\mathbf{j}} \qquad \text{（二维）}
+> $$
+>
+> $$
+> \mathbf{F}(x,y,z) = P(x,y,z)\,\hat{\mathbf{i}} + Q(x,y,z)\,\hat{\mathbf{j}} + R(x,y,z)\,\hat{\mathbf{k}} \qquad \text{（三维）}
+> $$
+>
+> 其中 $P, Q, R$ 是普通的多元函数, 分别表示向量在 $x, y, z$ 方向的分量.
 
 > [!note: 几个二维向量场的例子]
 >
-> ==例 1==　$\mathbf{F}(x,y) = 2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}$　— 均匀场, 每处方向和大小相同.
+> **例 1**　$\mathbf{F}(x,y) = 2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}$　— 均匀场, 每处方向和大小相同.
 >
 > ![均匀向量场](../media/img/fig2-4-1.png#200pt)
 >
-> ==例 2==　$\mathbf{F}(x,y) = x\hat{\mathbf{i}}$　— 水平分量随 $x$ 增大, 无竖直分量.
+> **例 2**　$\mathbf{F}(x,y) = x\hat{\mathbf{i}}$　— 水平分量随 $x$ 增大, 无竖直分量.
 >
 > ![水平向量场](../media/img/fig2-4-3.png#200pt)
 >
-> ==例 3==　$\mathbf{F}(x,y) = x\hat{\mathbf{i}} + y\hat{\mathbf{j}}$　— 从原点向外辐射的源场.
+> **例 3**　$\mathbf{F}(x,y) = x\hat{\mathbf{i}} + y\hat{\mathbf{j}}$　— 从原点向外辐射的源场.
 >
 > ![辐射向量场](../media/img/fig2-4-2.png#200pt)
 >
-> ==例 4==　$\mathbf{F}(x,y) = y\hat{\mathbf{i}} + x\hat{\mathbf{j}}$　— 场线呈双曲线形.
+> **例 4**　$\mathbf{F}(x,y) = y\hat{\mathbf{i}} + x\hat{\mathbf{j}}$　— 场线呈双曲线形.
 >
 > ![双曲向量场](../media/img/fig2-4-4.png#200pt)
 
-> [!note]
+> [!note: 三维向量场示例]
 >
 > **三维向量场**的结构更为丰富. 下面是两个典型例子, 可拖动旋转查看: 左图为螺旋场 $\mathbf{F}=(-z,\tfrac{1}{2},x)$, 右图为磁偶极子场.
+>
+> > <div style="display:flex;gap:10px;margin:1.2em 0 0.2em;">
+> > <div id="vf3d-helix" style="flex:1;height:400px;min-width:0;position:relative;background:#04080f;border-radius:8px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.5);"></div>
+> > <div id="vf3d-dipole" style="flex:1;height:400px;min-width:0;position:relative;background:#06030f;border-radius:8px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.5);"></div>
+> > </div>
+> > <script type="module" src="threejs/chapter12-vectorfield.js?v=20260414b"></script>
 
-<div style="display:flex;gap:10px;margin:1.2em 0 0.2em;">
-<div id="vf3d-helix" style="flex:1;height:400px;min-width:0;position:relative;background:#04080f;border-radius:8px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.5);"></div>
-<div id="vf3d-dipole" style="flex:1;height:400px;min-width:0;position:relative;background:#06030f;border-radius:8px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.5);"></div>
-</div>
-<script type="module" src="threejs/chapter12-vectorfield.js?v=20260414b"></script>
-
-本章的核心问题是: **如何在向量场中进行积分?**
+> [!tip: 本章的核心问题]
+>
+> **如何在向量场中进行积分?** 接下来三节回答这个问题: 沿曲线积分 (第一类、第二类), 穿越曲面积分; 然后用三大公式将"内部累积"与"边界总和"联系起来.
 
 ## 第一类曲线积分
 
@@ -67,11 +71,14 @@ $$
 >
 > $$M = \lim_{\lambda\to 0}\sum_{i=1}^{N}\rho(x_i,y_i)\,\Delta s_i,$$
 >
-> 其中 $\lambda = \max_i \Delta s_i$ 为最大小段弧长.
+> 其中 $\lambda = \max_i \Delta s_i$ 为最大小段弧长. 这个极限就是**第一类曲线积分** (或**弧长曲线积分**) 的定义.
+>
+> > <div id="chpt12-line-density" style="width:100%; height:480px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
+> > <script type="module" src="threejs/chpt12-line-density.js?v=1"></script>
+>
+> 上图把这条思路可视化了: 颜色表示线密度 $\rho$ 沿一条平面螺线 $L$ 的取值, 黑色刻度把 $L$ 分成 $N$ 段, 圆点是每段弧长的中点 (代表点). 拖动滑块改变 $N$, 看 Riemann 和如何逼近真实质量.
 
-这个极限就是**第一类曲线积分** (或**弧长曲线积分**) 的定义.
-
-> [!important: 定义: 第一类曲线积分]
+> [!important: 定义 — 第一类曲线积分]
 >
 > 设 $f(x,y)$ 在曲线 $L$ 上连续. 将 $L$ 划分为 $N$ 段弧, 第 $i$ 段弧长为 $\Delta s_i$, 在该段上取任一点 $(x_i,y_i)$, 令 $\lambda = \max_i \Delta s_i$. 若极限
 >
@@ -83,7 +90,7 @@ $$
 >
 > $\mathrm{d}s$ 称为**弧长微元**.
 
-> [!note: 计算方法 (参数化化简)]
+> [!tip: 计算方法 — 参数化化简]
 >
 > 若 $L$ 由参数方程 $x=x(t),\,y=y(t),\,t\in[t_0,t_1]$ 给出, $t_0 < t_1$, $x'(t),y'(t)$ 在 $[t_0,t_1]$ 上连续, 且对所有 $t\in[t_0,t_1]$ 均有 $[x'(t)]^2+[y'(t)]^2\neq 0$, 则弧长微元为
 >
@@ -93,7 +100,7 @@ $$
 >
 > $$\int_L f(x,y)\,\mathrm{d}s = \int_{t_0}^{t_1}f\bigl(x(t),y(t)\bigr)\sqrt{[x'(t)]^2+[y'(t)]^2}\,\mathrm{d}t.$$
 
-> [!note: 推广到空间曲线]
+> [!tip: 推广到空间曲线]
 >
 > 对空间曲线 $L$: $x=x(t),\,y=y(t),\,z=z(t),\,t\in[t_0,t_1]$, 弧长微元为
 >
@@ -101,7 +108,7 @@ $$
 >
 > 积分公式形式相同: $\displaystyle\int_L f(x,y,z)\,\mathrm{d}s = \int_{t_0}^{t_1}f(x(t),y(t),z(t))\sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2}\,\mathrm{d}t$.
 
-> [!note: 基本性质]
+> [!important: 性质 — 与方向无关 / 对路径可加]
 >
 > 第一类曲线积分有两个重要性质:
 >
@@ -127,7 +134,7 @@ $$
 >
 > $$W = \lim_{\lambda\to 0}\sum_{i=1}^{N}\bigl(P(x_i,y_i)\Delta x_i + Q(x_i,y_i)\Delta y_i\bigr).$$
 
-> [!important: 定义: 第二类曲线积分]
+> [!important: 定义 — 第二类曲线积分]
 >
 > 设向量场 $\mathbf{F}(x,y)=P(x,y)\hat{\mathbf{i}}+Q(x,y)\hat{\mathbf{j}}$ 在有向曲线 $L$ 上连续. 若上述极限存在且与划分及取点无关, 则称该极限为 $\mathbf{F}$ 沿 $L$ 的**第二类曲线积分** (或**向量场曲线积分**), 记作
 >
@@ -135,7 +142,7 @@ $$
 >
 > 其中 $\mathrm{d}\mathbf{r} = \mathrm{d}x\,\hat{\mathbf{i}}+\mathrm{d}y\,\hat{\mathbf{j}}$ 为**有向弧元**.
 
-> [!important: 方向性]
+> [!important: 性质 — 方向性]
 >
 > 第二类曲线积分与曲线的**方向**有关: 若 $-L$ 表示 $L$ 的反向, 则
 >
@@ -143,7 +150,7 @@ $$
 >
 > 物理直觉: 逆着力的方向运动, 场做负功. 这与第一类积分不同 (第一类积分的弧长 $\mathrm{d}s > 0$ 与方向无关).
 
-> [!note: 计算方法 (参数化化简)]
+> [!tip: 计算方法 — 参数化化简]
 >
 > 若 $L$: $x=x(t),\,y=y(t)$, $t$ 从 $t_1$ 到 $t_2$ ($t_1$ 对应起点, $t_2$ 对应终点), 则 $\mathrm{d}x=x'(t)\,\mathrm{d}t,\,\mathrm{d}y=y'(t)\,\mathrm{d}t$, 故
 >
@@ -151,7 +158,7 @@ $$
 >
 > 注意: $t_1$ 到 $t_2$ 的积分方向与曲线的定向一致; 若反向, 则交换 $t_1, t_2$, 积分变号.
 
-> [!note: 两类曲线积分的联系]
+> [!tip: 两类曲线积分的联系]
 >
 > 设 $\boldsymbol{\tau}$ 为 $L$ 的单位切向量 (与定向一致), 则 $\mathrm{d}\mathbf{r} = \boldsymbol{\tau}\,\mathrm{d}s$, 从而
 >
@@ -186,11 +193,9 @@ $$
 
 > [!tip: 引入问题: 边界环量与内部旋转]
 >
-> 流体在平面区域 $D$ 内流动, 速度场为 $\mathbf{F}=(P,Q)$. 沿 $D$ 的边界 $C$ (逆时针方向) 一圈的环量 $\displaystyle\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 是否能用 $D$ 内部每一点的"局部旋转"信息来计算?
+> 流体在平面区域 $D$ 内流动, 速度场为 $\mathbf{F}=(P,Q)$. 沿 $D$ 的边界 $C$ (逆时针方向) 一圈的环量 $\displaystyle\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 是否能用 $D$ 内部每一点的"局部旋转"信息来计算? 为此, 先用一个局部量刻画向量场在一点的旋转倾向 —— **旋度**.
 
-为刻画向量场在一点的旋转倾向, 引入**旋度**:
-
-> [!important: 定义: 二维旋度]
+> [!important: 定义 — 二维旋度]
 >
 > 设 $\mathbf{F}=(P,Q)$ 在区域 $D$ 上有连续偏导数, 称
 >
@@ -198,16 +203,15 @@ $$
 >
 > 为 $\mathbf{F}$ 的**旋度** (二维). $\operatorname{curl}\mathbf{F}>0$ 表示该点邻域内流体逆时针旋转, $<0$ 表示顺时针旋转, $=0$ 表示无旋.
 
-格林公式将区域内所有点的旋度"积累"起来, 得到边界上的环量:
-
-> [!important: 格林公式]
+> [!important: 定理 — 格林公式]
+>
+> 格林公式把区域内所有点的旋度"积累"起来, 得到边界上的环量.
 >
 > 设 $D$ 为平面上由分段光滑曲线围成的有界闭区域, $P(x,y)$ 和 $Q(x,y)$ 在 $D$ 上有一阶连续偏导数, $C = \partial D^+$ 表示 $D$ 的正向 (逆时针) 边界, 则
 >
 > $$\oint_{C} P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}A.$$
-
-> [!extension: 证明]
 >
+> ::: {.fold label="证明"}
 > 只需分别证明:
 >
 > $$\oint_C P\,\mathrm{d}x = -\iint_D P_y\,\mathrm{d}A, \qquad \oint_C Q\,\mathrm{d}y = \iint_D Q_x\,\mathrm{d}A. \tag{$*$}$$
@@ -224,9 +228,10 @@ $$
 >
 > 两式相等, 第一式对竖直简单区域得证.
 >
-> **第二步: 一般区域. ** 将 $D$ 用一条竖直线段分成两个竖直简单子区域 $D_1, D_2$, 对每个子区域应用第一步. 内部公共边界的贡献方向相反而相消: $\int_\ell P\,\mathrm{d}x + \int_{-\ell} P\,\mathrm{d}x = 0$. 两部分相加即得 $D$ 上的结论. 对 $(*)$ 的第二式类似处理, 两式相加即得格林公式. $\blacksquare$
+> **第二步: 一般区域.** 将 $D$ 用一条竖直线段分成两个竖直简单子区域 $D_1, D_2$, 对每个子区域应用第一步. 内部公共边界的贡献方向相反而相消: $\int_\ell P\,\mathrm{d}x + \int_{-\ell} P\,\mathrm{d}x = 0$. 两部分相加即得 $D$ 上的结论. 对 $(*)$ 的第二式类似处理, 两式相加即得格林公式. $\blacksquare$
+> :::
 
-> [!note: 应用: 用边界曲线计算面积]
+> [!note: 应用 — 用边界曲线计算面积]
 >
 > 取 $P=-y,\,Q=x$, 则 $Q_x-P_y=1+1=2$, 格林公式给出
 >
@@ -252,7 +257,7 @@ $$
 >
 > 对于同一起点 $A$, 终点 $B$, 力场 $\mathbf{F}$ 沿不同路径所做的功是否相同? 引力场是**保守的**——无论绕多远, 做功只取决于位移; 摩擦力是**非保守的**——路径越长, 克服摩擦做的负功越大. 决定这一区别的关键是什么?
 
-> [!important: 定义: 保守场与势函数]
+> [!important: 定义 — 保守场与势函数]
 >
 > 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}$ 在区域 $D$ 上连续. 若存在可微函数 $f(x,y)$, 使得
 >
@@ -260,19 +265,21 @@ $$
 >
 > 则称 $\mathbf{F}$ 为 $D$ 上的**保守场** (conservative field, 亦称**梯度场**), $f$ 称为 $\mathbf{F}$ 的**势函数** (potential function).
 
-> [!important: 曲线积分基本定理]
+> [!important: 定理 — 曲线积分基本定理]
 >
 > 若 $\mathbf{F}=\nabla f$ 在包含有向曲线 $L$ 的区域上连续可微, $L$ 从点 $A$ 到点 $B$, 则
 >
 > $$\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} = f(B) - f(A).$$
 >
-> **证明**: 设 $L$: $\mathbf{r}(t)=(x(t),y(t))$, $t\in[t_0,t_1]$, $\mathbf{r}(t_0)=A$, $\mathbf{r}(t_1)=B$, 则
+> 这是一元微积分基本定理 $\int_a^b f'(x)\,\mathrm{d}x=f(b)-f(a)$ 的直接推广: **"对梯度的曲线积分只取决于边界"**.
+>
+> ::: {.fold label="证明"}
+> 设 $L$: $\mathbf{r}(t)=(x(t),y(t))$, $t\in[t_0,t_1]$, $\mathbf{r}(t_0)=A$, $\mathbf{r}(t_1)=B$, 则
 >
 > $$\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} = \int_{t_0}^{t_1}\!\!\left(\frac{\partial f}{\partial x}x'(t)+\frac{\partial f}{\partial y}y'(t)\right)\mathrm{d}t = \int_{t_0}^{t_1}\frac{\mathrm{d}}{\mathrm{d}t}f(x(t),y(t))\,\mathrm{d}t = f(B)-f(A). \quad\blacksquare$$
+> :::
 
-这是一元微积分基本定理 $\int_a^b f'(x)\,\mathrm{d}x=f(b)-f(a)$ 的直接推广: **"对梯度的曲线积分只取决于边界"**.
-
-> [!important: 保守场的等价条件]
+> [!important: 定理 — 保守场的等价条件]
 >
 > 在**单连通区域** $D$ (无"洞"的区域) 上, 以下四个条件等价:
 >
@@ -285,7 +292,7 @@ $$
 >
 > **注**: 条件 4 的充分性依赖单连通性. 在非单连通区域 (如去掉原点的平面 $\mathbb{R}^2\setminus\{(0,0)\}$) 中, $\operatorname{curl}\mathbf{F}=0$ 不能保证 $\mathbf{F}$ 是保守场 (经典反例: $\mathbf{F}=\dfrac{(-y,\,x)}{x^2+y^2}$).
 
-> [!note: 求势函数的方法]
+> [!tip: 求势函数的方法]
 >
 > 已知 $\mathbf{F}=(P,Q)$ 满足 $\operatorname{curl}\mathbf{F}=0$, 求 $f(x,y)$.
 >
@@ -299,7 +306,9 @@ $$
 
 ## 曲面积分
 
-至此, 二维的积分理论已经完整: 沿曲线积分 (第一类, 第二类) 以及将区域内部与边界联系起来的格林公式. 现在将同样的思路推广到三维空间: **曲面**取代曲线, **通量**取代做功.
+> [!tip: 从二维到三维]
+>
+> 至此, 二维的积分理论已经完整: 沿曲线积分 (第一类, 第二类) 以及将区域内部与边界联系起来的格林公式. 现在把同样的思路推广到三维空间: **曲面**取代曲线, **通量**取代做功.
 
 > [!tip: 引入问题: 流体穿过曲面的通量]
 >
@@ -307,13 +316,13 @@ $$
 >
 > 将 $S$ 分成 $N$ 个小面片, 第 $i$ 片的面积为 $\Delta S_i$, 外法向单位向量为 $\mathbf{n}_i$. 穿过该小片的流量约为 $\mathbf{F}(x_i,y_i,z_i)\cdot\mathbf{n}_i\,\Delta S_i$. 令各小片面积最大值 $\to 0$, 取极限即得通量.
 
-> [!important: 定义: 曲面积分 (通量型)]
+> [!important: 定义 — 曲面积分 (通量型)]
 >
 > 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 在有向曲面 $S$ 上连续, $\mathbf{n}$ 为 $S$ 的单位法向量, 则 $\mathbf{F}$ 穿过 $S$ 的**通量**定义为
 >
 > $$\iint_S\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S = \iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S}.$$
 
-> [!note: 计算方法]
+> [!tip: 计算方法 — 投影到坐标平面]
 >
 > 设 $S$ 由 $z=g(x,y)$, $(x,y)\in D_{xy}$ 给出, 取朝上法向量. 曲面上的切向量为
 >
@@ -327,7 +336,7 @@ $$
 >
 > $$\iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S} = \iint_{D_{xy}}\bigl(-P\,g_x - Q\,g_y + R\bigr)\,\mathrm{d}x\,\mathrm{d}y.$$
 
-> [!note: 方向的选取]
+> [!caution: 易错 — 方向的选取]
 >
 > 曲面积分与曲面的**定向**有关, 改变法向量方向则积分变号. 对**封闭曲面** (如球面), 通常约定外法向量为正方向; 对**开曲面**, 需事先指定法向量朝哪一侧.
 
@@ -345,7 +354,7 @@ $$
 >
 > 设空间区域 $V$ 内有流体流动, 速度场为 $\mathbf{F}$. 若 $V$ 内某处是流体的**源** (即流体在那里被持续"产生"), 这些新产生的流体必然向外流出并最终穿越边界曲面 $\partial V$. 那么, $V$ 内总的产生率与穿越边界的总通量之间有何定量关系?
 
-> [!important: 定义: 散度]
+> [!important: 定义 — 散度]
 >
 > 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 有连续偏导数, 称
 >
@@ -353,14 +362,13 @@ $$
 >
 > 为 $\mathbf{F}$ 的**散度**. $\operatorname{div}\mathbf{F}>0$ 表示该点是源, $<0$ 表示是汇, $=0$ 表示不可压缩 (流体既不产生也不消失).
 
-> [!important: 高斯公式 (散度定理)]
+> [!important: 定理 — 高斯公式 (散度定理)]
 >
 > 设 $V$ 为空间中由分片光滑封闭曲面 $\Sigma=\partial V$ 围成的有界区域, $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 在 $V$ 上有一阶连续偏导数, $\mathbf{n}$ 为 $\Sigma$ 的外法向量, 则
 >
 > $$\oiint_{\Sigma}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S = \iiint_V\nabla\cdot\mathbf{F}\,\mathrm{d}V.$$
-
-> [!extension: 证明思路]
 >
+> ::: {.fold label="证明思路"}
 > 分别证明 (以 $R$ 分量为例):
 >
 > $$\oiint_\Sigma R\,\mathrm{d}x\,\mathrm{d}y = \iiint_V \frac{\partial R}{\partial z}\,\mathrm{d}V.$$
@@ -374,8 +382,9 @@ $$
 > $$\iiint_V R_z\,\mathrm{d}V = \iint_{D_{xy}}\int_{z_1}^{z_2}R_z\,\mathrm{d}z\,\mathrm{d}x\,\mathrm{d}y = \iint_{D_{xy}}\bigl[R(x,y,z_2)-R(x,y,z_1)\bigr]\,\mathrm{d}x\,\mathrm{d}y.$$
 >
 > 两式相等. $P$ 和 $Q$ 分量类似处理, 三式相加即得高斯公式. $\blacksquare$
+> :::
 
-> [!note: 与格林公式的类比]
+> [!tip: 与格林公式的类比]
 >
 > 高斯公式是格林公式通量形式的三维版本:
 >
@@ -400,7 +409,7 @@ $$
 
 ### 斯托克斯公式
 
-> [!note: 三维曲线积分]
+> [!tip: 三维曲线积分]
 >
 > 三维空间中的曲线积分是二维情形的自然推广:
 >
@@ -412,27 +421,27 @@ $$
 >
 > 三维向量场 $\mathbf{F}$ 沿封闭曲线 $C$ 的环量 $\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 与 $C$ 所围曲面 $S$ 上的"旋转强度"有何关系? 这是格林公式在三维的推广: 格林公式中的平面区域推广为任意曲面.
 
-> [!important: 定义: 三维旋度]
+> [!important: 定义 — 三维旋度]
 >
 > 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 有连续偏导数, 定义 $\mathbf{F}$ 的**旋度** (三维) 为
 >
 > $$\operatorname{curl}\mathbf{F} = \nabla\times\mathbf{F} = \begin{vmatrix}\hat{\mathbf{i}}&\hat{\mathbf{j}}&\hat{\mathbf{k}}\\\partial_x&\partial_y&\partial_z\\P&Q&R\end{vmatrix} = (R_y-Q_z)\hat{\mathbf{i}}+(P_z-R_x)\hat{\mathbf{j}}+(Q_x-P_y)\hat{\mathbf{k}}.$$
 
-> [!note: 二维旋度是三维旋度的分量]
+> [!tip: 二维旋度是三维旋度的分量]
 >
 > 对平面向量场 $\mathbf{F}=(P,Q,0)$, 三维旋度为 $(0,\,0,\,Q_x-P_y)$, 其 $\hat{\mathbf{k}}$-分量恰是二维旋度 $Q_x-P_y$. 三维旋度是二维旋度的自然推广.
 
-> [!important: 斯托克斯公式]
+> [!important: 定理 — 斯托克斯公式]
 >
 > 设 $S$ 为分片光滑的有向曲面, 其边界 $\partial S$ 为分段光滑的有向封闭曲线 (方向由右手法则与 $S$ 的法向量相符), $\mathbf{F}$ 在含 $S$ 的区域上有连续偏导数, 则
 >
 > $$\oint_{\partial S}\mathbf{F}\cdot\mathrm{d}\mathbf{r} = \iint_S(\nabla\times\mathbf{F})\cdot\mathbf{n}\,\mathrm{d}S.$$
-
-> [!extension: 证明思路]
 >
+> ::: {.fold label="证明思路"}
 > 将 $S$ 用参数方程 $\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v))$, $(u,v)\in R$ 参数化. 用链式法则将 $\oint_{\partial S} P\,\mathrm{d}x$ 转化为参数域 $R$ 的边界上的积分 $\oint_{\partial R}(\cdots)\,\mathrm{d}u+(\cdots)\,\mathrm{d}v$, 再对 $R$ 应用格林公式展开, 所得表达式恰与右端 $\iint_S (R_y-Q_z,P_z-R_x,Q_x-P_y)\cdot\mathbf{n}\,\mathrm{d}S$ 中的对应项相等. 对 $P,Q,R$ 三项逐一处理后相加, 即得斯托克斯公式. $\blacksquare$
+> :::
 
-> [!important: 三维保守场的判定]
+> [!important: 定理 — 三维保守场的判定]
 >
 > 在单连通空间区域 $D$ 上, 以下条件等价:
 >
@@ -456,9 +465,9 @@ $$
 
 ## 统一视角: 广义牛顿-莱布尼茨公式
 
-本章的四个核心定理并非彼此独立的结论——它们是同一件事在不同维度的面貌.
-
 > [!important: 四个定理的统一形式]
+>
+> 本章的四个核心定理并非彼此独立的结论——它们是同一件事在不同维度的面貌.
 >
 > | 定理 | 区域 $\Omega$ | 边界 $\partial\Omega$ | 公式 |
 > |:---|:---|:---|:---|
@@ -466,10 +475,10 @@ $$
 > | 格林公式 | 平面区域 $D$ | 有向曲线 $\partial D$ | $\displaystyle\iint_D\operatorname{curl}\mathbf{F}\,\mathrm{d}A = \oint_{\partial D}\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ |
 > | 斯托克斯公式 | 曲面 $S$ | 有向曲线 $\partial S$ | $\displaystyle\iint_S(\nabla\times\mathbf{F})\cdot\mathbf{n}\,\mathrm{d}S = \oint_{\partial S}\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ |
 > | 高斯公式 | 空间区域 $V$ | 封闭曲面 $\partial V$ | $\displaystyle\iiint_V\nabla\cdot\mathbf{F}\,\mathrm{d}V = \oiint_{\partial V}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S$ |
+>
+> **规律**: 对区域上某种"导数"的积分, 等于对其边界上"原函数"的积分.
 
-**规律**: 对区域上某种"导数"的积分, 等于对其边界上"原函数"的积分.
-
-> [!note: 微分形式语言]
+> [!extension: 拓展 — 微分形式语言]
 >
 > 在**微分形式** (differential forms) 的语言中, 上述四个公式统一为一个公式:
 >
@@ -477,8 +486,12 @@ $$
 >
 > 其中 $\omega$ 是微分形式, $\mathrm{d}$ 是外微分算子. 这一公式称为**广义斯托克斯定理**, 是实变函数论和微分几何的核心结果. 感兴趣的读者可在后续课程中深入探索.
 
-回顾本章的旅程: 我们从**场**出发, 建立了沿曲线积分和穿越曲面积分的概念, 发现了将区域与边界联系起来的三大定理. 每一个定理的背后, 都是牛顿和莱布尼茨三百年前的那个洞见——**积分与微分互为逆运算**——在更广阔的空间中回响.
-
-格林公式告诉我们, 平面区域内所有点的旋转强度可以"抵消"为边界上的一圈环量. 高斯公式告诉我们, 封闭区域内所有的源与汇, 最终体现为穿越边界曲面的净通量. 斯托克斯公式告诉我们, 曲面上所有点的旋转, 都在曲面边界的循环中留下完整的印记.
-
-这不仅仅是计算技巧——这是微积分统一性最深刻的一句话.
+> [!tip: 章末小结]
+>
+> 回顾本章的旅程: 我们从**场**出发, 建立了沿曲线积分和穿越曲面积分的概念, 发现了将区域与边界联系起来的三大定理. 每一个定理的背后, 都是牛顿和莱布尼茨三百年前的那个洞见——**积分与微分互为逆运算**——在更广阔的空间中回响.
+>
+> - **格林公式**: 平面区域内所有点的旋转强度, 可以"抵消"为边界上的一圈环量.
+> - **高斯公式**: 封闭区域内所有的源与汇, 最终体现为穿越边界曲面的净通量.
+> - **斯托克斯公式**: 曲面上所有点的旋转, 都在曲面边界的循环中留下完整的印记.
+>
+> 这不仅仅是计算技巧——这是微积分统一性最深刻的一句话.

@@ -70,6 +70,17 @@ and pushes. The target path is controlled by `$HYDRAYS_IO` (default:
 
 ## Markdown Authoring
 
+### Design principle: focused statement visible, depth on demand
+
+Each callout shows only its focused statement by default. Anything that's
+"the work behind it" — proof, derivation, alternate solution — lives
+inside the same callout and reveals on click via `::: {.fold label="证明"} ... :::`.
+
+Readers see structure first, depth on demand. This mirrors the existing
+exercise system (problem visible, 答案 / 提示 reveal). Apply the same
+pattern when authoring theorems, derivations, and worked examples in any
+chapter.
+
 ### Callout blocks
 
 Use the `[!type: title]` header form. A blank `>` line separates the header
@@ -84,6 +95,20 @@ from the body.
 - Types: `note` 注 · `tip` 提示 · `important` 重要 · `warning` 警告 · `caution` 注意 · `extension` 扩展
 - Title-only: `> [!tip: 标题]` — header shows "标题".
 - Type-only: `> [!tip]` followed by inline text on the next line — header shows "提示: …".
+
+**Recommended type per role:**
+
+| Role | Type |
+|---|---|
+| 动机 / 直觉 | `tip` |
+| 定义 / 定理 | `important` |
+| 例题 | `note` |
+| 易错 / 提醒 | `caution` |
+| 不要求 / 拓展 | `extension` |
+| 历史 / 文化 | `warning` |
+
+Theorem proofs, derivations, and detailed example calculations live
+inside a `::: {.fold label="..."} :::` block within the same callout.
 
 ### Video on a callout (opt-in, per callout)
 
@@ -102,6 +127,27 @@ label (提示 etc.). Omit `| video:` for no button.
 
 Do **not** embed `<iframe>` directly inside callouts any more; use the
 `| video:` syntax so the iframe lazy-loads only when clicked.
+
+### Foldable content (`::: {.fold label="..."} :::`)
+
+Hide a multi-paragraph block (theorem proof, derivation, alternate solution)
+behind a reveal button inside any callout:
+
+````markdown
+> [!important: 定理 — Fubini]
+>
+> 设 $f$ 在矩形 $D$ 上连续, 则
+> $$ \iint_D f \, dA = \int_a^b\!\int_c^d f \,dy\,dx. $$
+>
+> ::: {.fold label="证明"}
+> 证明的多段内容…
+> :::
+````
+
+- `label` defaults to `"展开"` if omitted.
+- The fold body is hidden until clicked; common labels: `证明`, `推导`, `详细计算`, `更多细节`.
+- KaTeX renders math inside the body the first time it opens.
+- The fold renders the same way regardless of the parent callout type.
 
 ### Inline emphasis
 
