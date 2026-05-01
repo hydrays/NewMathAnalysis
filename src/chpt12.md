@@ -74,9 +74,9 @@
 > 其中 $\lambda = \max_i \Delta s_i$ 为最大小段弧长. 这个极限就是**第一类曲线积分** (或**弧长曲线积分**) 的定义.
 >
 > > <div id="chpt12-line-density" style="width:100%; height:480px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
-> > <script type="module" src="threejs/chpt12-line-density.js?v=1"></script>
+> > <script type="module" src="threejs/chpt12-line-density.js?v=7"></script>
 >
-> 上图把这条思路可视化了: 颜色表示线密度 $\rho$ 沿一条平面螺线 $L$ 的取值, 黑色刻度把 $L$ 分成 $N$ 段, 圆点是每段弧长的中点 (代表点). 拖动滑块改变 $N$, 看 Riemann 和如何逼近真实质量.
+> 上图是 $\rho(x,y) = 0.25 + 0.95\,e^{-0.6((x-\pi)^2 + (y-0.4)^2)}$ 在一段正弦曲线 $L: y = 0.7\sin x,\; x\in[0, 2\pi]$ 上的可视化: 浅色背景是整个 $\rho(x,y)$ 的快照 (颜色越亮密度越大); 路径上的黑点是质点, 它已经走过的部分按当下密度着色, 未走的部分保持灰色. 拖动滑块, 黑点沿 $L$ 移动, 下方实时显示当前密度 $\rho$ 和已积累的质量 $M(t)$, 与真实总质量 $M$ 比较.
 
 > [!important: 定义 — 第一类曲线积分]
 >
@@ -133,6 +133,11 @@
 > 将路径分为 $N$ 小段, 第 $i$ 段的位移向量为 $\Delta\mathbf{r}_i = (\Delta x_i, \Delta y_i)^T$, 该段上的力约为 $\mathbf{F}(x_i,y_i)$. 做功约为 $\mathbf{F}(x_i,y_i)\cdot\Delta\mathbf{r}_i = P_i\Delta x_i + Q_i\Delta y_i$. 令 $\lambda = \max_i|\Delta\mathbf{r}_i|$ 并取极限:
 >
 > $$W = \lim_{\lambda\to 0}\sum_{i=1}^{N}\bigl(P(x_i,y_i)\Delta x_i + Q(x_i,y_i)\Delta y_i\bigr).$$
+>
+> > <div id="chpt12-work-along-path" style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
+> > <script type="module" src="threejs/chpt12-work-along-path.js?v=4"></script>
+>
+> 上图是 $\mathbf{F}(x,y) = (1.5 - y,\; x)$ 在一段半圆形路径 (从 $(-1,0)$ 经上半部到 $(1,0)$) 上做功的过程: 浅灰箭头是整个场的快照; 路径按照 $\mathbf{F}\cdot\boldsymbol\tau$ 的符号着色 —— **绿色**段 $\mathbf{F}\cdot\boldsymbol\tau > 0$, 场推动质点前进, 做正功; **红色**段方向相反, 做负功. 拖动滑块, 黑点 (质点) 沿路径移动, 红箭头是该处的 $\mathbf{F}$, 蓝箭头是单位切向 $\boldsymbol\tau$, 下方实时显示 $\mathbf{F}\cdot\boldsymbol\tau$ 与已积累的功 $W(t)$. 红、绿两段几乎相互抵消, 总功只略小于零.
 
 > [!important: 定义 — 第二类曲线积分]
 >
@@ -211,6 +216,11 @@
 >
 > $$\oint_{C} P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}A.$$
 >
+> > <div id="chpt12-green" style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
+> > <script type="module" src="threejs/chpt12-green.js?v=1"></script>
+>
+> 上图取 $D$ 为单位圆盘, $\mathbf{F}(x,y) = (y,\, -x^2)$, 故 $\mathrm{curl}\,\mathbf{F} = -2x - 1$, 在 $D$ 内随 $x$ 由 $+1$ (左缘) 单调降到 $-3$ (右缘). 圆盘内部以发散色谱画出旋度 (绿正红负), 浅灰箭头是场快照. 拖动滑块, 黑色质点沿 $\partial D$ 逆时针行进, 边界按 $\mathbf{F}\cdot\boldsymbol\tau$ 着色 (与 §12.3 同一色谱); 下方实时显示 $\oint_{\partial D} \mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 累积值与 $\iint_D \mathrm{curl}\,\mathbf{F}\,\mathrm{d}A = -\pi$. 当滑块到达 $t=1$, 二者相等 —— 这就是格林公式. 点击 **反向** 让边界顺时针走, 此时 $\oint$ 变号, 而面积积分 $\iint$ 不变.
+>
 > ::: {.fold label="证明"}
 > 只需分别证明:
 >
@@ -273,6 +283,11 @@
 >
 > 这是一元微积分基本定理 $\int_a^b f'(x)\,\mathrm{d}x=f(b)-f(a)$ 的直接推广: **"对梯度的曲线积分只取决于边界"**.
 >
+> > <div id="chpt12-conservative" style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
+> > <script type="module" src="threejs/chpt12-conservative.js?v=1"></script>
+>
+> 上图取势函数 $f(x,y) = -e^{-(x^2 + y^2)/2}$ (一个高斯势阱), $\mathbf{F} = \nabla f$ 是它产生的保守场. 起点 $A = (0, 0)$ (势阱底部, $f(A) = -1$), 终点 $B = (1.5,\, 1)$ ($f(B) \approx -0.197$). 拖动滑块 **路径形状 α** 让 $A \to B$ 的路径在直线 ($\alpha = 0$) 与上下两条圆弧之间连续变形; 拖动滑块 **质点位置 t** 让红点沿当前路径移动. **不论 α 取何值**, 当 $t = 1$ 时积分总是 $f(B) - f(A) \approx 0.803$ —— 这就是保守场的路径无关性. 路径上的颜色仍然按 $\mathbf{F}\cdot\boldsymbol\tau$ 的符号与大小变化, 但绿色与红色总会"刚好"相加成同一数值.
+>
 > ::: {.fold label="证明"}
 > 设 $L$: $\mathbf{r}(t)=(x(t),y(t))$, $t\in[t_0,t_1]$, $\mathbf{r}(t_0)=A$, $\mathbf{r}(t_1)=B$, 则
 >
@@ -321,6 +336,11 @@
 > 设 $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 在有向曲面 $S$ 上连续, $\mathbf{n}$ 为 $S$ 的单位法向量, 则 $\mathbf{F}$ 穿过 $S$ 的**通量**定义为
 >
 > $$\iint_S\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S = \iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S}.$$
+>
+> > <div id="chpt12-flux" style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
+> > <script type="module" src="threejs/chpt12-flux.js?v=1"></script>
+>
+> 上图取 $S$ 为单位上半球面, 边界 $\partial S$ 为单位圆. 场 $\mathbf{F}$ 是一个均匀场, 但其方向由滑块 $\alpha$ 在垂直 (y 轴方向) 与水平 (x 轴方向) 之间连续旋转: $\mathbf{F}(\alpha) = (\sin\alpha,\, \cos\alpha,\, 0)$. 球面按 $\mathbf{F}\cdot\mathbf{n}$ 染色 (绿正红负), 黑色短箭是若干代表点处的外法向 $\mathbf{n}$, 浅蓝箭头是空间中的场. 通量 $\iint_S \mathbf{F}\cdot\mathrm{d}\mathbf{S} = \pi \cos\alpha$: 当 $\alpha = 0$ 时场垂直, 通量最大 $\pi$; 当 $\alpha = 90°$ 时场水平, 球面正负贡献相消, 通量为零. 鼠标左键拖拽可旋转视角.
 
 > [!tip: 计算方法 — 投影到坐标平面]
 >
@@ -367,6 +387,11 @@
 > 设 $V$ 为空间中由分片光滑封闭曲面 $\Sigma=\partial V$ 围成的有界区域, $\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}$ 在 $V$ 上有一阶连续偏导数, $\mathbf{n}$ 为 $\Sigma$ 的外法向量, 则
 >
 > $$\oiint_{\Sigma}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S = \iiint_V\nabla\cdot\mathbf{F}\,\mathrm{d}V.$$
+>
+> > <div id="chpt12-gauss" style="width:100%; height:540px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
+> > <script type="module" src="threejs/chpt12-gauss.js?v=1"></script>
+>
+> 上图取 $V$ 为单位立方体 $[-1, 1]^3$, $\mathbf{F}(x,y,z) = \kappa\,(x^2,\, y,\, z^2)$, 故 $\nabla\cdot\mathbf{F} = \kappa(2x + 1 + 2z)$. 立方体的六个面按 $\mathbf{F}\cdot\mathbf{n}$ 半透明染色 (绿正红负); 中央 $y = 0$ 切片为不透明面板, 显示散度 $\nabla\cdot\mathbf{F}$ 在内部如何随 $x, z$ 变化, 同样用绿/红着色. 黑色短箭头是各面中心的外法向 $\mathbf{n}$. 拖动滑块 $\kappa$ 让场强按比例缩放, 两侧读数 $\oiint_{\partial V}\mathbf{F}\cdot\mathrm{d}\mathbf{S}$ 与 $\iiint_V \nabla\cdot\mathbf{F}\,\mathrm{d}V$ 始终相等 (本场二者皆为 $8\kappa$). 鼠标左键拖拽旋转, 滚轮缩放.
 >
 > ::: {.fold label="证明思路"}
 > 分别证明 (以 $R$ 分量为例):
@@ -436,6 +461,11 @@
 > 设 $S$ 为分片光滑的有向曲面, 其边界 $\partial S$ 为分段光滑的有向封闭曲线 (方向由右手法则与 $S$ 的法向量相符), $\mathbf{F}$ 在含 $S$ 的区域上有连续偏导数, 则
 >
 > $$\oint_{\partial S}\mathbf{F}\cdot\mathrm{d}\mathbf{r} = \iint_S(\nabla\times\mathbf{F})\cdot\mathbf{n}\,\mathrm{d}S.$$
+>
+> > <div id="chpt12-stokes" style="width:100%; height:540px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
+> > <script type="module" src="threejs/chpt12-stokes.js?v=1"></script>
+>
+> 上图取 $S$ 为单位上半球面, 边界 $\partial S$ 为单位圆 (位于 $xy$ 平面). 场 $\mathbf{F}(x,y,z) = (-y + 1.5x,\, x,\, 0)$, 旋度 $\nabla\times\mathbf{F} = (0,0,2)$, 处处指向 $+z$ —— 半球面用 $(\nabla\times\mathbf{F})\cdot\mathbf{n} = 2z$ 着色, 因此球顶最绿、向赤道渐淡. 几支绿色短箭头是表面上代表点处的旋度向量. 拖动滑块, 黑点沿 $\partial S$ 行进, 边界丝带按 $\mathbf{F}\cdot\boldsymbol\tau$ 的符号与大小着色 (与 §12.3、§12.4 同色谱), 红绿交替清晰可见. 当 $t = 1$ 完成一周时, 累积的 $\oint_{\partial S}\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 等于面积积分 $\iint_S (\nabla\times\mathbf{F})\cdot\mathrm{d}\mathbf{S} = 2\pi$. 反向按钮翻转方向, 二者同时变号. 鼠标左键拖拽旋转视角.
 >
 > ::: {.fold label="证明思路"}
 > 将 $S$ 用参数方程 $\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v))$, $(u,v)\in R$ 参数化. 用链式法则将 $\oint_{\partial S} P\,\mathrm{d}x$ 转化为参数域 $R$ 的边界上的积分 $\oint_{\partial R}(\cdots)\,\mathrm{d}u+(\cdots)\,\mathrm{d}v$, 再对 $R$ 应用格林公式展开, 所得表达式恰与右端 $\iint_S (R_y-Q_z,P_z-R_x,Q_x-P_y)\cdot\mathbf{n}\,\mathrm{d}S$ 中的对应项相等. 对 $P,Q,R$ 三项逐一处理后相加, 即得斯托克斯公式. $\blacksquare$
