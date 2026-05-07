@@ -4,6 +4,10 @@ chapter: 5
 tags: [中值定理]
 difficulty: medium
 video:
+figures:
+  - file: chpt5_ex008.png
+    alt: $\int_0^1 e^{-x^2}\,dx$ 的下界 $e^{-1}$ (红虚) 与上界 $1$ (绿虚) 之间夹住真实值
+    where: problem
 ---
 
 ## Problem

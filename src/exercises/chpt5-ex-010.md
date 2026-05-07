@@ -4,6 +4,10 @@ chapter: 5
 tags: [泰勒展开]
 difficulty: easy
 video:
+figures:
+  - file: chpt5_ex010.png
+    alt: $\sin x$ (黑实线) 与其 1 阶 / 3 阶 / 5 阶 Taylor 多项式 — 只含奇次项 (因为 $\sin$ 是奇函数)
+    where: problem
 ---
 
 ## Problem

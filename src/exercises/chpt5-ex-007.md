@@ -4,6 +4,10 @@ chapter: 5
 tags: [中值定理]
 difficulty: medium
 video:
+figures:
+  - file: chpt5_ex007.png
+    alt: 连续函数 $f$ 的正负面积大小相同 (积分为 0), 函数图像必在某 $c$ 处穿越 $x$ 轴
+    where: problem
 ---
 
 ## Problem

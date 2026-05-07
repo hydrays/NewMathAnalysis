@@ -4,6 +4,10 @@ chapter: 5
 tags: [泰勒展开]
 difficulty: easy
 video:
+figures:
+  - file: chpt5_ex017.png
+    alt: 同一函数的两种数值积分 — 左 梯形公式 (一阶折线), 右 辛普森公式 (二阶抛物线), 误差阶分别为 $O(h^2)$ 与 $O(h^4)$
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 5
 tags: [中值定理, 拉格朗日中值定理]
 difficulty: easy
 video:
+figures:
+  - file: chpt5_ex004.png
+    alt: $f(x)=x^3$ 在 $[0,1]$ 的割线斜率 $=1$, 切线在 $c=1/\sqrt{3}$ 处与之平行
+    where: problem
 ---
 
 ## Problem

@@ -5,6 +5,10 @@ title: 利用泰勒展开计算π的近似值
 tags: [泰勒展开, 数值计算]
 difficulty: medium
 video:
+figures:
+  - file: chpt5_ex020.png
+    alt: Leibniz 级数 $4\sum (-1)^{n-1}/(2n-1)$ 部分和 — 80 项后只稳定到小数点后两位, 收敛极慢
+    where: problem
 ---
 
 ## Problem

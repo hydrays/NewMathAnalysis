@@ -5,6 +5,10 @@ title: 无穷小量的阶与等价无穷小
 tags: [无穷小, 等价无穷小, 大O记号]
 difficulty: easy
 video:
+figures:
+  - file: chpt5_ex018.png
+    alt: 三个 $x\to 0$ 渐近关系 — 左 $x^2 = o(x)$, 中 $\sin x\sim x$, 右 $1-\cos x \sim x^2/2$
+    where: problem
 ---
 
 ## Problem

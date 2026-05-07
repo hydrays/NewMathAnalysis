@@ -4,6 +4,10 @@ chapter: 5
 tags: [泰勒展开]
 difficulty: medium
 video:
+figures:
+  - file: chpt5_ex014.png
+    alt: $e^x$ 始终在 $1+x+x^2/2$ 之上 — 二者之差 (绿色阴影) 等于 Taylor 余项, 在 $x>0$ 处恒正
+    where: problem
 ---
 
 ## Problem

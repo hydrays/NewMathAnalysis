@@ -4,6 +4,10 @@ chapter: 5
 tags: [泰勒展开]
 difficulty: easy
 video:
+figures:
+  - file: chpt5_ex009.png
+    alt: $e^x$ (黑实线) 与其 1, 2, 3 阶 Taylor 多项式 — 阶数越高, 在 0 附近吻合越远
+    where: problem
 ---
 
 ## Problem

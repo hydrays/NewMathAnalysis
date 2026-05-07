@@ -4,6 +4,10 @@ chapter: 5
 tags: [中值定理]
 difficulty: easy
 video:
+figures:
+  - file: chpt5_ex006.png
+    alt: $\int_0^2 x^2\,dx$ 的面积 (红色) 等于以 $f(c)=4/3$ 为高、宽 $2$ 的等高矩形 (绿色)
+    where: problem
 ---
 
 ## Problem

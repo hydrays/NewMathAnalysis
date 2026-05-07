@@ -4,6 +4,10 @@ chapter: 5
 tags: [泰勒展开]
 difficulty: medium
 video:
+figures:
+  - file: chpt5_ex015.png
+    alt: $\sin x$ 在 $(0, \pi/2)$ 上始终略大于 $x - x^3/6$ — Taylor 余项的下一阶 ($+x^5/120$) 恒正
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 5
 tags: [中值定理, 拉格朗日中值定理]
 difficulty: easy
 video:
+figures:
+  - file: chpt5_ex003.png
+    alt: $f(x)=x^2$ 上 $x_1, x_2$ 之间的割线 (红虚) 与某个 $c$ 处的切线 (绿) 平行 — 这就是拉格朗日中值定理
+    where: problem
 ---
 
 ## Problem
