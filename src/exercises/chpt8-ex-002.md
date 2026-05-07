@@ -4,6 +4,10 @@ chapter: 8
 tags: [偏导数, 数值方法]
 difficulty: easy
 video:
+figures:
+  - file: chpt8_ex002.png
+    alt: 前向差商误差正比于 $h$, 中心差商误差正比于 $h^2$ — 在双对数坐标下两条直线斜率不同
+    where: problem
 ---
 
 ## Problem

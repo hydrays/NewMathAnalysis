@@ -5,6 +5,10 @@ title: 可分离变量方程
 tags: [常微分方程, 分离变量法]
 difficulty: easy
 video:
+figures:
+  - file: chpt7_ex001.png
+    alt: $y' = y^2/x^2$ 的方向场 (蓝色短箭头) 与几条解曲线 $y = x/(1-Cx)$ (红色)
+    where: problem
 ---
 
 ## Problem

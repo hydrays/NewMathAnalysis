@@ -5,6 +5,10 @@ title: 牛顿冷却定律
 tags: [常微分方程, 应用, 分离变量法]
 difficulty: medium
 video:
+figures:
+  - file: chpt7_ex002.png
+    alt: 牛顿冷却 $T(t) = T_\infty + (T_0-T_\infty)e^{-kt}$ — 指数趋向环境温度 (虚线)
+    where: problem
 ---
 
 ## Problem

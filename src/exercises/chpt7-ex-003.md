@@ -5,6 +5,10 @@ title: 贷款偿还模型
 tags: [常微分方程, 应用, 金融数学]
 difficulty: medium
 video:
+figures:
+  - file: chpt7_ex003.png
+    alt: 贷款余额 $B(t)$ 随时间变化 — 利息累积与定额还款的平衡, 余额跨过零的时刻即还清日
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 8
 tags: [偏导数, 数值方法]
 difficulty: easy
 video:
+figures:
+  - file: chpt8_ex006.png
+    alt: 辛普森法 — 用相邻三个点的二次抛物拟合曲线, 对二次以下函数恰好精确
+    where: problem
 ---
 
 ## Problem

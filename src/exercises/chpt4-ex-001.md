@@ -4,6 +4,10 @@ chapter: 4
 tags: [不定积分, 黎曼和]
 difficulty: medium
 video:
+figures:
+  - file: chpt4_ex001.png
+    alt: $\int_0^1 x\,dx$ 的黎曼和 — 矩形高度采用每段右端点函数值, 当分段加密时收敛到 $1/2$
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 4
 tags: [不定积分, 黎曼和]
 difficulty: medium
 video:
+figures:
+  - file: chpt4_ex002.png
+    alt: $\int_0^1 x^2\,dx$ 的黎曼和 — 抛物线下的精确面积是 $1/3$
+    where: problem
 ---
 
 ## Problem

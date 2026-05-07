@@ -4,6 +4,10 @@ chapter: 8
 tags: [偏导数, 数值方法]
 difficulty: easy
 video:
+figures:
+  - file: chpt8_ex005.png
+    alt: 梯形法 — 用相邻两端点连线的折线代替曲线, 阴影梯形的总面积近似积分
+    where: problem
 ---
 
 ## Problem

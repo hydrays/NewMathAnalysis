@@ -4,6 +4,10 @@ chapter: 8
 tags: [偏导数, 数值方法]
 difficulty: easy
 video:
+figures:
+  - file: chpt8_ex004.png
+    alt: 左矩形 (低估) 与右矩形 (高估) — 对单调递增函数 $x^2$, 真值夹在两者之间
+    where: problem
 ---
 
 ## Problem

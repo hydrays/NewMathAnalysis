@@ -4,6 +4,10 @@ chapter: 8
 tags: [偏导数, 数值方法]
 difficulty: medium
 video:
+figures:
+  - file: chpt8_ex007.png
+    alt: Euler 法折线 (红) 用切线小步追赶指数曲线 $y=e^x$ (蓝) — 步长 $h=0.2$
+    where: problem
 ---
 
 ## Problem

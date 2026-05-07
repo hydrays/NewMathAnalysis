@@ -4,6 +4,10 @@ chapter: 8
 tags: [偏导数, 数值方法]
 difficulty: easy
 video:
+figures:
+  - file: chpt8_ex008.png
+    alt: Euler 法在 $x=1$ 处的误差与步长 $h$ 的双对数图 — 斜率 1 表明这是一阶方法
+    where: problem
 ---
 
 ## Problem
