@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 第二类曲线积分, 路径相关]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex007.png
+    alt: 被积函数 $f=y^2$ 的密度场与两条积分路径; (1) 上半圆周, (2) 沿 $x$ 轴的直线段
+    where: problem
 ---
 
 ## Problem

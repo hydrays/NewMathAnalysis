@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲面积分, 通量, 球面, 极坐标, 例题]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex026.png
+    alt: 上半球面 $S$ 由 $F\cdot\vec n=z$ 着色（顶部最亮）, 黑色箭头为竖直向上的场 $\vec F=z\hat k$
+    where: problem
 ---
 
 ## Problem

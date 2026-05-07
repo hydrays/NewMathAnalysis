@@ -4,6 +4,10 @@ chapter: 12
 tags: [Stokes公式, 三维曲线积分, 斯托克斯定理]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex019.png
+    alt: 第一卦限内三角形 $\Sigma:x+y+z=1$, 边界 $\Gamma$ 沿三边定向, 红色为上侧单位法向 $\vec n$
+    where: problem
 ---
 
 ## Problem

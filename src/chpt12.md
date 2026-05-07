@@ -126,6 +126,22 @@
 
 ## 第二类曲线积分
 
+> [!tip: 从标量场到向量场]
+>
+> §12.2 中, 被积函数 $f(x,y)$ 是一个**标量场**, 沿曲线累加 $f\,\mathrm{d}s$. 本节把被积对象换成带方向的**向量场** $\mathbf{F}$, 沿*有向*曲线 $L$ 累加 $\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ —— 这就是第二类曲线积分.
+>
+> 回忆向量场的分量形式 (见 §12.1):
+>
+> $$
+> \mathbf{F}(x,y) = P(x,y)\,\hat{\mathbf{i}} + Q(x,y)\,\hat{\mathbf{j}} \qquad \text{(二维)},
+> $$
+>
+> $$
+> \mathbf{F}(x,y,z) = P(x,y,z)\,\hat{\mathbf{i}} + Q(x,y,z)\,\hat{\mathbf{j}} + R(x,y,z)\,\hat{\mathbf{k}} \qquad \text{(三维)},
+> $$
+>
+> 其中 $P, Q, R$ 是普通的多元函数, 分别给出向量在三条坐标轴上的分量. 下面就在这种结构上构造曲线积分.
+
 > [!tip: 引入问题: 力沿路径做的功]
 >
 > 质点在向量场 $\mathbf{F}(x,y) = P(x,y)\hat{\mathbf{i}}+Q(x,y)\hat{\mathbf{j}}$ 的作用下沿有向曲线 $L$ 运动. 如何计算场对质点所做的总功?
@@ -192,76 +208,7 @@
 ::: {.exercise id="chpt12-ex-008"}
 :::
 
-## 格林公式与保守场
-
-### 格林公式
-
-> [!tip: 引入问题: 边界环量与内部旋转]
->
-> 流体在平面区域 $D$ 内流动, 速度场为 $\mathbf{F}=(P,Q)$. 沿 $D$ 的边界 $C$ (逆时针方向) 一圈的环量 $\displaystyle\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 是否能用 $D$ 内部每一点的"局部旋转"信息来计算? 为此, 先用一个局部量刻画向量场在一点的旋转倾向 —— **旋度**.
-
-> [!important: 定义 — 二维旋度]
->
-> 设 $\mathbf{F}=(P,Q)$ 在区域 $D$ 上有连续偏导数, 称
->
-> $$\operatorname{curl}\mathbf{F} = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$$
->
-> 为 $\mathbf{F}$ 的**旋度** (二维). $\operatorname{curl}\mathbf{F}>0$ 表示该点邻域内流体逆时针旋转, $<0$ 表示顺时针旋转, $=0$ 表示无旋.
-
-> [!important: 定理 — 格林公式]
->
-> 格林公式把区域内所有点的旋度"积累"起来, 得到边界上的环量.
->
-> 设 $D$ 为平面上由分段光滑曲线围成的有界闭区域, $P(x,y)$ 和 $Q(x,y)$ 在 $D$ 上有一阶连续偏导数, $C = \partial D^+$ 表示 $D$ 的正向 (逆时针) 边界, 则
->
-> $$\oint_{C} P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}A.$$
->
-> > <div id="chpt12-green" style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
-> > <script type="module" src="threejs/chpt12-green.js?v=1"></script>
->
-> 上图取 $D$ 为单位圆盘, $\mathbf{F}(x,y) = (y,\, -x^2)$, 故 $\mathrm{curl}\,\mathbf{F} = -2x - 1$, 在 $D$ 内随 $x$ 由 $+1$ (左缘) 单调降到 $-3$ (右缘). 圆盘内部以发散色谱画出旋度 (绿正红负), 浅灰箭头是场快照. 拖动滑块, 黑色质点沿 $\partial D$ 逆时针行进, 边界按 $\mathbf{F}\cdot\boldsymbol\tau$ 着色 (与 §12.3 同一色谱); 下方实时显示 $\oint_{\partial D} \mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 累积值与 $\iint_D \mathrm{curl}\,\mathbf{F}\,\mathrm{d}A = -\pi$. 当滑块到达 $t=1$, 二者相等 —— 这就是格林公式. 点击 **反向** 让边界顺时针走, 此时 $\oint$ 变号, 而面积积分 $\iint$ 不变.
->
-> ::: {.fold label="证明"}
-> 只需分别证明:
->
-> $$\oint_C P\,\mathrm{d}x = -\iint_D P_y\,\mathrm{d}A, \qquad \oint_C Q\,\mathrm{d}y = \iint_D Q_x\,\mathrm{d}A. \tag{$*$}$$
->
-> 两式对称, 只证第一式.
->
-> **第一步: 竖直简单区域.** 设 $D$: $a\leq x\leq b$, $f_1(x)\leq y\leq f_2(x)$, 正向边界由底弧 $C_1$ ($y=f_1$, 从左到右), 顶弧 $C_3$ ($y=f_2$, 从右到左) 及两侧竖直边 (若有) 组成. 在竖直边上 $\mathrm{d}x=0$, 故其贡献为零.
->
-> $$\oint_C P\,\mathrm{d}x = \int_a^b P(x,f_1(x))\,\mathrm{d}x - \int_a^b P(x,f_2(x))\,\mathrm{d}x = -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.$$
->
-> 另一方面, 由单变量 FTC 对 $y$ 积分:
->
-> $$-\iint_D P_y\,\mathrm{d}A = -\int_a^b\int_{f_1(x)}^{f_2(x)}\frac{\partial P}{\partial y}\,\mathrm{d}y\,\mathrm{d}x = -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.$$
->
-> 两式相等, 第一式对竖直简单区域得证.
->
-> **第二步: 一般区域.** 将 $D$ 用一条竖直线段分成两个竖直简单子区域 $D_1, D_2$, 对每个子区域应用第一步. 内部公共边界的贡献方向相反而相消: $\int_\ell P\,\mathrm{d}x + \int_{-\ell} P\,\mathrm{d}x = 0$. 两部分相加即得 $D$ 上的结论. 对 $(*)$ 的第二式类似处理, 两式相加即得格林公式. $\blacksquare$
-> :::
-
-> [!note: 应用 — 用边界曲线计算面积]
->
-> 取 $P=-y,\,Q=x$, 则 $Q_x-P_y=1+1=2$, 格林公式给出
->
-> $$A = \iint_D\mathrm{d}A = \frac{1}{2}\oint_C x\,\mathrm{d}y - y\,\mathrm{d}x.$$
->
-> 这是仅用边界曲线参数方程就能计算区域面积的公式.
-
-::: {.exercise id="chpt12-ex-010"}
-:::
-
-::: {.exercise id="chpt12-ex-011"}
-:::
-
-::: {.exercise id="chpt12-ex-012"}
-:::
-
-::: {.exercise id="chpt12-ex-013"}
-:::
-
-### 保守场与曲线积分基本定理
+## 保守场与曲线积分基本定理
 
 > [!tip: 引入问题: 做功何时与路径无关? ]
 >
@@ -317,6 +264,89 @@
 :::
 
 ::: {.exercise id="chpt12-ex-009"}
+:::
+
+## 旋度与格林公式
+
+### 旋度
+
+> [!important: 定义 — 二维旋度]
+>
+> 设 $\mathbf{F}=(P,Q)$ 在区域 $D$ 上有连续偏导数, 称
+>
+> $$\operatorname{curl}\mathbf{F} = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$$
+>
+> 为 $\mathbf{F}$ 的**旋度** (二维). $\operatorname{curl}\mathbf{F}>0$ 表示该点邻域内流体逆时针旋转, $<0$ 表示顺时针旋转, $=0$ 表示无旋.
+
+> [!note: 旋度的直观含义 — 三个例子]
+>
+> 把场 $\mathbf{F}$ 想成流体的速度场, 在某点放一个无穷小的"风车". 风车随流体被携带前进的同时, 还可能**自转**; **旋度衡量的就是这个自转角速度** (与公转无关).
+>
+> **例 (1) 旋转场** $\mathbf{F}=(-y,\,x)$: $Q_x - P_y = 1-(-1) = 2$. 流线是绕原点的圆, 风车既绕原点公转, 也以同样的角速度自转, $\operatorname{curl}\mathbf{F}=2>0$ (逆时针).
+>
+> **例 (2) 辐射场** $\mathbf{F}=(x,\,y)$: $Q_x - P_y = 0-0 = 0$. 流线沿径向向外, 风车被推远但**不自转**, $\operatorname{curl}\mathbf{F}=0$ —— 即使场在向外膨胀.
+>
+> **例 (3) 剪切场** $\mathbf{F}=(y,\,0)$: $Q_x - P_y = 0-1 = -1$. 流线是平行于 $x$ 轴的直线, 看似"无旋", 但**上层流速大于下层**, 把风车上沿向右推, 下沿基本不动, 风车顺时针自转, $\operatorname{curl}\mathbf{F}=-1<0$.
+>
+> 关键观察: 旋度看的是局部"撕扯", 与流线是否绕中心绕圈无关 (例 2, 3 给出反直觉的两面).
+
+### 格林公式
+
+> [!tip: 引入问题: 边界环量与内部旋度的总和]
+>
+> 流体在平面区域 $D$ 内流动, 速度场为 $\mathbf{F}=(P,Q)$. 沿 $D$ 的边界 $C$ (逆时针方向) 一圈的环量 $\displaystyle\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 能否用 $D$ 内部每一点的旋度 $\operatorname{curl}\mathbf{F}$ "积累"得到? 这就是格林公式给出的答案.
+
+> [!important: 定理 — 格林公式]
+>
+> 格林公式把区域内所有点的旋度"积累"起来, 得到边界上的环量.
+>
+> 设 $D$ 为平面上由分段光滑曲线围成的有界闭区域, $P(x,y)$ 和 $Q(x,y)$ 在 $D$ 上有一阶连续偏导数, $C = \partial D^+$ 表示 $D$ 的正向 (逆时针) 边界, 则
+>
+> $$\oint_{C} P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}A.$$
+>
+> > <div id="chpt12-green" style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;"></div>
+> > <script type="module" src="threejs/chpt12-green.js?v=1"></script>
+>
+> 上图取 $D$ 为单位圆盘, $\mathbf{F}(x,y) = (y,\, -x^2)$, 故 $\mathrm{curl}\,\mathbf{F} = -2x - 1$, 在 $D$ 内随 $x$ 由 $+1$ (左缘) 单调降到 $-3$ (右缘). 圆盘内部以发散色谱画出旋度 (绿正红负), 浅灰箭头是场快照. 拖动滑块, 黑色质点沿 $\partial D$ 逆时针行进, 边界按 $\mathbf{F}\cdot\boldsymbol\tau$ 着色 (与 §12.3 同一色谱); 下方实时显示 $\oint_{\partial D} \mathbf{F}\cdot\mathrm{d}\mathbf{r}$ 累积值与 $\iint_D \mathrm{curl}\,\mathbf{F}\,\mathrm{d}A = -\pi$. 当滑块到达 $t=1$, 二者相等 —— 这就是格林公式. 点击 **反向** 让边界顺时针走, 此时 $\oint$ 变号, 而面积积分 $\iint$ 不变.
+>
+> ::: {.fold label="证明"}
+> 只需分别证明:
+>
+> $$\oint_C P\,\mathrm{d}x = -\iint_D P_y\,\mathrm{d}A, \qquad \oint_C Q\,\mathrm{d}y = \iint_D Q_x\,\mathrm{d}A. \tag{$*$}$$
+>
+> 两式对称, 只证第一式.
+>
+> **第一步: 竖直简单区域.** 设 $D$: $a\leq x\leq b$, $f_1(x)\leq y\leq f_2(x)$, 正向边界由底弧 $C_1$ ($y=f_1$, 从左到右), 顶弧 $C_3$ ($y=f_2$, 从右到左) 及两侧竖直边 (若有) 组成. 在竖直边上 $\mathrm{d}x=0$, 故其贡献为零.
+>
+> $$\oint_C P\,\mathrm{d}x = \int_a^b P(x,f_1(x))\,\mathrm{d}x - \int_a^b P(x,f_2(x))\,\mathrm{d}x = -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.$$
+>
+> 另一方面, 由单变量 FTC 对 $y$ 积分:
+>
+> $$-\iint_D P_y\,\mathrm{d}A = -\int_a^b\int_{f_1(x)}^{f_2(x)}\frac{\partial P}{\partial y}\,\mathrm{d}y\,\mathrm{d}x = -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.$$
+>
+> 两式相等, 第一式对竖直简单区域得证.
+>
+> **第二步: 一般区域.** 将 $D$ 用一条竖直线段分成两个竖直简单子区域 $D_1, D_2$, 对每个子区域应用第一步. 内部公共边界的贡献方向相反而相消: $\int_\ell P\,\mathrm{d}x + \int_{-\ell} P\,\mathrm{d}x = 0$. 两部分相加即得 $D$ 上的结论. 对 $(*)$ 的第二式类似处理, 两式相加即得格林公式. $\blacksquare$
+> :::
+
+> [!note: 应用 — 用边界曲线计算面积]
+>
+> 取 $P=-y,\,Q=x$, 则 $Q_x-P_y=1+1=2$, 格林公式给出
+>
+> $$A = \iint_D\mathrm{d}A = \frac{1}{2}\oint_C x\,\mathrm{d}y - y\,\mathrm{d}x.$$
+>
+> 这是仅用边界曲线参数方程就能计算区域面积的公式.
+
+::: {.exercise id="chpt12-ex-010"}
+:::
+
+::: {.exercise id="chpt12-ex-011"}
+:::
+
+::: {.exercise id="chpt12-ex-012"}
+:::
+
+::: {.exercise id="chpt12-ex-013"}
 :::
 
 ## 曲面积分

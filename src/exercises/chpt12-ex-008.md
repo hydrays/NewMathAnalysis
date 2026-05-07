@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 第二类曲线积分, 路径无关]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex008.png
+    alt: 势函数 $\varphi=x^2 y$ 的等高线（白色细线）与三条从 $O$ 到 $B(1,1)$ 的路径 $L_1, L_2, L_3$
+    where: problem
 ---
 
 ## Problem

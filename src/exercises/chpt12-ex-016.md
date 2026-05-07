@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲面积分, 高斯公式, 柱面坐标]
 difficulty: hard
 video:
+figures:
+  - file: chpt12_ex016.png
+    alt: 闭区域 $\Omega$ 由柱面 $x^2+y^2=1$ 与平面 $z=0, z=3$ 围成, $\Sigma$ 为其整个外侧边界
+    where: problem
 ---
 
 ## Problem

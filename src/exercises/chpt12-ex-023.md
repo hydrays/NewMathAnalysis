@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 第一类曲线积分, 弧长, 例题]
 difficulty: easy
 video:
+figures:
+  - file: chpt12_ex023.png
+    alt: 被积函数 $f=x^2+y^2$ 的密度场与单位圆路径 $L$
+    where: problem
 ---
 
 ## Problem

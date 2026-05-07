@@ -4,6 +4,11 @@ chapter: 12
 tags: [曲线积分, 第一类曲线积分, 空间曲线, 螺旋线]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex002.png
+    alt: 被积函数 $f=x^2+y^2+z^2$ 在 $y=0$ 截面上的密度场, 以及空间螺旋路径 $\Gamma$（取 $a=1, k=0.5$）
+    where: problem
+    width: 420
 ---
 
 ## Problem

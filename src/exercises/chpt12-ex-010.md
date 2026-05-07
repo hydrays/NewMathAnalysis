@@ -4,6 +4,10 @@ chapter: 12
 tags: [格林公式, 旋转场, 面积]
 difficulty: easy
 video:
+figures:
+  - file: chpt12_ex010.png
+    alt: 旋转场 $\vec F=(-y,x)$ 与样例区域 $D$（单位圆盘）, 边界 $\partial D$ 沿正向
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 第二类曲线积分, 参数化]
 difficulty: easy
 video:
+figures:
+  - file: chpt12_ex003.png
+    alt: 向量场 $\vec F=(-y,x)$ 的方向（白色箭头）与模长 $|\vec F|$ 密度场, 以及积分路径 $L:(t,t^2)$
+    where: problem
 ---
 
 ## Problem

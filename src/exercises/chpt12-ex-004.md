@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 第二类曲线积分, 路径相关]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex004.png
+    alt: 被积函数 $f=xy$ 的密度场（红正蓝负）与抛物线路径 $L:x=y^2$, 从 $A(1,-1)$ 到 $B(1,1)$
+    where: problem
 ---
 
 ## Problem

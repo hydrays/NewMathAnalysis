@@ -4,6 +4,10 @@ chapter: 12
 tags: [Stokes公式, 三维曲线积分, 斯托克斯定理]
 difficulty: hard
 video:
+figures:
+  - file: chpt12_ex020.png
+    alt: 立方体 $[0,1]^3$ 与平面 $x+y+z=3/2$ 截得的正六边形截痕 $\Gamma$, 沿正向标记
+    where: problem
 ---
 
 ## Problem

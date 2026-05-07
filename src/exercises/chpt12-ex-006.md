@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 两类曲线积分关系, 保守场]
 difficulty: easy
 video:
+figures:
+  - file: chpt12_ex006.png
+    alt: 辐射场 $\vec F=(x,y)$ 的密度场, 以及任取的一条闭合曲线 $L$
+    where: problem
 ---
 
 ## Problem

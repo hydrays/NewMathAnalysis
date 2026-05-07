@@ -86,10 +86,38 @@ def _parse_solution_body(text: str) -> tuple:
     return hint, answer
 
 
+def _parse_figures(raw) -> list:
+    """
+    Normalize a `figures:` frontmatter entry into a list of dicts with keys
+    `file`, `alt`, `where`, `width`. `raw` may be None, a single string
+    (filename), a single dict, or a list of strings/dicts.
+
+    `where` is one of: "problem" (default), "answer" (≡ answer:1), or
+    "answer:N" for the N-th solution (1-based).
+    """
+    if not raw:
+        return []
+    if not isinstance(raw, list):
+        raw = [raw]
+    out = []
+    for item in raw:
+        if isinstance(item, str):
+            item = {"file": item}
+        if not isinstance(item, dict) or not item.get("file"):
+            continue
+        out.append({
+            "file":  str(item["file"]),
+            "alt":   str(item.get("alt", "")),
+            "where": str(item.get("where", "problem")).strip().lower(),
+            "width": int(item.get("width", 400)),
+        })
+    return out
+
+
 def parse_exercise_file(text: str) -> dict:
     """
     Parse an exercise .md file (as a string) and return a dict:
-      id, chapter, tags, difficulty, video, problem, solutions
+      id, chapter, tags, difficulty, video, problem, solutions, figures
     """
     meta, body = _split_frontmatter(text)
     sections = _parse_sections(body)
@@ -103,6 +131,7 @@ def parse_exercise_file(text: str) -> dict:
         "title":      str(meta.get("title", "")).strip() if meta.get("title") else "",
         "problem":    sections["problem"],
         "solutions":  sections["solutions"],
+        "figures":    _parse_figures(meta.get("figures")),
     }
 
 
@@ -138,6 +167,43 @@ def _sol_buttons(ex_id: str, frame_id: str, sol: dict, idx: int) -> tuple:
     return buttons, panels
 
 
+def _figure_md(fig: dict) -> str:
+    """Render one figure as a markdown image line (pandoc turns it into a
+    <figure> with caption). Bare filenames resolve to ../media/img/."""
+    path = fig["file"]
+    if "/" not in path:
+        path = f"../media/img/{path}"
+    return f"\n\n![{fig['alt']}]({path}#{fig['width']}w)\n"
+
+
+def _distribute_figures(problem: str, solutions: list, figures: list):
+    """Append each figure's markdown to its target body. Returns
+    (problem, solutions) — solutions is a fresh list of fresh dicts."""
+    solutions = [dict(s) for s in solutions]
+    for fig in figures:
+        md = _figure_md(fig)
+        where = fig["where"]
+        if where == "problem":
+            problem = problem + md
+            continue
+        # answer / answer:N
+        idx = 0
+        if where.startswith("answer:"):
+            try:
+                idx = int(where.split(":", 1)[1]) - 1
+            except ValueError:
+                idx = 0
+        elif where != "answer":
+            # Unknown target — fall back to problem so the figure isn't lost.
+            problem = problem + md
+            continue
+        if 0 <= idx < len(solutions):
+            solutions[idx]["answer"] = solutions[idx]["answer"] + md
+        else:
+            problem = problem + md
+    return problem, solutions
+
+
 def render_exercise_html(ex: dict, number: int = 0) -> str:
     ex_id = ex["id"]
     diff_class, diff_dot = _DIFFICULTY_DOT.get(
@@ -150,11 +216,15 @@ def render_exercise_html(ex: dict, number: int = 0) -> str:
     title     = ex.get("title", "")
     ex_label  = f"{base}: {title}" if title else base
 
+    problem, solutions = _distribute_figures(
+        ex["problem"], ex["solutions"], ex.get("figures", []),
+    )
+
     controls = ""
     panels   = ""
 
     # All solutions rendered identically: label (when multi) + hint/answer buttons
-    for i, sol in enumerate(ex["solutions"]):
+    for i, sol in enumerate(solutions):
         btns, pnls = _sol_buttons(ex_id, frame_id, sol, i)
         if is_multi:
             sol_label = _SOLUTION_LABELS[i] if i < len(_SOLUTION_LABELS) else f"解法{i+1}"
@@ -179,7 +249,7 @@ def render_exercise_html(ex: dict, number: int = 0) -> str:
         f'<span class="ex-tags">{tags_html}</span>'
         f'</div>\n'
         f'<div class="ex-body">\n'
-        f'<div class="ex-problem-box">\n\n{ex["problem"]}\n\n</div>\n'
+        f'<div class="ex-problem-box">\n\n{problem}\n\n</div>\n'
         f'<div class="ex-controls">\n{controls}{video_btn}</div>\n'
         f'<div class="ex-frame" id="{frame_id}" hidden>\n{panels}</div>\n'
         f'</div>\n'

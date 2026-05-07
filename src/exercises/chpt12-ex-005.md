@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 第二类曲线积分, 物理应用, 做功]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex005.png
+    alt: 向心力场 $\vec F=-k(x,y)$ 的密度场, 以及椭圆弧路径 $A(a,0)\to B(0,b)$（取 $a=2, b=1$）
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 12
 tags: [格林公式, 曲线积分, 圆周]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex011.png
+    alt: 向量场 $\vec F=(x^2 y,\,-xy^2)$ 的密度场与正向圆周 $L:x^2+y^2=a^2$（取 $a=1$）
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 第二类曲线积分, 例题]
 difficulty: easy
 video:
+figures:
+  - file: chpt12_ex024.png
+    alt: 向量场 $\vec F=(y,-x)$ 的密度场与上半圆周 $L:(\cos t,\sin t),t\in[0,\pi]$
+    where: problem
 ---
 
 ## Problem

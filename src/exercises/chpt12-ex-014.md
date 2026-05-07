@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲面积分, 通量, 散度定理]
 difficulty: easy
 video:
+figures:
+  - file: chpt12_ex014.png
+    alt: 辐射场 $\vec F=(x,y)$ 与样例区域 $D$（单位圆盘）, 红色箭头示外法向 $\vec n$
+    where: problem
 ---
 
 ## Problem

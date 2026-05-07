@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲面积分, 高斯公式, 三维散度]
 difficulty: easy
 video:
+figures:
+  - file: chpt12_ex015.png
+    alt: 球面 $\Sigma:\,x^2+y^2+z^2=a^2$ 与辐射场 $\vec F=(x,y,z)$ 的外向箭头（取 $a=1$）
+    where: problem
 ---
 
 ## Problem

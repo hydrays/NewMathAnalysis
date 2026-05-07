@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲线积分, 第一类曲线积分, 弧长]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex001.png
+    alt: 被积函数 $\sqrt{y}$ 的密度场与积分路径 $L$
+    where: problem
 ---
 
 ## Problem

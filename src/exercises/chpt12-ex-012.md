@@ -4,6 +4,11 @@ chapter: 12
 tags: [格林公式, 奇点, 复连通区域]
 difficulty: hard
 video:
+figures:
+  - file: chpt12_ex012.png
+    alt: 奇异场 $\vec F=(-y,x)/(x^2+y^2)$ 在原点处发散; (1) 闭曲线包围原点, (2) 不包围原点
+    where: problem
+    width: 600
 ---
 
 ## Problem

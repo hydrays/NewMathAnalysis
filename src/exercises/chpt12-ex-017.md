@@ -4,6 +4,10 @@ chapter: 12
 tags: [曲面积分, 高斯公式, 非封闭曲面, 补面法]
 difficulty: hard
 video:
+figures:
+  - file: chpt12_ex017.png
+    alt: 锥面 $\Sigma:z^2=x^2+y^2$（$0\leq z\leq h$）下侧, 红色箭头为下侧法向
+    where: problem
 ---
 
 ## Problem

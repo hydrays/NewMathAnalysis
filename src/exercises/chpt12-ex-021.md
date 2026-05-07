@@ -4,6 +4,10 @@ chapter: 12
 tags: [Stokes公式, 三维曲线积分, 旋度]
 difficulty: medium
 video:
+figures:
+  - file: chpt12_ex021.png
+    alt: 三维曲线 $C:(x,y,z)=(t^3,t^2,t)$, 从 $(0,0,0)$ 到 $(1,1,1)$
+    where: problem
 ---
 
 ## Problem

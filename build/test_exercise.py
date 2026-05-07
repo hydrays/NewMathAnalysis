@@ -69,6 +69,86 @@ def test_render_video_button_appears():
     assert "视频" in html
     assert "https://example.com/video" in html
 
+def test_figures_default_to_problem():
+    src = """\
+---
+id: chpt0-ex-001
+chapter: 0
+tags: []
+difficulty: easy
+figures:
+  - foo.png
+---
+
+## Problem
+
+P body.
+
+## Solution 1
+
+### Hint
+H.
+
+### Answer
+A body.
+"""
+    ex = parse_exercise_file(src)
+    assert ex["figures"][0]["file"] == "foo.png"
+    assert ex["figures"][0]["where"] == "problem"
+    assert ex["figures"][0]["width"] == 400
+    html = render_exercise_html(ex)
+    # image goes into problem box, not the (hidden) answer panel
+    pre_ctrl = html.split("ex-controls")[0]
+    assert "foo.png" in pre_ctrl
+    post_ctrl = html.split("ex-controls")[1]
+    assert "foo.png" not in post_ctrl
+
+
+def test_figures_routed_to_answer():
+    src = """\
+---
+id: chpt0-ex-002
+chapter: 0
+tags: []
+difficulty: easy
+figures:
+  - { file: only-in-problem.png, where: problem, alt: P, width: 320 }
+  - { file: only-in-answer-2.png, where: "answer:2", alt: A2 }
+---
+
+## Problem
+
+P.
+
+## Solution 1
+
+### Hint
+H1.
+
+### Answer
+A1.
+
+## Solution 2
+
+### Hint
+H2.
+
+### Answer
+A2.
+"""
+    ex = parse_exercise_file(src)
+    html = render_exercise_html(ex)
+    pre_ctrl, _, post_ctrl = html.partition("ex-controls")
+    assert "only-in-problem.png" in pre_ctrl
+    assert "only-in-problem.png" not in post_ctrl
+    assert "width=320" in pre_ctrl or "320w" in pre_ctrl
+    # answer:2 lands in the second answer panel only
+    ans2_block = post_ctrl.split("ex-ans-panel")[2]  # index 0=before first split, 1=first panel, 2=second
+    assert "only-in-answer-2.png" in ans2_block
+    ans1_block = post_ctrl.split("ex-ans-panel")[1]
+    assert "only-in-answer-2.png" not in ans1_block
+
+
 def test_render_multiple_solutions():
     sample2 = SAMPLE + """
 ## Solution 2
