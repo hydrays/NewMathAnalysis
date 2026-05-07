@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 体积]
 difficulty: easy
 video:
+figures:
+  - file: chpt6_ex004.png
+    alt: 直线 $y=x$ 在 $[0,1]$ 上绕 $y$ 轴旋转 — 形成顶端在原点的倒置圆锥, 高度 $y$ 处的圆半径等于 $y$
+    where: problem
 ---
 
 ## Problem

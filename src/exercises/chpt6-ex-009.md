@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 面积]
 difficulty: medium
 video:
+figures:
+  - file: chpt6_ex009.png
+    alt: 圆柱形水箱 (半径 $R$, 高 $H$), 红色薄片为高 $z$ 处厚 $dz$ 的水层, 需提升的距离为 $H-z$
+    where: problem
 ---
 
 ## Problem

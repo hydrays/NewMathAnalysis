@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 面积]
 difficulty: easy
 video:
+figures:
+  - file: chpt6_ex011.png
+    alt: $y = 1/\sqrt{x}$ 在 $x=0$ 处发散, 但 $\int_0^1 1/\sqrt{x}\,dx$ 收敛于 $2$ — 红色阴影即为该面积
+    where: problem
 ---
 
 ## Problem

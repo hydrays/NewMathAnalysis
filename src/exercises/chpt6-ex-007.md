@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 弧长, 极坐标]
 difficulty: medium
 video:
+figures:
+  - file: chpt6_ex007.png
+    alt: 心形线 $r = a(1+\cos\theta)$, $\theta\in[0, 2\pi]$ — 经典极坐标曲线, 周长为 $8a$
+    where: problem
 ---
 
 ## Problem

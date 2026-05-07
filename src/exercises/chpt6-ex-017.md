@@ -5,6 +5,10 @@ title: 曲线下面积的计算
 tags: [定积分, 面积]
 difficulty: easy
 video:
+figures:
+  - file: chpt6_ex017.png
+    alt: 曲线 $y=f(x)$ 与 $x$ 轴在 $[a,b]$ 围成的区域面积 $\int_a^b f(x)\,dx$
+    where: problem
 ---
 
 ## Problem

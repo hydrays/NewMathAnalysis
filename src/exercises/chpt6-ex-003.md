@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 体积]
 difficulty: easy
 video:
+figures:
+  - file: chpt6_ex003.png
+    alt: $y=\sqrt{x}$ 在 $[0,1]$ 上绕 $x$ 轴旋转, 形成的旋转体 — 在 $x$ 处的截面是半径 $\sqrt{x}$ 的圆
+    where: problem
 ---
 
 ## Problem

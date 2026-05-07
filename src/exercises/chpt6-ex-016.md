@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 面积]
 difficulty: medium
 video:
+figures:
+  - file: chpt6_ex016.png
+    alt: "同样的 $1/x^p$ 曲线在 $x=0$ 附近 — 故事颠倒过来 ($p<1$ 时积分收敛, $p\\ge 1$ 时发散)"
+    where: problem
 ---
 
 ## Problem

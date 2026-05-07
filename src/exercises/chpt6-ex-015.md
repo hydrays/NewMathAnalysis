@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 面积]
 difficulty: medium
 video:
+figures:
+  - file: chpt6_ex015.png
+    alt: "$1/x^p$ 几条曲线 ($p=0.5, 1, 1.5, 2$) — $p\\le 1$ 的尾部太胖 (积分发散), $p>1$ 收敛"
+    where: problem
 ---
 
 ## Problem

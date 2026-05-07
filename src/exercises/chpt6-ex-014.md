@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 面积]
 difficulty: medium
 video:
+figures:
+  - file: chpt6_ex014.png
+    alt: 指数分布密度 $f(x) = \lambda e^{-\lambda x}$, $\lambda = 0.001$ — 红色阴影为尾部概率 $P(X>1000) = e^{-1} \approx 0.368$
+    where: problem
 ---
 
 ## Problem

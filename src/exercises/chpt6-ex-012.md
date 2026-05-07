@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 面积]
 difficulty: easy
 video:
+figures:
+  - file: chpt6_ex012.png
+    alt: 三角形概率密度 $f(x)=2x$ 在 $[0,1]$ 上, 阴影面积 $\int_0^1 2x\,dx = 1$ 验证为 PDF
+    where: problem
 ---
 
 ## Problem

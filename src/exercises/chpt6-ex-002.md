@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 体积]
 difficulty: easy
 video:
+figures:
+  - file: chpt6_ex002.png
+    alt: 圆锥体积示意 — 高 $z$ 处的截面圆半径为 $r(z) = R(1 - z/h)$, 用切片积分得 $V = \pi R^2 h / 3$
+    where: problem
 ---
 
 ## Problem

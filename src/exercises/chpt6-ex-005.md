@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 弧长, 换元法]
 difficulty: medium
 video:
+figures:
+  - file: chpt6_ex005.png
+    alt: $y=x^{3/2}$ 在 $[0,1]$ 的曲线, 红色短箭头标出弧长微元 $ds=\sqrt{1+(y')^2}\,dx$
+    where: problem
 ---
 
 ## Problem

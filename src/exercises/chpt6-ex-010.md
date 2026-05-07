@@ -4,6 +4,10 @@ chapter: 6
 tags: [定积分, 面积]
 difficulty: medium
 video:
+figures:
+  - file: chpt6_ex010.png
+    alt: 引力大小 $F(r) = GMm/r^2$ 随距离衰减, 红色阴影面积即为从 $r$ 到无穷远做的功 $W$
+    where: problem
 ---
 
 ## Problem
