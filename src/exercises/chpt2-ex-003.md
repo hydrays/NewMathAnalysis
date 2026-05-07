@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 导函数, 幂函数]
 difficulty: easy
 video:
+figures:
+  - file: chpt2_ex003.png
+    alt: 函数 $y=x^2$ 与导函数 $y'=2x$ 并排展示 — 同一 $x$ 处, 抛物线的切线斜率即为 $2x$
+    where: problem
 ---
 
 ## Problem

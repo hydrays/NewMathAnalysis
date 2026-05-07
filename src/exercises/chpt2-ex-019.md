@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 凸性, 对数函数]
 difficulty: easy
 video:
+figures:
+  - file: chpt2_ex019.png
+    alt: $y=\ln x$ ($x>0$) 是凹函数 (concave) — 任意两点之间的弦都在曲线下方
+    where: problem
 ---
 
 ## Problem

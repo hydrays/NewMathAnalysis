@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 极值, 高阶导数, 幂函数]
 difficulty: medium
 video:
+figures:
+  - file: chpt2_ex014.png
+    alt: $y=x^4-4x^2$ 是经典的 W 形曲线 — 在 $x=\pm\sqrt{2}$ 取两个极小值 $-4$, 在 $x=0$ 取局部极大值 $0$
+    where: problem
 ---
 
 ## Problem

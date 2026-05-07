@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 凸性, 幂函数]
 difficulty: easy
 video:
+figures:
+  - file: chpt2_ex017.png
+    alt: $y=\sqrt{x}$ 是凹函数 (concave) — 任意两点之间的弦都在曲线下方
+    where: problem
 ---
 
 ## Problem

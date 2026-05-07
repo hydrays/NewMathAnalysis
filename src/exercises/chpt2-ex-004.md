@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 导函数, 三角函数]
 difficulty: medium
 video:
+figures:
+  - file: chpt2_ex004.png
+    alt: $y=\cos x$ 与其导数 $y'=-\sin x$ 同框显示 — 余弦的极值处正弦取零, 余弦的零点处正弦达极值
+    where: problem
 ---
 
 ## Problem

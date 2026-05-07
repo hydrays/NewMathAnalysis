@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 幂函数]
 difficulty: easy
 video:
+figures:
+  - file: chpt2_ex002.png
+    alt: $y=x^2$ 与 $x=2$ 处的切线 $y=4x-4$, 斜率 $f'(2)=4$
+    where: problem
 ---
 
 ## Problem

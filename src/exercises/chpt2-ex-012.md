@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 单调性, 三角函数]
 difficulty: easy
 video:
+figures:
+  - file: chpt2_ex012.png
+    alt: 左图 $y=x+\cos x$ 在 $[0,2\pi]$ 单调递增; 右图 $y'=1-\sin x \geq 0$ 处处非负 — 这就是单调的依据
+    where: problem
 ---
 
 ## Problem

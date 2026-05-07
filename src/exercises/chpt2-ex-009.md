@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 商法则, 三角函数]
 difficulty: medium
 video:
+figures:
+  - file: chpt2_ex009.png
+    alt: $y=\tan x$ (蓝实线) 与导数 $y'=\sec^2 x$ (红虚线), 在 $x=\pm\pi/2$ 处有竖直渐近线
+    where: problem
 ---
 
 ## Problem

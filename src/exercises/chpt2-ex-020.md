@@ -5,6 +5,10 @@ title: 凸函数的仿射变换
 tags: [凸函数, 极值]
 difficulty: easy
 video:
+figures:
+  - file: chpt2_ex020.png
+    alt: $f(x)=x^2$ 与 $k(x)=f(2x+1)=(2x+1)^2$ 都是开口向上的抛物线 — 仿射代换不破坏凸性
+    where: problem
 ---
 
 ## Problem

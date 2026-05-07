@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 凸性, 幂函数]
 difficulty: easy
 video:
+figures:
+  - file: chpt2_ex018.png
+    alt: $y=x^2$ 是凸函数 (convex) — 任意两点之间的弦都在曲线上方
+    where: problem
 ---
 
 ## Problem

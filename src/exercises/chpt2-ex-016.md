@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 极值, 应用题, 链式法则]
 difficulty: hard
 video:
+figures:
+  - file: chpt2_light_shortest_problem.png
+    alt: $A\to P\to B$ 路径示意 — 上半区 (空气, 速度 $v_1$) 入射角 $\theta_1$, 下半区 (水, 速度 $v_2$) 折射角 $\theta_2$
+    where: problem
 ---
 
 ## Problem

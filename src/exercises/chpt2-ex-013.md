@@ -4,6 +4,10 @@ chapter: 2
 tags: [导数, 单调性]
 difficulty: easy
 video:
+figures:
+  - file: chpt2_ex013.png
+    alt: $y=e^x-x+3$ 在 $x=0$ 处取得最小值 4 — 左侧 ($y'<0$) 递减, 右侧 ($y'>0$) 递增
+    where: problem
 ---
 
 ## Problem
