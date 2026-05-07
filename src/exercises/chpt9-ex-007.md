@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 曲面积分]
 difficulty: easy
 video:
+figures:
+  - file: chpt9_ex007.png
+    alt: 抛物线 $z=ax^2$ 绕 $z$ 轴旋转得到的旋转抛物面 $z = a(x^2+y^2)$ — 黑色实线为母线
+    where: problem
 ---
 
 ## Problem

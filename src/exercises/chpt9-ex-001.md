@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 极坐标]
 difficulty: medium
 video:
+figures:
+  - file: chpt9_ex001.png
+    alt: 两平面 $x+y+z+1=0$ 与 $2x-y+3z+4=0$ 的交线 — 黑色实线即所求直线, 方向 $\vec d = \vec n_1 \times \vec n_2 = (4,-1,-3)$
+    where: problem
 ---
 
 ## Problem

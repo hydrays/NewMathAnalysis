@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 曲面积分]
 difficulty: easy
 video:
+figures:
+  - file: chpt9_ex008.png
+    alt: 直线 $z=kx$ 绕 $z$ 轴旋转一周得到的圆锥面 $z = k\sqrt{x^2+y^2}$
+    where: problem
 ---
 
 ## Problem

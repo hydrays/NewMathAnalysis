@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 曲线积分]
 difficulty: medium
 video:
+figures:
+  - file: chpt9_ex011.png
+    alt: 两球面相交得空间圆 (绿色虚线), 投影到 $xOy$ 面是一个椭圆 (红色实线)
+    where: problem
 ---
 
 ## Problem

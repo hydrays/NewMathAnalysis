@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 曲线积分]
 difficulty: medium
 video:
+figures:
+  - file: chpt9_ex012.png
+    alt: 上半球面 $z=\sqrt{4-x^2-y^2}$ 与锥面 $z=\sqrt{3(x^2+y^2)}$ 在 $r=1, z=\sqrt{3}$ 处相交; 投影到 $xOy$ 是单位圆盘
+    where: problem
 ---
 
 ## Problem

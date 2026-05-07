@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 极坐标]
 difficulty: medium
 video:
+figures:
+  - file: chpt9_ex004.png
+    alt: 两平面相交得一条交线; 红色目标直线与之平行, 过给定点 $P(-3,2,5)$
+    where: problem
 ---
 
 ## Problem

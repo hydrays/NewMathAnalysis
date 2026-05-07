@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 极坐标]
 difficulty: easy
 video:
+figures:
+  - file: chpt9_ex005.png
+    alt: 直线 (红色) 穿过平面, 绿色点为唯一的交点
+    where: problem
 ---
 
 ## Problem

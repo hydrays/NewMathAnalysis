@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 曲线积分]
 difficulty: easy
 video:
+figures:
+  - file: chpt9_ex009.png
+    alt: 圆柱面 $x^2+y^2=1$ 与平面 $2x+3z=6$ 的交线 — 一条三维空间中的椭圆 (红色)
+    where: problem
 ---
 
 ## Problem

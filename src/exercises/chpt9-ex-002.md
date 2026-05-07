@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 极坐标]
 difficulty: easy
 video:
+figures:
+  - file: chpt9_ex002.png
+    alt: 两直线 $L_1, L_2$ 在公共原点处的夹角 $\theta$ — 由方向向量的点积公式得出
+    where: problem
 ---
 
 ## Problem

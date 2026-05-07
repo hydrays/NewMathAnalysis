@@ -4,6 +4,10 @@ chapter: 9
 tags: [二重积分, 极坐标]
 difficulty: hard
 video:
+figures:
+  - file: chpt9_ex006.png
+    alt: 蓝色已知直线, 红色目标直线过 $P$ 与之垂直相交 — 红线方向即 $P$ 到蓝线的垂线方向
+    where: problem
 ---
 
 ## Problem
