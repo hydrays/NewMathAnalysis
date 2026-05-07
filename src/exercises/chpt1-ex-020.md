@@ -4,6 +4,10 @@ chapter: 1
 tags: [连续性, 极限]
 difficulty: medium
 video:
+figures:
+  - file: chpt1_ex020.png
+    alt: $f(x) = x^3 - 4x^2 + 1$ 在 $x=0$ 取正值, $x=1$ 取负值 — 由零点定理保证 $(0,1)$ 内有根
+    where: problem
 ---
 
 ## Problem

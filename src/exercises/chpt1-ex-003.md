@@ -4,6 +4,10 @@ chapter: 1
 tags: [数列极限, epsilon-N, 极限]
 difficulty: medium
 video:
+figures:
+  - file: chpt1_ex003.png
+    alt: $\varepsilon$-$N$ 定义图解 — 给定 $\varepsilon$ 带, 找到 $N$ 使 $n>N$ 后所有点都落在带内
+    where: problem
 ---
 
 ## Problem

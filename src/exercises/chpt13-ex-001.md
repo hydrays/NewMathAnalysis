@@ -4,6 +4,10 @@ chapter: 13
 tags: [级数, 收敛, 几何级数, 部分和]
 difficulty: easy
 video:
+figures:
+  - file: chpt13_ex001.png
+    alt: 一根长为 1 的木棰按 $1/2, 1/4, 1/8, \ldots$ 切下 — 各段总和趋向 1, 是几何级数收敛的几何画面
+    where: problem
 ---
 
 ## Problem

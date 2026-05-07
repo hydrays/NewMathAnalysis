@@ -4,6 +4,10 @@ chapter: 1
 tags: [数列极限, 极限]
 difficulty: easy
 video:
+figures:
+  - file: chpt1_ex001.png
+    alt: $a_n = (-1)^{n+1}$ 在 $\pm 1$ 之间永久跳跃 — 不存在唯一的极限
+    where: problem
 ---
 
 ## Problem

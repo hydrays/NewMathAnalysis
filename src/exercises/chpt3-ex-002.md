@@ -4,6 +4,10 @@ chapter: 3
 tags: [导数应用, 微分]
 difficulty: easy
 video:
+figures:
+  - file: chpt3_ex002.png
+    alt: 激光从原点以角度 $\theta$ 射向墙 $y=b$, 命中点横坐标 $x = b/\tan\theta$, 距离 $l = b/\sin\theta$
+    where: problem
 ---
 
 ## Problem

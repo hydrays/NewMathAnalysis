@@ -5,6 +5,10 @@ title: 幂级数的收敛半径
 tags: [幂级数, 收敛半径, 收敛域]
 difficulty: medium
 video:
+figures:
+  - file: chpt13_ex007.png
+    alt: 中心 $x=1$, 收敛半径 2 — 端点 $x=-1$ 收敛, $x=3$ 发散, 收敛域为 $[-1, 3)$
+    where: problem
 ---
 
 ## Problem

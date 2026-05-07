@@ -4,6 +4,10 @@ chapter: 1
 tags: [连续性, 间断点]
 difficulty: easy
 video:
+figures:
+  - file: chpt1_ex019.png
+    alt: 符号函数 $\mathrm{sgn}(x)$ — $x=0$ 处跳跃间断, 左极限 $-1$, 右极限 $+1$, $\mathrm{sgn}(0)=0$
+    where: problem
 ---
 
 ## Problem

@@ -5,6 +5,10 @@ title: 交错调和级数
 tags: [交错级数, Leibniz判别法, 收敛性]
 difficulty: easy
 video:
+figures:
+  - file: chpt13_ex006.png
+    alt: 交错调和级数 $\sum (-1)^{n-1}/n$ 的部分和上下震荡, 收敛到 $\ln 2 \approx 0.6931$
+    where: problem
 ---
 
 ## Problem

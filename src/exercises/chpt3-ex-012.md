@@ -4,6 +4,10 @@ chapter: 3
 tags: [导数应用, 隐函数]
 difficulty: medium
 video:
+figures:
+  - file: chpt3_ex012.png
+    alt: 双曲线 $x^2/9 - y^2/4 = 1$ 上 $(3\sqrt{2}, 2)$ 处的切线 — 用隐函数求导得 $y' = 4x/(9y)$
+    where: problem
 ---
 
 ## Problem

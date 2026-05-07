@@ -4,6 +4,10 @@ chapter: 1
 tags: [连续性, 间断点, 函数极限]
 difficulty: easy
 video:
+figures:
+  - file: chpt1_ex015.png
+    alt: $1/|x|$ 在 $x=0$ 处发散到无穷 — 第二类 (无穷型) 间断点
+    where: problem
 ---
 
 ## Problem

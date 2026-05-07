@@ -4,6 +4,10 @@ chapter: 13
 tags: [级数, 收敛, 几何直观, 圆面积]
 difficulty: easy
 video:
+figures:
+  - file: chpt13_ex002.png
+    alt: 内接正 $n=3,6,12,24$ 边形面积逐步逼近 $\pi$ — 割圆术的几何级数收敛
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 1
 tags: [连续性, 函数极限]
 difficulty: easy
 video:
+figures:
+  - file: chpt1_ex014.png
+    alt: $|x|$ 是 V 形, 在原点处连续但不可导 (左右导数不等)
+    where: problem
 ---
 
 ## Problem

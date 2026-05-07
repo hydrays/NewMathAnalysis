@@ -4,6 +4,10 @@ chapter: 1
 tags: [连续性, 间断点, 函数极限]
 difficulty: easy
 video:
+figures:
+  - file: chpt1_ex016.png
+    alt: $\sin x / x$ 在 $x=0$ 处空心圆 — 极限值 1 存在但函数无定义, 是可去间断点
+    where: problem
 ---
 
 ## Problem

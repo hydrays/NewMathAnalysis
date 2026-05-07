@@ -4,6 +4,10 @@ chapter: 1
 tags: [连续性, 间断点, 函数极限]
 difficulty: medium
 video:
+figures:
+  - file: chpt1_ex017.png
+    alt: $\sin(1/x)$ 在 $x \to 0$ 时无穷次振荡 — 极限不存在, 第二类间断点 (振荡型)
+    where: problem
 ---
 
 ## Problem
