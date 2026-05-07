@@ -4,6 +4,10 @@ chapter: 10
 tags: [多元极值, 无约束极值, 应用题]
 difficulty: medium
 video:
+figures:
+  - file: chpt10_ex013.png
+    alt: 24 厘米宽铁板 (左) 折出等腰梯形水槽截面 (右), 折边长 $x$, 折角 $\theta$
+    where: problem
 ---
 
 ## Problem

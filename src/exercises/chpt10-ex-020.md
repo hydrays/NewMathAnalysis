@@ -5,6 +5,10 @@ title: 隐函数的求导
 tags: [隐函数, 隐函数定理, 偏导数]
 difficulty: medium
 video:
+figures:
+  - file: chpt10_ex020.png
+    alt: 单位圆 $x^2+y^2=1$ 与点 $(1/2, \sqrt{3}/2)$ 处的切线 — 由隐函数定理 $dy/dx = -x/y$
+    where: problem
 ---
 
 ## Problem

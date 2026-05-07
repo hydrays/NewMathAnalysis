@@ -4,6 +4,10 @@ chapter: 10
 tags: [梯度, 切平面, 法线, 曲面]
 difficulty: medium
 video:
+figures:
+  - file: chpt10_ex012.png
+    alt: 旋转抛物面 $x^2+y^2+z=9$ (蓝绿色) 与 $P_0(1,2,4)$ 处的切平面 (红色), 法向 $\vec n=(2,4,1)$
+    where: problem
 ---
 
 ## Problem

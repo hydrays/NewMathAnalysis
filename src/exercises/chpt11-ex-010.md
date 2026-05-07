@@ -4,6 +4,10 @@ chapter: 11
 tags: [三重积分, 累次积分]
 difficulty: medium
 video:
+figures:
+  - file: chpt11_ex010.png
+    alt: 第一卦限四面体 $\Omega$ — 由 $x+2y+z=1$ 与三个坐标平面围成, 顶点 $(1,0,0), (0,1/2,0), (0,0,1)$
+    where: problem
 ---
 
 ## Problem

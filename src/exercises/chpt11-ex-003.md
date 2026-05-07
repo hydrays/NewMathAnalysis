@@ -4,6 +4,10 @@ chapter: 11
 tags: [二重积分, 累次积分, 积分顺序交换]
 difficulty: medium
 video:
+figures:
+  - file: chpt11_ex003.png
+    alt: 三角形区域 D — 由 $y=1$, $x=2$, $y=x$ 围成 (顶点 $(1,1), (2,1), (2,2)$)
+    where: problem
 ---
 
 ## Problem

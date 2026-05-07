@@ -5,6 +5,10 @@ title: 高斯积分
 tags: [二重积分, 极坐标, 广义积分]
 difficulty: medium
 video:
+figures:
+  - file: chpt11_ex013.png
+    alt: $y = e^{-x^2}$ 钟形曲线; 全实数轴上的积分等于 $\sqrt{\pi}$ — 用极坐标做 $I^2$ 即得
+    where: problem
 ---
 
 ## Problem

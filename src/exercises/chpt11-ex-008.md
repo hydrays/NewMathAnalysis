@@ -4,6 +4,10 @@ chapter: 11
 tags: [二重积分, 换元法, 椭圆面积]
 difficulty: medium
 video:
+figures:
+  - file: chpt11_ex008.png
+    alt: 椭圆 $x^2/a^2 + y^2/b^2 = 1$, 用 $x = ar\cos\theta, y = br\sin\theta$ 换元后得面积 $\pi ab$
+    where: problem
 ---
 
 ## Problem

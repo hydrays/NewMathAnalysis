@@ -5,6 +5,10 @@ title: 矩形区域上的二重积分
 tags: [二重积分, 累次积分, 矩形区域]
 difficulty: easy
 video:
+figures:
+  - file: chpt11_ex001.png
+    alt: $f = 1 - x^2 - y^2$ 在矩形 $D=[0,1]^2$ (红色底) 上 — 体积即为二重积分值
+    where: problem
 ---
 
 ## Problem

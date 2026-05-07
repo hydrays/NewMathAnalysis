@@ -4,6 +4,10 @@ chapter: 11
 tags: [二重积分, 极坐标, 重积分应用]
 difficulty: medium
 video:
+figures:
+  - file: chpt11_ex005.png
+    alt: 极坐标曲线 $\rho = 2\cos\theta$ 是半径 1、圆心在 $(1,0)$ 的圆 — $\theta$ 从 $-\pi/2$ 到 $\pi/2$ 描出整圆
+    where: problem
 ---
 
 ## Problem

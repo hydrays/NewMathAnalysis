@@ -4,6 +4,10 @@ chapter: 11
 tags: [二重积分, 极坐标, 体积, 重积分应用]
 difficulty: hard
 video:
+figures:
+  - file: chpt11_ex007.png
+    alt: 半径 $2a$ 的球被半径 $a$ 圆心在 $(a,0)$ 的圆柱穿透 — 求圆柱内部分体积 (即 Viviani 立体)
+    where: problem
 ---
 
 ## Problem

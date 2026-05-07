@@ -4,6 +4,10 @@ chapter: 11
 tags: [三重积分, 柱面坐标]
 difficulty: medium
 video:
+figures:
+  - file: chpt11_ex011.png
+    alt: 抛物面 $z = x^2+y^2$ (蓝) 与平面 $z=4$ (绿) 之间的立体, 顶面为半径 2 的圆 (红)
+    where: problem
 ---
 
 ## Problem

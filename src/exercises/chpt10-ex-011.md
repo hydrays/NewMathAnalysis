@@ -4,6 +4,10 @@ chapter: 10
 tags: [梯度, 方向导数, 三元函数, 最大变化率]
 difficulty: medium
 video:
+figures:
+  - file: chpt10_ex011.png
+    alt: $f = x^3 - xy^2 - z^2$ 在 $z=0$ 切片的等高线, $P_0=(1,1,0)$ 处梯度 $(2,-2,0)$ 指向最快上升方向
+    where: problem
 ---
 
 ## Problem

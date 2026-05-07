@@ -4,6 +4,10 @@ chapter: 10
 tags: [全微分, 应用, 梯形截面]
 difficulty: medium
 video:
+figures:
+  - file: chpt10_ex009.png
+    alt: 等腰梯形截面, 折边长 $x$, 折角 $\theta$, 底宽 $L-2x$ — 截面积是 $x, \theta$ 的二元函数
+    where: problem
 ---
 
 ## Problem

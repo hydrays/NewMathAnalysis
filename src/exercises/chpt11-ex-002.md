@@ -4,6 +4,10 @@ chapter: 11
 tags: [二重积分, 累次积分, 圆形区域, 三角换元]
 difficulty: medium
 video:
+figures:
+  - file: chpt11_ex002.png
+    alt: 第一象限的 1/4 单位圆盘 — 在极坐标下表达极简
+    where: problem
 ---
 
 ## Problem

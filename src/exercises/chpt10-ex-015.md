@@ -5,6 +5,10 @@ title: 点集的内点、外点与边界点
 tags: [多元函数, 点集拓扑, 邻域]
 difficulty: easy
 video:
+figures:
+  - file: chpt10_ex015.png
+    alt: 圆环 $D = \{1 < x^2+y^2 < 2\}$ — 内点 (绿色), 边界点 ($\times$, 不属于 D), 外点 (黄色)
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 10
 tags: [多元极值, 无约束极值, 应用题, 最省材料]
 difficulty: medium
 video:
+figures:
+  - file: chpt10_ex014.png
+    alt: 体积固定 $V = 2$ 立方米的有盖长方体, 在 $a=b=c=\sqrt[3]{2}$ 时 (立方体) 用料最省
+    where: problem
 ---
 
 ## Problem

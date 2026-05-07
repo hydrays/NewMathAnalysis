@@ -4,6 +4,10 @@ chapter: 10
 tags: [梯度, 偏导数, 二元函数]
 difficulty: easy
 video:
+figures:
+  - file: chpt10_ex010.png
+    alt: $f = 1/(x^2+y^2)$ 的等高线为同心圆, 梯形 $\nabla f = -2(x,y)/r^4$ 处处指向原点 (上升最快方向)
+    where: problem
 ---
 
 ## Problem

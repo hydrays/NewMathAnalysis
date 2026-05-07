@@ -4,6 +4,10 @@ chapter: 10
 tags: [多元函数, 极限, 极限不存在]
 difficulty: medium
 video:
+figures:
+  - file: chpt10_ex002.png
+    alt: $z = xy/(x^2+y^2)$ 是马鞍形曲面 — 沿不同方向 ($y=kx$) 趋近原点得到不同值, 极限不存在
+    where: problem
 ---
 
 ## Problem

@@ -4,6 +4,10 @@ chapter: 10
 tags: [多元函数, 极限, epsilon-delta证明]
 difficulty: medium
 video:
+figures:
+  - file: chpt10_ex001.png
+    alt: $z = (x^2+y^2)\sin(1/(x^2+y^2))$ 在原点附近振荡, 但被 $\pm r^2$ 夹住, 极限 $=0$
+    where: problem
 ---
 
 ## Problem

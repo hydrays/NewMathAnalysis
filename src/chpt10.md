@@ -50,7 +50,7 @@
 > 集合 $D$ 的全体**边界点**所构成的集合称为 $D$ 的**边界**, 记作 $\partial D$.
 >
 
-::: {. exercise id="chpt10-ex-015"}
+::: {.exercise id="chpt10-ex-015"}
 :::
 
 > [!important: 开集与闭集]
@@ -59,7 +59,7 @@
 > **闭集**: 集合的边界属于该集合, $\partial D \subseteq D$
 >
 
-::: {. exercise id="chpt10-ex-016"}
+::: {.exercise id="chpt10-ex-016"}
 :::
 
 > [!important: 连通集]
@@ -109,13 +109,13 @@
 >
 > 注意从 $(x, y)$ 趋于 $(x_0, y_0)$ 有无数条路径, 极限存在要求**任意一条路径都成立**, 不能仅仅验证从 $x$-轴趋近和从$y$-轴趋近就断言极限存在.
 
-::: {. exercise id="chpt10-ex-001"}
+::: {.exercise id="chpt10-ex-001"}
 :::
 
-::: {. exercise id="chpt10-ex-002"}
+::: {.exercise id="chpt10-ex-002"}
 :::
 
-::: {. exercise id="chpt10-ex-003"}
+::: {.exercise id="chpt10-ex-003"}
 :::
 
 ### 多元函数的连续性
@@ -182,7 +182,7 @@
 > \displaystyle\frac{\partial z}{\partial y}, \quad \displaystyle\frac{\partial f}{\partial y}, \quad z_y \text{ 或 } f_y(x, y)
 > $$
 
-::: {. exercise id="chpt10-ex-004"}
+::: {.exercise id="chpt10-ex-004"}
 :::
 
 
@@ -207,7 +207,7 @@
 >4. 对 $y$ 的二阶偏导:
 >$$ \displaystyle\frac{\partial}{\partial y} \left( \displaystyle\frac{\partial z}{\partial y} \right) = \displaystyle\frac{\partial^2 z}{\partial y^2} = f_{yy}(x, y) $$
 
-::: {. exercise id="chpt10-ex-017"}
+::: {.exercise id="chpt10-ex-017"}
 :::
 
 >[!important]
@@ -221,10 +221,10 @@
 >
 > 即: **二阶混合偏导数在连续条件下与求导次序无关**,
 
-::: {. exercise id="chpt10-ex-005"}
+::: {.exercise id="chpt10-ex-005"}
 :::
 
-::: {. exercise id="chpt10-ex-006"}
+::: {.exercise id="chpt10-ex-006"}
 :::
 
 ## 全微分
@@ -261,13 +261,13 @@
 </div>
 <script type="module" src="threejs/chapter10-complex.js?v=20260331a"></script>
 
-::: {. exercise id="chpt10-ex-007"}
+::: {.exercise id="chpt10-ex-007"}
 :::
 
-::: {. exercise id="chpt10-ex-008"}
+::: {.exercise id="chpt10-ex-008"}
 :::
 
-::: {. exercise id="chpt10-ex-009"}
+::: {.exercise id="chpt10-ex-009"}
 :::
 
 ### 链式法则
@@ -297,7 +297,7 @@
 > $$
 >
 
-::: {. exercise id="chpt10-ex-018"}
+::: {.exercise id="chpt10-ex-018"}
 :::
 
 ### 全微分形式不变性
@@ -307,7 +307,7 @@
 > 微分符号的奇妙之处在于, 无论 $u, v$ 是作为**最终自变量**, 还是作为进一步依赖其他变量的**中间变量**, 全微分的表达式 $dz = \frac{\partial z}{\partial u}du + \frac{\partial z}{\partial v}dv$ 始终保持形式上的一致. 这个深刻的性质被称为**全微分形式不变性**. 它能帮我们绕开繁琐的链式法则, 直接通过代数代入来求导!
 >
 
-::: {. exercise id="chpt10-ex-019"}
+::: {.exercise id="chpt10-ex-019"}
 :::
 
 ### 隐函数求导
@@ -341,7 +341,7 @@
 > 这个自带负号的公式, 正是全微分移项产生的自然结果.
 >
 
-::: {. exercise id="chpt10-ex-020"}
+::: {.exercise id="chpt10-ex-020"}
 :::
 
 ## 梯度与方向导数
@@ -357,13 +357,13 @@
 
 > [!warning: 梯度方向是函数值增长最快的方向]
 
-::: {. exercise id="chpt10-ex-010"}
+::: {.exercise id="chpt10-ex-010"}
 :::
 
-::: {. exercise id="chpt10-ex-011"}
+::: {.exercise id="chpt10-ex-011"}
 :::
 
-::: {. exercise id="chpt10-ex-012"}
+::: {.exercise id="chpt10-ex-012"}
 :::
 
 > [!important: 三元函数的梯度定义与性质]
@@ -375,7 +375,7 @@
 > $$ \nabla = \dfrac{\partial}{\partial x}\mathbf{i} + \dfrac{\partial}{\partial y}\mathbf{j} + \dfrac{\partial}{\partial z}\mathbf{k} $$
 >
 
-::: {. exercise id="chpt10-ex-021"}
+::: {.exercise id="chpt10-ex-021"}
 :::
 
 
@@ -399,10 +399,10 @@
 
 ### 无约束极值问题
 
-::: {. exercise id="chpt10-ex-013"}
+::: {.exercise id="chpt10-ex-013"}
 :::
 
-::: {. exercise id="chpt10-ex-014"}
+::: {.exercise id="chpt10-ex-014"}
 :::
 
 #### 无约束极值的判别法
@@ -572,7 +572,7 @@ updateBadge2(2,-1);
 >
 > 拉格朗日乘数法只会给你提供**临界点 (候选点)**. 方程本身**并不会**告诉你它是最大值还是最小值 (此时无法使用二阶导数判别法). 你必须将解出来的这些点统一代入原函数 $f(x,y)$ 中, 通过比较数值的大小, 或者结合实际几何背景, 来最终敲定谁是极小值, 谁是极大值.
 
-::: {. exercise id="chpt10-ex-022"}
+::: {.exercise id="chpt10-ex-022"}
 :::
 
 ### 人工智能中的优化问题
