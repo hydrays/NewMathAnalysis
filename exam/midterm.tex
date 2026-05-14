@@ -1,0 +1,135 @@
+% ==============================================================
+%  新工科数学分析 · 期中考试   编译: xelatex midterm.tex
+% ==============================================================
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage[UTF8]{ctex}
+\setCJKmainfont{Noto Serif CJK SC}
+
+\usepackage[a4paper, top=1.6cm, bottom=1.8cm,
+            left=2.2cm, right=2.2cm]{geometry}
+
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{esint}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\definecolor{headblue}{RGB}{23,55,120}
+
+% 紧凑列表
+\setlist[enumerate,1]{leftmargin=2em, itemsep=1pt, topsep=2pt}
+\setlist[enumerate,2]{leftmargin=2em, itemsep=1pt, topsep=1pt}
+
+% 题号命令
+\newcounter{pnum}
+\newcommand{\prob}{%
+  \stepcounter{pnum}%
+  \vspace{5pt}%
+  \noindent
+  {\color{headblue}\rule[-.3ex]{3pt}{11pt}}\,%
+  \textbf{第\chinese{pnum}题}\enspace%
+}
+
+\begin{document}
+
+% ── 表头 ─────────────────────────────────────────────────────
+\noindent
+\textbf{共10题，每题10分, 满分：100 分}
+
+\vspace{3pt}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{2pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob 计算三重积分
+$\displaystyle\iiint_V z\,\mathrm{d}V$，
+其中 $V$ 为球面 $x^2+y^2+z^2=4$ 与锥面 $z=\sqrt{x^2+y^2}$
+围成的锥面上方区域。
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob 计算曲线积分
+$\displaystyle\oint_L \dfrac{-y\,\mathrm{d}x+x\,\mathrm{d}y}{x^2+y^2}$，
+其中 $L$ 为圆周 $(x-1)^2+(y-1)^2=4$，取正向（逆时针）。
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob
+设 $\bm{F}(x,y)=\bigl(2xe^{x^2}+y^2,\ 2xy+\cos y\bigr)$。
+\begin{enumerate}[label=(\arabic*)]
+  \item 验证 $\bm{F}$ 是保守场。
+  \item 求满足 $f(0,0)=0$ 的势函数 $f(x,y)$。
+  \item 利用 (2)，计算 $\displaystyle\int_L\bm{F}\cdot\mathrm{d}\bm{r}$，
+        其中 $L$ 为从 $O(0,0)$ 到 $A(1,\pi/2)$ 的任意曲线。
+\end{enumerate}
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob 利用格林公式计算
+$\displaystyle\oint_L \bigl(2x^3-y^3\bigr)\mathrm{d}x+\bigl(x^3+y^3\bigr)\mathrm{d}y$，
+其中 $L$ 为椭圆 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ 的正向边界（$a,b>0$）。
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob 利用高斯公式计算曲面积分
+\[
+  \oiint_\Sigma \bigl(x^3+yz\bigr)\mathrm{d}y\,\mathrm{d}z
+  +\bigl(y^3+xz\bigr)\mathrm{d}z\,\mathrm{d}x
+  +\bigl(z^3+xy\bigr)\mathrm{d}x\,\mathrm{d}y,
+\]
+其中 $\Sigma$ 为球面 $x^2+y^2+z^2=R^2$ 的外侧（$R>0$）。
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob 计算二重积分
+$\displaystyle\iint_D y\sqrt{x^2+y^2}\,\mathrm{d}A$，
+其中 $D=\bigl\{(x,y):x^2+y^2\le 1,\;y\ge 0\bigr\}$（单位上半圆盘）。
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob 计算第一型曲面积分
+$\displaystyle\iint_\Sigma z\,\mathrm{d}S$，
+其中 $\Sigma$ 为锥面 $z=\sqrt{x^2+y^2}$ 介于 $z=0$ 与 $z=1$ 之间的部分。
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob 利用高斯公式计算通量
+$\displaystyle\iint_S x\,\mathrm{d}y\,\mathrm{d}z
++y\,\mathrm{d}z\,\mathrm{d}x+z\,\mathrm{d}x\,\mathrm{d}y$，
+其中 $S$ 为抛物面 $z=4-x^2-y^2$（$z\ge 0$）的上侧。
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob （证明题）\enspace
+设 $a\in\mathbb{R}$，$L$ 为正向单位圆周 $x^2+y^2=1$。证明
+\[
+  \oint_L \bigl(e^x\cos y+ay\bigr)\mathrm{d}x
+  +\bigl(e^x\sin y-ax\bigr)\mathrm{d}y
+  =-2\pi a.
+\]
+
+% ══════════════════════════════════════════════════════════════
+\prob （证明题）\enspace
+设 $f,g$ 在有界区域 $V$ 上具有连续的二阶偏导数，$\Sigma=\partial V$ 为外侧边界，
+$\bm{n}$ 为外法向单位向量，$\dfrac{\partial g}{\partial\bm{n}}=\nabla g\cdot\bm{n}$。
+证明
+\[
+  \oiint_\Sigma f\,\frac{\partial g}{\partial\bm{n}}\,\mathrm{d}S
+  =\iiint_V\!\bigl(f\,\Delta g+\nabla f\cdot\nabla g\bigr)\mathrm{d}V,
+  \quad \Delta g=g_{xx}+g_{yy}+g_{zz}.
+\]
+
+
+\end{document}

@@ -1,0 +1,177 @@
+% ==============================================================
+%  新工科数学分析 · 期中考试参考解答   编译: xelatex midterm-answers.tex
+% ==============================================================
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage[UTF8]{ctex}
+\setCJKmainfont{Noto Serif CJK SC}
+
+\usepackage[a4paper, top=1.6cm, bottom=1.8cm,
+            left=2.2cm, right=2.2cm]{geometry}
+
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{esint}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\definecolor{headblue}{RGB}{23,55,120}
+\definecolor{ansgreen}{RGB}{0,110,60}
+
+\setlist[enumerate,1]{leftmargin=2em, itemsep=2pt, topsep=2pt}
+
+% 题号命令
+\newcounter{pnum}
+\newcommand{\prob}{%
+  \stepcounter{pnum}%
+  \vspace{6pt}%
+  \noindent
+  {\color{headblue}\rule[-.3ex]{3pt}{11pt}}\,%
+  \textbf{第\chinese{pnum}题}\enspace%
+}
+\newcommand{\ans}{\par\vspace{2pt}\noindent\textbf{\color{ansgreen}解\,:}\enspace}
+\newcommand{\prf}{\par\vspace{2pt}\noindent\textbf{\color{ansgreen}证\,:}\enspace}
+\newcommand{\boxedans}[1]{\boxed{\,#1\,}}
+
+\begin{document}
+
+% ── 表头 ─────────────────────────────────────────────────────
+\noindent
+\textbf{新工科数学分析 · 期中考试参考解答}
+
+\vspace{3pt}
+\noindent\rule{\linewidth}{0.6pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\ans 用球坐标 $x=\rho\sin\varphi\cos\theta,\ y=\rho\sin\varphi\sin\theta,\ z=\rho\cos\varphi$。
+锥面 $z=\sqrt{x^2+y^2}$ 即 $\varphi=\pi/4$，所求区域为
+$0\le\theta\le 2\pi,\ 0\le\varphi\le \pi/4,\ 0\le\rho\le 2$。
+\[
+\iiint_V z\,\mathrm{d}V
+=\int_0^{2\pi}\!\mathrm{d}\theta\!\int_0^{\pi/4}\!\sin\varphi\cos\varphi\,\mathrm{d}\varphi
+ \!\int_0^2\!\rho^3\,\mathrm{d}\rho
+=2\pi\cdot\tfrac{1}{4}\cdot 4=\boxedans{2\pi}.
+\]
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\ans 记 $P=\dfrac{-y}{x^2+y^2},\ Q=\dfrac{x}{x^2+y^2}$。直接计算可得
+$\dfrac{\partial Q}{\partial x}=\dfrac{\partial P}{\partial y}=\dfrac{y^2-x^2}{(x^2+y^2)^2}$，
+但向量场在原点处奇异。圆心 $(1,1)$ 到原点距离 $\sqrt{2}<2$，故原点在 $L$ 内部。
+
+取小正向圆周 $L_\varepsilon\!:\,x^2+y^2=\varepsilon^2$。在 $L$ 与 $L_\varepsilon$ 所围环域上由格林公式得
+$\displaystyle\oint_L=\oint_{L_\varepsilon}$。在 $L_\varepsilon$ 上令 $x=\varepsilon\cos t,y=\varepsilon\sin t$：
+\[
+\oint_{L_\varepsilon}\!\dfrac{-y\,\mathrm{d}x+x\,\mathrm{d}y}{x^2+y^2}
+=\int_0^{2\pi}\!\dfrac{\varepsilon^2\sin^2 t+\varepsilon^2\cos^2 t}{\varepsilon^2}\,\mathrm{d}t
+=\boxedans{2\pi}.
+\]
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\ans
+\begin{enumerate}[label=(\arabic*)]
+  \item $P=2xe^{x^2}+y^2,\ Q=2xy+\cos y$。
+        $\dfrac{\partial P}{\partial y}=2y=\dfrac{\partial Q}{\partial x}$，
+        且 $\bm{F}$ 在单连通区域 $\mathbb{R}^2$ 上 $C^1$，故 $\bm{F}$ 是保守场。
+  \item 由 $f_x=2xe^{x^2}+y^2$ 得 $f=e^{x^2}+xy^2+g(y)$；
+        再由 $f_y=2xy+g'(y)=2xy+\cos y$ 得 $g(y)=\sin y+C$。
+        由 $f(0,0)=1+C=0$ 得 $C=-1$，故
+        \[
+          \boxedans{\,f(x,y)=e^{x^2}+xy^2+\sin y-1\,}.
+        \]
+  \item $\displaystyle\int_L\bm{F}\cdot\mathrm{d}\bm{r}
+        =f(1,\pi/2)-f(0,0)=e+\dfrac{\pi^2}{4}+1-1-0=\boxedans{e+\dfrac{\pi^2}{4}}$。
+\end{enumerate}
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\ans 记 $P=2x^3-y^3,\ Q=x^3+y^3$，则 $Q_x-P_y=3x^2+3y^2$。由格林公式
+$\displaystyle\oint_L=3\iint_D(x^2+y^2)\,\mathrm{d}A$，
+$D$ 为椭圆内部。令 $x=a r\cos\theta,\ y=b r\sin\theta$，Jacobian $=abr$：
+\[
+3\!\iint_D(x^2+y^2)\mathrm{d}A
+=3ab\!\int_0^{2\pi}\!(a^2\cos^2\theta+b^2\sin^2\theta)\mathrm{d}\theta\!\int_0^1\!r^3\mathrm{d}r
+=3ab\cdot\pi(a^2+b^2)\cdot\tfrac{1}{4}=\boxedans{\dfrac{3\pi ab(a^2+b^2)}{4}}.
+\]
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\ans 由高斯公式（外侧，配合 $\oiint$）：
+\[
+\oiint_\Sigma=\iiint_V\!\bigl(3x^2+3y^2+3z^2\bigr)\mathrm{d}V
+=3\!\int_0^{2\pi}\!\mathrm{d}\theta\!\int_0^\pi\!\sin\varphi\,\mathrm{d}\varphi\!\int_0^R\!\rho^4\,\mathrm{d}\rho
+=3\cdot 2\pi\cdot 2\cdot\dfrac{R^5}{5}=\boxedans{\dfrac{12\pi R^5}{5}}.
+\]
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\ans 用极坐标 $x=r\cos\theta,\ y=r\sin\theta$，$D:0\le r\le 1,0\le\theta\le\pi$：
+\[
+\iint_D y\sqrt{x^2+y^2}\,\mathrm{d}A
+=\!\int_0^\pi\!\sin\theta\,\mathrm{d}\theta\!\int_0^1\!r^3\,\mathrm{d}r
+=2\cdot\dfrac{1}{4}=\boxedans{\dfrac{1}{2}}.
+\]
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\ans 锥面 $z=\sqrt{x^2+y^2}$ 上 $z_x=\dfrac{x}{\sqrt{x^2+y^2}},\ z_y=\dfrac{y}{\sqrt{x^2+y^2}}$，故
+$\sqrt{1+z_x^2+z_y^2}=\sqrt{2}$，$\mathrm{d}S=\sqrt{2}\,\mathrm{d}A$。
+投影 $D\!:\,x^2+y^2\le 1$。
+\[
+\iint_\Sigma z\,\mathrm{d}S
+=\sqrt{2}\!\iint_D\!\sqrt{x^2+y^2}\,\mathrm{d}A
+=\sqrt{2}\!\int_0^{2\pi}\!\mathrm{d}\theta\!\int_0^1\!r\cdot r\,\mathrm{d}r
+=\sqrt{2}\cdot 2\pi\cdot\tfrac{1}{3}=\boxedans{\dfrac{2\sqrt{2}\,\pi}{3}}.
+\]
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\ans $S$ 为开曲面。补一片 $S_0\!:\,z=0,\ x^2+y^2\le 4$，取下侧；则 $S\cup S_0$ 为闭曲面外侧。
+由高斯公式
+\[
+\oiint_{S\cup S_0}=\iiint_V(1+1+1)\mathrm{d}V=3\,\text{Vol}(V).
+\]
+体积 $\text{Vol}(V)=\int_0^{2\pi}\!\mathrm{d}\theta\!\int_0^2\!(4-r^2)r\,\mathrm{d}r
+=2\pi\cdot 4=8\pi$，故 $\oiint=24\pi$。
+
+在 $S_0$ 上 $z=0$，且 $\mathrm{d}y\,\mathrm{d}z=0,\ \mathrm{d}z\,\mathrm{d}x=0$，
+所以 $\displaystyle\iint_{S_0}=\iint_{S_0}z\,\mathrm{d}x\mathrm{d}y=0$。
+故 $\displaystyle\iint_S=24\pi-0=\boxedans{24\pi}$。
+
+\vspace{4pt}
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\prf 记 $P=e^x\cos y+ay,\ Q=e^x\sin y-ax$，则
+\[
+Q_x-P_y=e^x\sin y-a-(-e^x\sin y+a)=2e^x\sin y-2a.
+\]
+设 $D:x^2+y^2\le 1$。由格林公式
+$\displaystyle\oint_L=\iint_D(2e^x\sin y-2a)\,\mathrm{d}A$。
+
+由于 $D$ 关于 $y=0$ 对称且 $e^x\sin y$ 关于 $y$ 为奇函数，
+$\iint_D 2e^x\sin y\,\mathrm{d}A=0$；又 $\iint_D 2a\,\mathrm{d}A=2a\pi$。
+故 $\displaystyle\oint_L=0-2\pi a=-2\pi a$。$\hfill\square$
+
+% ══════════════════════════════════════════════════════════════
+\prob
+\prf 注意 $f\,\dfrac{\partial g}{\partial\bm{n}}=f\,\nabla g\cdot\bm{n}=(f\nabla g)\cdot\bm{n}$。
+对向量场 $f\nabla g$ 应用高斯公式得
+\[
+\oiint_\Sigma (f\nabla g)\cdot\bm{n}\,\mathrm{d}S
+=\iiint_V \nabla\cdot(f\nabla g)\,\mathrm{d}V.
+\]
+由乘积法则
+$\nabla\cdot(f\nabla g)=\nabla f\cdot\nabla g+f\,\nabla\cdot\nabla g
+=\nabla f\cdot\nabla g+f\,\Delta g$，
+故
+\[
+\oiint_\Sigma f\,\dfrac{\partial g}{\partial\bm{n}}\,\mathrm{d}S
+=\iiint_V\bigl(f\,\Delta g+\nabla f\cdot\nabla g\bigr)\mathrm{d}V.
+\quad\square
+\]
+
+\end{document}
