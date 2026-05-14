@@ -349,11 +349,110 @@
 ::: {.exercise id="chpt12-ex-013"}
 :::
 
+### 格林公式的法向形式
+
+> [!tip: 引入问题: 边界处的"流出量"]
+>
+> 上一小节问的是"沿边界绕一圈做了多少功" (切向问题), 答案与内部旋度的总和相等. 换一个问法: 单位时间内, **从边界流出 $D$ 的总量是多少**? 即沿边界 $\partial D$ 的**通量** $\displaystyle\oint_{\partial D}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s$, 其中 $\mathbf{n}$ 是边界的**外法向单位向量**, $\mathrm{d}s$ 是弧长微元. 答案由格林公式的另一形式给出: 它等于 $D$ 内部所有点的**散度**之和.
+
+> [!important: 定义 — 二维散度]
+>
+> 设 $\mathbf{F}=(P,Q)$ 在区域 $D$ 上有连续偏导数, 称
+>
+> $$\operatorname{div}\mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}$$
+>
+> 为 $\mathbf{F}$ 的**散度** (二维). $\operatorname{div}\mathbf{F}>0$ 表示该点为"源" (流体向外膨胀), $<0$ 为"汇" (向内汇聚), $=0$ 表示该点处不可压缩.
+
+> [!important: 定理 — 格林公式 (法向 / 通量形式)]
+>
+> 设 $D$ 为分段光滑边界的有界闭区域, $\mathbf{F}=(P,Q)$ 在 $D$ 上 $C^1$, $\mathbf{n}$ 为 $\partial D^+$ 的**外法向**单位向量, $\mathrm{d}s$ 为弧长微元, 则
+>
+> $$\oint_{\partial D^+}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s = \iint_D \operatorname{div}\mathbf{F}\,\mathrm{d}A.$$
+>
+> 在正向 (逆时针) 边界上 $\mathbf{n}\,\mathrm{d}s = (\mathrm{d}y,\,-\mathrm{d}x)$, 故等价地
+>
+> $$\oint_{\partial D^+} P\,\mathrm{d}y - Q\,\mathrm{d}x = \iint_D\Bigl(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}\Bigr)\mathrm{d}A.$$
+>
+> ::: {.fold label="推导"}
+> 把 $\mathbf{F}$ 旋转 $90°$: 令 $\tilde{\mathbf{F}}=(-Q,\,P)$, 则 $\tilde{\mathbf{F}}\cdot\boldsymbol\tau = \mathbf{F}\cdot\mathbf{n}$ (沿正向边界), 且 $\operatorname{curl}\tilde{\mathbf{F}} = P_x + Q_y = \operatorname{div}\mathbf{F}$. 对 $\tilde{\mathbf{F}}$ 用切向形式的格林公式即得
+>
+> $$\oint_{\partial D^+}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s
+> = \oint_{\partial D^+}\tilde{\mathbf{F}}\cdot\boldsymbol\tau\,\mathrm{d}s
+> = \iint_D \operatorname{curl}\tilde{\mathbf{F}}\,\mathrm{d}A
+> = \iint_D \operatorname{div}\mathbf{F}\,\mathrm{d}A. \quad\blacksquare$$
+> :::
+
+> [!tip: 切向形式与法向形式 — 同一公式的两面]
+>
+> 二维格林公式有两种等价表述, 角色完全对偶:
+>
+> | 形式 | 边界积分 | 内部积分 | 物理意义 |
+> |---|---|---|---|
+> | 切向 (旋度形式) | $\displaystyle\oint_C\mathbf{F}\cdot\boldsymbol\tau\,\mathrm{d}s$ | $\displaystyle\iint_D\operatorname{curl}\mathbf{F}\,\mathrm{d}A$ | 环量 = 总旋度 |
+> | 法向 (散度形式) | $\displaystyle\oint_C\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s$ | $\displaystyle\iint_D\operatorname{div}\mathbf{F}\,\mathrm{d}A$ | 通量 = 总散度 |
+>
+> 二者只差一个"把 $\mathbf{F}$ 旋转 $90°$"的代换. 推广到三维, 切向形式变成**斯托克斯公式** (§12.7), 法向形式变成**高斯公式** (§12.7).
+
 ## 曲面积分
 
 > [!tip: 从二维到三维]
 >
-> 至此, 二维的积分理论已经完整: 沿曲线积分 (第一类, 第二类) 以及将区域内部与边界联系起来的格林公式. 现在把同样的思路推广到三维空间: **曲面**取代曲线, **通量**取代做功.
+> 至此, 二维的积分理论已经完整: 沿曲线积分 (第一类, 第二类) 以及将区域内部与边界联系起来的格林公式. 现在把同样的思路推广到三维空间: **曲面**取代曲线. 与曲线积分一样, 曲面积分也分两类: 第一类对**面积**积分 (用于质量, 表面密度等标量问题), 第二类对**有向面元**积分 (用于通量等矢量问题).
+
+### 第一类曲面积分
+
+> [!tip: 引入问题: 不均匀曲面壳的质量]
+>
+> 一块薄壳弯曲成空间曲面 $\Sigma$ 的形状, 其**面密度** (单位面积的质量) 在不同位置不同, 记为 $\rho(x,y,z)$. 如何计算这块壳的总质量?
+>
+> 将 $\Sigma$ 划分成 $N$ 个小面片, 第 $i$ 片面积为 $\Delta S_i$, 在其上任取一点 $(x_i,y_i,z_i)$, 则该片质量约为 $\rho(x_i,y_i,z_i)\,\Delta S_i$. 对所有小片求和并令最大直径 $\to 0$, 即得总质量
+>
+> $$M = \lim_{\lambda\to 0}\sum_{i=1}^N\rho(x_i,y_i,z_i)\,\Delta S_i.$$
+>
+> 这就是**第一类曲面积分** (或**对面积的曲面积分**) 的定义.
+
+> [!important: 定义 — 第一类曲面积分]
+>
+> 设 $f(x,y,z)$ 在曲面 $\Sigma$ 上连续. 把 $\Sigma$ 划分为 $N$ 个小面片, 第 $i$ 片面积 $\Delta S_i$, 直径 $\operatorname{diam}(\Sigma_i)$, 在该片上取任一点 $(x_i,y_i,z_i)$, 令 $\lambda = \max_i\operatorname{diam}(\Sigma_i)$. 若极限
+>
+> $$\lim_{\lambda\to 0}\sum_{i=1}^N f(x_i,y_i,z_i)\,\Delta S_i$$
+>
+> 存在且与划分方式及取点无关, 则称该极限为 $f$ 在 $\Sigma$ 上的**第一类曲面积分**, 记作
+>
+> $$\iint_\Sigma f(x,y,z)\,\mathrm{d}S = \lim_{\lambda\to 0}\sum_{i=1}^N f(x_i,y_i,z_i)\,\Delta S_i,$$
+>
+> $\mathrm{d}S$ 称为**面积微元**.
+
+> [!tip: 计算方法 — 显式方程投影]
+>
+> 若 $\Sigma$ 由显式方程 $z = g(x,y),\ (x,y)\in D_{xy}$ 给出, 且 $g$ 在 $D_{xy}$ 上有连续偏导数, 则面积微元为
+>
+> $$\mathrm{d}S = \sqrt{1 + g_x^2 + g_y^2}\,\mathrm{d}x\,\mathrm{d}y,$$
+>
+> 从而
+>
+> $$\iint_\Sigma f(x,y,z)\,\mathrm{d}S = \iint_{D_{xy}} f\bigl(x,y,g(x,y)\bigr)\sqrt{1+g_x^2+g_y^2}\,\mathrm{d}x\,\mathrm{d}y.$$
+>
+> 若 $\Sigma$ 由 $x=h(y,z)$ 或 $y=k(x,z)$ 给出, 投影到对应坐标平面即可, 公式形式相同.
+
+> [!tip: 计算方法 — 一般参数化]
+>
+> 若 $\Sigma$ 由参数方程 $\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v)),\ (u,v)\in R$ 给出, $\mathbf{r}_u\times\mathbf{r}_v\ne\mathbf{0}$, 则
+>
+> $$\mathrm{d}S = |\mathbf{r}_u\times\mathbf{r}_v|\,\mathrm{d}u\,\mathrm{d}v,$$
+>
+> 积分公式为
+>
+> $$\iint_\Sigma f\,\mathrm{d}S = \iint_R f\bigl(\mathbf{r}(u,v)\bigr)\,|\mathbf{r}_u\times\mathbf{r}_v|\,\mathrm{d}u\,\mathrm{d}v.$$
+
+> [!important: 性质 — 与定向无关 / 对曲面可加]
+>
+> 第一类曲面积分有两条基本性质 (与第一类曲线积分平行):
+>
+> 1. **与定向无关**: 改变 $\Sigma$ 的"正负侧"不改变积分值 ($\mathrm{d}S$ 始终为正).
+> 2. **对曲面可加**: $\displaystyle\iint_{\Sigma_1+\Sigma_2}f\,\mathrm{d}S = \iint_{\Sigma_1}f\,\mathrm{d}S + \iint_{\Sigma_2}f\,\mathrm{d}S$.
+
+### 第二类曲面积分
 
 > [!tip: 引入问题: 流体穿过曲面的通量]
 >
