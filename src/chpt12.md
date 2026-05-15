@@ -452,6 +452,44 @@
 > 1. **与定向无关**: 改变 $\Sigma$ 的"正负侧"不改变积分值 ($\mathrm{d}S$ 始终为正).
 > 2. **对曲面可加**: $\displaystyle\iint_{\Sigma_1+\Sigma_2}f\,\mathrm{d}S = \iint_{\Sigma_1}f\,\mathrm{d}S + \iint_{\Sigma_2}f\,\mathrm{d}S$.
 
+> [!note: 例 — 平面在第一卦限的部分 (投影法)]
+>
+> 计算 $\displaystyle\iint_\Sigma xy\,\mathrm{d}S$, 其中 $\Sigma$ 为平面 $x+y+z=1$ 被三个坐标面所截的三角形 (在第一卦限).
+>
+> ::: {.fold label="计算"}
+> 由 $z=1-x-y$ 得 $z_x=z_y=-1$, 故面积微元 $\mathrm{d}S=\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}A=\sqrt{3}\,\mathrm{d}A$. 投影区域 $D=\{(x,y):x\ge 0,\,y\ge 0,\,x+y\le 1\}$.
+>
+> $$\iint_\Sigma xy\,\mathrm{d}S
+> = \sqrt{3}\!\int_0^1\!\!x\!\int_0^{1-x}\!\!y\,\mathrm{d}y\,\mathrm{d}x
+> = \frac{\sqrt{3}}{2}\!\int_0^1\!x(1-x)^2\,\mathrm{d}x
+> = \frac{\sqrt{3}}{2}\cdot\frac{1}{12}
+> = \frac{\sqrt{3}}{24}.$$
+> :::
+
+> [!note: 例 — 球面上的对称性技巧]
+>
+> 计算 $\displaystyle\iint_\Sigma z^2\,\mathrm{d}S$, 其中 $\Sigma$ 为球面 $x^2+y^2+z^2=R^2$.
+>
+> ::: {.fold label="计算"}
+> **解法一 (对称性).** 球面关于 $x,y,z$ 完全对称, 故
+>
+> $$\iint_\Sigma x^2\,\mathrm{d}S = \iint_\Sigma y^2\,\mathrm{d}S = \iint_\Sigma z^2\,\mathrm{d}S.$$
+>
+> 三式相加得
+>
+> $$3\!\iint_\Sigma z^2\,\mathrm{d}S = \iint_\Sigma(x^2+y^2+z^2)\,\mathrm{d}S = R^2\!\iint_\Sigma\mathrm{d}S = R^2\cdot 4\pi R^2 = 4\pi R^4,$$
+>
+> 故 $\displaystyle\iint_\Sigma z^2\,\mathrm{d}S = \frac{4\pi R^4}{3}$.
+>
+> **解法二 (球面参数化).** 取 $\mathbf{r}(\varphi,\theta)=(R\sin\varphi\cos\theta,R\sin\varphi\sin\theta,R\cos\varphi)$, $\varphi\in[0,\pi],\theta\in[0,2\pi]$, 则 $|\mathbf{r}_\varphi\times\mathbf{r}_\theta|=R^2\sin\varphi$, 从而
+>
+> $$\iint_\Sigma z^2\,\mathrm{d}S
+> = \int_0^{2\pi}\!\!\int_0^\pi R^2\cos^2\varphi\cdot R^2\sin\varphi\,\mathrm{d}\varphi\,\mathrm{d}\theta
+> = 2\pi R^4\!\int_0^\pi\!\cos^2\varphi\sin\varphi\,\mathrm{d}\varphi
+> = 2\pi R^4\cdot\frac{2}{3}
+> = \frac{4\pi R^4}{3}.$$
+> :::
+
 ### 第二类曲面积分
 
 > [!tip: 引入问题: 流体穿过曲面的通量]
